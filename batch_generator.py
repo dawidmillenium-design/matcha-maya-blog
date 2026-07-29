@@ -96,7 +96,6 @@ DEBATES = [
     "Should remote workers undergo cultural orientation to prevent overtourism friction?"
 ]
 
-# Generate All 220 Cities Programmatically
 def generate_220_cities():
     cities_list = []
     for index, (slug, region_slug) in enumerate(REGIONAL_SILO.items()):
@@ -118,7 +117,20 @@ def generate_220_cities():
 
 CITIES = generate_220_cities()
 
+def get_sibling_links(current_slug, current_region):
+    siblings = [
+        c for c in CITIES 
+        if c['region_slug'] == current_region and c['slug'] != current_slug
+    ][:3]
+    
+    html = '<div class="mt-8 border-t border-stone-200 pt-6"><h4 class="text-xs font-bold text-stone-900 uppercase tracking-wider mb-3">🎧 Related Regional Podcasts</h4><ul class="space-y-2 text-xs">'
+    for s in siblings:
+        html += f'<li><a href="{s["slug"]}" class="text-emerald-700 hover:underline font-medium">→ Remote Work & Superfoods in {s["city"]}</a></li>'
+    html += '</ul></div>'
+    return html
+
 def build_city_post(c):
+    sibling_section = get_sibling_links(c['slug'], c['region_slug'])
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,7 +142,7 @@ def build_city_post(c):
 <body class="bg-stone-50 text-stone-800 font-sans antialiased">
   <header class="bg-emerald-900 text-white p-4 text-xs shadow-md">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
-      <a href="index2.html" class="font-bold text-sm tracking-wide">🍵 MATCHA MAYA</a>
+      <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/" class="font-bold text-sm tracking-wide">🍵 MATCHA MAYA</a>
       <a href="regions/{c['region_slug']}.html" class="underline text-emerald-300 hover:text-white transition">
         Parent Regional SILO Hub
       </a>
@@ -161,6 +173,8 @@ def build_city_post(c):
         <h3 class="font-bold text-emerald-400 text-sm">🗣️ The Nomad Debate</h3>
         <p class="text-xs text-stone-300 mt-2 leading-relaxed">{c['debate']}</p>
       </div>
+
+      {sibling_section}
     </article>
   </main>
 
@@ -179,4 +193,4 @@ for city in CITIES:
         f.write(content)
     generated_count += 1
 
-print(f"\n🎉 SUCCESS! Generated all {generated_count} city posts locally!")
+print(f"\n🎉 SUCCESS! Generated all {generated_count} city posts locally with internal SILO linking!")
