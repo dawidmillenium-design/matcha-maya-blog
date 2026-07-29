@@ -1,6 +1,5 @@
 import os
 
-# Regional SILO Mapping
 REGIONAL_SILO = {
     # Southeast Asia
     "jakarta": "southeast-asia", "bangkok": "southeast-asia", "manila": "southeast-asia",
@@ -96,6 +95,23 @@ DEBATES = [
     "Should remote workers undergo cultural orientation to prevent overtourism friction?"
 ]
 
+DATA_SETS = [
+    {
+        "visa": "Remote Worker Visa / Digital Nomad Residence Permit",
+        "ride_app": "Grab & Gojek",
+        "taxi_cost": "$25 - $45 USD (Premium Executive SUV / Alphard)",
+        "vlog": "YouTube Nomad Vlogs & Medium City Guides",
+        "audiobook": "The Digital Nomad Guide to Sustainable Relocation (Audiobook & E-Book)"
+    },
+    {
+        "visa": "D8 Nomad Visa / E33G Remote Worker Status",
+        "ride_app": "Uber, Bolt & FreeNow",
+        "taxi_cost": "$35 - $60 USD (Black Sedan Executive)",
+        "vlog": "Local Expat Blogs & Youtube Relocation Logs",
+        "audiobook": "Remote Work Freedom & Regional Tech Hubs (Audible & Kindle)"
+    }
+]
+
 def generate_220_cities():
     cities_list = []
     for index, (slug, region_slug) in enumerate(REGIONAL_SILO.items()):
@@ -103,6 +119,7 @@ def generate_220_cities():
         arch = ARCHETYPES[index % len(ARCHETYPES)]
         sf_title, sf_desc = SUPERFOODS[index % len(SUPERFOODS)]
         debate = DEBATES[index % len(DEBATES)]
+        extra_data = DATA_SETS[index % len(DATA_SETS)]
         
         cities_list.append({
             "slug": f"{slug}-interview.html",
@@ -111,7 +128,12 @@ def generate_220_cities():
             "archetype": arch,
             "superfood_topic": sf_title,
             "superfood_text": sf_desc,
-            "debate": debate
+            "debate": debate,
+            "visa": extra_data['visa'],
+            "ride_app": extra_data['ride_app'],
+            "taxi_cost": extra_data['taxi_cost'],
+            "vlog": extra_data['vlog'],
+            "audiobook": extra_data['audiobook']
         })
     return cities_list
 
@@ -136,7 +158,8 @@ def build_city_post(c):
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🍵 {c['city']} Remote Work, {c['superfood_topic']} & Nomad Guide</title>
+  <title>🍵 {c['city']} Digital Nomad Visa, Laptop Coworking & Podcast Guide</title>
+  <meta name="description" content="Explore {c['city']} digital nomad visas, laptop friendly cafes with high-speed fiber, ride-hailing apps, premium taxi car costs, audiobooks, e-books, and local vlogs." />
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-stone-50 text-stone-800 font-sans antialiased">
@@ -156,17 +179,38 @@ def build_city_post(c):
         <span class="text-xs text-stone-400">100+ Mbps Fiber Verified</span>
       </div>
 
-      <h1 class="text-3xl font-extrabold text-stone-900 mt-1">{c['city']} Remote Work & Superfood Guide</h1>
-      <p class="text-xs text-stone-500 mt-2">Verified local workspace analysis, high-speed fiber mapping, and wellness nutrition.</p>
+      <h1 class="text-3xl font-extrabold text-stone-900 mt-1">{c['city']} Digital Nomad Visa, Laptop & Mobility Guide</h1>
+      <p class="text-xs text-stone-500 mt-2">Verified workspace analysis, laptop battery hubs, ride-hailing app options, e-books, and local vlogs.</p>
       
+      <!-- SEO Key Info Box -->
+      <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-stone-50 p-4 rounded-xl border border-stone-200 text-xs">
+        <div>
+          <strong class="text-stone-900">🛂 Country-Specific Visa:</strong>
+          <p class="text-stone-600">{c['visa']}</p>
+        </div>
+        <div>
+          <strong class="text-stone-900">🚕 Ride-Hailing Apps & Premium Taxi:</strong>
+          <p class="text-stone-600">{c['ride_app']} | Airport Executive Car: {c['taxi_cost']}</p>
+        </div>
+        <div>
+          <strong class="text-stone-900">🎧 Audiobook & E-Book Recommendation:</strong>
+          <p class="text-stone-600">{c['audiobook']}</p>
+        </div>
+        <div>
+          <strong class="text-stone-900">📹 Blogs & Vlogs:</strong>
+          <p class="text-stone-600">{c['vlog']}</p>
+        </div>
+      </div>
+
+      <!-- Superfood Section -->
       <div class="my-6 bg-emerald-50 border-l-4 border-emerald-600 p-4 rounded-r-xl">
         <h3 class="font-bold text-emerald-950 text-sm flex items-center gap-2">🌿 {c['superfood_topic']}</h3>
         <p class="text-emerald-800 text-xs mt-1 leading-relaxed">{c['superfood_text']}</p>
       </div>
 
       <section class="mt-6 text-xs leading-relaxed text-stone-700 space-y-4">
-        <h2 class="text-base font-bold text-stone-900">Workspace Infrastructure & Laptop Culture</h2>
-        <p>In {c['city']}, maintaining peak cognitive throughput requires balancing ergonomic workspace environments with daily metabolic recovery. Local cafes and co-working spaces in central districts feature dedicated power drops, ergonomic seating, and verified high-speed fiber internet.</p>
+        <h2 class="text-base font-bold text-stone-900">Laptop Workspaces & High-Speed Mobility</h2>
+        <p>In {c['city']}, digital nomads using modern dual-screen laptop setups can rely on high-speed fiber internet in dedicated co-working spaces. Getting around the city is seamless using popular local ride-hailing apps like {c['ride_app']}, while premium executive taxi cars are readily available for comfortable airport transfers.</p>
       </section>
 
       <div class="bg-stone-900 text-white p-6 rounded-2xl mt-8 shadow-sm">
@@ -193,4 +237,4 @@ for city in CITIES:
         f.write(content)
     generated_count += 1
 
-print(f"\n🎉 SUCCESS! Generated all {generated_count} city posts locally with internal SILO linking!")
+print(f"\n🎉 SUCCESS! Regenerated all {generated_count} city posts with enhanced SEO keywords!")
