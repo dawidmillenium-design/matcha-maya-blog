@@ -8,14 +8,7 @@
   <link rel="canonical" href="https://dawidmillenium-design.github.io/matcha-maya-blog/">
   
   <style>
-    :root {
-      --primary: #0f4c3a;
-      --primary-hover: #15624c;
-      --bg: #f7f9f6;
-      --card-bg: #ffffff;
-      --border: #d1ded0;
-      --text: #2c352b;
-    }
+    :root { --primary: #0f4c3a; --primary-hover: #15624c; --bg: #f7f9f6; --card-bg: #ffffff; --border: #d1ded0; --text: #2c352b; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
 
@@ -31,7 +24,6 @@
     .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
     .hero p { font-size: 1.15rem; color: #4a5d4e; max-width: 750px; margin: 0 auto; }
 
-    /* 3 Main Content Portals Grid */
     .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 50px; }
     .portal-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.2s ease, box-shadow 0.2s ease; }
     .portal-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
@@ -48,70 +40,64 @@
 </head>
 <body>
 
-  <!-- Top Navigation Header -->
+  <!-- Level 1 Header Navigation with Keyword Anchor Text -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo">MATCHA MAYA</a>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="index2.html">220 Interviews</a></li>
-          <li><a href="podcasts.html">Podcasts</a></li>
-          <li><a href="comparison.html">Comparison</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index2.html">220 City Interviews</a></li>
+          <li><a href="podcasts.html">Podcast Proposals</a></li>
+          <li><a href="comparison.html">City Comparisons</a></li>
+          <li><a href="about.html">About Our Mission</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    
     <section class="hero">
       <h1>Global Remote Work & Podcast Creator Network</h1>
       <p>Data-backed 12-point destination research, fiber internet benchmarks, and podcast production blueprints across 220+ global cities.</p>
     </section>
 
-    <!-- Fixed Portal Cards with Active Navigational Links -->
+    <!-- Level 1 -> Level 2 PageRank Flow Portal Cards -->
     <div class="portal-grid">
-      
-      <!-- 1. Explore Interviews Portal -->
       <div class="portal-card">
         <span class="portal-icon">🎙️</span>
         <h2>220+ Creator Interviews</h2>
         <p>Access regional interviews and field research with remote nomads, local creators, and workspace managers worldwide.</p>
-        <a href="index2.html" class="btn-action">Explore Interviews →</a>
+        <!-- Descriptive Anchor Text Fix -->
+        <a href="index2.html" class="btn-action">Read interviews with creators in 220 cities →</a>
       </div>
 
-      <!-- 2. View Podcast Proposals Portal -->
       <div class="portal-card">
         <span class="portal-icon">🎧</span>
         <h2>Podcast Proposals</h2>
         <p>Structured show blueprints, studio location maps, and production logistics for location-independent audio creators.</p>
-        <a href="podcasts.html" class="btn-action">View Podcast Proposals →</a>
+        <!-- Descriptive Anchor Text Fix -->
+        <a href="podcasts.html" class="btn-action">Explore podcast production proposals by region →</a>
       </div>
 
-      <!-- 3. Compare Cities Portal -->
       <div class="portal-card">
         <span class="portal-icon">📊</span>
         <h2>City Comparisons</h2>
         <p>Side-by-side infrastructure matrices evaluating WiFi bandwidth, monthly living costs, and coworking day pass prices.</p>
-        <a href="comparison.html" class="btn-action">Compare Cities Now →</a>
+        <!-- Descriptive Anchor Text Fix -->
+        <a href="comparison.html" class="btn-action">Compare digital nomad hubs side-by-side →</a>
       </div>
-
     </div>
-
   </main>
 
-  <!-- Site-Wide Navigational Footer -->
   <footer class="site-footer">
     <p style="margin-bottom: 12px; font-weight: 500;">© Matcha Maya Blog — Global Nomad Destination Guides</p>
     <p style="margin: 0;">
       <a href="index.html">Home</a> | 
-      <a href="index2.html">220 Interviews</a> | 
-      <a href="podcasts.html">Podcast Proposals</a> | 
-      <a href="comparison.html">City Comparisons</a> | 
-      <a href="https://seohobby.myteachify.com" target="_blank" rel="noopener">SEO hobby Expert School</a> | 
-      <a href="about.html">About</a>
+      <a href="index2.html">Read interviews with creators in 220 cities</a> | 
+      <a href="podcasts.html">Podcast Production Proposals</a> | 
+      <a href="comparison.html">Compare Digital Nomad Hubs</a> | 
+      <a href="about.html">About the Matcha Maya team and our remote work mission</a>
     </p>
   </footer>
 
