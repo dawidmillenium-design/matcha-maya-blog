@@ -4,50 +4,161 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matcha Maya Blog: Global Remote Work & Podcast Guides</title>
-  <meta name="description" content="In-depth city guides for remote workers and podcasters. Analyze internet speeds, rents, and local tech in 220 global destinations. Start exploring now.">
+  <meta name="description" content="In-depth city guides for remote workers and podcasters. Analyze internet speeds, rents, and local tech in 220 global destinations.">
   <style>
     :root {
       --primary-color: #0f4c3a;
+      --primary-hover: #15624c;
       --bg-color: #f7f9f6;
       --text-color: #2c352b;
       --card-bg: #ffffff;
       --border-color: #d1ded0;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+      background-color: var(--bg-color); 
+      color: var(--text-color); 
+      line-height: 1.6; 
+    }
     
-    .site-header { background-color: var(--primary-color); color: #ffffff; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none; }
-    .main-nav ul { display: flex; list-style: none; gap: 10px; padding: 0; margin: 0; }
-    .main-nav a { text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; }
-    .main-nav a:hover { background-color: rgba(255,255,255,0.2); }
+    /* Navigation Header */
+    .site-header { 
+      background-color: var(--primary-color); 
+      color: #ffffff; 
+      padding: 14px 24px; 
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15); 
+    }
+    .nav-container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    .brand-logo { 
+      font-size: 1.4rem; 
+      font-weight: 800; 
+      color: #ffffff; 
+      text-decoration: none; 
+      letter-spacing: 0.5px;
+    }
+    .main-nav ul { display: flex; list-style: none; gap: 12px; margin: 0; padding: 0; }
+    .main-nav a { 
+      text-decoration: none; 
+      color: #ffffff; 
+      font-weight: 600; 
+      padding: 8px 16px; 
+      border-radius: 20px; 
+      border: 1px solid rgba(255,255,255,0.3); 
+      background: rgba(255,255,255,0.08); 
+      font-size: 0.85rem; 
+      transition: background 0.2s ease;
+    }
+    .main-nav a:hover { background-color: rgba(255,255,255,0.25); }
     
-    .container { max-width: 1200px; margin: 40px auto; background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); padding: 40px; }
-    .hero-layout { display: flex; flex-direction: row; align-items: center; gap: 40px; }
-    .content-left { flex: 1; }
-    .image-right { flex: 1; text-align: center; }
-    .image-right img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
-    
-    h1 { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 16px; }
-    h2 { font-size: 1.4rem; color: var(--primary-color); margin-top: 24px; margin-bottom: 12px; }
-    p { margin-bottom: 16px; }
-    ul.feature-list { margin-left: 20px; margin-bottom: 24px; }
-    ul.feature-list li { margin-bottom: 8px; }
-    
-    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
-    .cta-btn { display: inline-block; background-color: var(--primary-color); color: #fff; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; }
-    .cta-btn:hover { opacity: 0.9; }
-    
-    @media (max-width: 768px) {
-      .hero-layout { flex-direction: column; }
-      .image-right { order: -1; }
+    /* Main Layout */
+    .container { 
+      max-width: 1200px; 
+      margin: 40px auto; 
+      padding: 0 20px;
+    }
+
+    .hero-title-area {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero-title-area h1 {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+    }
+    .hero-title-area p {
+      font-size: 1.15rem;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* 3 Huge Center Buttons / Feature Grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 50px;
+    }
+
+    .feature-card {
+      background: var(--card-bg);
+      border: 2px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(15, 76, 58, 0.15);
+      border-color: var(--primary-color);
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .feature-card h2 {
+      font-size: 1.35rem;
+      color: var(--primary-color);
+      margin-bottom: 12px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .card-btn {
+      display: block;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 14px 20px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    .card-btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    /* Responsive Grid for Mobile */
+    @media (max-width: 900px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title-area h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Single Top Navigation Header -->
+  <!-- Site Navigation Header -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo">MATCHA MAYA</a>
@@ -62,40 +173,48 @@
   </header>
 
   <div class="container">
-    <div class="hero-layout">
+    
+    <!-- Hero Title -->
+    <div class="hero-title-area">
+      <h1>Global Podcast Proposals & Nomad Guides</h1>
+      <p>Select a portal below to explore city breakdowns, creator interviews, or side-by-side destination analysis across 220 locations.</p>
+    </div>
+
+    <!-- 3 Huge Main Buttons / Feature Cards -->
+    <div class="feature-grid">
       
-      <!-- Left Side: Main Text Content -->
-      <div class="content-left">
-        <h1>Global Podcast Proposals & Nomad Guides</h1>
-        <p>
-          Discover comprehensive city analysis tailored specifically for <strong>global remote workers</strong>, digital nomads, and <strong>podcast producers</strong> looking to relocate or record worldwide.
-        </p>
-
-        <h2>What Our 12-Point City Analysis Covers</h2>
-        <p>Every destination profile is thoroughly evaluated across core criteria:</p>
-        <ul class="feature-list">
-          <li><strong>Connectivity:</strong> WiFi reliability, 5G coverage, and co-working space options.</li>
-          <li><strong>Living Costs:</strong> Apartment rentals, utilities, and daily living expenses.</li>
-          <li><strong>Local Tech & Safety:</strong> SIM card registration, transport options, and safe neighborhood breakdowns.</li>
-        </ul>
-
-        <h2>Explore City Guides & Interviews</h2>
-        <p>Browse our destination breakdowns or check out our exclusive creator interviews.</p>
-        
-        <!-- 3 Action Buttons -->
-        <div class="cta-group">
-          <a href="hub.html" class="cta-btn">View Interviews</a>
-          <a href="podcasts.html" class="cta-btn">Explore Podcast</a>
-          <a href="comparison.html" class="cta-btn">City to City Comparison</a>
+      <!-- Button 1: Interview Style Blog Posts -->
+      <div class="feature-card">
+        <div>
+          <span class="card-icon">🎙️</span>
+          <h2>Interview Style Blog Posts</h2>
+          <p>Read in-depth interviews with local creators, digital nomads, and podcast hosts across 220 global cities.</p>
         </div>
+        <a href="hub.html" class="card-btn">Explore Interviews</a>
       </div>
 
-      <!-- Right Side: Visual Graphic -->
-      <div class="image-right">
-        <img src="matcha-maya-pages.png" alt="Matcha Maya Blog Website Pages Layout - Storyboard Style" loading="lazy">
+      <!-- Button 2: Podcast Proposals -->
+      <div class="feature-card">
+        <div>
+          <span class="card-icon">🎧</span>
+          <h2>Podcast Proposals</h2>
+          <p>Browse structured 12-point destination proposals optimized for podcast producers and remote media teams.</p>
+        </div>
+        <a href="podcasts.html" class="card-btn">View Podcast Proposals</a>
+      </div>
+
+      <!-- Button 3: City to City Comparison -->
+      <div class="feature-card">
+        <div>
+          <span class="card-icon">📊</span>
+          <h2>City to City Comparison</h2>
+          <p>Compare rent prices, WiFi stability, living costs, and safety metrics across all destinations side-by-side.</p>
+        </div>
+        <a href="comparison.html" class="card-btn">Compare Cities Now</a>
       </div>
 
     </div>
+
   </div>
 
 </body>
