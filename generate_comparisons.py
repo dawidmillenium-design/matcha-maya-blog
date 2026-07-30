@@ -3,7 +3,7 @@ import html
 import itertools
 from batch_generator import CITY_ENTITIES
 
-print("--- STARTING COMPARISON PAGE GENERATOR WITH FAQ SCHEMA ---")
+print("--- STARTING COMPARISON PAGE GENERATOR WITH BREADCRUMBS ---")
 
 domain = "https://dawidmillenium-design.github.io/matcha-maya-blog"
 
@@ -41,7 +41,7 @@ for city_a_slug, city_b_slug in city_pairs:
     q3 = f"What are the best coworking spots in {name_a} and {name_b}?"
     a3 = f"In {name_a}, a top recommended remote work spot is {data_a['top_spot']}. In {name_b}, remote workers frequently use {data_b['top_spot']}."
 
-    # JSON-LD Schema: ItemPage + FAQPage
+    # JSON-LD Schema: ItemPage + FAQPage + BreadcrumbList
     schema_json = f"""<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -55,6 +55,29 @@ for city_a_slug, city_b_slug in city_pairs:
         "name": "Matcha Maya Blog",
         "url": "{domain}/"
       }}
+    }},
+    {{
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{domain}/index.html"
+        }},
+        {{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "City Comparisons",
+          "item": "{domain}/compare.html"
+        }},
+        {{
+          "@type": "ListItem",
+          "position": 3,
+          "name": "{name_a} vs {name_b}",
+          "item": "{page_url}"
+        }}
+      ]
     }},
     {{
       "@type": "FAQPage",
@@ -109,9 +132,12 @@ for city_a_slug, city_b_slug in city_pairs:
     
     <style>
         body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }}
-        header {{ background: #2d5a27; color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; }}
+        header {{ background: #2d5a27; color: white; padding: 2rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: center; }}
         header h1 {{ margin: 0; font-size: 2rem; }}
         header a {{ color: #eef5ee; text-decoration: underline; }}
+        .breadcrumbs {{ font-size: 0.9rem; margin-bottom: 1.5rem; color: #555; }}
+        .breadcrumbs a {{ color: #2d5a27; text-decoration: none; font-weight: 500; }}
+        .breadcrumbs a:hover {{ text-decoration: underline; }}
         .summary-box {{ background: #eef5ee; border-left: 4px solid #2d5a27; padding: 1.2rem; border-radius: 4px; margin-bottom: 2rem; }}
         table {{ width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1rem; }}
         th, td {{ padding: 12px 15px; border: 1px solid #ddd; text-align: left; }}
@@ -134,6 +160,12 @@ for city_a_slug, city_b_slug in city_pairs:
         <p>Head-to-Head Digital Nomad & Remote Work Comparison</p>
         <p><a href="{domain}/index.html">← Home</a> | <a href="{domain}/hub.html">Global Hub Directory</a> | <a href="{domain}/compare.html">City Comparisons</a></p>
     </header>
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="{domain}/index.html">Home</a> &gt; 
+        <a href="{domain}/compare.html">City Comparisons</a> &gt; 
+        <span>{name_a} vs {name_b}</span>
+    </nav>
 
     <div class="summary-box">
         <strong>🤖 AI Executive Summary:</strong> Choosing between <strong>{name_a}</strong> ({data_a['country']}) and <strong>{name_b}</strong> ({data_b['country']}) depends on budget and speed priorities. {name_a} offers average WiFi speeds of <strong>{data_a['wifi_speed']}</strong> with estimated living expenses around <strong>{data_a['avg_cost']}</strong>. In comparison, {name_b} provides <strong>{data_b['wifi_speed']}</strong> internet for roughly <strong>{data_b['avg_cost']}</strong> per month.
@@ -224,4 +256,4 @@ for city_a_slug, city_b_slug in city_pairs:
     
     generated_count += 1
 
-print(f"✔ Successfully regenerated {generated_count} comparison pages with FAQ capsules & FAQPage schema!")
+print(f"✔ Successfully regenerated {generated_count} comparison pages with visual breadcrumbs & BreadcrumbList schema!")
