@@ -3,180 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Title Tag & Meta Description -->
   <title>Matcha Maya Blog: Global Remote Work & Podcast Guides</title>
   <meta name="description" content="In-depth city guides for remote workers and podcasters. Analyze internet speeds, rents, and local tech in 220 global destinations. Start exploring now.">
-
   <style>
     :root {
-      --primary-color: #3b5336;
+      --primary-color: #0f4c3a;
       --bg-color: #f7f9f6;
       --text-color: #2c352b;
       --card-bg: #ffffff;
       --border-color: #d1ded0;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    /* Top Navigation Header */
-    .site-header {
-      background-color: var(--card-bg);
-      border-bottom: 2px solid var(--border-color);
-      padding: 15px 20px;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand-logo {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-
-    .main-nav ul {
-      display: flex;
-      list-style: none;
-      gap: 15px;
-    }
-
-    .main-nav a {
-      text-decoration: none;
-      color: var(--text-color);
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active-link {
-      background-color: var(--primary-color);
-      color: #ffffff;
-    }
-
-    /* Main Container & Hero Layout */
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      padding: 40px;
-    }
-
-    .hero-layout {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 40px;
-    }
-
-    .content-left {
-      flex: 1;
-    }
-
-    .image-right {
-      flex: 1;
-      text-align: center;
-    }
-
-    .image-right img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      color: var(--primary-color);
-      margin-bottom: 16px;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      color: var(--primary-color);
-      margin-top: 24px;
-      margin-bottom: 12px;
-    }
-
-    p {
-      margin-bottom: 16px;
-    }
-
-    ul.feature-list {
-      margin-left: 20px;
-      margin-bottom: 24px;
-    }
-
-    ul.feature-list li {
-      margin-bottom: 8px;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 12px 24px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .cta-btn:hover {
-      opacity: 0.9;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+    
+    .site-header { background-color: var(--primary-color); color: #ffffff; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none; }
+    .main-nav ul { display: flex; list-style: none; gap: 10px; padding: 0; margin: 0; }
+    .main-nav a { text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; }
+    .main-nav a:hover { background-color: rgba(255,255,255,0.2); }
+    
+    .container { max-width: 1200px; margin: 40px auto; background: var(--card-bg); border-radius: 12px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); padding: 40px; }
+    .hero-layout { display: flex; flex-direction: row; align-items: center; gap: 40px; }
+    .content-left { flex: 1; }
+    .image-right { flex: 1; text-align: center; }
+    .image-right img { width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); }
+    
+    h1 { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 16px; }
+    h2 { font-size: 1.4rem; color: var(--primary-color); margin-top: 24px; margin-bottom: 12px; }
+    p { margin-bottom: 16px; }
+    ul.feature-list { margin-left: 20px; margin-bottom: 24px; }
+    ul.feature-list li { margin-bottom: 8px; }
+    
+    .cta-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
+    .cta-btn { display: inline-block; background-color: var(--primary-color); color: #fff; padding: 12px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    .cta-btn:hover { opacity: 0.9; }
+    
     @media (max-width: 768px) {
-      .hero-layout {
-        flex-direction: column;
-      }
-      .image-right {
-        order: -1;
-      }
+      .hero-layout { flex-direction: column; }
+      .image-right { order: -1; }
     }
   </style>
 </head>
 <body>
 
-<header class="site-header" style="background-color: #0f4c3a; color: #ffffff; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15);"><div class="nav-container" style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;"><a href="index.html" style="font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none;">?? MATCHA MAYA</a><nav class="main-nav"><ul style="display: flex; list-style: none; gap: 10px; padding: 0; margin: 0;"><li><a href="index.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">?? Home</a></li><li><a href="index2.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">??? 220 Interviews</a></li><li><a href="comparison.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">?? Comparison</a></li></ul></nav><div class="search-box"><input type="text" id="citySearch" placeholder="?? Search cities..." onkeyup="filterCities()" style="padding: 6px 12px; border-radius: 20px; border: none; outline: none; font-size: 0.85rem;"></div></div></header><nav class="breadcrumb-trail" style="background: #eef5ee; padding: 8px 20px; font-size: 0.85rem; border-bottom: 1px solid #d1ded0;"><div style="max-width: 1400px; margin: 0 auto;"><a href="index.html" style="color: #2d5a27; text-decoration: none; font-weight: 600;">Home</a> &gt; <a href="index2.html" style="color: #2d5a27; text-decoration: none; font-weight: 600;">Interviews</a> &gt; <span style="color: #666;">City Breakdown</span></div></nav>
-  <header class="site-header" style="background-color: #0f4c3a; color: #ffffff; padding: 15px 30px; position: sticky; top: 0; z-index: 1000;">
-    <div class="nav-container" style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
-      <a href="index.html" class="brand-logo" style="font-size: 1.5rem; font-weight: 800; color: #ffffff; text-decoration: none;">MATCHA MAYA</a>
+  <!-- Single Top Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">MATCHA MAYA</a>
       <nav class="main-nav">
-        <ul style="display: flex; list-style: none; gap: 12px;">
-          <li><a href="index.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 8px 18px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.9em;">?? 1. Home / Guides</a></li>
-          <li><a href="index2.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 8px 18px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.9em;">??? 2. Interviews</a></li>
-          <li><a href="comparison.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 8px 18px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.9em;">?? 3. Comparison</a></li>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index2.html">220 Interviews</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
         </ul>
       </nav>
-      <span style="color: #a3d9a5; font-size: 0.85em;">220 Global City Destinations</span>
     </div>
   </header>
-
-  <!-- Site Navigation Header -->
-  <header class="site-header" style="background-color: #0f4c3a; color: #ffffff; padding: 12px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15);"><div class="nav-container" style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;"><a href="index.html" style="font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none;">?? MATCHA MAYA</a><nav class="main-nav"><ul style="display: flex; list-style: none; gap: 10px; padding: 0; margin: 0;"><li><a href="index.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">?? Home</a></li><li><a href="index2.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">??? 220 Interviews</a></li><li><a href="comparison.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">?? Comparison</a></li></ul></nav><div class="search-box"><input type="text" id="citySearch" placeholder="?? Search cities..." onkeyup="filterCities()" style="padding: 6px 12px; border-radius: 20px; border: none; outline: none; font-size: 0.85rem;"></div></div></header><nav class="breadcrumb-trail" style="background: #eef5ee; padding: 8px 20px; font-size: 0.85rem; border-bottom: 1px solid #d1ded0;"><div style="max-width: 1400px; margin: 0 auto;"><a href="index.html" style="color: #2d5a27; text-decoration: none; font-weight: 600;">Home</a> &gt; <a href="index2.html" style="color: #2d5a27; text-decoration: none; font-weight: 600;">Interviews</a> &gt; <span style="color: #666;">City Breakdown</span></div></nav>
 
   <div class="container">
     <div class="hero-layout">
@@ -184,14 +67,12 @@
       <!-- Left Side: Main Text Content -->
       <div class="content-left">
         <h1>Global Podcast Proposals & Nomad Guides</h1>
-        
         <p>
           Discover comprehensive city analysis tailored specifically for <strong>global remote workers</strong>, digital nomads, and <strong>podcast producers</strong> looking to relocate or record worldwide.
         </p>
 
         <h2>What Our 12-Point City Analysis Covers</h2>
         <p>Every destination profile is thoroughly evaluated across core criteria:</p>
-        
         <ul class="feature-list">
           <li><strong>Connectivity:</strong> WiFi reliability, 5G coverage, and co-working space options.</li>
           <li><strong>Living Costs:</strong> Apartment rentals, utilities, and daily living expenses.</li>
@@ -201,7 +82,12 @@
         <h2>Explore City Guides & Interviews</h2>
         <p>Browse our destination breakdowns or check out our exclusive creator interviews.</p>
         
-        <a href="index2.html" class="cta-btn">View Interviews</a>
+        <!-- 3 Action Buttons -->
+        <div class="cta-group">
+          <a href="hub.html" class="cta-btn">View Interviews</a>
+          <a href="podcasts.html" class="cta-btn">Explore Podcast</a>
+          <a href="comparison.html" class="cta-btn">City to City Comparison</a>
+        </div>
       </div>
 
       <!-- Right Side: Visual Graphic -->
@@ -214,5 +100,3 @@
 
 </body>
 </html>
-
-
