@@ -33,6 +33,31 @@ def get_city_data(city_slug):
         "related": ["bangkok", "lisbon", "medellin"]
     })
 
+def generate_head_tags(city_slug, city_name):
+    city_info = get_city_data(city_slug)
+    country = city_info.get("country", "Global Destination")
+    page_url = f"https://dawidmillenium-design.github.io/matcha-maya-blog/{city_slug}-coworking-guide.html"
+    title = f"{city_name} Digital Nomad & Coworking Guide | Matcha Maya"
+    description = f"Complete remote work guide to {city_name}, {country}. Includes average WiFi speeds ({city_info.get('wifi_speed')}), living costs ({city_info.get('avg_cost')}), top work cafes, and coworking spaces."
+    
+    return f"""<!-- DYNAMIC AI SEO & OPEN GRAPH HEAD TAGS -->
+    <title>{html.escape(title)}</title>
+    <meta name="description" content="{html.escape(description)}">
+    <link rel="canonical" href="{page_url}">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{html.escape(title)}">
+    <meta property="og:description" content="{html.escape(description)}">
+    <meta property="og:url" content="{page_url}">
+    <meta property="og:site_name" content="Matcha Maya Blog">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{html.escape(title)}">
+    <meta name="twitter:description" content="{html.escape(description)}">
+"""
+
 def generate_intent_pillars_html(city_slug, city_name, custom_data=None):
     city_info = custom_data if custom_data else get_city_data(city_slug)
     related_cities = city_info.get("related", ["bangkok", "lisbon", "medellin"])
