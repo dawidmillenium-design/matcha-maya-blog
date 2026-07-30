@@ -3,111 +3,298 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MATCHA MAYA | Global City Comparison</title>
-  <meta name="description" content="Compare 220 global nomad cities side by side for internet speed, living costs, and coworking spaces.">
+  <title>Matcha Maya Blog: 220 City Coworking & Cost Comparisons</title>
+  <meta name="description" content="Compare rent, internet speeds, safety, and coworking options across 220 global destinations.">
   <style>
+    :root {
+      --primary-color: #0f4c3a;
+      --primary-hover: #15624c;
+      --bg-color: #f7f9f6;
+      --text-color: #2c352b;
+      --card-bg: #ffffff;
+      --border-color: #d1ded0;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; background: #faf8f5; color: #2d2d2d; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
     
-    .site-header {
-      background-color: #0f4c3a;
-      color: #ffffff;
-      padding: 15px 30px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-    .brand-logo { font-size: 1.5rem; font-weight: 800; color: #ffffff; text-decoration: none; }
-    .main-nav ul { display: flex; list-style: none; gap: 12px; }
-    .nav-btn {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 600;
-      padding: 8px 18px;
-      border-radius: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      background: rgba(255, 255, 255, 0.08);
-      font-size: 0.9em;
-    }
-    .nav-btn:hover, .nav-btn.active {
-      background-color: #8bc34a;
-      color: #0f4c3a;
-      font-weight: bold;
-    }
+    /* Navigation Header */
+    .site-header { background-color: var(--primary-color); color: #ffffff; padding: 14px 24px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none; letter-spacing: 0.5px; }
+    .main-nav ul { display: flex; list-style: none; gap: 12px; margin: 0; padding: 0; }
+    .main-nav a { text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; }
+    .main-nav a:hover { background-color: rgba(255,255,255,0.25); }
+    
+    /* Layout */
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    .page-header { text-align: center; margin-bottom: 40px; }
+    .page-header h1 { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 10px; }
+    .page-header p { font-size: 1.1rem; color: #555; }
+    
+    /* Search Bar Filter */
+    .search-filter-box { max-width: 600px; margin: 0 auto 30px auto; text-align: center; }
+    .search-filter-box input { width: 100%; padding: 12px 20px; border-radius: 30px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; }
+    .search-filter-box input:focus { border-color: var(--primary-color); }
 
-    .main-wrapper { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
-    h1 { color: #2d5a27; font-size: 2.5em; margin-bottom: 15px; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: #fff; border-radius: 8px; overflow: hidden; }
-    .comparison-table th { background: #0f4c3a; color: white; padding: 12px; text-align: left; }
-    .comparison-table td { padding: 12px; border-bottom: 1px solid #ddd; }
+    /* City Link Grid */
+    .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .grid-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px 20px; text-decoration: none; color: var(--text-color); display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; }
+    .grid-card:hover { border-color: var(--primary-color); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(15, 76, 58, 0.1); }
+    .grid-card span.title { font-weight: 600; font-size: 0.95rem; }
+    .grid-card span.badge { background: #eef5ee; color: var(--primary-color); font-size: 0.75rem; padding: 4px 8px; border-radius: 12px; font-weight: bold; }
   </style>
 </head>
 <body>
-<header class="site-header" style="background-color: #0f4c3a; color: #ffffff; padding: 14px 24px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15);">
-  <div class="nav-container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-    <a href="index.html" style="font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none; letter-spacing: 0.5px;">MATCHA MAYA</a>
-    <nav class="main-nav">
-      <ul style="display: flex; list-style: none; gap: 12px; margin: 0; padding: 0;">
-        <li><a href="index.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">Home</a></li>
-        <li><a href="index2.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">220 Interviews</a></li>
-        <li><a href="comparison.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">Comparison</a></li>
-      </ul>
-    </nav>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">MATCHA MAYA</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index2.html">220 Interviews</a></li>
+          <li><a href="podcasts.html">Podcasts</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="page-header">
+      <h1>📊 City to City Coworking & Cost Comparison</h1>
+      <p>Analyze internet speeds, safety, living costs, and coworking hubs side-by-side.</p>
+    </div>
+
+    <div class="search-filter-box">
+      <input type="text" id="compSearch" placeholder="🔍 Search city comparisons..." onkeyup="filterComparison()">
+    </div>
+
+    <div class="link-grid" id="comparisonGrid">      <a href="abu-dhabi-coworking-guide.html" class="grid-card"><span class="title">📊 Abu Dhabi</span><span class="badge">Guide</span></a>
+      <a href="accra-coworking-guide.html" class="grid-card"><span class="title">📊 Accra</span><span class="badge">Guide</span></a>
+      <a href="addis-ababa-coworking-guide.html" class="grid-card"><span class="title">📊 Addis Ababa</span><span class="badge">Guide</span></a>
+      <a href="albuquerque-coworking-guide.html" class="grid-card"><span class="title">📊 Albuquerque</span><span class="badge">Guide</span></a>
+      <a href="alexandria-coworking-guide.html" class="grid-card"><span class="title">📊 Alexandria</span><span class="badge">Guide</span></a>
+      <a href="algiers-coworking-guide.html" class="grid-card"><span class="title">📊 Algiers</span><span class="badge">Guide</span></a>
+      <a href="almaty-coworking-guide.html" class="grid-card"><span class="title">📊 Almaty</span><span class="badge">Guide</span></a>
+      <a href="amman-coworking-guide.html" class="grid-card"><span class="title">📊 Amman</span><span class="badge">Guide</span></a>
+      <a href="amsterdam-coworking-guide.html" class="grid-card"><span class="title">📊 Amsterdam</span><span class="badge">Guide</span></a>
+      <a href="antwerp-coworking-guide.html" class="grid-card"><span class="title">📊 Antwerp</span><span class="badge">Guide</span></a>
+      <a href="ashgabat-coworking-guide.html" class="grid-card"><span class="title">📊 Ashgabat</span><span class="badge">Guide</span></a>
+      <a href="asuncion-coworking-guide.html" class="grid-card"><span class="title">📊 Asuncion</span><span class="badge">Guide</span></a>
+      <a href="athens-coworking-guide.html" class="grid-card"><span class="title">📊 Athens</span><span class="badge">Guide</span></a>
+      <a href="atlanta-coworking-guide.html" class="grid-card"><span class="title">📊 Atlanta</span><span class="badge">Guide</span></a>
+      <a href="auckland-coworking-guide.html" class="grid-card"><span class="title">📊 Auckland</span><span class="badge">Guide</span></a>
+      <a href="austin-coworking-guide.html" class="grid-card"><span class="title">📊 Austin</span><span class="badge">Guide</span></a>
+      <a href="baku-coworking-guide.html" class="grid-card"><span class="title">📊 Baku</span><span class="badge">Guide</span></a>
+      <a href="bangalore-coworking-guide.html" class="grid-card"><span class="title">📊 Bangalore</span><span class="badge">Guide</span></a>
+      <a href="bangkok-coworking-guide.html" class="grid-card"><span class="title">📊 Bangkok</span><span class="badge">Guide</span></a>
+      <a href="barcelona-coworking-guide.html" class="grid-card"><span class="title">📊 Barcelona</span><span class="badge">Guide</span></a>
+      <a href="beijing-coworking-guide.html" class="grid-card"><span class="title">📊 Beijing</span><span class="badge">Guide</span></a>
+      <a href="beirut-coworking-guide.html" class="grid-card"><span class="title">📊 Beirut</span><span class="badge">Guide</span></a>
+      <a href="belgrade-coworking-guide.html" class="grid-card"><span class="title">📊 Belgrade</span><span class="badge">Guide</span></a>
+      <a href="berlin-coworking-guide.html" class="grid-card"><span class="title">📊 Berlin</span><span class="badge">Guide</span></a>
+      <a href="bern-coworking-guide.html" class="grid-card"><span class="title">📊 Bern</span><span class="badge">Guide</span></a>
+      <a href="birmingham-coworking-guide.html" class="grid-card"><span class="title">📊 Birmingham</span><span class="badge">Guide</span></a>
+      <a href="bishkek-coworking-guide.html" class="grid-card"><span class="title">📊 Bishkek</span><span class="badge">Guide</span></a>
+      <a href="bogota-coworking-guide.html" class="grid-card"><span class="title">📊 Bogota</span><span class="badge">Guide</span></a>
+      <a href="boston-coworking-guide.html" class="grid-card"><span class="title">📊 Boston</span><span class="badge">Guide</span></a>
+      <a href="brampton-coworking-guide.html" class="grid-card"><span class="title">📊 Brampton</span><span class="badge">Guide</span></a>
+      <a href="bratislava-coworking-guide.html" class="grid-card"><span class="title">📊 Bratislava</span><span class="badge">Guide</span></a>
+      <a href="bremen-coworking-guide.html" class="grid-card"><span class="title">📊 Bremen</span><span class="badge">Guide</span></a>
+      <a href="bridgetown-coworking-guide.html" class="grid-card"><span class="title">📊 Bridgetown</span><span class="badge">Guide</span></a>
+      <a href="brisbane-coworking-guide.html" class="grid-card"><span class="title">📊 Brisbane</span><span class="badge">Guide</span></a>
+      <a href="bristol-coworking-guide.html" class="grid-card"><span class="title">📊 Bristol</span><span class="badge">Guide</span></a>
+      <a href="brussels-coworking-guide.html" class="grid-card"><span class="title">📊 Brussels</span><span class="badge">Guide</span></a>
+      <a href="budapest-coworking-guide.html" class="grid-card"><span class="title">📊 Budapest</span><span class="badge">Guide</span></a>
+      <a href="buenos-aires-coworking-guide.html" class="grid-card"><span class="title">📊 Buenos Aires</span><span class="badge">Guide</span></a>
+      <a href="busan-coworking-guide.html" class="grid-card"><span class="title">📊 Busan</span><span class="badge">Guide</span></a>
+      <a href="cairo-coworking-guide.html" class="grid-card"><span class="title">📊 Cairo</span><span class="badge">Guide</span></a>
+      <a href="calgary-coworking-guide.html" class="grid-card"><span class="title">📊 Calgary</span><span class="badge">Guide</span></a>
+      <a href="cape-town-coworking-guide.html" class="grid-card"><span class="title">📊 Cape Town</span><span class="badge">Guide</span></a>
+      <a href="caracas-coworking-guide.html" class="grid-card"><span class="title">📊 Caracas</span><span class="badge">Guide</span></a>
+      <a href="casablanca-coworking-guide.html" class="grid-card"><span class="title">📊 Casablanca</span><span class="badge">Guide</span></a>
+      <a href="chicago-coworking-guide.html" class="grid-card"><span class="title">📊 Chicago</span><span class="badge">Guide</span></a>
+      <a href="chisinau-coworking-guide.html" class="grid-card"><span class="title">📊 Chisinau</span><span class="badge">Guide</span></a>
+      <a href="christchurch-coworking-guide.html" class="grid-card"><span class="title">📊 Christchurch</span><span class="badge">Guide</span></a>
+      <a href="ciudad-juarez-coworking-guide.html" class="grid-card"><span class="title">📊 Ciudad Juarez</span><span class="badge">Guide</span></a>
+      <a href="cologne-coworking-guide.html" class="grid-card"><span class="title">📊 Cologne</span><span class="badge">Guide</span></a>
+      <a href="colombo-coworking-guide.html" class="grid-card"><span class="title">📊 Colombo</span><span class="badge">Guide</span></a>
+      <a href="copenhagen-coworking-guide.html" class="grid-card"><span class="title">📊 Copenhagen</span><span class="badge">Guide</span></a>
+      <a href="dakar-coworking-guide.html" class="grid-card"><span class="title">📊 Dakar</span><span class="badge">Guide</span></a>
+      <a href="dallas-coworking-guide.html" class="grid-card"><span class="title">📊 Dallas</span><span class="badge">Guide</span></a>
+      <a href="dammam-coworking-guide.html" class="grid-card"><span class="title">📊 Dammam</span><span class="badge">Guide</span></a>
+      <a href="dar-es-salaam-coworking-guide.html" class="grid-card"><span class="title">📊 Dar Es Salaam</span><span class="badge">Guide</span></a>
+      <a href="denver-coworking-guide.html" class="grid-card"><span class="title">📊 Denver</span><span class="badge">Guide</span></a>
+      <a href="detroit-coworking-guide.html" class="grid-card"><span class="title">📊 Detroit</span><span class="badge">Guide</span></a>
+      <a href="dhaka-coworking-guide.html" class="grid-card"><span class="title">📊 Dhaka</span><span class="badge">Guide</span></a>
+      <a href="doha-coworking-guide.html" class="grid-card"><span class="title">📊 Doha</span><span class="badge">Guide</span></a>
+      <a href="dortmund-coworking-guide.html" class="grid-card"><span class="title">📊 Dortmund</span><span class="badge">Guide</span></a>
+      <a href="dresden-coworking-guide.html" class="grid-card"><span class="title">📊 Dresden</span><span class="badge">Guide</span></a>
+      <a href="dubai-coworking-guide.html" class="grid-card"><span class="title">📊 Dubai</span><span class="badge">Guide</span></a>
+      <a href="dublin-coworking-guide.html" class="grid-card"><span class="title">📊 Dublin</span><span class="badge">Guide</span></a>
+      <a href="duisburg-coworking-guide.html" class="grid-card"><span class="title">📊 Duisburg</span><span class="badge">Guide</span></a>
+      <a href="dushanbe-coworking-guide.html" class="grid-card"><span class="title">📊 Dushanbe</span><span class="badge">Guide</span></a>
+      <a href="dusseldorf-coworking-guide.html" class="grid-card"><span class="title">📊 Dusseldorf</span><span class="badge">Guide</span></a>
+      <a href="edinburgh-coworking-guide.html" class="grid-card"><span class="title">📊 Edinburgh</span><span class="badge">Guide</span></a>
+      <a href="edmonton-coworking-guide.html" class="grid-card"><span class="title">📊 Edmonton</span><span class="badge">Guide</span></a>
+      <a href="essen-coworking-guide.html" class="grid-card"><span class="title">📊 Essen</span><span class="badge">Guide</span></a>
+      <a href="frankfurt-coworking-guide.html" class="grid-card"><span class="title">📊 Frankfurt</span><span class="badge">Guide</span></a>
+      <a href="fresno-coworking-guide.html" class="grid-card"><span class="title">📊 Fresno</span><span class="badge">Guide</span></a>
+      <a href="geneva-coworking-guide.html" class="grid-card"><span class="title">📊 Geneva</span><span class="badge">Guide</span></a>
+      <a href="glasgow-coworking-guide.html" class="grid-card"><span class="title">📊 Glasgow</span><span class="badge">Guide</span></a>
+      <a href="guadalajara-coworking-guide.html" class="grid-card"><span class="title">📊 Guadalajara</span><span class="badge">Guide</span></a>
+      <a href="guangzhou-coworking-guide.html" class="grid-card"><span class="title">📊 Guangzhou</span><span class="badge">Guide</span></a>
+      <a href="guayaquil-coworking-guide.html" class="grid-card"><span class="title">📊 Guayaquil</span><span class="badge">Guide</span></a>
+      <a href="halifax-coworking-guide.html" class="grid-card"><span class="title">📊 Halifax</span><span class="badge">Guide</span></a>
+      <a href="hamburg-coworking-guide.html" class="grid-card"><span class="title">📊 Hamburg</span><span class="badge">Guide</span></a>
+      <a href="hamilton-coworking-guide.html" class="grid-card"><span class="title">📊 Hamilton</span><span class="badge">Guide</span></a>
+      <a href="hanover-coworking-guide.html" class="grid-card"><span class="title">📊 Hanover</span><span class="badge">Guide</span></a>
+      <a href="helsinki-coworking-guide.html" class="grid-card"><span class="title">📊 Helsinki</span><span class="badge">Guide</span></a>
+      <a href="ho-chi-minh-coworking-guide.html" class="grid-card"><span class="title">📊 Ho Chi Minh</span><span class="badge">Guide</span></a>
+      <a href="hong-kong-coworking-guide.html" class="grid-card"><span class="title">📊 Hong Kong</span><span class="badge">Guide</span></a>
+      <a href="houston-coworking-guide.html" class="grid-card"><span class="title">📊 Houston</span><span class="badge">Guide</span></a>
+      <a href="hyderabad-coworking-guide.html" class="grid-card"><span class="title">📊 Hyderabad</span><span class="badge">Guide</span></a>
+      <a href="istanbul-coworking-guide.html" class="grid-card"><span class="title">📊 Istanbul</span><span class="badge">Guide</span></a>
+      <a href="jakarta-coworking-guide.html" class="grid-card"><span class="title">📊 Jakarta</span><span class="badge">Guide</span></a>
+      <a href="jeddah-coworking-guide.html" class="grid-card"><span class="title">📊 Jeddah</span><span class="badge">Guide</span></a>
+      <a href="johannesburg-coworking-guide.html" class="grid-card"><span class="title">📊 Johannesburg</span><span class="badge">Guide</span></a>
+      <a href="kampala-coworking-guide.html" class="grid-card"><span class="title">📊 Kampala</span><span class="badge">Guide</span></a>
+      <a href="kathmandu-coworking-guide.html" class="grid-card"><span class="title">📊 Kathmandu</span><span class="badge">Guide</span></a>
+      <a href="kigali-coworking-guide.html" class="grid-card"><span class="title">📊 Kigali</span><span class="badge">Guide</span></a>
+      <a href="kingston-coworking-guide.html" class="grid-card"><span class="title">📊 Kingston</span><span class="badge">Guide</span></a>
+      <a href="kolkata-coworking-guide.html" class="grid-card"><span class="title">📊 Kolkata</span><span class="badge">Guide</span></a>
+      <a href="kuala-lumpur-coworking-guide.html" class="grid-card"><span class="title">📊 Kuala Lumpur</span><span class="badge">Guide</span></a>
+      <a href="kyiv-coworking-guide.html" class="grid-card"><span class="title">📊 Kyiv</span><span class="badge">Guide</span></a>
+      <a href="la-paz-coworking-guide.html" class="grid-card"><span class="title">📊 La Paz</span><span class="badge">Guide</span></a>
+      <a href="lagos-coworking-guide.html" class="grid-card"><span class="title">📊 Lagos</span><span class="badge">Guide</span></a>
+      <a href="las-vegas-coworking-guide.html" class="grid-card"><span class="title">📊 Las Vegas</span><span class="badge">Guide</span></a>
+      <a href="laval-coworking-guide.html" class="grid-card"><span class="title">📊 Laval</span><span class="badge">Guide</span></a>
+      <a href="leeds-coworking-guide.html" class="grid-card"><span class="title">📊 Leeds</span><span class="badge">Guide</span></a>
+      <a href="leipzig-coworking-guide.html" class="grid-card"><span class="title">📊 Leipzig</span><span class="badge">Guide</span></a>
+      <a href="leon-coworking-guide.html" class="grid-card"><span class="title">📊 Leon</span><span class="badge">Guide</span></a>
+      <a href="lima-coworking-guide.html" class="grid-card"><span class="title">📊 Lima</span><span class="badge">Guide</span></a>
+      <a href="lisbon-coworking-guide.html" class="grid-card"><span class="title">📊 Lisbon</span><span class="badge">Guide</span></a>
+      <a href="liverpool-coworking-guide.html" class="grid-card"><span class="title">📊 Liverpool</span><span class="badge">Guide</span></a>
+      <a href="ljubljana-coworking-guide.html" class="grid-card"><span class="title">📊 Ljubljana</span><span class="badge">Guide</span></a>
+      <a href="london-coworking-guide.html" class="grid-card"><span class="title">📊 London</span><span class="badge">Guide</span></a>
+      <a href="london-ontario-coworking-guide.html" class="grid-card"><span class="title">📊 London Ontario</span><span class="badge">Guide</span></a>
+      <a href="los-angeles-coworking-guide.html" class="grid-card"><span class="title">📊 Los Angeles</span><span class="badge">Guide</span></a>
+      <a href="louisville-coworking-guide.html" class="grid-card"><span class="title">📊 Louisville</span><span class="badge">Guide</span></a>
+      <a href="luxembourg-coworking-guide.html" class="grid-card"><span class="title">📊 Luxembourg</span><span class="badge">Guide</span></a>
+      <a href="lviv-coworking-guide.html" class="grid-card"><span class="title">📊 Lviv</span><span class="badge">Guide</span></a>
+      <a href="madrid-coworking-guide.html" class="grid-card"><span class="title">📊 Madrid</span><span class="badge">Guide</span></a>
+      <a href="male-coworking-guide.html" class="grid-card"><span class="title">📊 Male</span><span class="badge">Guide</span></a>
+      <a href="manama-coworking-guide.html" class="grid-card"><span class="title">📊 Manama</span><span class="badge">Guide</span></a>
+      <a href="manchester-coworking-guide.html" class="grid-card"><span class="title">📊 Manchester</span><span class="badge">Guide</span></a>
+      <a href="manila-coworking-guide.html" class="grid-card"><span class="title">📊 Manila</span><span class="badge">Guide</span></a>
+      <a href="medellin-coworking-guide.html" class="grid-card"><span class="title">📊 Medellin</span><span class="badge">Guide</span></a>
+      <a href="melbourne-coworking-guide.html" class="grid-card"><span class="title">📊 Melbourne</span><span class="badge">Guide</span></a>
+      <a href="memphis-coworking-guide.html" class="grid-card"><span class="title">📊 Memphis</span><span class="badge">Guide</span></a>
+      <a href="mexico-city-coworking-guide.html" class="grid-card"><span class="title">📊 Mexico City</span><span class="badge">Guide</span></a>
+      <a href="miami-coworking-guide.html" class="grid-card"><span class="title">📊 Miami</span><span class="badge">Guide</span></a>
+      <a href="milan-coworking-guide.html" class="grid-card"><span class="title">📊 Milan</span><span class="badge">Guide</span></a>
+      <a href="minneapolis-coworking-guide.html" class="grid-card"><span class="title">📊 Minneapolis</span><span class="badge">Guide</span></a>
+      <a href="minsk-coworking-guide.html" class="grid-card"><span class="title">📊 Minsk</span><span class="badge">Guide</span></a>
+      <a href="mississauga-coworking-guide.html" class="grid-card"><span class="title">📊 Mississauga</span><span class="badge">Guide</span></a>
+      <a href="monterrey-coworking-guide.html" class="grid-card"><span class="title">📊 Monterrey</span><span class="badge">Guide</span></a>
+      <a href="montevideo-coworking-guide.html" class="grid-card"><span class="title">📊 Montevideo</span><span class="badge">Guide</span></a>
+      <a href="montreal-coworking-guide.html" class="grid-card"><span class="title">📊 Montreal</span><span class="badge">Guide</span></a>
+      <a href="moscow-coworking-guide.html" class="grid-card"><span class="title">📊 Moscow</span><span class="badge">Guide</span></a>
+      <a href="mumbai-coworking-guide.html" class="grid-card"><span class="title">📊 Mumbai</span><span class="badge">Guide</span></a>
+      <a href="munich-coworking-guide.html" class="grid-card"><span class="title">📊 Munich</span><span class="badge">Guide</span></a>
+      <a href="muscat-coworking-guide.html" class="grid-card"><span class="title">📊 Muscat</span><span class="badge">Guide</span></a>
+      <a href="nagoya-coworking-guide.html" class="grid-card"><span class="title">📊 Nagoya</span><span class="badge">Guide</span></a>
+      <a href="nairobi-coworking-guide.html" class="grid-card"><span class="title">📊 Nairobi</span><span class="badge">Guide</span></a>
+      <a href="nashville-coworking-guide.html" class="grid-card"><span class="title">📊 Nashville</span><span class="badge">Guide</span></a>
+      <a href="nassau-coworking-guide.html" class="grid-card"><span class="title">📊 Nassau</span><span class="badge">Guide</span></a>
+      <a href="new-delhi-coworking-guide.html" class="grid-card"><span class="title">📊 New Delhi</span><span class="badge">Guide</span></a>
+      <a href="new-orleans-coworking-guide.html" class="grid-card"><span class="title">📊 New Orleans</span><span class="badge">Guide</span></a>
+      <a href="new-york-city-coworking-guide.html" class="grid-card"><span class="title">📊 New York City</span><span class="badge">Guide</span></a>
+      <a href="newcastle-coworking-guide.html" class="grid-card"><span class="title">📊 Newcastle</span><span class="badge">Guide</span></a>
+      <a href="nuremberg-coworking-guide.html" class="grid-card"><span class="title">📊 Nuremberg</span><span class="badge">Guide</span></a>
+      <a href="odesa-coworking-guide.html" class="grid-card"><span class="title">📊 Odesa</span><span class="badge">Guide</span></a>
+      <a href="oklahoma-city-coworking-guide.html" class="grid-card"><span class="title">📊 Oklahoma City</span><span class="badge">Guide</span></a>
+      <a href="omaha-coworking-guide.html" class="grid-card"><span class="title">📊 Omaha</span><span class="badge">Guide</span></a>
+      <a href="osaka-coworking-guide.html" class="grid-card"><span class="title">📊 Osaka</span><span class="badge">Guide</span></a>
+      <a href="oslo-coworking-guide.html" class="grid-card"><span class="title">📊 Oslo</span><span class="badge">Guide</span></a>
+      <a href="ottawa-coworking-guide.html" class="grid-card"><span class="title">📊 Ottawa</span><span class="badge">Guide</span></a>
+      <a href="panama-city-coworking-guide.html" class="grid-card"><span class="title">📊 Panama City</span><span class="badge">Guide</span></a>
+      <a href="paris-coworking-guide.html" class="grid-card"><span class="title">📊 Paris</span><span class="badge">Guide</span></a>
+      <a href="perth-coworking-guide.html" class="grid-card"><span class="title">📊 Perth</span><span class="badge">Guide</span></a>
+      <a href="philadelphia-coworking-guide.html" class="grid-card"><span class="title">📊 Philadelphia</span><span class="badge">Guide</span></a>
+      <a href="phnom-penh-coworking-guide.html" class="grid-card"><span class="title">📊 Phnom Penh</span><span class="badge">Guide</span></a>
+      <a href="phoenix-coworking-guide.html" class="grid-card"><span class="title">📊 Phoenix</span><span class="badge">Guide</span></a>
+      <a href="port-au-prince-coworking-guide.html" class="grid-card"><span class="title">📊 Port Au Prince</span><span class="badge">Guide</span></a>
+      <a href="port-of-spain-coworking-guide.html" class="grid-card"><span class="title">📊 Port Of Spain</span><span class="badge">Guide</span></a>
+      <a href="portland-coworking-guide.html" class="grid-card"><span class="title">📊 Portland</span><span class="badge">Guide</span></a>
+      <a href="prague-coworking-guide.html" class="grid-card"><span class="title">📊 Prague</span><span class="badge">Guide</span></a>
+      <a href="puebla-coworking-guide.html" class="grid-card"><span class="title">📊 Puebla</span><span class="badge">Guide</span></a>
+      <a href="quebec-city-coworking-guide.html" class="grid-card"><span class="title">📊 Quebec City</span><span class="badge">Guide</span></a>
+      <a href="quito-coworking-guide.html" class="grid-card"><span class="title">📊 Quito</span><span class="badge">Guide</span></a>
+      <a href="reykjavik-coworking-guide.html" class="grid-card"><span class="title">📊 Reykjavik</span><span class="badge">Guide</span></a>
+      <a href="riga-coworking-guide.html" class="grid-card"><span class="title">📊 Riga</span><span class="badge">Guide</span></a>
+      <a href="rio-de-janeiro-coworking-guide.html" class="grid-card"><span class="title">📊 Rio De Janeiro</span><span class="badge">Guide</span></a>
+      <a href="riyadh-coworking-guide.html" class="grid-card"><span class="title">📊 Riyadh</span><span class="badge">Guide</span></a>
+      <a href="rome-coworking-guide.html" class="grid-card"><span class="title">📊 Rome</span><span class="badge">Guide</span></a>
+      <a href="sacramento-coworking-guide.html" class="grid-card"><span class="title">📊 Sacramento</span><span class="badge">Guide</span></a>
+      <a href="san-diego-coworking-guide.html" class="grid-card"><span class="title">📊 San Diego</span><span class="badge">Guide</span></a>
+      <a href="san-francisco-coworking-guide.html" class="grid-card"><span class="title">📊 San Francisco</span><span class="badge">Guide</span></a>
+      <a href="san-jose-coworking-guide.html" class="grid-card"><span class="title">📊 San Jose</span><span class="badge">Guide</span></a>
+      <a href="san-juan-coworking-guide.html" class="grid-card"><span class="title">📊 San Juan</span><span class="badge">Guide</span></a>
+      <a href="san-salvador-coworking-guide.html" class="grid-card"><span class="title">📊 San Salvador</span><span class="badge">Guide</span></a>
+      <a href="santiago-coworking-guide.html" class="grid-card"><span class="title">📊 Santiago</span><span class="badge">Guide</span></a>
+      <a href="santo-domingo-coworking-guide.html" class="grid-card"><span class="title">📊 Santo Domingo</span><span class="badge">Guide</span></a>
+      <a href="sao-paulo-coworking-guide.html" class="grid-card"><span class="title">📊 Sao Paulo</span><span class="badge">Guide</span></a>
+      <a href="sarajevo-coworking-guide.html" class="grid-card"><span class="title">📊 Sarajevo</span><span class="badge">Guide</span></a>
+      <a href="seattle-coworking-guide.html" class="grid-card"><span class="title">📊 Seattle</span><span class="badge">Guide</span></a>
+      <a href="seoul-coworking-guide.html" class="grid-card"><span class="title">📊 Seoul</span><span class="badge">Guide</span></a>
+      <a href="shanghai-coworking-guide.html" class="grid-card"><span class="title">📊 Shanghai</span><span class="badge">Guide</span></a>
+      <a href="sheffield-coworking-guide.html" class="grid-card"><span class="title">📊 Sheffield</span><span class="badge">Guide</span></a>
+      <a href="singapore-coworking-guide.html" class="grid-card"><span class="title">📊 Singapore</span><span class="badge">Guide</span></a>
+      <a href="skopje-coworking-guide.html" class="grid-card"><span class="title">📊 Skopje</span><span class="badge">Guide</span></a>
+      <a href="st-petersburg-coworking-guide.html" class="grid-card"><span class="title">📊 St Petersburg</span><span class="badge">Guide</span></a>
+      <a href="stockholm-coworking-guide.html" class="grid-card"><span class="title">📊 Stockholm</span><span class="badge">Guide</span></a>
+      <a href="stuttgart-coworking-guide.html" class="grid-card"><span class="title">📊 Stuttgart</span><span class="badge">Guide</span></a>
+      <a href="surrey-coworking-guide.html" class="grid-card"><span class="title">📊 Surrey</span><span class="badge">Guide</span></a>
+      <a href="sydney-coworking-guide.html" class="grid-card"><span class="title">📊 Sydney</span><span class="badge">Guide</span></a>
+      <a href="taipei-coworking-guide.html" class="grid-card"><span class="title">📊 Taipei</span><span class="badge">Guide</span></a>
+      <a href="tallinn-coworking-guide.html" class="grid-card"><span class="title">📊 Tallinn</span><span class="badge">Guide</span></a>
+      <a href="tashkent-coworking-guide.html" class="grid-card"><span class="title">📊 Tashkent</span><span class="badge">Guide</span></a>
+      <a href="tbilisi-coworking-guide.html" class="grid-card"><span class="title">📊 Tbilisi</span><span class="badge">Guide</span></a>
+      <a href="tel-aviv-coworking-guide.html" class="grid-card"><span class="title">📊 Tel Aviv</span><span class="badge">Guide</span></a>
+      <a href="tijuana-coworking-guide.html" class="grid-card"><span class="title">📊 Tijuana</span><span class="badge">Guide</span></a>
+      <a href="tirana-coworking-guide.html" class="grid-card"><span class="title">📊 Tirana</span><span class="badge">Guide</span></a>
+      <a href="tokyo-coworking-guide.html" class="grid-card"><span class="title">📊 Tokyo</span><span class="badge">Guide</span></a>
+      <a href="toronto-coworking-guide.html" class="grid-card"><span class="title">📊 Toronto</span><span class="badge">Guide</span></a>
+      <a href="tripoli-coworking-guide.html" class="grid-card"><span class="title">📊 Tripoli</span><span class="badge">Guide</span></a>
+      <a href="tucson-coworking-guide.html" class="grid-card"><span class="title">📊 Tucson</span><span class="badge">Guide</span></a>
+      <a href="tunis-coworking-guide.html" class="grid-card"><span class="title">📊 Tunis</span><span class="badge">Guide</span></a>
+      <a href="ulaanbaatar-coworking-guide.html" class="grid-card"><span class="title">📊 Ulaanbaatar</span><span class="badge">Guide</span></a>
+      <a href="vancouver-coworking-guide.html" class="grid-card"><span class="title">📊 Vancouver</span><span class="badge">Guide</span></a>
+      <a href="vienna-coworking-guide.html" class="grid-card"><span class="title">📊 Vienna</span><span class="badge">Guide</span></a>
+      <a href="vientiane-coworking-guide.html" class="grid-card"><span class="title">📊 Vientiane</span><span class="badge">Guide</span></a>
+      <a href="vilnius-coworking-guide.html" class="grid-card"><span class="title">📊 Vilnius</span><span class="badge">Guide</span></a>
+      <a href="warsaw-coworking-guide.html" class="grid-card"><span class="title">📊 Warsaw</span><span class="badge">Guide</span></a>
+      <a href="washington-dc-coworking-guide.html" class="grid-card"><span class="title">📊 Washington Dc</span><span class="badge">Guide</span></a>
+      <a href="wellington-coworking-guide.html" class="grid-card"><span class="title">📊 Wellington</span><span class="badge">Guide</span></a>
+      <a href="winnipeg-coworking-guide.html" class="grid-card"><span class="title">📊 Winnipeg</span><span class="badge">Guide</span></a>
+      <a href="yangon-coworking-guide.html" class="grid-card"><span class="title">📊 Yangon</span><span class="badge">Guide</span></a>
+      <a href="yerevan-coworking-guide.html" class="grid-card"><span class="title">📊 Yerevan</span><span class="badge">Guide</span></a>
+      <a href="zagreb-coworking-guide.html" class="grid-card"><span class="title">📊 Zagreb</span><span class="badge">Guide</span></a>
+      <a href="zurich-coworking-guide.html" class="grid-card"><span class="title">📊 Zurich</span><span class="badge">Guide</span></a>
+    </div>
   </div>
-</header>
 
-
-  
-
-  <!-- Top Navigation Header -->
-  
-
-  <div class="main-wrapper">
-    <h1>📊 Global Nomad City Comparison</h1>
-    <p>Compare key metrics across popular remote work hubs around the world.</p>
-
-    <table class="comparison-table">
-      <thead>
-        <tr>
-          <th>City</th>
-          <th>Avg WiFi Speed</th>
-          <th>Est. Living Cost</th>
-          <th>Primary Transit</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>🇹🇭 Bangkok</td>
-          <td>120 Mbps</td>
-          <td>$1,400/mo</td>
-          <td>BTS / MRT</td>
-        </tr>
-        <tr>
-          <td>🇮🇩 Jakarta</td>
-          <td>85 Mbps</td>
-          <td>$1,100/mo</td>
-          <td>Gojek / Grab</td>
-        </tr>
-        <tr>
-          <td>🇵🇭 Manila</td>
-          <td>75 Mbps</td>
-          <td>$1,250/mo</td>
-          <td>Grab / Jeepney</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
+  <script>
+    function filterComparison() {
+      let input = document.getElementById('compSearch').value.toLowerCase();
+      let cards = document.getElementsByClassName('grid-card');
+      for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+        cards[i].style.display = text.includes(input) ? "" : "none";
+      }
+    }
+  </script>
 </body>
 </html>
-
-
