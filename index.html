@@ -1,450 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- ===== TITLE TAG - ADDED ===== -->
-    <title>Complete MATCHA MAYA Coworking Guides: 220 Cities | Digital Nomad Workspace Reviews</title>
-    
-    <!-- ===== META DESCRIPTION - ADDED ===== -->
-    <meta name="description" content="Discover detailed, research-backed coworking guides for 220 cities worldwide. Find the perfect workspace for digital nomads in every major global hub." />
-    
-    <!-- ===== ADDITIONAL SEO META TAGS ===== -->
-    <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://dawidmillenium-design.github.io/coworking/" />
-    
-    <!-- ===== OPEN GRAPH TAGS (for social sharing) ===== -->
-    <meta property="og:title" content="Complete MATCHA MAYA Coworking Guides: 220 Cities | Digital Nomad Workspace Reviews" />
-    <meta property="og:description" content="Discover detailed, research-backed coworking guides for 220 cities worldwide. Find the perfect workspace for digital nomads in every major global hub." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://dawidmillenium-design.github.io/coworking/" />
-    <meta property="og:image" content="https://dawidmillenium-design.github.io/coworking/images/og-image.jpg" />
-    
-    <!-- ===== TWITTER CARD ===== -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Complete MATCHA MAYA Coworking Guides: 220 Cities" />
-    <meta name="twitter:description" content="Discover detailed, research-backed coworking guides for 220 cities worldwide." />
-    
-    <!-- ===== SCHEMA MARKUP (Organization) - ADDED ===== -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "MATCHA MAYA Coworking Guides",
-      "description": "Research-backed workspace reviews for digital nomads across 220 cities worldwide.",
-      "url": "https://dawidmillenium-design.github.io/coworking/",
-      "publisher": {
-        "@type": "Organization",
-        "name": "MATCHA MAYA"
-      },
-      "about": {
-        "@type": "Thing",
-        "name": "Coworking Space Guides",
-        "description": "Comprehensive guides to coworking spaces in major cities around the world."
-      },
-      "numberOfItems": 220
-    }
-    </script>
-    
-    <!-- ===== STYLES ===== -->
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; max-width: 1400px; margin: 0 auto; padding: 40px 20px; background: #faf8f5; color: #2d2d2d; }
-        h1 { color: #2d5a27; font-size: 2.8em; border-bottom: 4px solid #8bc34a; padding-bottom: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
-        h1 small { font-size: 0.4em; color: #777; font-weight: normal; }
-        .subtitle { color: #666; font-size: 1.1em; margin-bottom: 40px; }
-        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; background: #e8f5e9; padding: 20px; border-radius: 12px; margin: 30px 0; }
-        .meta-grid .stat { text-align: center; }
-        .meta-grid .stat-number { font-size: 2em; font-weight: bold; color: #2d5a27; }
-        .meta-grid .stat-label { font-size: 0.85em; color: #555; }
-        .region-section { margin: 40px 0 30px; }
-        .region-section h2 { color: #2d5a27; font-size: 1.8em; border-left: 5px solid #8bc34a; padding-left: 15px; margin-bottom: 20px; }
-        .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 20px 0; }
-        .guide-card { background: white; border-radius: 8px; padding: 12px 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 4px solid #8bc34a; transition: transform 0.2s, box-shadow 0.2s; }
-        .guide-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.10); }
-        .guide-card .city { font-size: 0.9em; font-weight: bold; color: #2d5a27; display: flex; align-items: center; gap: 6px; }
-        .guide-card .venue { color: #555; font-size: 0.7em; margin: 3px 0 6px; }
-        .guide-card .venue a { color: #2d5a27; text-decoration: none; }
-        .guide-card .venue a:hover { text-decoration: underline; }
-        .guide-card .badge { display: inline-block; background: #e8f5e9; color: #2d5a27; padding: 1px 8px; border-radius: 20px; font-size: 0.5em; font-weight: bold; margin-top: 4px; }
-        .guide-card .open-btn { display: inline-block; margin-top: 6px; background: #2d5a27; color: white; padding: 3px 12px; border-radius: 20px; text-decoration: none; font-size: 0.7em; transition: background 0.2s; }
-        .guide-card .open-btn:hover { background: #1e3f1b; }
-        .footer { margin-top: 50px; padding-top: 25px; border-top: 2px solid #e8e0d5; text-align: center; color: #888; font-size: 0.9em; }
-        .footer a { color: #2d5a27; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
-        .cta-box { background: #2d5a27; color: white; padding: 25px 30px; border-radius: 12px; text-align: center; margin: 30px 0; }
-        .cta-box h3 { color: #8bc34a; margin-bottom: 10px; }
-        .cta-box a { background: #8bc34a; color: #2d5a27; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; }
-        .cta-box a:hover { background: #aed581; }
-        .progress-bar { background: #e8f5e9; border-radius: 30px; padding: 10px 20px; text-align: center; margin: 20px 0; font-weight: bold; color: #2d5a27; border: 2px solid #8bc34a; }
-        .progress-bar span { font-size: 1.2em; }
-        .completed-badge { display: inline-block; background: #2d5a27; color: white; padding: 2px 14px; border-radius: 20px; font-size: 0.7em; margin-left: 10px; }
-        @media (max-width: 600px) { h1 { font-size: 2em; } .guide-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 400px) { .guide-grid { grid-template-columns: 1fr; } }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matcha Maya Blog - Global Remote Work & Podcast Proposals</title>
+  <meta name="description" content="Matcha Maya global blog platform covering digital nomad lifestyle, high-speed workspace analysis, visa requirements, and city podcast proposals across 220 global destinations." />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Matcha Maya Blog",
+    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/",
+    "description": "Global hub for remote work podcasts, workspace infrastructure, and digital nomad lifestyle insights."
+  }
+  </script>
 </head>
-<body>
-
-    <!-- ===== H1 HEADING - CHANGED FROM DIV TO H1 ===== -->
-    <h1>🍵 MATCHA MAYA Coworking Series 🎉 220/220 Complete</h1>
-    <p class="subtitle">🌏 Research-backed workspace guides for digital nomads · 220 cities · Complete collection</p>
-
-    <div class="meta-grid">
-        <div class="stat"><div class="stat-number">220</div><div class="stat-label">Cities Covered</div></div>
-        <div class="stat"><div class="stat-number">~204,000</div><div class="stat-label">Total Words</div></div>
-        <div class="stat"><div class="stat-number">220</div><div class="stat-label">Featured Venues</div></div>
-        <div class="stat"><div class="stat-number">⭐ 88%</div><div class="stat-label">Avg. SEO Score</div></div>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased">
+  <header class="bg-emerald-900 text-white p-6 shadow-md">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="font-bold text-lg tracking-wide">MATCHA MAYA</a>
+      <span class="text-xs text-emerald-300">220 Global City Destinations</span>
     </div>
+  </header>
 
-    <div class="progress-bar">
-        <span>🌍 220 / 220 cities completed · 100% global coverage · 🎉 COMPLETE!</span>
+  <main class="max-w-5xl mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-stone-900">Global Podcast Proposals & Nomad Guides</h1>
+      <p class="text-sm text-stone-600 max-w-2xl mx-auto mt-3">
+        Comprehensive 12-point city analysis covering internet speeds, SIM cards, influencer media, rooftop venues, luxury rents, and local tech innovation. Select a continent or region below to browse city proposals.
+      </p>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+        <a href="regions/southeast-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">Southeast Asia Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Southeast Asia destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Southeast Asia Cities -></span>
+        </a>
+        <a href="regions/east-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">East Asia Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for East Asia destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse East Asia Cities -></span>
+        </a>
+        <a href="regions/south-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">South Asia Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for South Asia destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse South Asia Cities -></span>
+        </a>
+        <a href="regions/central-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">Central Asia Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Central Asia destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Central Asia Cities -></span>
+        </a>
+        <a href="regions/middle-east.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">Middle East Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Middle East destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Middle East Cities -></span>
+        </a>
+        <a href="regions/africa.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">Africa Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Africa destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Africa Cities -></span>
+        </a>
+        <a href="regions/western-europe.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">Western Europe Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Western Europe destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Western Europe Cities -></span>
+        </a>
+        <a href="regions/uk-eastern-europe.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">UK & Eastern Europe Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for UK & Eastern Europe destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse UK & Eastern Europe Cities -></span>
+        </a>
+        <a href="regions/north-america.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">North America Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for North America destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse North America Cities -></span>
+        </a>
+        <a href="regions/south-america.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
+          <h2 class="text-lg font-bold text-stone-900">South America Hub</h2>
+          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for South America destinations.</p>
+          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse South America Cities -></span>
+        </a>
     </div>
+  </main>
 
-    <!-- ===== REGION 1: SOUTHEAST ASIA ===== -->
-    <div class="region-section">
-        <h2>🌴 Southeast Asia</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇮🇩 Jakarta</div><div class="venue"><a href="jakarta-coworking-guide.html">GoWork Plaza Indonesia</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="jakarta-coworking-guide.html">📖 Jakarta Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇵🇭 Manila</div><div class="venue"><a href="manila-coworking-guide.html">KMC Proworking</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="manila-coworking-guide.html">📖 Manila Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇹🇭 Bangkok</div><div class="venue"><a href="bangkok-coworking-guide.html">The Hive Thonglor</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bangkok-coworking-guide.html">📖 Bangkok Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇻🇳 Ho Chi Minh City</div><div class="venue"><a href="ho-chi-minh-coworking-guide.html">Dreamplex</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="ho-chi-minh-coworking-guide.html">📖 HCMC Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇾 Kuala Lumpur</div><div class="venue"><a href="kuala-lumpur-coworking-guide.html">Common Ground</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="kuala-lumpur-coworking-guide.html">📖 KL Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇬 Singapore</div><div class="venue"><a href="singapore-coworking-guide.html">The Great Room</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="singapore-coworking-guide.html">📖 Singapore Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇰🇭 Phnom Penh</div><div class="venue"><a href="phnom-penh-coworking-guide.html">Impact Hub Phnom Penh</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="phnom-penh-coworking-guide.html">📖 Phnom Penh Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇱🇦 Vientiane</div><div class="venue"><a href="vientiane-coworking-guide.html">Coworking Laos</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="vientiane-coworking-guide.html">📖 Vientiane Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇲 Yangon</div><div class="venue"><a href="yangon-coworking-guide.html">Impact Hub Yangon</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="yangon-coworking-guide.html">📖 Yangon Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 2: EAST ASIA ===== -->
-    <div class="region-section">
-        <h2>🏯 East Asia</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇯🇵 Tokyo</div><div class="venue"><a href="tokyo-coworking-guide.html">Business-Airport</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tokyo-coworking-guide.html">📖 Tokyo Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇯🇵 Osaka</div><div class="venue"><a href="osaka-coworking-guide.html">WeWork Osaka</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="osaka-coworking-guide.html">📖 Osaka Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇯🇵 Nagoya</div><div class="venue"><a href="nagoya-coworking-guide.html">WeWork Nagoya</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="nagoya-coworking-guide.html">📖 Nagoya Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇰🇷 Seoul</div><div class="venue"><a href="seoul-coworking-guide.html">Fastfive</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="seoul-coworking-guide.html">📖 Seoul Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇰🇷 Busan</div><div class="venue"><a href="busan-coworking-guide.html">WeWork Busan</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="busan-coworking-guide.html">📖 Busan Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇳 Shanghai</div><div class="venue"><a href="shanghai-coworking-guide.html">Arcc Spaces</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="shanghai-coworking-guide.html">📖 Shanghai Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇳 Guangzhou</div><div class="venue"><a href="guangzhou-coworking-guide.html">WeWork NEO Metropolis</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="guangzhou-coworking-guide.html">📖 Guangzhou Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇭🇰 Hong Kong</div><div class="venue"><a href="hong-kong-coworking-guide.html">The Work Project</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="hong-kong-coworking-guide.html">📖 Hong Kong Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇹🇼 Taipei</div><div class="venue"><a href="taipei-coworking-guide.html">CLBC</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="taipei-coworking-guide.html">📖 Taipei Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇳 Beijing</div><div class="venue"><a href="beijing-coworking-guide.html">Ucommune</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="beijing-coworking-guide.html">📖 Beijing Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇳 Ulaanbaatar</div><div class="venue"><a href="ulaanbaatar-coworking-guide.html">Coworking Mongolia</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="ulaanbaatar-coworking-guide.html">📖 Ulaanbaatar Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 3: SOUTH ASIA ===== -->
-    <div class="region-section">
-        <h2>🕌 South Asia</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇧🇩 Dhaka</div><div class="venue"><a href="dhaka-coworking-guide.html">Moar Banani</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dhaka-coworking-guide.html">📖 Dhaka Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇳 New Delhi</div><div class="venue"><a href="new-delhi-coworking-guide.html">Awfis New Delhi</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="new-delhi-coworking-guide.html">📖 New Delhi Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇳 Kolkata</div><div class="venue"><a href="kolkata-coworking-guide.html">Awfis Godrej Waterside</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="kolkata-coworking-guide.html">📖 Kolkata Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇳 Mumbai</div><div class="venue"><a href="mumbai-coworking-guide.html">WeWork BKC</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="mumbai-coworking-guide.html">📖 Mumbai Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇳 Bangalore</div><div class="venue"><a href="bangalore-coworking-guide.html">Cowrks</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bangalore-coworking-guide.html">📖 Bangalore Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇳 Hyderabad</div><div class="venue"><a href="hyderabad-coworking-guide.html">91springboard</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="hyderabad-coworking-guide.html">📖 Hyderabad Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇳🇵 Kathmandu</div><div class="venue"><a href="kathmandu-coworking-guide.html">Coworking Nepal</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="kathmandu-coworking-guide.html">📖 Kathmandu Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇱🇰 Colombo</div><div class="venue"><a href="colombo-coworking-guide.html">Impact Hub Colombo</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="colombo-coworking-guide.html">📖 Colombo Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇻 Male</div><div class="venue"><a href="male-coworking-guide.html">Coworking Maldives</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="male-coworking-guide.html">📖 Male Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 4: CENTRAL ASIA ===== -->
-    <div class="region-section">
-        <h2>🐫 Central Asia</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇺🇿 Tashkent</div><div class="venue"><a href="tashkent-coworking-guide.html">Coworking Tashkent</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tashkent-coworking-guide.html">📖 Tashkent Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇰🇿 Almaty</div><div class="venue"><a href="almaty-coworking-guide.html">The Office</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="almaty-coworking-guide.html">📖 Almaty Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇰🇬 Bishkek</div><div class="venue"><a href="bishkek-coworking-guide.html">Coworking Bishkek</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bishkek-coworking-guide.html">📖 Bishkek Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇹🇯 Dushanbe</div><div class="venue"><a href="dushanbe-coworking-guide.html">Impact Hub Dushanbe</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dushanbe-coworking-guide.html">📖 Dushanbe Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇹🇲 Ashgabat</div><div class="venue"><a href="ashgabat-coworking-guide.html">Coworking Ashgabat</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="ashgabat-coworking-guide.html">📖 Ashgabat Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 5: MIDDLE EAST ===== -->
-    <div class="region-section">
-        <h2>🕌 Middle East</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇹🇷 Istanbul</div><div class="venue"><a href="istanbul-coworking-guide.html">Kolektif House</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="istanbul-coworking-guide.html">📖 Istanbul Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇪 Dubai</div><div class="venue"><a href="dubai-coworking-guide.html">AstroLabs</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dubai-coworking-guide.html">📖 Dubai Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇪 Abu Dhabi</div><div class="venue"><a href="abu-dhabi-coworking-guide.html">Hub71</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="abu-dhabi-coworking-guide.html">📖 Abu Dhabi Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇦 Riyadh</div><div class="venue"><a href="riyadh-coworking-guide.html">The Space</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="riyadh-coworking-guide.html">📖 Riyadh Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇦 Jeddah</div><div class="venue"><a href="jeddah-coworking-guide.html">WeWork Jeddah</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="jeddah-coworking-guide.html">📖 Jeddah Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇦 Dammam</div><div class="venue"><a href="dammam-coworking-guide.html">WeWork Dammam</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dammam-coworking-guide.html">📖 Dammam Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇶🇦 Doha</div><div class="venue"><a href="doha-coworking-guide.html">Workinton</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="doha-coworking-guide.html">📖 Doha Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇭 Manama</div><div class="venue"><a href="manama-coworking-guide.html">WeWork Manama</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="manama-coworking-guide.html">📖 Manama Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇴🇲 Muscat</div><div class="venue"><a href="muscat-coworking-guide.html">The Business Hub</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="muscat-coworking-guide.html">📖 Muscat Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇯🇴 Amman</div><div class="venue"><a href="amman-coworking-guide.html">The Tank</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="amman-coworking-guide.html">📖 Amman Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇱 Tel Aviv</div><div class="venue"><a href="tel-aviv-coworking-guide.html">WeWork Herzliya</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tel-aviv-coworking-guide.html">📖 Tel Aviv Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇱🇧 Beirut</div><div class="venue"><a href="beirut-coworking-guide.html">Antwork</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="beirut-coworking-guide.html">📖 Beirut Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 6: AFRICA ===== -->
-    <div class="region-section">
-        <h2>🌍 Africa</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇪🇬 Cairo</div><div class="venue"><a href="cairo-coworking-guide.html">Regus Nile City Towers</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="cairo-coworking-guide.html">📖 Cairo Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇪🇬 Alexandria</div><div class="venue"><a href="alexandria-coworking-guide.html">WeWork Alexandria</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="alexandria-coworking-guide.html">📖 Alexandria Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇹🇳 Tunis</div><div class="venue"><a href="tunis-coworking-guide.html">WeWork Tunis</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tunis-coworking-guide.html">📖 Tunis Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇿 Algiers</div><div class="venue"><a href="algiers-coworking-guide.html">WeWork Algiers</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="algiers-coworking-guide.html">📖 Algiers Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇱🇾 Tripoli</div><div class="venue"><a href="tripoli-coworking-guide.html">WeWork Tripoli</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tripoli-coworking-guide.html">📖 Tripoli Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇦 Casablanca</div><div class="venue"><a href="casablanca-coworking-guide.html">Coworking Casablanca</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="casablanca-coworking-guide.html">📖 Casablanca Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇳 Dakar</div><div class="venue"><a href="dakar-coworking-guide.html">CTIC Dakar</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dakar-coworking-guide.html">📖 Dakar Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇭 Accra</div><div class="venue"><a href="accra-coworking-guide.html">Impact Hub Accra</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="accra-coworking-guide.html">📖 Accra Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇰🇪 Nairobi</div><div class="venue"><a href="nairobi-coworking-guide.html">Nairobi Garage</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="nairobi-coworking-guide.html">📖 Nairobi Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇹🇿 Dar es Salaam</div><div class="venue"><a href="dar-es-salaam-coworking-guide.html">Sahara Sparks</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dar-es-salaam-coworking-guide.html">📖 Dar es Salaam Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇬 Kampala</div><div class="venue"><a href="kampala-coworking-guide.html">Innovation Hub Kampala</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="kampala-coworking-guide.html">📖 Kampala Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇷🇼 Kigali</div><div class="venue"><a href="kigali-coworking-guide.html">Kigali Innovation City</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="kigali-coworking-guide.html">📖 Kigali Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇪🇹 Addis Ababa</div><div class="venue"><a href="addis-ababa-coworking-guide.html">ICEAddis</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="addis-ababa-coworking-guide.html">📖 Addis Ababa Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇳🇬 Lagos</div><div class="venue"><a href="lagos-coworking-guide.html">Workstation Lagos</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="lagos-coworking-guide.html">📖 Lagos Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇿🇦 Cape Town</div><div class="venue"><a href="cape-town-coworking-guide.html">Workshop17</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="cape-town-coworking-guide.html">📖 Cape Town Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇿🇦 Johannesburg</div><div class="venue"><a href="johannesburg-coworking-guide.html">WeWork Johannesburg</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="johannesburg-coworking-guide.html">📖 Johannesburg Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 7: EUROPE - SOUTHERN ===== -->
-    <div class="region-section">
-        <h2>🇪🇺 Southern Europe</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇬🇷 Athens</div><div class="venue"><a href="athens-coworking-guide.html">Impact Hub Athens</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="athens-coworking-guide.html">📖 Athens Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇹 Rome</div><div class="venue"><a href="rome-coworking-guide.html">Talent Garden</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="rome-coworking-guide.html">📖 Rome Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇹 Milan</div><div class="venue"><a href="milan-coworking-guide.html">Talent Garden Milano</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="milan-coworking-guide.html">📖 Milan Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇪🇸 Barcelona</div><div class="venue"><a href="barcelona-coworking-guide.html">MOB Barcelona</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="barcelona-coworking-guide.html">📖 Barcelona Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇪🇸 Madrid</div><div class="venue"><a href="madrid-coworking-guide.html">La Nave</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="madrid-coworking-guide.html">📖 Madrid Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇵🇹 Lisbon</div><div class="venue"><a href="lisbon-coworking-guide.html">Second Home</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="lisbon-coworking-guide.html">📖 Lisbon Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇫🇷 Paris</div><div class="venue"><a href="paris-coworking-guide.html">WeWork La Défense</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="paris-coworking-guide.html">📖 Paris Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 8: EUROPE - UK & IRELAND ===== -->
-    <div class="region-section">
-        <h2>🇬🇧 UK &amp; Ireland</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇬🇧 London</div><div class="venue"><a href="london-coworking-guide.html">Central Working</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="london-coworking-guide.html">📖 London Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇪 Dublin</div><div class="venue"><a href="dublin-coworking-guide.html">The Iconic Offices</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dublin-coworking-guide.html">📖 Dublin Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Edinburgh</div><div class="venue"><a href="edinburgh-coworking-guide.html">TechCube</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="edinburgh-coworking-guide.html">📖 Edinburgh Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Manchester</div><div class="venue"><a href="manchester-coworking-guide.html">Colony</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="manchester-coworking-guide.html">📖 Manchester Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Birmingham</div><div class="venue"><a href="birmingham-coworking-guide.html">Impact Hub Birmingham</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="birmingham-coworking-guide.html">📖 Birmingham Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Bristol</div><div class="venue"><a href="bristol-coworking-guide.html">Engine Shed</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bristol-coworking-guide.html">📖 Bristol Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Glasgow</div><div class="venue"><a href="glasgow-coworking-guide.html">Creative Clyde</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="glasgow-coworking-guide.html">📖 Glasgow Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Liverpool</div><div class="venue"><a href="liverpool-coworking-guide.html">Launch22</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="liverpool-coworking-guide.html">📖 Liverpool Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Leeds</div><div class="venue"><a href="leeds-coworking-guide.html">Duke Studios</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="leeds-coworking-guide.html">📖 Leeds Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Newcastle</div><div class="venue"><a href="newcastle-coworking-guide.html">The Lumen</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="newcastle-coworking-guide.html">📖 Newcastle Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇧 Sheffield</div><div class="venue"><a href="sheffield-coworking-guide.html">Sheffield Technology Parks</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="sheffield-coworking-guide.html">📖 Sheffield Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 9: EUROPE - NORDICS & BALTICS ===== -->
-    <div class="region-section">
-        <h2>🇳🇴 Nordics &amp; Baltics</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇸🇪 Stockholm</div><div class="venue"><a href="stockholm-coworking-guide.html">Epicenter</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="stockholm-coworking-guide.html">📖 Stockholm Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇰 Copenhagen</div><div class="venue"><a href="copenhagen-coworking-guide.html">Matrikel1</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="copenhagen-coworking-guide.html">📖 Copenhagen Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇳🇴 Oslo</div><div class="venue"><a href="oslo-coworking-guide.html">Mesh</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="oslo-coworking-guide.html">📖 Oslo Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇫🇮 Helsinki</div><div class="venue"><a href="helsinki-coworking-guide.html">Maria 01</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="helsinki-coworking-guide.html">📖 Helsinki Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇮🇸 Reykjavik</div><div class="venue"><a href="reykjavik-coworking-guide.html">The Icelandic Startup</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="reykjavik-coworking-guide.html">📖 Reykjavik Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇪🇪 Tallinn</div><div class="venue"><a href="tallinn-coworking-guide.html">Lift99</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tallinn-coworking-guide.html">📖 Tallinn Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇱🇻 Riga</div><div class="venue"><a href="riga-coworking-guide.html">TechHub Riga</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="riga-coworking-guide.html">📖 Riga Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇱🇹 Vilnius</div><div class="venue"><a href="vilnius-coworking-guide.html">Workland</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="vilnius-coworking-guide.html">📖 Vilnius Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇵🇱 Warsaw</div><div class="venue"><a href="warsaw-coworking-guide.html">MindSpace</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="warsaw-coworking-guide.html">📖 Warsaw Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇿 Prague</div><div class="venue"><a href="prague-coworking-guide.html">Node5</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="prague-coworking-guide.html">📖 Prague Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 10: EUROPE - CENTRAL & EASTERN ===== -->
-    <div class="region-section">
-        <h2>🇪🇺 Central &amp; Eastern Europe</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇦🇹 Vienna</div><div class="venue"><a href="vienna-coworking-guide.html">Impact Hub Vienna</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="vienna-coworking-guide.html">📖 Vienna Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇭🇺 Budapest</div><div class="venue"><a href="budapest-coworking-guide.html">Kaptár</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="budapest-coworking-guide.html">📖 Budapest Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇰 Bratislava</div><div class="venue"><a href="bratislava-coworking-guide.html">Campus Cowork</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bratislava-coworking-guide.html">📖 Bratislava Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇮 Ljubljana</div><div class="venue"><a href="ljubljana-coworking-guide.html">Poligon</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="ljubljana-coworking-guide.html">📖 Ljubljana Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇭🇷 Zagreb</div><div class="venue"><a href="zagreb-coworking-guide.html">Impact Hub Zagreb</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="zagreb-coworking-guide.html">📖 Zagreb Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇷🇸 Belgrade</div><div class="venue"><a href="belgrade-coworking-guide.html">Startit</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="belgrade-coworking-guide.html">📖 Belgrade Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇦 Sarajevo</div><div class="venue"><a href="sarajevo-coworking-guide.html">HUB387</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="sarajevo-coworking-guide.html">📖 Sarajevo Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇰 Skopje</div><div class="venue"><a href="skopje-coworking-guide.html">Seavus</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="skopje-coworking-guide.html">📖 Skopje Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇱 Tirana</div><div class="venue"><a href="tirana-coworking-guide.html">Co-Host</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tirana-coworking-guide.html">📖 Tirana Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 11: EUROPE - EASTERN EUROPE & CAUCASUS ===== -->
-    <div class="region-section">
-        <h2>🇪🇺 Eastern Europe &amp; Caucasus</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇷🇺 Moscow</div><div class="venue"><a href="moscow-coworking-guide.html">Workstation</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="moscow-coworking-guide.html">📖 Moscow Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇷🇺 St. Petersburg</div><div class="venue"><a href="st-petersburg-coworking-guide.html">The Place</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="st-petersburg-coworking-guide.html">📖 St. Petersburg Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇦 Kyiv</div><div class="venue"><a href="kyiv-coworking-guide.html">LIFT99 Kyiv</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="kyiv-coworking-guide.html">📖 Kyiv Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇦 Lviv</div><div class="venue"><a href="lviv-coworking-guide.html">Coworking Lviv</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="lviv-coworking-guide.html">📖 Lviv Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇦 Odesa</div><div class="venue"><a href="odesa-coworking-guide.html">Impact Hub Odesa</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="odesa-coworking-guide.html">📖 Odesa Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇾 Minsk</div><div class="venue"><a href="minsk-coworking-guide.html">Imaguru</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="minsk-coworking-guide.html">📖 Minsk Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇬🇪 Tbilisi</div><div class="venue"><a href="tbilisi-coworking-guide.html">Impact Hub Tbilisi</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tbilisi-coworking-guide.html">📖 Tbilisi Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇲 Yerevan</div><div class="venue"><a href="yerevan-coworking-guide.html">Loft</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="yerevan-coworking-guide.html">📖 Yerevan Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇿 Baku</div><div class="venue"><a href="baku-coworking-guide.html">COWORKING Baku</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="baku-coworking-guide.html">📖 Baku Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇩 Chisinau</div><div class="venue"><a href="chisinau-coworking-guide.html">CRYSTAL</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="chisinau-coworking-guide.html">📖 Chisinau Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 12: EUROPE - MORE EUROPE ===== -->
-    <div class="region-section">
-        <h2>🇪🇺 More Europe</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇨🇭 Zurich</div><div class="venue"><a href="zurich-coworking-guide.html">Impact Hub Zurich</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="zurich-coworking-guide.html">📖 Zurich Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇭 Geneva</div><div class="venue"><a href="geneva-coworking-guide.html">Impact Hub Geneva</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="geneva-coworking-guide.html">📖 Geneva Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇭 Bern</div><div class="venue"><a href="bern-coworking-guide.html">Coworking Bern</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bern-coworking-guide.html">📖 Bern Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇪 Brussels</div><div class="venue"><a href="brussels-coworking-guide.html">WeWork Brussels</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="brussels-coworking-guide.html">📖 Brussels Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇪 Antwerp</div><div class="venue"><a href="antwerp-coworking-guide.html">FCO Antwerp</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="antwerp-coworking-guide.html">📖 Antwerp Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇱🇺 Luxembourg</div><div class="venue"><a href="luxembourg-coworking-guide.html">The Office Luxembourg</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="luxembourg-coworking-guide.html">📖 Luxembourg Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Munich</div><div class="venue"><a href="munich-coworking-guide.html">WeWork Munich</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="munich-coworking-guide.html">📖 Munich Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Frankfurt</div><div class="venue"><a href="frankfurt-coworking-guide.html">WeWork Frankfurt</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="frankfurt-coworking-guide.html">📖 Frankfurt Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Hamburg</div><div class="venue"><a href="hamburg-coworking-guide.html">WeWork Hamburg</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="hamburg-coworking-guide.html">📖 Hamburg Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Cologne</div><div class="venue"><a href="cologne-coworking-guide.html">WeWork Cologne</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="cologne-coworking-guide.html">📖 Cologne Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Düsseldorf</div><div class="venue"><a href="dusseldorf-coworking-guide.html">WeWork Düsseldorf</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dusseldorf-coworking-guide.html">📖 Düsseldorf Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Stuttgart</div><div class="venue"><a href="stuttgart-coworking-guide.html">WeWork Stuttgart</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="stuttgart-coworking-guide.html">📖 Stuttgart Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Nuremberg</div><div class="venue"><a href="nuremberg-coworking-guide.html">WeWork Nuremberg</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="nuremberg-coworking-guide.html">📖 Nuremberg Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Hanover</div><div class="venue"><a href="hanover-coworking-guide.html">WeWork Hanover</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="hanover-coworking-guide.html">📖 Hanover Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Leipzig</div><div class="venue"><a href="leipzig-coworking-guide.html">WeWork Leipzig</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="leipzig-coworking-guide.html">📖 Leipzig Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Dresden</div><div class="venue"><a href="dresden-coworking-guide.html">WeWork Dresden</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dresden-coworking-guide.html">📖 Dresden Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Dortmund</div><div class="venue"><a href="dortmund-coworking-guide.html">WeWork Dortmund</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dortmund-coworking-guide.html">📖 Dortmund Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Essen</div><div class="venue"><a href="essen-coworking-guide.html">WeWork Essen</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="essen-coworking-guide.html">📖 Essen Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Bremen</div><div class="venue"><a href="bremen-coworking-guide.html">WeWork Bremen</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bremen-coworking-guide.html">📖 Bremen Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇪 Duisburg</div><div class="venue"><a href="duisburg-coworking-guide.html">WeWork Duisburg</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="duisburg-coworking-guide.html">📖 Duisburg Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 13: NORTH AMERICA - CANADA ===== -->
-    <div class="region-section">
-        <h2>🇨🇦 Canada</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇨🇦 Toronto</div><div class="venue"><a href="toronto-coworking-guide.html">WeWork Toronto</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="toronto-coworking-guide.html">📖 Toronto Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Vancouver</div><div class="venue"><a href="vancouver-coworking-guide.html">The Network Hub</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="vancouver-coworking-guide.html">📖 Vancouver Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Montreal</div><div class="venue"><a href="montreal-coworking-guide.html">WeWork Montreal</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="montreal-coworking-guide.html">📖 Montreal Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Ottawa</div><div class="venue"><a href="ottawa-coworking-guide.html">Hub Ottawa</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="ottawa-coworking-guide.html">📖 Ottawa Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Mississauga</div><div class="venue"><a href="mississauga-coworking-guide.html">WeWork Mississauga</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="mississauga-coworking-guide.html">📖 Mississauga Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Brampton</div><div class="venue"><a href="brampton-coworking-guide.html">WeWork Brampton</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="brampton-coworking-guide.html">📖 Brampton Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Surrey</div><div class="venue"><a href="surrey-coworking-guide.html">WeWork Surrey</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="surrey-coworking-guide.html">📖 Surrey Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Laval</div><div class="venue"><a href="laval-coworking-guide.html">WeWork Laval</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="laval-coworking-guide.html">📖 Laval Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Calgary</div><div class="venue"><a href="calgary-coworking-guide.html">WorkNicer</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="calgary-coworking-guide.html">📖 Calgary Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Edmonton</div><div class="venue"><a href="edmonton-coworking-guide.html">Startup Edmonton</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="edmonton-coworking-guide.html">📖 Edmonton Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Halifax</div><div class="venue"><a href="halifax-coworking-guide.html">Volta</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="halifax-coworking-guide.html">📖 Halifax Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Winnipeg</div><div class="venue"><a href="winnipeg-coworking-guide.html">The Forks</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="winnipeg-coworking-guide.html">📖 Winnipeg Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Quebec City</div><div class="venue"><a href="quebec-city-coworking-guide.html">Le Camp</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="quebec-city-coworking-guide.html">📖 Quebec City Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 Hamilton</div><div class="venue"><a href="hamilton-coworking-guide.html">CoMotion</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="hamilton-coworking-guide.html">📖 Hamilton Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇦 London (Ontario)</div><div class="venue"><a href="london-ontario-coworking-guide.html">WeWork London ON</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="london-ontario-coworking-guide.html">📖 London ON Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 14: NORTH AMERICA - USA MAJOR CITIES ===== -->
-    <div class="region-section">
-        <h2>🇺🇸 USA Major Cities</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇺🇸 New York City</div><div class="venue"><a href="new-york-city-coworking-guide.html">WeWork NYC</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="new-york-city-coworking-guide.html">📖 NYC Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Los Angeles</div><div class="venue"><a href="los-angeles-coworking-guide.html">WeWork LA</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="los-angeles-coworking-guide.html">📖 LA Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Chicago</div><div class="venue"><a href="chicago-coworking-guide.html">WeWork Chicago</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="chicago-coworking-guide.html">📖 Chicago Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 San Francisco</div><div class="venue"><a href="san-francisco-coworking-guide.html">WeWork SF</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="san-francisco-coworking-guide.html">📖 SF Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Boston</div><div class="venue"><a href="boston-coworking-guide.html">WeWork Boston</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="boston-coworking-guide.html">📖 Boston Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Seattle</div><div class="venue"><a href="seattle-coworking-guide.html">WeWork Seattle</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="seattle-coworking-guide.html">📖 Seattle Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Austin</div><div class="venue"><a href="austin-coworking-guide.html">WeWork Austin</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="austin-coworking-guide.html">📖 Austin Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Denver</div><div class="venue"><a href="denver-coworking-guide.html">WeWork Denver</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="denver-coworking-guide.html">📖 Denver Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Miami</div><div class="venue"><a href="miami-coworking-guide.html">WeWork Miami</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="miami-coworking-guide.html">📖 Miami Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Portland</div><div class="venue"><a href="portland-coworking-guide.html">WeWork Portland</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="portland-coworking-guide.html">📖 Portland Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 San Diego</div><div class="venue"><a href="san-diego-coworking-guide.html">WeWork San Diego</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="san-diego-coworking-guide.html">📖 San Diego Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Dallas</div><div class="venue"><a href="dallas-coworking-guide.html">WeWork Dallas</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="dallas-coworking-guide.html">📖 Dallas Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Houston</div><div class="venue"><a href="houston-coworking-guide.html">WeWork Houston</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="houston-coworking-guide.html">📖 Houston Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Atlanta</div><div class="venue"><a href="atlanta-coworking-guide.html">WeWork Atlanta</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="atlanta-coworking-guide.html">📖 Atlanta Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Washington D.C.</div><div class="venue"><a href="washington-dc-coworking-guide.html">WeWork D.C.</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="washington-dc-coworking-guide.html">📖 D.C. Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Philadelphia</div><div class="venue"><a href="philadelphia-coworking-guide.html">WeWork Philadelphia</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="philadelphia-coworking-guide.html">📖 Philadelphia Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Phoenix</div><div class="venue"><a href="phoenix-coworking-guide.html">WeWork Phoenix</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="phoenix-coworking-guide.html">📖 Phoenix Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Las Vegas</div><div class="venue"><a href="las-vegas-coworking-guide.html">WeWork Las Vegas</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="las-vegas-coworking-guide.html">📖 Las Vegas Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Detroit</div><div class="venue"><a href="detroit-coworking-guide.html">WeWork Detroit</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="detroit-coworking-guide.html">📖 Detroit Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Minneapolis</div><div class="venue"><a href="minneapolis-coworking-guide.html">WeWork Minneapolis</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="minneapolis-coworking-guide.html">📖 Minneapolis Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 New Orleans</div><div class="venue"><a href="new-orleans-coworking-guide.html">WeWork New Orleans</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="new-orleans-coworking-guide.html">📖 New Orleans Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Nashville</div><div class="venue"><a href="nashville-coworking-guide.html">WeWork Nashville</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="nashville-coworking-guide.html">📖 Nashville Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Memphis</div><div class="venue"><a href="memphis-coworking-guide.html">WeWork Memphis</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="memphis-coworking-guide.html">📖 Memphis Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Louisville</div><div class="venue"><a href="louisville-coworking-guide.html">WeWork Louisville</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="louisville-coworking-guide.html">📖 Louisville Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Oklahoma City</div><div class="venue"><a href="oklahoma-city-coworking-guide.html">WeWork OKC</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="oklahoma-city-coworking-guide.html">📖 OKC Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Omaha</div><div class="venue"><a href="omaha-coworking-guide.html">WeWork Omaha</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="omaha-coworking-guide.html">📖 Omaha Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Albuquerque</div><div class="venue"><a href="albuquerque-coworking-guide.html">WeWork Albuquerque</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="albuquerque-coworking-guide.html">📖 Albuquerque Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Tucson</div><div class="venue"><a href="tucson-coworking-guide.html">WeWork Tucson</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tucson-coworking-guide.html">📖 Tucson Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Fresno</div><div class="venue"><a href="fresno-coworking-guide.html">WeWork Fresno</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="fresno-coworking-guide.html">📖 Fresno Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇸 Sacramento</div><div class="venue"><a href="sacramento-coworking-guide.html">WeWork Sacramento</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="sacramento-coworking-guide.html">📖 Sacramento Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 15: CARIBBEAN ===== -->
-    <div class="region-section">
-        <h2>🏝️ Caribbean</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇵🇷 San Juan</div><div class="venue"><a href="san-juan-coworking-guide.html">WeWork San Juan</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="san-juan-coworking-guide.html">📖 San Juan Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇯🇲 Kingston</div><div class="venue"><a href="kingston-coworking-guide.html">WeWork Kingston</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="kingston-coworking-guide.html">📖 Kingston Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇭🇹 Port-au-Prince</div><div class="venue"><a href="port-au-prince-coworking-guide.html">WeWork Port-au-Prince</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="port-au-prince-coworking-guide.html">📖 Port-au-Prince Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇧 Bridgetown</div><div class="venue"><a href="bridgetown-coworking-guide.html">WeWork Bridgetown</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bridgetown-coworking-guide.html">📖 Bridgetown Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇹🇹 Port of Spain</div><div class="venue"><a href="port-of-spain-coworking-guide.html">WeWork Port of Spain</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="port-of-spain-coworking-guide.html">📖 Port of Spain Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇸 Nassau</div><div class="venue"><a href="nassau-coworking-guide.html">WeWork Nassau</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="nassau-coworking-guide.html">📖 Nassau Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 16: LATIN AMERICA ===== -->
-    <div class="region-section">
-        <h2>🌎 Latin America</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇲🇽 Mexico City</div><div class="venue"><a href="mexico-city-coworking-guide.html">WeWork Mexico City</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="mexico-city-coworking-guide.html">📖 Mexico City Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇽 Guadalajara</div><div class="venue"><a href="guadalajara-coworking-guide.html">WeWork Guadalajara</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="guadalajara-coworking-guide.html">📖 Guadalajara Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇽 Monterrey</div><div class="venue"><a href="monterrey-coworking-guide.html">WeWork Monterrey</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="monterrey-coworking-guide.html">📖 Monterrey Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇽 Puebla</div><div class="venue"><a href="puebla-coworking-guide.html">WeWork Puebla</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="puebla-coworking-guide.html">📖 Puebla Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇽 Tijuana</div><div class="venue"><a href="tijuana-coworking-guide.html">WeWork Tijuana</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="tijuana-coworking-guide.html">📖 Tijuana Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇽 Ciudad Juárez</div><div class="venue"><a href="ciudad-juarez-coworking-guide.html">WeWork Juárez</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="ciudad-juarez-coworking-guide.html">📖 Ciudad Juárez Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇲🇽 León</div><div class="venue"><a href="leon-coworking-guide.html">WeWork León</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="leon-coworking-guide.html">📖 León Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇷 São Paulo</div><div class="venue"><a href="sao-paulo-coworking-guide.html">WeWork São Paulo</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="sao-paulo-coworking-guide.html">📖 São Paulo Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇷 Rio de Janeiro</div><div class="venue"><a href="rio-de-janeiro-coworking-guide.html">WeWork Rio</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="rio-de-janeiro-coworking-guide.html">📖 Rio Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇷 Buenos Aires</div><div class="venue"><a href="buenos-aires-coworking-guide.html">WeWork BA</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="buenos-aires-coworking-guide.html">📖 Buenos Aires Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇱 Santiago</div><div class="venue"><a href="santiago-coworking-guide.html">WeWork Santiago</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="santiago-coworking-guide.html">📖 Santiago Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇴 Bogotá</div><div class="venue"><a href="bogota-coworking-guide.html">WeWork Bogotá</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="bogota-coworking-guide.html">📖 Bogotá Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇴 Medellín</div><div class="venue"><a href="medellin-coworking-guide.html">WeWork Medellín</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="medellin-coworking-guide.html">📖 Medellín Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇵🇪 Lima</div><div class="venue"><a href="lima-coworking-guide.html">WeWork Lima</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="lima-coworking-guide.html">📖 Lima Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇪🇨 Quito</div><div class="venue"><a href="quito-coworking-guide.html">WeWork Quito</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="quito-coworking-guide.html">📖 Quito Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇪🇨 Guayaquil</div><div class="venue"><a href="guayaquil-coworking-guide.html">WeWork Guayaquil</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="guayaquil-coworking-guide.html">📖 Guayaquil Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇧🇴 La Paz</div><div class="venue"><a href="la-paz-coworking-guide.html">WeWork La Paz</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="la-paz-coworking-guide.html">📖 La Paz Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇺🇾 Montevideo</div><div class="venue"><a href="montevideo-coworking-guide.html">WeWork Montevideo</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="montevideo-coworking-guide.html">📖 Montevideo Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇵🇾 Asunción</div><div class="venue"><a href="asuncion-coworking-guide.html">WeWork Asunción</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="asuncion-coworking-guide.html">📖 Asunción Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇻🇪 Caracas</div><div class="venue"><a href="caracas-coworking-guide.html">WeWork Caracas</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="caracas-coworking-guide.html">📖 Caracas Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇨🇷 San José</div><div class="venue"><a href="san-jose-coworking-guide.html">WeWork San José</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="san-jose-coworking-guide.html">📖 San José Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇵🇦 Panama City</div><div class="venue"><a href="panama-city-coworking-guide.html">WeWork Panama</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="panama-city-coworking-guide.html">📖 Panama City Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇸🇻 San Salvador</div><div class="venue"><a href="san-salvador-coworking-guide.html">WeWork San Salvador</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="san-salvador-coworking-guide.html">📖 San Salvador Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇩🇴 Santo Domingo</div><div class="venue"><a href="santo-domingo-coworking-guide.html">WeWork Santo Domingo</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="santo-domingo-coworking-guide.html">📖 Santo Domingo Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== REGION 17: OCEANIA ===== -->
-    <div class="region-section">
-        <h2>🌏 Oceania</h2>
-        <div class="guide-grid">
-            <div class="guide-card"><div class="city">🇦🇺 Sydney</div><div class="venue"><a href="sydney-coworking-guide.html">WeWork Sydney</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="sydney-coworking-guide.html">📖 Sydney Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇺 Melbourne</div><div class="venue"><a href="melbourne-coworking-guide.html">WeWork Melbourne</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="melbourne-coworking-guide.html">📖 Melbourne Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇺 Brisbane</div><div class="venue"><a href="brisbane-coworking-guide.html">WeWork Brisbane</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="brisbane-coworking-guide.html">📖 Brisbane Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇦🇺 Perth</div><div class="venue"><a href="perth-coworking-guide.html">WeWork Perth</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="perth-coworking-guide.html">📖 Perth Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇳🇿 Auckland</div><div class="venue"><a href="auckland-coworking-guide.html">WeWork Auckland</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="auckland-coworking-guide.html">📖 Auckland Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇳🇿 Wellington</div><div class="venue"><a href="wellington-coworking-guide.html">WeWork Wellington</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="wellington-coworking-guide.html">📖 Wellington Guide</a></div></div>
-            <div class="guide-card"><div class="city">🇳🇿 Christchurch</div><div class="venue"><a href="christchurch-coworking-guide.html">WeWork Christchurch</a></div><div class="badge">⭐ Featured</div><div><a class="open-btn" href="christchurch-coworking-guide.html">📖 Christchurch Guide</a></div></div>
-        </div>
-    </div>
-
-    <!-- ===== CTA BOX ===== -->
-    <div class="cta-box">
-        <h3>🎉 220 Cities Complete!</h3>
-        <p style="margin-bottom: 15px;">The complete <strong>MATCHA MAYA Global Coworking Guide</strong> is now available!</p>
-        <p style="margin-bottom: 15px;">🌍 220 cities · 7 regions · ~204,000 words</p>
-        <a href="https://matchainfluencer.blogspot.com/2026/07/ultimate-global-matcha-guide.html" target="_blank">🌏 Open Global Guide</a>
-    </div>
-
-    <!-- ===== FOOTER ===== -->
-    <div class="footer">
-        <p>© 2026 MATCHA MAYA · All guides are research-backed and based on publicly available workspace information.</p>
-        <p style="margin-top: 5px;">Always confirm current access, prices, and amenities directly with venues before visiting.</p>
-        <p style="margin-top: 10px; font-size: 0.85em;">🏆 220 cities covered · 100% complete!</p>
-    </div>
-
+  <footer class="bg-stone-900 text-stone-400 py-8 text-center text-xs border-t border-stone-800 mt-12">
+    <p>MATCHA MAYA (C) 2026 - Global Digital Nomad SILO Platform</p>
+  </footer>
 </body>
 </html>
