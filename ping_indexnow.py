@@ -1,48 +1,54 @@
+import os
 import glob
-import json
 import urllib.request
-import ssl
+import json
 
-HOST = "dawidmillenium-design.github.io"
-KEY = "matchamaya2026indexnowkey"
-KEY_LOCATION = f"https://{HOST}/{KEY}.txt"
+print("--- STARTING INDEXNOW PING AUTOMATION ---")
 
-# 1. Create verification key file
-with open(f"{KEY}.txt", "w", encoding="utf-8") as f:
-    f.write(KEY)
+DOMAIN = "dawidmillenium-design.github.io"
+BASE_URL = f"https://{DOMAIN}/matcha-maya-blog"
+API_KEY = "a4b8c1d2e3f4567890abcdef12345678"  # 32-character hex key
+KEY_LOCATION = f"{BASE_URL}/{API_KEY}.txt"
 
-print(f"✔ Created IndexNow key verification file: {KEY}.txt")
+# 1. Ensure IndexNow key file exists locally
+key_filename = f"{API_KEY}.txt"
+if not os.path.exists(key_filename):
+    with open(key_filename, "w", encoding="utf-8") as f:
+        f.write(API_KEY)
+    print(f"✔ Generated IndexNow verification key file: {key_filename}")
 
-# 2. Collect all HTML URLs
-html_files = glob.glob("*.html")
-url_list = [f"https://{HOST}/matcha-maya-blog/{page}" for page in html_files]
+# 2. Gather target URLs (compare.html + all comparison guides)
+target_files = ["compare.html", "llms.txt", "hub.html"] + sorted(glob.glob("*-vs-*-digital-nomad.html"))
+url_list = [f"{BASE_URL}/{f}" for f in target_files]
 
-# 3. Payload structure for IndexNow API
+print(f"Found {len(url_list)} priority URLs to submit to IndexNow.")
+
+# 3. Construct IndexNow Payload
 payload = {
-    "host": HOST,
-    "key": KEY,
+    "host": DOMAIN,
+    "key": API_KEY,
     "keyLocation": KEY_LOCATION,
     "urlList": url_list
 }
 
 data = json.dumps(payload).encode("utf-8")
 
-# Send request to Bing / IndexNow Endpoint
+# 4. Send POST request to Bing/IndexNow Endpoint
+indexnow_url = "https://api.indexnow.org/indexnow"
+
 req = urllib.request.Request(
-    "https://api.indexnow.org/indexnow",
+    indexnow_url,
     data=data,
-    headers={"Content-Type": "application/json; charset=utf-8"},
-    method="POST"
+    headers={"Content-Type": "application/json; charset=utf-8"}
 )
 
 try:
-    ctx = ssl.create_default_context()
-    with urllib.request.urlopen(req, context=ctx) as response:
-        if response.status in [200, 202]:
-            print(f"✔ Successfully pinged IndexNow API for {len(url_list)} URLs! (Status Code: {response.status})")
+    with urllib.request.urlopen(req) as response:
+        status_code = response.getcode()
+        if status_code in (200, 202):
+            print(f"✔ Successfully pinged IndexNow! Status Code: {status_code}")
+            print(f"✔ Submitted {len(url_list)} URLs for immediate crawling across Bing & participating search engines.")
         else:
-            print(f"⚠ Response status: {response.status}")
+            print(f"⚠️ IndexNow returned status code: {status_code}")
 except Exception as e:
-    print(f"ℹ API Ping notice: Key file needs to be live on GitHub Pages first before API validation. Exception: {e}")
-
-print("--- INDEXNOW SETUP COMPLETE ---")
+    print(f"❌ Error pinging IndexNow: {e}")
