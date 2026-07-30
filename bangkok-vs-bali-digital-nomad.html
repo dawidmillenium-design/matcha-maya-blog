@@ -17,32 +17,47 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemPage",
-  "headline": "Bangkok vs Bali: Digital Nomad Comparison Guide | Matcha Maya",
-  "description": "Detailed remote work comparison: Bangkok vs Bali. Compare internet speeds (120 Mbps vs 85 Mbps), monthly costs ($1,400/mo vs $1,300/mo), coworking spaces, and lifestyle.",
-  "author": {
-    "@type": "Organization",
-    "name": "Matcha Maya Blog",
-    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
-  },
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "Bangkok vs Bali Digital Nomad Comparison",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Bangkok",
-        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/bangkok-coworking-guide.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Bali",
-        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/bali-podcast-proposal.html"
+  "@graph": [
+    {
+      "@type": "ItemPage",
+      "headline": "Bangkok vs Bali: Digital Nomad Comparison Guide | Matcha Maya",
+      "description": "Detailed remote work comparison: Bangkok vs Bali. Compare internet speeds (120 Mbps vs 85 Mbps), monthly costs ($1,400/mo vs $1,300/mo), coworking spaces, and lifestyle.",
+      "author": {
+        "@type": "Organization",
+        "name": "Matcha Maya Blog",
+        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which city is cheaper for digital nomads, Bangkok or Bali?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Living expenses in Bangkok average around $1,400/mo per month, compared to approximately $1,300/mo per month in Bali."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Bangkok or Bali have faster internet for remote work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bangkok offers average speeds of 120 Mbps, while Bali averages 85 Mbps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best coworking spots in Bangkok and Bali?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Bangkok, a top recommended remote work spot is HUBBA Ekkamai. In Bali, remote workers frequently use Dojo Bali."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
     
@@ -60,6 +75,9 @@
         .btn:hover { background: #1b3617; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
         .card { background: #ffffff; border: 1px solid #e0ebe0; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .faq-section { background: #fdfdfd; border: 1px solid #e0ebe0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+        .faq-item { margin-bottom: 1.2rem; }
+        .faq-item h3 { margin: 0 0 0.4rem 0; color: #2d5a27; font-size: 1.1rem; }
         footer { text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #666; }
     </style>
 </head>
@@ -118,11 +136,27 @@
         </tbody>
     </table>
 
+    <section class="faq-section">
+        <h2>💡 Frequently Asked Questions (Bangkok vs Bali)</h2>
+        <div class="faq-item">
+            <h3>Which city is cheaper for digital nomads, Bangkok or Bali?</h3>
+            <p>Living expenses in Bangkok average around $1,400/mo per month, compared to approximately $1,300/mo per month in Bali.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Does Bangkok or Bali have faster internet for remote work?</h3>
+            <p>Bangkok offers average speeds of 120 Mbps, while Bali averages 85 Mbps.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the best coworking spots in Bangkok and Bali?</h3>
+            <p>In Bangkok, a top recommended remote work spot is HUBBA Ekkamai. In Bali, remote workers frequently use Dojo Bali.</p>
+        </div>
+    </section>
+
     <div class="grid">
         <div class="card">
             <h3>Explore Bangkok</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in Bangkok.</p>
-            <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/bangkok-coworking-guide.html" class="btn">Read Full Bangkok Guide →</a>
+            <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/bangkok-podcast-proposal.html" class="btn">Read Full Bangkok Guide →</a>
         </div>
         <div class="card">
             <h3>Explore Bali</h3>

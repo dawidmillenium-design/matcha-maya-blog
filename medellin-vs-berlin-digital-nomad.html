@@ -17,32 +17,47 @@
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemPage",
-  "headline": "Medellin vs Berlin: Digital Nomad Comparison Guide | Matcha Maya",
-  "description": "Detailed remote work comparison: Medellin vs Berlin. Compare internet speeds (90 Mbps vs 130 Mbps), monthly costs ($1,100/mo vs $2,400/mo), coworking spaces, and lifestyle.",
-  "author": {
-    "@type": "Organization",
-    "name": "Matcha Maya Blog",
-    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
-  },
-  "mainEntity": {
-    "@type": "ItemList",
-    "name": "Medellin vs Berlin Digital Nomad Comparison",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Medellin",
-        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/medellin-coworking-guide.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Berlin",
-        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/berlin-coworking-guide.html"
+  "@graph": [
+    {
+      "@type": "ItemPage",
+      "headline": "Medellin vs Berlin: Digital Nomad Comparison Guide | Matcha Maya",
+      "description": "Detailed remote work comparison: Medellin vs Berlin. Compare internet speeds (90 Mbps vs 130 Mbps), monthly costs ($1,100/mo vs $2,400/mo), coworking spaces, and lifestyle.",
+      "author": {
+        "@type": "Organization",
+        "name": "Matcha Maya Blog",
+        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which city is cheaper for digital nomads, Medellin or Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Living expenses in Medellin average around $1,100/mo per month, compared to approximately $2,400/mo per month in Berlin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Medellin or Berlin have faster internet for remote work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Medellin offers average speeds of 90 Mbps, while Berlin averages 130 Mbps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the best coworking spots in Medellin and Berlin?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Medellin, a top recommended remote work spot is Selah Coworking. In Berlin, remote workers frequently use Factory Berlin."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
     
@@ -60,6 +75,9 @@
         .btn:hover { background: #1b3617; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
         .card { background: #ffffff; border: 1px solid #e0ebe0; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .faq-section { background: #fdfdfd; border: 1px solid #e0ebe0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+        .faq-item { margin-bottom: 1.2rem; }
+        .faq-item h3 { margin: 0 0 0.4rem 0; color: #2d5a27; font-size: 1.1rem; }
         footer { text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #666; }
     </style>
 </head>
@@ -118,16 +136,32 @@
         </tbody>
     </table>
 
+    <section class="faq-section">
+        <h2>💡 Frequently Asked Questions (Medellin vs Berlin)</h2>
+        <div class="faq-item">
+            <h3>Which city is cheaper for digital nomads, Medellin or Berlin?</h3>
+            <p>Living expenses in Medellin average around $1,100/mo per month, compared to approximately $2,400/mo per month in Berlin.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Does Medellin or Berlin have faster internet for remote work?</h3>
+            <p>Medellin offers average speeds of 90 Mbps, while Berlin averages 130 Mbps.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are the best coworking spots in Medellin and Berlin?</h3>
+            <p>In Medellin, a top recommended remote work spot is Selah Coworking. In Berlin, remote workers frequently use Factory Berlin.</p>
+        </div>
+    </section>
+
     <div class="grid">
         <div class="card">
             <h3>Explore Medellin</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in Medellin.</p>
-            <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/medellin-coworking-guide.html" class="btn">Read Full Medellin Guide →</a>
+            <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/medellin-podcast-proposal.html" class="btn">Read Full Medellin Guide →</a>
         </div>
         <div class="card">
             <h3>Explore Berlin</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in Berlin.</p>
-            <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/berlin-coworking-guide.html" class="btn">Read Full Berlin Guide →</a>
+            <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/berlin-podcast-proposal.html" class="btn">Read Full Berlin Guide →</a>
         </div>
     </div>
 

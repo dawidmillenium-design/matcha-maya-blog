@@ -3,7 +3,7 @@ import html
 import itertools
 from batch_generator import CITY_ENTITIES
 
-print("--- STARTING COMPARISON PAGE GENERATOR ---")
+print("--- STARTING COMPARISON PAGE GENERATOR WITH FAQ SCHEMA ---")
 
 domain = "https://dawidmillenium-design.github.io/matcha-maya-blog"
 
@@ -31,35 +31,61 @@ for city_a_slug, city_b_slug in city_pairs:
     title = f"{name_a} vs {name_b}: Digital Nomad Comparison Guide | Matcha Maya"
     description = f"Detailed remote work comparison: {name_a} vs {name_b}. Compare internet speeds ({data_a['wifi_speed']} vs {data_b['wifi_speed']}), monthly costs ({data_a['avg_cost']} vs {data_b['avg_cost']}), coworking spaces, and lifestyle."
 
+    # Q&A Pair Definitions for GEO Optimization
+    q1 = f"Which city is cheaper for digital nomads, {name_a} or {name_b}?"
+    a1 = f"Living expenses in {name_a} average around {data_a['avg_cost']} per month, compared to approximately {data_b['avg_cost']} per month in {name_b}."
+
+    q2 = f"Does {name_a} or {name_b} have faster internet for remote work?"
+    a2 = f"{name_a} offers average speeds of {data_a['wifi_speed']}, while {name_b} averages {data_b['wifi_speed']}."
+
+    q3 = f"What are the best coworking spots in {name_a} and {name_b}?"
+    a3 = f"In {name_a}, a top recommended remote work spot is {data_a['top_spot']}. In {name_b}, remote workers frequently use {data_b['top_spot']}."
+
+    # JSON-LD Schema: ItemPage + FAQPage
     schema_json = f"""<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
-  "@type": "ItemPage",
-  "headline": "{html.escape(title)}",
-  "description": "{html.escape(description)}",
-  "author": {{
-    "@type": "Organization",
-    "name": "Matcha Maya Blog",
-    "url": "{domain}/"
-  }},
-  "mainEntity": {{
-    "@type": "ItemList",
-    "name": "{name_a} vs {name_b} Digital Nomad Comparison",
-    "itemListElement": [
-      {{
-        "@type": "ListItem",
-        "position": 1,
-        "name": "{name_a}",
-        "url": "{domain}/{city_a_slug}-coworking-guide.html"
-      }},
-      {{
-        "@type": "ListItem",
-        "position": 2,
-        "name": "{name_b}",
-        "url": "{domain}/{city_b_slug}-coworking-guide.html"
+  "@graph": [
+    {{
+      "@type": "ItemPage",
+      "headline": "{html.escape(title)}",
+      "description": "{html.escape(description)}",
+      "author": {{
+        "@type": "Organization",
+        "name": "Matcha Maya Blog",
+        "url": "{domain}/"
       }}
-    ]
-  }}
+    }},
+    {{
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{
+          "@type": "Question",
+          "name": "{html.escape(q1)}",
+          "acceptedAnswer": {{
+            "@type": "Answer",
+            "text": "{html.escape(a1)}"
+          }}
+        }},
+        {{
+          "@type": "Question",
+          "name": "{html.escape(q2)}",
+          "acceptedAnswer": {{
+            "@type": "Answer",
+            "text": "{html.escape(a2)}"
+          }}
+        }},
+        {{
+          "@type": "Question",
+          "name": "{html.escape(q3)}",
+          "acceptedAnswer": {{
+            "@type": "Answer",
+            "text": "{html.escape(a3)}"
+          }}
+        }}
+      ]
+    }}
+  ]
 }}
 </script>"""
 
@@ -95,6 +121,9 @@ for city_a_slug, city_b_slug in city_pairs:
         .btn:hover {{ background: #1b3617; }}
         .grid {{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }}
         .card {{ background: #ffffff; border: 1px solid #e0ebe0; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }}
+        .faq-section {{ background: #fdfdfd; border: 1px solid #e0ebe0; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }}
+        .faq-item {{ margin-bottom: 1.2rem; }}
+        .faq-item h3 {{ margin: 0 0 0.4rem 0; color: #2d5a27; font-size: 1.1rem; }}
         footer {{ text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #666; }}
     </style>
 </head>
@@ -153,16 +182,32 @@ for city_a_slug, city_b_slug in city_pairs:
         </tbody>
     </table>
 
+    <section class="faq-section">
+        <h2>💡 Frequently Asked Questions ({name_a} vs {name_b})</h2>
+        <div class="faq-item">
+            <h3>{q1}</h3>
+            <p>{a1}</p>
+        </div>
+        <div class="faq-item">
+            <h3>{q2}</h3>
+            <p>{a2}</p>
+        </div>
+        <div class="faq-item">
+            <h3>{q3}</h3>
+            <p>{a3}</p>
+        </div>
+    </section>
+
     <div class="grid">
         <div class="card">
             <h3>Explore {name_a}</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in {name_a}.</p>
-            <a href="{domain}/{city_a_slug}-coworking-guide.html" class="btn">Read Full {name_a} Guide →</a>
+            <a href="{domain}/{city_a_slug}-podcast-proposal.html" class="btn">Read Full {name_a} Guide →</a>
         </div>
         <div class="card">
             <h3>Explore {name_b}</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in {name_b}.</p>
-            <a href="{domain}/{city_b_slug}-coworking-guide.html" class="btn">Read Full {name_b} Guide →</a>
+            <a href="{domain}/{city_b_slug}-podcast-proposal.html" class="btn">Read Full {name_b} Guide →</a>
         </div>
     </div>
 
@@ -179,4 +224,4 @@ for city_a_slug, city_b_slug in city_pairs:
     
     generated_count += 1
 
-print(f"✔ Successfully re-generated {generated_count} comparison pages with absolute URLs!")
+print(f"✔ Successfully regenerated {generated_count} comparison pages with FAQ capsules & FAQPage schema!")
