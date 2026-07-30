@@ -1,4 +1,3 @@
-Set-Content -Path batch_generator.py -Value @'
 import os
 
 REGIONAL_SILO = {
@@ -373,4 +372,3 @@ for city in CITIES:
     generated_count += 1
 
 print(f"SUCCESS! Regenerated all {generated_count} city posts with Question 13 added!")
-'@
