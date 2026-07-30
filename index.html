@@ -1,95 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matcha Maya Blog - Global Remote Work & Podcast Proposals</title>
-  <meta name="description" content="Matcha Maya global blog platform covering digital nomad lifestyle, high-speed workspace analysis, visa requirements, and city podcast proposals across 220 global destinations." />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Title Tag & Meta Description -->
+  <title>Matcha Maya Blog: Global Remote Work & Podcast Guides</title>
+  <meta name="description" content="In-depth city guides for remote workers and podcasters. Analyze internet speeds, rents, and local tech in 220 global destinations. Start exploring now.">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Matcha Maya Blog",
-    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/",
-    "description": "Global hub for remote work podcasts, workspace infrastructure, and digital nomad lifestyle insights."
-  }
-  </script>
+  <style>
+    :root {
+      --primary-color: #3b5336;
+      --bg-color: #f7f9f6;
+      --text-color: #2c352b;
+      --card-bg: #ffffff;
+      --border-color: #d1ded0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Top Navigation Header */
+    .site-header {
+      background-color: var(--card-bg);
+      border-bottom: 2px solid var(--border-color);
+      padding: 15px 20px;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+    }
+
+    .main-nav a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a.active-link {
+      background-color: var(--primary-color);
+      color: #ffffff;
+    }
+
+    /* Main Container & Hero Layout */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      padding: 40px;
+    }
+
+    .hero-layout {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .content-left {
+      flex: 1;
+    }
+
+    .image-right {
+      flex: 1;
+      text-align: center;
+    }
+
+    .image-right img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: var(--primary-color);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--primary-color);
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    ul.feature-list {
+      margin-left: 20px;
+      margin-bottom: 24px;
+    }
+
+    ul.feature-list li {
+      margin-bottom: 8px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .cta-btn:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 768px) {
+      .hero-layout {
+        flex-direction: column;
+      }
+      .image-right {
+        order: -1;
+      }
+    }
+  </style>
 </head>
-<body class="bg-stone-50 text-stone-800 font-sans antialiased">
-  <header class="bg-emerald-900 text-white p-6 shadow-md">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="font-bold text-lg tracking-wide">MATCHA MAYA</a>
-      <span class="text-xs text-emerald-300">220 Global City Destinations</span>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">🍵 Matcha Maya</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html" class="active-link">Home</a></li>
+          <li><a href="index2.html">MATCHA MAYA Interviews</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-12">
-    <section class="text-center mb-12">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-stone-900">Global Podcast Proposals & Nomad Guides</h1>
-      <p class="text-sm text-stone-600 max-w-2xl mx-auto mt-3">
-        Comprehensive 12-point city analysis covering internet speeds, SIM cards, influencer media, rooftop venues, luxury rents, and local tech innovation. Select a continent or region below to browse city proposals.
-      </p>
-    </section>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="container">
+    <div class="hero-layout">
       
-        <a href="regions/southeast-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Southeast Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Southeast Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Southeast Asia Cities -></span>
-        </a>
-        <a href="regions/east-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">East Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for East Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse East Asia Cities -></span>
-        </a>
-        <a href="regions/south-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">South Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for South Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse South Asia Cities -></span>
-        </a>
-        <a href="regions/central-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Central Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Central Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Central Asia Cities -></span>
-        </a>
-        <a href="regions/middle-east.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Middle East Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Middle East destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Middle East Cities -></span>
-        </a>
-        <a href="regions/africa.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Africa Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Africa destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Africa Cities -></span>
-        </a>
-        <a href="regions/western-europe.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Western Europe Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Western Europe destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Western Europe Cities -></span>
-        </a>
-        <a href="regions/uk-eastern-europe.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">UK & Eastern Europe Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for UK & Eastern Europe destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse UK & Eastern Europe Cities -></span>
-        </a>
-        <a href="regions/north-america.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">North America Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for North America destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse North America Cities -></span>
-        </a>
-        <a href="regions/south-america.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">South America Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for South America destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse South America Cities -></span>
-        </a>
-    </div>
-  </main>
+      <!-- Left Side: Main Text Content -->
+      <div class="content-left">
+        <h1>Global Podcast Proposals & Nomad Guides</h1>
+        
+        <p>
+          Discover comprehensive city analysis tailored specifically for <strong>global remote workers</strong>, digital nomads, and <strong>podcast producers</strong> looking to relocate or record worldwide.
+        </p>
 
-  <footer class="bg-stone-900 text-stone-400 py-8 text-center text-xs border-t border-stone-800 mt-12">
-    <p>MATCHA MAYA (C) 2026 - Global Digital Nomad SILO Platform</p>
-  </footer>
+        <h2>What Our 12-Point City Analysis Covers</h2>
+        <p>Every destination profile is thoroughly evaluated across core criteria:</p>
+        
+        <ul class="feature-list">
+          <li><strong>Connectivity:</strong> WiFi reliability, 5G coverage, and co-working space options.</li>
+          <li><strong>Living Costs:</strong> Apartment rentals, utilities, and daily living expenses.</li>
+          <li><strong>Local Tech & Safety:</strong> SIM card registration, transport options, and safe neighborhood breakdowns.</li>
+        </ul>
+
+        <h2>Explore City Guides & Interviews</h2>
+        <p>Browse our destination breakdowns or check out our exclusive creator interviews.</p>
+        
+        <a href="index2.html" class="cta-btn">View Interviews</a>
+      </div>
+
+      <!-- Right Side: Visual Graphic -->
+      <div class="image-right">
+        <img src="matcha-maya-pages.png" alt="Matcha Maya Blog Website Pages Layout - Storyboard Style" loading="lazy">
+      </div>
+
+    </div>
+  </div>
+
 </body>
 </html>
