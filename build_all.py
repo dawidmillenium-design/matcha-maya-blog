@@ -5,25 +5,19 @@ scripts = [
     ("1. Generating Comparison Pages", "generate_comparisons.py"),
     ("2. Repairing Regional Links & Hubs", "fix_internal_links.py"),
     ("3. Cleaning Dead Spoke References", "clean_dead_spokes.py"),
-    ("4. Applying AI SEO & Sitemap", "apply_ai_seo.py"),
-    ("5. Auditing Internal Links", "audit_links.py"),
-    ("6. Pinging IndexNow", "ping_indexnow.py")
+    ("4. Generating XML Sitemap", "generate_sitemap.py"),
+    ("5. Applying AI SEO & Metadata", "apply_ai_seo.py"),
+    ("6. Auditing Internal Links", "audit_links.py"),
+    ("7. Pinging IndexNow Engine", "ping_indexnow.py")
 ]
 
-print("==================================================")
-print("🚀 MATCHA MAYA — FULL SITE BUILD PIPELINE")
-print("==================================================\n")
+print("=== STARTING MASTER SITE BUILD PIPELINE ===")
 
-for title, script in scripts:
-    print(f"\n▶ [{title}]...")
-    try:
-        result = subprocess.run([sys.executable, script], check=True)
-    except subprocess.CalledProcessError as e:
-        print(f"❌ Error executing {script}. Aborting pipeline.")
+for description, script in scripts:
+    print(f"\n--- Running: {description} ({script}) ---")
+    result = subprocess.run([sys.executable, script])
+    if result.returncode != 0:
+        print(f"❌ Error encountered in {script}. Stopping build.")
         sys.exit(1)
-    except FileNotFoundError:
-        print(f"⚠️ Script {script} not found, skipping.")
 
-print("\n==================================================")
-print("✨ BUILD COMPLETE! All 570+ pages updated & synced.")
-print("==================================================")
+print("\n=== MASTER BUILD COMPLETE: ALL STAGES PASSED SUCCESSFULLY ===")
