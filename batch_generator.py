@@ -271,6 +271,7 @@ def build_city_post(c):
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="google-site-verification" content="ddryQTwrxDAxNvgfjcrTs2eW06UebOvdNums43rTfJc" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{page_title}</title>
@@ -324,7 +325,24 @@ def build_city_post(c):
   </script>
 </head>
 <body class="bg-stone-50 text-stone-800 font-sans antialiased">
-  <header class="bg-emerald-900 text-white p-4 text-xs shadow-md">
+  
+    <!-- Enhanced SILO Breadcrumb Header -->
+    <nav class="bg-emerald-900 text-white py-3 px-4 text-xs shadow-md" aria-label="Breadcrumb">
+      <div class="max-w-4xl mx-auto flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/index.html" class="font-bold text-emerald-200 hover:text-white transition">Home</a>
+          <span class="text-emerald-400">&rsaquo;</span>
+          <a href="regions/{c['region_slug']}.html" class="font-semibold text-emerald-200 hover:text-white underline transition">
+            {c['region_slug'].replace('-', ' ').title()} Hub
+          </a>
+          <span class="text-emerald-400">&rsaquo;</span>
+          <span class="text-stone-300 truncate">{c['city']}</span>
+        </div>
+        <span class="hidden sm:inline-block text-stone-400 text-[10px] uppercase font-mono">SILO Node</span>
+      </div>
+    </nav>
+    
+<header class="bg-emerald-900 text-white p-4 text-xs shadow-md">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
       <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/" class="font-bold text-sm tracking-wide">MATCHA MAYA</a>
       <a href="regions/{c['region_slug']}.html" class="underline text-emerald-300 hover:text-white transition">
