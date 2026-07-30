@@ -1,4 +1,5 @@
 code = '''import html
+import random
 
 CITY_ENTITIES = {
     # Asia-Pacific
@@ -75,8 +76,14 @@ def generate_head_tags(city_slug, city_name):
 
 def generate_intent_pillars_html(city_slug, city_name, custom_data=None):
     city_info = custom_data if custom_data else get_city_data(city_slug)
-    related_cities = city_info.get("related", ["bangkok", "lisbon", "medellin"])
     
+    # Dynamic fallback: If not explicitly set, pick related from same region
+    related_cities = city_info.get("related", [])
+    if not related_cities:
+        region = city_info.get("region", "Asia")
+        regional_candidates = [slug for slug, info in CITY_ENTITIES.items() if info.get("region") == region and slug != city_slug]
+        related_cities = regional_candidates[:3] if len(regional_candidates) >= 3 else ["bangkok", "lisbon", "medellin"]
+
     related_links_html = "".join([
         f'<a href="{rel}-coworking-guide.html" style="display: inline-block; margin: 0.25rem 0.5rem 0.25rem 0; padding: 0.5rem 1rem; background: #eef5ee; color: #2d5a27; text-decoration: none; border-radius: 4px; font-weight: 500;">👉 {rel.replace("-", " ").title()} Guide</a>'
         for rel in related_cities
@@ -279,4 +286,4 @@ def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, co
 with open('batch_generator.py', 'w', encoding='utf-8') as f:
     f.write(code)
 
-print("Successfully updated batch_generator.py with expanded European and Latin American city entities!")
+print("Successfully updated batch_generator.py with Dynamic Regional Internal Link Graph!")
