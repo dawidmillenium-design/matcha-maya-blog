@@ -6,7 +6,7 @@ print("--- STARTING ADVANCED AI SEO UPGRADE ---")
 
 domain = "https://dawidmillenium-design.github.io/matcha-maya-blog"
 
-# 1. Update/Create robots.txt with AI Crawlers
+# 1. Update robots.txt
 robots_content = f"""User-agent: *
 Allow: /
 
@@ -30,7 +30,7 @@ with open("robots.txt", "w", encoding="utf-8") as f:
 
 print("✔ 1. Updated robots.txt with AI Crawler Allow rules")
 
-# 2. Gather all HTML pages for dynamic sitemap
+# 2. Update sitemap.xml
 all_html_files = sorted(glob.glob("*.html"))
 now_iso = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%S+00:00")
 
@@ -54,20 +54,29 @@ print(f"✔ 2. Generated sitemap.xml covering {len(all_html_files)} HTML pages")
 
 # 3. Inject Speakable Schema into Spoke Guides
 speakable_injected_count = 0
+speakable_snippet = """
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".summary-box", ".ai-atomic-summary", "h1"]
+      }
+    }
+    </script>
+"""
+
 for html_file in all_html_files:
     if html_file.endswith("-coworking-guide.html"):
         with open(html_file, "r", encoding="utf-8") as f:
             content = f.read()
 
-        # Inject speakable schema property if not already present
-        if '"@type": "ItemPage"' in content and '"speakable"' not in content:
-            updated_content = content.replace(
-                '"@type": "ItemPage",',
-                '"@type": "ItemPage",\n  "speakable": {\n    "@type": "SpeakableSpecification",\n    "cssSelector": [".summary-box", ".ai-atomic-summary"]\n  },'
-            )
+        if '"SpeakableSpecification"' not in content and "</head>" in content:
+            updated_content = content.replace("</head>", f"{speakable_snippet}\n</head>")
             with open(html_file, "w", encoding="utf-8") as f:
                 f.write(updated_content)
             speakable_injected_count += 1
 
-print(f"✔ 3. Injected SpeakableSpecification Schema into {speakable_injected_count} spoke pages")
+print(f"✔ 3. Injected SpeakableSpecification Schema into {speakable_injected_count} spoke pages!")
 print("--- ADVANCED AI SEO UPGRADES COMPLETE ---")
