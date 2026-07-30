@@ -1,11 +1,13 @@
 import os
 import html
 import itertools
+from datetime import datetime
 from batch_generator import CITY_ENTITIES
 
-print("--- STARTING COMPARISON PAGE GENERATOR WITH BREADCRUMBS ---")
+print("--- STARTING COMPARISON PAGE GENERATOR WITH TOC & FRESHNESS TAGS ---")
 
 domain = "https://dawidmillenium-design.github.io/matcha-maya-blog"
+current_date = datetime.now().strftime("%Y-%m-%d")
 
 featured_cities = [
     "bangkok", "lisbon", "medellin", "bali", "chiang-mai", 
@@ -31,7 +33,6 @@ for city_a_slug, city_b_slug in city_pairs:
     title = f"{name_a} vs {name_b}: Digital Nomad Comparison Guide | Matcha Maya"
     description = f"Detailed remote work comparison: {name_a} vs {name_b}. Compare internet speeds ({data_a['wifi_speed']} vs {data_b['wifi_speed']}), monthly costs ({data_a['avg_cost']} vs {data_b['avg_cost']}), coworking spaces, and lifestyle."
 
-    # Q&A Pair Definitions for GEO Optimization
     q1 = f"Which city is cheaper for digital nomads, {name_a} or {name_b}?"
     a1 = f"Living expenses in {name_a} average around {data_a['avg_cost']} per month, compared to approximately {data_b['avg_cost']} per month in {name_b}."
 
@@ -41,7 +42,6 @@ for city_a_slug, city_b_slug in city_pairs:
     q3 = f"What are the best coworking spots in {name_a} and {name_b}?"
     a3 = f"In {name_a}, a top recommended remote work spot is {data_a['top_spot']}. In {name_b}, remote workers frequently use {data_b['top_spot']}."
 
-    # JSON-LD Schema: ItemPage + FAQPage + BreadcrumbList
     schema_json = f"""<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -50,6 +50,7 @@ for city_a_slug, city_b_slug in city_pairs:
       "@type": "ItemPage",
       "headline": "{html.escape(title)}",
       "description": "{html.escape(description)}",
+      "dateModified": "{current_date}",
       "author": {{
         "@type": "Organization",
         "name": "Matcha Maya Blog",
@@ -121,12 +122,13 @@ for city_a_slug, city_b_slug in city_pairs:
     <meta name="description" content="{html.escape(description)}">
     <link rel="canonical" href="{page_url}">
     
-    <!-- Open Graph -->
+    <!-- Open Graph & Freshness Signals -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="{html.escape(title)}">
     <meta property="og:description" content="{html.escape(description)}">
     <meta property="og:url" content="{page_url}">
     <meta property="og:site_name" content="Matcha Maya Blog">
+    <meta property="article:modified_time" content="{current_date}">
     
     {schema_json}
     
@@ -137,7 +139,11 @@ for city_a_slug, city_b_slug in city_pairs:
         header a {{ color: #eef5ee; text-decoration: underline; }}
         .breadcrumbs {{ font-size: 0.9rem; margin-bottom: 1.5rem; color: #555; }}
         .breadcrumbs a {{ color: #2d5a27; text-decoration: none; font-weight: 500; }}
-        .breadcrumbs a:hover {{ text-decoration: underline; }}
+        .toc-box {{ background: #fdfdfd; border: 1px solid #e0ebe0; border-radius: 6px; padding: 1rem 1.5rem; margin-bottom: 2rem; }}
+        .toc-box h3 {{ margin-top: 0; margin-bottom: 0.5rem; color: #2d5a27; font-size: 1.1rem; }}
+        .toc-box ul {{ margin: 0; padding-left: 1.2rem; }}
+        .toc-box a {{ color: #2d5a27; text-decoration: none; font-weight: 500; }}
+        .toc-box a:hover {{ text-decoration: underline; }}
         .summary-box {{ background: #eef5ee; border-left: 4px solid #2d5a27; padding: 1.2rem; border-radius: 4px; margin-bottom: 2rem; }}
         table {{ width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 1rem; }}
         th, td {{ padding: 12px 15px; border: 1px solid #ddd; text-align: left; }}
@@ -167,11 +173,21 @@ for city_a_slug, city_b_slug in city_pairs:
         <span>{name_a} vs {name_b}</span>
     </nav>
 
-    <div class="summary-box">
+    <div class="toc-box">
+        <h3>📋 Table of Contents</h3>
+        <ul>
+            <li><a href="#summary">AI Executive Summary</a></li>
+            <li><a href="#metrics">Head-to-Head Metric Comparison</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="#guides">Detailed City Guides</a></li>
+        </ul>
+    </div>
+
+    <div id="summary" class="summary-box">
         <strong>🤖 AI Executive Summary:</strong> Choosing between <strong>{name_a}</strong> ({data_a['country']}) and <strong>{name_b}</strong> ({data_b['country']}) depends on budget and speed priorities. {name_a} offers average WiFi speeds of <strong>{data_a['wifi_speed']}</strong> with estimated living expenses around <strong>{data_a['avg_cost']}</strong>. In comparison, {name_b} provides <strong>{data_b['wifi_speed']}</strong> internet for roughly <strong>{data_b['avg_cost']}</strong> per month.
     </div>
 
-    <h2>Head-to-Head Metric Comparison</h2>
+    <h2 id="metrics">Head-to-Head Metric Comparison</h2>
     <table>
         <thead>
             <tr>
@@ -214,7 +230,7 @@ for city_a_slug, city_b_slug in city_pairs:
         </tbody>
     </table>
 
-    <section class="faq-section">
+    <section id="faq" class="faq-section">
         <h2>💡 Frequently Asked Questions ({name_a} vs {name_b})</h2>
         <div class="faq-item">
             <h3>{q1}</h3>
@@ -230,7 +246,7 @@ for city_a_slug, city_b_slug in city_pairs:
         </div>
     </section>
 
-    <div class="grid">
+    <div id="guides" class="grid">
         <div class="card">
             <h3>Explore {name_a}</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in {name_a}.</p>
@@ -244,7 +260,7 @@ for city_a_slug, city_b_slug in city_pairs:
     </div>
 
     <footer>
-        <p>© Matcha Maya Blog — Digital Nomad Research Index</p>
+        <p>© Matcha Maya Blog — Digital Nomad Research Index | Last Updated: {current_date}</p>
     </footer>
 
 </body>
@@ -256,4 +272,4 @@ for city_a_slug, city_b_slug in city_pairs:
     
     generated_count += 1
 
-print(f"✔ Successfully regenerated {generated_count} comparison pages with visual breadcrumbs & BreadcrumbList schema!")
+print(f"✔ Successfully regenerated {generated_count} comparison pages with TOC jump links and freshness metadata!")
