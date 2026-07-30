@@ -3,93 +3,1375 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Matcha Maya Blog - Global Remote Work & Podcast Proposals</title>
-  <meta name="description" content="Matcha Maya global blog platform covering digital nomad lifestyle, high-speed workspace analysis, visa requirements, and city podcast proposals across 220 global destinations." />
+  <title>Matcha Maya Blog - 220 Global Digital Nomad City Guides</title>
+  <meta name="description" content="Explore 220 podcast proposals and digital nomad infrastructure guides across 10 global regions." />
+  <link rel="canonical" href="https://dawidmillenium-design.github.io/matcha-maya-blog/index.html" />
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Matcha Maya Blog",
-    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/",
-    "description": "Global hub for remote work podcasts, workspace infrastructure, and digital nomad lifestyle insights."
-  }
-  </script>
 </head>
-<body class="bg-stone-50 text-stone-800 font-sans antialiased">
-  <header class="bg-emerald-900 text-white p-6 shadow-md">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <a href="index.html" class="font-bold text-lg tracking-wide">MATCHA MAYA</a>
-      <span class="text-xs text-emerald-300">220 Global City Destinations</span>
+<body class="bg-stone-50 text-stone-800 font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-emerald-900 text-white py-8 px-4 shadow-md">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">MATCHA MAYA BLOG</h1>
+      <p class="text-emerald-200 text-sm mt-2">220 Global Digital Nomad City Guides & Podcast Proposals</p>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-12">
-    <section class="text-center mb-12">
-      <h1 class="text-3xl md:text-4xl font-extrabold text-stone-900">Global Podcast Proposals & Nomad Guides</h1>
-      <p class="text-sm text-stone-600 max-w-2xl mx-auto mt-3">
-        Comprehensive 12-point city analysis covering internet speeds, SIM cards, influencer media, rooftop venues, luxury rents, and local tech innovation. Select a continent or region below to browse city proposals.
-      </p>
+  <!-- Main Content Area -->
+  <main class="max-w-5xl mx-auto px-4 py-8 flex-grow w-full">
+    
+    <!-- Search & Filter Controls -->
+    <section class="mb-8 bg-white p-6 rounded-2xl border border-stone-200 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div class="relative flex-grow">
+          <input 
+            type="text" 
+            id="citySearchInput" 
+            placeholder="Search 220 cities (e.g., Bangkok, Lisbon, Tokyo)..." 
+            class="w-full px-4 py-3 pl-11 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:border-transparent text-sm shadow-inner transition"
+            onkeyup="filterCities()"
+          />
+          <svg class="w-5 h-5 text-stone-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+        <div class="flex items-center justify-between md:justify-end gap-3 text-xs text-stone-500 font-medium">
+          <span id="cityCounter" class="bg-emerald-50 text-emerald-800 px-3 py-2 rounded-lg border border-emerald-200">
+            Showing <strong id="visibleCount">220</strong> of 220 cities
+          </span>
+          <button 
+            onclick="clearSearch()" 
+            id="clearBtn"
+            class="hidden text-stone-400 hover:text-stone-700 underline transition"
+          >
+            Clear filter
+          </button>
+        </div>
+      </div>
     </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Regional SILO Hub Navigation -->
+    <section class="mb-10">
+      <h2 class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-4">Browse by Regional SILO Hubs</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 text-xs font-semibold">
+        <a href="regions/southeast-asia.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">Southeast Asia</a>
+        <a href="regions/east-asia.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">East Asia</a>
+        <a href="regions/south-asia.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">South Asia</a>
+        <a href="regions/central-asia.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">Central Asia</a>
+        <a href="regions/middle-east.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">Middle East</a>
+        <a href="regions/africa.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">Africa</a>
+        <a href="regions/western-europe.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">Western Europe</a>
+        <a href="regions/uk-eastern-europe.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">UK & Eastern Europe</a>
+        <a href="regions/north-america.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">North America</a>
+        <a href="regions/south-america.html" class="p-3 bg-stone-100 hover:bg-emerald-800 hover:text-white rounded-xl border border-stone-200 text-center transition">South America</a>
+      </div>
+    </section>
+
+    <!-- 220 City Grid -->
+    <section>
+      <h2 class="text-xs font-bold text-stone-400 uppercase tracking-wider mb-4">All City Guides</h2>
       
-        <a href="regions/southeast-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Southeast Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Southeast Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Southeast Asia Cities -></span>
+      <!-- Container for JavaScript Filtering -->
+      <div id="cityGridContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+        <a href="abu-dhabi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="abu dhabi">
+          <span>Abu Dhabi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/east-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">East Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for East Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse East Asia Cities -></span>
+        <a href="accra-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="accra">
+          <span>Accra</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/south-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">South Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for South Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse South Asia Cities -></span>
+        <a href="addis-ababa-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="addis ababa">
+          <span>Addis Ababa</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/central-asia.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Central Asia Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Central Asia destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Central Asia Cities -></span>
+        <a href="al-ula-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="al ula">
+          <span>Al Ula</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/middle-east.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Middle East Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Middle East destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Middle East Cities -></span>
+        <a href="albuquerque-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="albuquerque">
+          <span>Albuquerque</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/africa.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Africa Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Africa destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Africa Cities -></span>
+        <a href="alexandria-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="alexandria">
+          <span>Alexandria</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/western-europe.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">Western Europe Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for Western Europe destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse Western Europe Cities -></span>
+        <a href="algiers-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="algiers">
+          <span>Algiers</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/uk-eastern-europe.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">UK & Eastern Europe Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for UK & Eastern Europe destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse UK & Eastern Europe Cities -></span>
+        <a href="almaty-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="almaty">
+          <span>Almaty</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/north-america.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">North America Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for North America destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse North America Cities -></span>
+        <a href="amman-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="amman">
+          <span>Amman</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-        <a href="regions/south-america.html" class="block p-6 bg-white rounded-xl border border-stone-200 hover:border-emerald-500 hover:shadow-md transition">
-          <h2 class="text-lg font-bold text-stone-900">South America Hub</h2>
-          <p class="text-xs text-stone-500 mt-1">Explore podcast proposals, remote work infrastructure, and lifestyle insights for South America destinations.</p>
-          <span class="inline-block mt-3 text-xs font-semibold text-emerald-700">Browse South America Cities -></span>
+        <a href="amsterdam-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="amsterdam">
+          <span>Amsterdam</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
         </a>
-    </div>
+        <a href="ankara-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="ankara">
+          <span>Ankara</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="antalya-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="antalya">
+          <span>Antalya</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="antananarivo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="antananarivo">
+          <span>Antananarivo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="antwerp-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="antwerp">
+          <span>Antwerp</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="aqaba-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="aqaba">
+          <span>Aqaba</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="arequipa-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="arequipa">
+          <span>Arequipa</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="ashgabat-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="ashgabat">
+          <span>Ashgabat</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="astana-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="astana">
+          <span>Astana</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="asuncion-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="asuncion">
+          <span>Asuncion</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="athens-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="athens">
+          <span>Athens</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="atlanta-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="atlanta">
+          <span>Atlanta</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="auckland-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="auckland">
+          <span>Auckland</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="austin-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="austin">
+          <span>Austin</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="baku-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="baku">
+          <span>Baku</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bali-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bali">
+          <span>Bali</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bangalore-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bangalore">
+          <span>Bangalore</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bangkok-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bangkok">
+          <span>Bangkok</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="barcelona-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="barcelona">
+          <span>Barcelona</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bariloche-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bariloche">
+          <span>Bariloche</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="batumi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="batumi">
+          <span>Batumi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="beijing-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="beijing">
+          <span>Beijing</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="beirut-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="beirut">
+          <span>Beirut</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="belfast-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="belfast">
+          <span>Belfast</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="belgrade-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="belgrade">
+          <span>Belgrade</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bengaluru-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bengaluru">
+          <span>Bengaluru</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="berlin-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="berlin">
+          <span>Berlin</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bern-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bern">
+          <span>Bern</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="birmingham-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="birmingham">
+          <span>Birmingham</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bishkek-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bishkek">
+          <span>Bishkek</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bodrum-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bodrum">
+          <span>Bodrum</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bogota-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bogota">
+          <span>Bogota</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="boston-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="boston">
+          <span>Boston</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="brampton-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="brampton">
+          <span>Brampton</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bratislava-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bratislava">
+          <span>Bratislava</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bremen-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bremen">
+          <span>Bremen</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bridgetown-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bridgetown">
+          <span>Bridgetown</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="brisbane-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="brisbane">
+          <span>Brisbane</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bristol-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bristol">
+          <span>Bristol</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="brussels-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="brussels">
+          <span>Brussels</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bucharest-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bucharest">
+          <span>Bucharest</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="budapest-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="budapest">
+          <span>Budapest</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="buenos-aires-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="buenos aires">
+          <span>Buenos Aires</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="bursa-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="bursa">
+          <span>Bursa</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="busan-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="busan">
+          <span>Busan</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cairo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cairo">
+          <span>Cairo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="calgary-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="calgary">
+          <span>Calgary</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cali-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cali">
+          <span>Cali</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cape-town-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cape town">
+          <span>Cape Town</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="caracas-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="caracas">
+          <span>Caracas</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cardiff-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cardiff">
+          <span>Cardiff</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cartagena-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cartagena">
+          <span>Cartagena</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="casablanca-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="casablanca">
+          <span>Casablanca</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cebu-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cebu">
+          <span>Cebu</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="chengdu-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="chengdu">
+          <span>Chengdu</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="chennai-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="chennai">
+          <span>Chennai</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="chiang-mai-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="chiang mai">
+          <span>Chiang Mai</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="chicago-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="chicago">
+          <span>Chicago</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="chisinau-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="chisinau">
+          <span>Chisinau</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="christchurch-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="christchurch">
+          <span>Christchurch</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="ciudad-juarez-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="ciudad juarez">
+          <span>Ciudad Juarez</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cluj-napoca-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cluj napoca">
+          <span>Cluj Napoca</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cologne-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cologne">
+          <span>Cologne</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="colombo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="colombo">
+          <span>Colombo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="copenhagen-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="copenhagen">
+          <span>Copenhagen</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cordoba-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cordoba">
+          <span>Cordoba</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cuenca-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cuenca">
+          <span>Cuenca</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="curitiba-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="curitiba">
+          <span>Curitiba</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="cusco-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="cusco">
+          <span>Cusco</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="da-nang-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="da nang">
+          <span>Da Nang</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dakar-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dakar">
+          <span>Dakar</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dallas-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dallas">
+          <span>Dallas</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dammam-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dammam">
+          <span>Dammam</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dar-es-salaam-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dar es salaam">
+          <span>Dar Es Salaam</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="delhi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="delhi">
+          <span>Delhi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="denver-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="denver">
+          <span>Denver</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="detroit-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="detroit">
+          <span>Detroit</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dhaka-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dhaka">
+          <span>Dhaka</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="doha-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="doha">
+          <span>Doha</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dortmund-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dortmund">
+          <span>Dortmund</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dresden-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dresden">
+          <span>Dresden</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dubai-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dubai">
+          <span>Dubai</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dublin-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dublin">
+          <span>Dublin</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dubrovnik-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dubrovnik">
+          <span>Dubrovnik</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="duisburg-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="duisburg">
+          <span>Duisburg</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="durban-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="durban">
+          <span>Durban</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dushanbe-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dushanbe">
+          <span>Dushanbe</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="dusseldorf-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="dusseldorf">
+          <span>Dusseldorf</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="edinburgh-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="edinburgh">
+          <span>Edinburgh</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="edmonton-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="edmonton">
+          <span>Edmonton</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="erbil-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="erbil">
+          <span>Erbil</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="essen-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="essen">
+          <span>Essen</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="faro-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="faro">
+          <span>Faro</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="florence-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="florence">
+          <span>Florence</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="florianopolis-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="florianopolis">
+          <span>Florianopolis</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="frankfurt-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="frankfurt">
+          <span>Frankfurt</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="fresno-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="fresno">
+          <span>Fresno</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="fukuoka-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="fukuoka">
+          <span>Fukuoka</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="funchal-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="funchal">
+          <span>Funchal</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="gdansk-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="gdansk">
+          <span>Gdansk</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="geneva-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="geneva">
+          <span>Geneva</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="glasgow-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="glasgow">
+          <span>Glasgow</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="goa-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="goa">
+          <span>Goa</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="guadalajara-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="guadalajara">
+          <span>Guadalajara</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="guangzhou-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="guangzhou">
+          <span>Guangzhou</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="guayaquil-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="guayaquil">
+          <span>Guayaquil</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="halifax-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="halifax">
+          <span>Halifax</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="hamburg-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="hamburg">
+          <span>Hamburg</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="hamilton-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="hamilton">
+          <span>Hamilton</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="hanoi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="hanoi">
+          <span>Hanoi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="hanover-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="hanover">
+          <span>Hanover</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="helsinki-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="helsinki">
+          <span>Helsinki</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="ho-chi-minh-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="ho chi minh">
+          <span>Ho Chi Minh</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="hong-kong-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="hong kong">
+          <span>Hong Kong</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="honolulu-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="honolulu">
+          <span>Honolulu</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="houston-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="houston">
+          <span>Houston</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="hyderabad-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="hyderabad">
+          <span>Hyderabad</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="islamabad-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="islamabad">
+          <span>Islamabad</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="istanbul-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="istanbul">
+          <span>Istanbul</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="izmir-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="izmir">
+          <span>Izmir</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="jaipur-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="jaipur">
+          <span>Jaipur</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="jakarta-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="jakarta">
+          <span>Jakarta</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="jeddah-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="jeddah">
+          <span>Jeddah</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="jeju-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="jeju">
+          <span>Jeju</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="johannesburg-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="johannesburg">
+          <span>Johannesburg</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kampala-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kampala">
+          <span>Kampala</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kandy-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kandy">
+          <span>Kandy</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kaohsiung-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kaohsiung">
+          <span>Kaohsiung</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="karachi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="karachi">
+          <span>Karachi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kathmandu-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kathmandu">
+          <span>Kathmandu</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kaunas-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kaunas">
+          <span>Kaunas</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="khujand-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="khujand">
+          <span>Khujand</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kigali-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kigali">
+          <span>Kigali</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kingston-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kingston">
+          <span>Kingston</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kolkata-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kolkata">
+          <span>Kolkata</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="krakow-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="krakow">
+          <span>Krakow</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kuala-lumpur-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kuala lumpur">
+          <span>Kuala Lumpur</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kuwait-city-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kuwait city">
+          <span>Kuwait City</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kyiv-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kyiv">
+          <span>Kyiv</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="kyoto-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="kyoto">
+          <span>Kyoto</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="la-paz-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="la paz">
+          <span>La Paz</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="lagos-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="lagos">
+          <span>Lagos</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="lahore-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="lahore">
+          <span>Lahore</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="las-vegas-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="las vegas">
+          <span>Las Vegas</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="laval-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="laval">
+          <span>Laval</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="leeds-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="leeds">
+          <span>Leeds</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="leipzig-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="leipzig">
+          <span>Leipzig</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="leon-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="leon">
+          <span>Leon</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="lima-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="lima">
+          <span>Lima</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="lisbon-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="lisbon">
+          <span>Lisbon</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="liverpool-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="liverpool">
+          <span>Liverpool</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="ljubljana-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="ljubljana">
+          <span>Ljubljana</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="london-ontario-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="london ontario">
+          <span>London Ontario</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="london-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="london">
+          <span>London</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="los-angeles-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="los angeles">
+          <span>Los Angeles</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="louisville-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="louisville">
+          <span>Louisville</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="luanda-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="luanda">
+          <span>Luanda</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="luxembourg-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="luxembourg">
+          <span>Luxembourg</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="lviv-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="lviv">
+          <span>Lviv</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="lyon-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="lyon">
+          <span>Lyon</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="macau-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="macau">
+          <span>Macau</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="madrid-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="madrid">
+          <span>Madrid</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="male-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="male">
+          <span>Male</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="manama-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="manama">
+          <span>Manama</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="manchester-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="manchester">
+          <span>Manchester</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="manila-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="manila">
+          <span>Manila</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="maputo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="maputo">
+          <span>Maputo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="marrakech-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="marrakech">
+          <span>Marrakech</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="mauritius-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="mauritius">
+          <span>Mauritius</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="medellin-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="medellin">
+          <span>Medellin</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="melbourne-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="melbourne">
+          <span>Melbourne</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="memphis-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="memphis">
+          <span>Memphis</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="mendoza-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="mendoza">
+          <span>Mendoza</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="mexico-city-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="mexico city">
+          <span>Mexico City</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="miami-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="miami">
+          <span>Miami</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="milan-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="milan">
+          <span>Milan</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="minneapolis-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="minneapolis">
+          <span>Minneapolis</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="minsk-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="minsk">
+          <span>Minsk</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="mississauga-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="mississauga">
+          <span>Mississauga</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="mombasa-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="mombasa">
+          <span>Mombasa</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="monterrey-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="monterrey">
+          <span>Monterrey</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="montevideo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="montevideo">
+          <span>Montevideo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="montreal-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="montreal">
+          <span>Montreal</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="moscow-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="moscow">
+          <span>Moscow</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="mumbai-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="mumbai">
+          <span>Mumbai</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="munich-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="munich">
+          <span>Munich</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="muscat-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="muscat">
+          <span>Muscat</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="nagoya-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="nagoya">
+          <span>Nagoya</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="nairobi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="nairobi">
+          <span>Nairobi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="nashville-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="nashville">
+          <span>Nashville</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="nassau-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="nassau">
+          <span>Nassau</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="new-delhi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="new delhi">
+          <span>New Delhi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="new-orleans-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="new orleans">
+          <span>New Orleans</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="new-york-city-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="new york city">
+          <span>New York City</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="new-york-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="new york">
+          <span>New York</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="newcastle-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="newcastle">
+          <span>Newcastle</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="nice-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="nice">
+          <span>Nice</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="nuremberg-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="nuremberg">
+          <span>Nuremberg</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="oaxaca-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="oaxaca">
+          <span>Oaxaca</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="odesa-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="odesa">
+          <span>Odesa</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="oklahoma-city-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="oklahoma city">
+          <span>Oklahoma City</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="omaha-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="omaha">
+          <span>Omaha</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="osaka-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="osaka">
+          <span>Osaka</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="oslo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="oslo">
+          <span>Oslo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="ottawa-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="ottawa">
+          <span>Ottawa</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="panama-city-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="panama city">
+          <span>Panama City</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="paris-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="paris">
+          <span>Paris</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="penang-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="penang">
+          <span>Penang</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="perth-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="perth">
+          <span>Perth</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="philadelphia-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="philadelphia">
+          <span>Philadelphia</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="phnom-penh-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="phnom penh">
+          <span>Phnom Penh</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="phoenix-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="phoenix">
+          <span>Phoenix</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="phuket-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="phuket">
+          <span>Phuket</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="playa-del-carmen-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="playa del carmen">
+          <span>Playa Del Carmen</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="plovdiv-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="plovdiv">
+          <span>Plovdiv</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="pokhara-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="pokhara">
+          <span>Pokhara</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="port-au-prince-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="port au prince">
+          <span>Port Au Prince</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="port-of-spain-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="port of spain">
+          <span>Port Of Spain</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="portland-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="portland">
+          <span>Portland</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="porto-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="porto">
+          <span>Porto</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="prague-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="prague">
+          <span>Prague</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="pretoria-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="pretoria">
+          <span>Pretoria</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="puebla-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="puebla">
+          <span>Puebla</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="puerto-vallarta-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="puerto vallarta">
+          <span>Puerto Vallarta</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="pune-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="pune">
+          <span>Pune</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="quebec-city-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="quebec city">
+          <span>Quebec City</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="quito-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="quito">
+          <span>Quito</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="reykjavik-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="reykjavik">
+          <span>Reykjavik</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="riga-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="riga">
+          <span>Riga</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="rio-de-janeiro-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="rio de janeiro">
+          <span>Rio De Janeiro</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="riyadh-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="riyadh">
+          <span>Riyadh</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="rome-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="rome">
+          <span>Rome</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="rotterdam-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="rotterdam">
+          <span>Rotterdam</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sacramento-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sacramento">
+          <span>Sacramento</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="salalah-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="salalah">
+          <span>Salalah</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="salvador-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="salvador">
+          <span>Salvador</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="samarkand-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="samarkand">
+          <span>Samarkand</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="san-diego-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="san diego">
+          <span>San Diego</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="san-francisco-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="san francisco">
+          <span>San Francisco</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="san-jose-cr-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="san jose cr">
+          <span>San Jose Cr</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="san-jose-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="san jose">
+          <span>San Jose</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="san-juan-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="san juan">
+          <span>San Juan</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="san-salvador-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="san salvador">
+          <span>San Salvador</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="santa-marta-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="santa marta">
+          <span>Santa Marta</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="santiago-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="santiago">
+          <span>Santiago</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="santo-domingo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="santo domingo">
+          <span>Santo Domingo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sao-paulo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sao paulo">
+          <span>Sao Paulo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sapporo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sapporo">
+          <span>Sapporo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sarajevo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sarajevo">
+          <span>Sarajevo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="seattle-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="seattle">
+          <span>Seattle</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="seoul-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="seoul">
+          <span>Seoul</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="seville-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="seville">
+          <span>Seville</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="shanghai-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="shanghai">
+          <span>Shanghai</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sharjah-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sharjah">
+          <span>Sharjah</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sheffield-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sheffield">
+          <span>Sheffield</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="shenzhen-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="shenzhen">
+          <span>Shenzhen</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="singapore-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="singapore">
+          <span>Singapore</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="skopje-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="skopje">
+          <span>Skopje</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sofia-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sofia">
+          <span>Sofia</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="split-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="split">
+          <span>Split</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="st-petersburg-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="st petersburg">
+          <span>St Petersburg</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="stockholm-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="stockholm">
+          <span>Stockholm</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="stuttgart-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="stuttgart">
+          <span>Stuttgart</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="surrey-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="surrey">
+          <span>Surrey</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="sydney-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="sydney">
+          <span>Sydney</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="taghazout-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="taghazout">
+          <span>Taghazout</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="taichung-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="taichung">
+          <span>Taichung</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="taipei-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="taipei">
+          <span>Taipei</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tallinn-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tallinn">
+          <span>Tallinn</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tartu-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tartu">
+          <span>Tartu</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tashkent-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tashkent">
+          <span>Tashkent</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tbilisi-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tbilisi">
+          <span>Tbilisi</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tel-aviv-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tel aviv">
+          <span>Tel Aviv</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="thimphu-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="thimphu">
+          <span>Thimphu</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tijuana-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tijuana">
+          <span>Tijuana</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tirana-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tirana">
+          <span>Tirana</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tokyo-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tokyo">
+          <span>Tokyo</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="toronto-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="toronto">
+          <span>Toronto</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tripoli-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tripoli">
+          <span>Tripoli</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tucson-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tucson">
+          <span>Tucson</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tulum-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tulum">
+          <span>Tulum</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="tunis-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="tunis">
+          <span>Tunis</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="ulaanbaatar-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="ulaanbaatar">
+          <span>Ulaanbaatar</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="valencia-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="valencia">
+          <span>Valencia</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="valletta-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="valletta">
+          <span>Valletta</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="vancouver-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="vancouver">
+          <span>Vancouver</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="varna-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="varna">
+          <span>Varna</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="vienna-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="vienna">
+          <span>Vienna</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="vientiane-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="vientiane">
+          <span>Vientiane</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="vilnius-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="vilnius">
+          <span>Vilnius</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="warsaw-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="warsaw">
+          <span>Warsaw</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="washington-dc-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="washington dc">
+          <span>Washington Dc</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="wellington-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="wellington">
+          <span>Wellington</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="windhoek-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="windhoek">
+          <span>Windhoek</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="winnipeg-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="winnipeg">
+          <span>Winnipeg</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="wroclaw-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="wroclaw">
+          <span>Wroclaw</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="yangon-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="yangon">
+          <span>Yangon</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="yerevan-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="yerevan">
+          <span>Yerevan</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="zagreb-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="zagreb">
+          <span>Zagreb</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="zanzibar-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="zanzibar">
+          <span>Zanzibar</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+        <a href="zurich-podcast-proposal.html" class="city-card p-3.5 bg-white hover:bg-emerald-50 rounded-xl border border-stone-200 text-xs font-medium text-stone-700 hover:text-emerald-900 hover:border-emerald-300 transition flex items-center justify-between" data-city="zurich">
+          <span>Zurich</span>
+          <span class="text-stone-300 group-hover:text-emerald-600">&rarr;</span>
+        </a>
+      </div>
+
+      <!-- No Results Feedback State -->
+      <div id="noResultsState" class="hidden py-12 text-center bg-white rounded-2xl border border-stone-200 mt-4">
+        <p class="text-stone-500 text-sm font-medium">No matching cities found.</p>
+        <button onclick="clearSearch()" class="mt-2 text-xs text-emerald-700 underline font-semibold">Reset Filter</button>
+      </div>
+    </section>
   </main>
 
-  <footer class="bg-stone-900 text-stone-400 py-8 text-center text-xs border-t border-stone-800 mt-12">
-    <p>MATCHA MAYA (C) 2026 - Global Digital Nomad SILO Platform</p>
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-400 text-center py-6 text-xs mt-12">
+    <p>MATCHA MAYA &copy; 2026 - 220 City Guides Index</p>
   </footer>
+
+  <!-- Instant JavaScript Filter Logic -->
+  <script>
+    function filterCities() {
+      const input = document.getElementById('citySearchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.city-card');
+      const clearBtn = document.getElementById('clearBtn');
+      const noResults = document.getElementById('noResultsState');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cityData = card.getAttribute('data-city');
+        if (cityData.includes(input)) {
+          card.classList.remove('hidden');
+          card.classList.add('flex');
+          visibleCount++;
+        } else {
+          card.classList.remove('flex');
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update visible city count
+      document.getElementById('visibleCount').textContent = visibleCount;
+
+      // Show/hide clear button
+      if (input.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+
+      // Show no results state if count is zero
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+
+    function clearSearch() {
+      document.getElementById('citySearchInput').value = '';
+      filterCities();
+    }
+  </script>
 </body>
 </html>
