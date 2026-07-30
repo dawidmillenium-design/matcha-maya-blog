@@ -17,12 +17,19 @@ CITY_ENTITIES = {
     "tbilisi": {"wifi_speed": "90 Mbps", "avg_cost": "$1,200/mo", "country": "Georgia", "region": "Europe", "top_spot": "Impact Hub Tbilisi", "matcha_spot": "Coffee LAB", "app": "Yandex Go / Bolt", "related": ["lisbon", "chiang-mai", "medellin"]},
     "porto": {"wifi_speed": "140 Mbps", "avg_cost": "$1,800/mo", "country": "Portugal", "region": "Europe", "top_spot": "Porto i/o", "matcha_spot": "Epoca Cafe", "app": "Bolt / Uber", "related": ["lisbon", "barcelona", "madrid"]},
     "budapest": {"wifi_speed": "130 Mbps", "avg_cost": "$1,500/mo", "country": "Hungary", "region": "Europe", "top_spot": "KAPTÁR Coworking", "matcha_spot": "Kontakt Coffee", "app": "Bolt", "related": ["prague", "berlin", "tbilisi"]},
+    "prague": {"wifi_speed": "140 Mbps", "avg_cost": "$1,900/mo", "country": "Czech Republic", "region": "Europe", "top_spot": "Opero", "matcha_spot": "Mezi Srnky", "app": "Bolt / PID Lítačka", "related": ["budapest", "berlin", "zagreb"]},
+    "tallinn": {"wifi_speed": "200 Mbps", "avg_cost": "$1,800/mo", "country": "Estonia", "region": "Europe", "top_spot": "Lift99 Telliskivi", "matcha_spot": "RØST Bakery", "app": "Bolt", "related": ["berlin", "tbilisi", "budapest"]},
+    "zagreb": {"wifi_speed": "110 Mbps", "avg_cost": "$1,450/mo", "country": "Croatia", "region": "Europe", "top_spot": "HUB385", "matcha_spot": "Cogito Coffee", "app": "Bolt / Uber", "related": ["budapest", "prague", "lisbon"]},
+    "valencia": {"wifi_speed": "160 Mbps", "avg_cost": "$1,850/mo", "country": "Spain", "region": "Europe", "top_spot": "Wayco Abastos", "matcha_spot": "Bluebell Coffee Co.", "app": "Cabify / Uber", "related": ["barcelona", "lisbon", "porto"]},
 
-    # Americas
+    # Latin America
     "medellin": {"wifi_speed": "90 Mbps", "avg_cost": "$1,100/mo", "country": "Colombia", "region": "Americas", "top_spot": "Selah Coworking", "matcha_spot": "Teahouse El Poblado", "app": "Uber / InDrive", "related": ["mexico-city", "bali", "tbilisi"]},
-    "new-york": {"wifi_speed": "250 Mbps", "avg_cost": "$4,200/mo", "country": "United States", "region": "Americas", "top_spot": "WeWork 450 Lexington", "matcha_spot": "Cha Cha Matcha", "app": "Uber / Lyft / UberEats", "related": ["tokyo", "london", "barcelona"]},
     "mexico-city": {"wifi_speed": "110 Mbps", "avg_cost": "$1,600/mo", "country": "Mexico", "region": "Americas", "top_spot": "Público Condesa", "matcha_spot": "Matcha Kaori", "app": "Uber / DiDi", "related": ["medellin", "barcelona", "lisbon"]},
-    "buenos-aires": {"wifi_speed": "85 Mbps", "avg_cost": "$1,000/mo", "country": "Argentina", "region": "Americas", "top_spot": "AreaTres Soho", "matcha_spot": "Lattente", "app": "Cabify / Uber", "related": ["medellin", "mexico-city", "lima"]}
+    "buenos-aires": {"wifi_speed": "85 Mbps", "avg_cost": "$1,000/mo", "country": "Argentina", "region": "Americas", "top_spot": "AreaTres Soho", "matcha_spot": "Lattente", "app": "Cabify / Uber", "related": ["medellin", "mexico-city", "lima"]},
+    "lima": {"wifi_speed": "95 Mbps", "avg_cost": "$1,250/mo", "country": "Peru", "region": "Americas", "top_spot": "Comunal Miraflores", "matcha_spot": "Origen Tostadores", "app": "Uber / Cabify", "related": ["medellin", "buenos-aires", "santiago"]},
+    "florianopolis": {"wifi_speed": "100 Mbps", "avg_cost": "$1,200/mo", "country": "Brazil", "region": "Americas", "top_spot": "CIA Primavera Hub", "matcha_spot": "Cafe Cultura Lagoa", "app": "Uber / 99", "related": ["buenos-aires", "medellin", "mexico-city"]},
+    "santiago": {"wifi_speed": "150 Mbps", "avg_cost": "$1,700/mo", "country": "Chile", "region": "Americas", "top_spot": "CoWork LatAm Providencia", "matcha_spot": "Singular Coffee", "app": "Uber / Cabify", "related": ["buenos-aires", "lima", "mexico-city"]},
+    "oaxaca": {"wifi_speed": "75 Mbps", "avg_cost": "$1,150/mo", "country": "Mexico", "region": "Americas", "top_spot": "Conalep Cowork", "matcha_spot": "Boulenc", "app": "DiDi / Local Taxi", "related": ["mexico-city", "medellin", "florianopolis"]}
 }
 
 def get_city_data(city_slug):
@@ -272,4 +279,4 @@ def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, co
 with open('batch_generator.py', 'w', encoding='utf-8') as f:
     f.write(code)
 
-print("Successfully updated batch_generator.py with og:image and twitter:image meta tags!")
+print("Successfully updated batch_generator.py with expanded European and Latin American city entities!")
