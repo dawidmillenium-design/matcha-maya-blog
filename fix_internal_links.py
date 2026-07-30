@@ -1,117 +1,131 @@
 import os
 import glob
 
-print("--- STARTING INTERNAL LINK REPAIR ---")
-
-# 1. Create 'regions' directory
-os.makedirs("regions", exist_ok=True)
-
-# 2. Define Regional Hub Data
-regions_data = {
-    "middle-east": "Middle East",
-    "africa": "Africa",
-    "central-asia": "Central Asia",
-    "western-europe": "Western Europe",
-    "south-america": "South America",
-    "north-america": "North America",
-    "southeast-asia": "Southeast Asia",
-    "east-asia": "East Asia",
-    "uk-eastern-europe": "UK & Eastern Europe",
-    "south-asia": "South Asia"
-}
+print("--- REBUILDING REGIONAL HUBS WITH CITY GUIDES & TOP MENU ---")
 
 domain = "https://dawidmillenium-design.github.io/matcha-maya-blog"
 
-# 3. Generate individual Regional Hub HTML pages inside 'regions/'
-for reg_slug, reg_name in regions_data.items():
-    hub_filename = os.path.join("regions", f"{reg_slug}.html")
+# Mapping cities to regional hubs and their spoke guide filenames
+regional_mapping = {
+    "southeast-asia": {
+        "title": "Southeast Asia Digital Nomad Hub",
+        "cities": [
+            ("Bangkok", "bangkok-podcast-proposal.html"),
+            ("Chiang Mai", "chiang-mai-podcast-proposal.html"),
+            ("Bali", "bali-podcast-proposal.html")
+        ],
+        "comparisons": [
+            ("Bangkok vs Chiang Mai", "bangkok-vs-chiang-mai-digital-nomad.html"),
+            ("Bangkok vs Bali", "bangkok-vs-bali-digital-nomad.html"),
+            ("Chiang Mai vs Bali", "chiang-mai-vs-bali-digital-nomad.html")
+        ]
+    },
+    "europe": {
+        "title": "Europe Digital Nomad Hub",
+        "cities": [
+            ("Lisbon", "lisbon-podcast-proposal.html"),
+            ("Barcelona", "barcelona-podcast-proposal.html"),
+            ("Berlin", "berlin-podcast-proposal.html"),
+            ("Tbilisi", "tbilisi-podcast-proposal.html")
+        ],
+        "comparisons": [
+            ("Lisbon vs Barcelona", "lisbon-vs-barcelona-digital-nomad.html"),
+            ("Lisbon vs Berlin", "lisbon-vs-berlin-digital-nomad.html"),
+            ("Barcelona vs Berlin", "barcelona-vs-berlin-digital-nomad.html")
+        ]
+    },
+    "latin-america": {
+        "title": "Latin America Digital Nomad Hub",
+        "cities": [
+            ("Medellin", "medellin-podcast-proposal.html"),
+            ("Mexico City", "mexico-city-podcast-proposal.html")
+        ],
+        "comparisons": [
+            ("Medellin vs Mexico City", "medellin-vs-mexico-city-digital-nomad.html")
+        ]
+    }
+}
+
+os.makedirs("regions", exist_ok=True)
+
+for region_slug, data in regional_mapping.items():
+    filename = f"regions/{region_slug}.html"
     
-    hub_html = f"""<!DOCTYPE html>
+    city_links_html = "".join([
+        f'<li><a href="../{file}"><strong>{name}</strong> Digital Nomad & Workation Guide →</a></li>'
+        for name, file in data["cities"]
+    ])
+    
+    comp_links_html = "".join([
+        f'<li><a href="../{file}"><strong>{name}</strong> Comparison Breakdown →</a></li>'
+        for name, file in data["comparisons"]
+    ])
+
+    html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{reg_name} Digital Nomad Hub | Matcha Maya Blog</title>
-    <meta name="description" content="Digital nomad guides, coworking reviews, cost of living metrics, and WiFi speeds for cities across {reg_name}.">
-    <link rel="canonical" href="{domain}/regions/{reg_slug}.html">
+    <title>{data['title']} | Matcha Maya Blog</title>
+    <meta name="description" content="Explore top remote work cities, living costs, wifi speeds, and city comparisons across {data['title']}.">
+    <link rel="canonical" href="{domain}/{filename}">
     <style>
-        body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }}
+        body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 950px; margin: 0 auto; padding: 20px; }}
+        nav.top-menu {{ background: #1b3617; padding: 12px 20px; border-radius: 6px; margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }}
+        nav.top-menu a {{ color: #ffffff; text-decoration: none; font-weight: 600; font-size: 0.95rem; }}
+        nav.top-menu a:hover {{ text-decoration: underline; }}
+        .top-menu .brand {{ font-weight: bold; color: #a3e09d; margin-right:auto; }}
         header {{ background: #2d5a27; color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; }}
-        header a {{ color: #eef5ee; text-decoration: underline; }}
-        .card {{ background: #ffffff; border: 1px solid #e0ebe0; border-radius: 6px; padding: 1rem; margin-bottom: 1rem; }}
+        header h1 {{ margin: 0; font-size: 2.2rem; }}
+        .section-box {{ background: #ffffff; border: 1px solid #e0ebe0; border-radius: 8px; padding: 1.8rem; margin-bottom: 2rem; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }}
+        .section-box h2 {{ color: #2d5a27; margin-top: 0; font-size: 1.4rem; border-bottom: 2px solid #e0ebe0; padding-bottom: 0.5rem; }}
+        ul.link-list {{ list-style: none; padding: 0; margin: 0; }}
+        ul.link-list li {{ padding: 10px 0; border-bottom: 1px solid #f0f0f0; }}
+        ul.link-list li:last-child {{ border-bottom: none; }}
+        ul.link-list a {{ color: #2d5a27; text-decoration: none; font-size: 1.05rem; }}
+        ul.link-list a:hover {{ text-decoration: underline; }}
         footer {{ text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #666; }}
     </style>
 </head>
 <body>
+
+    <nav class="top-menu">
+        <span class="brand">🍵 Matcha Maya</span>
+        <a href="../index.html">Home</a>
+        <a href="../hub.html">Regional Hubs</a>
+        <a href="../compare.html">City Comparisons</a>
+    </nav>
+
     <header>
-        <h1>🌍 {reg_name} Nomad Directory</h1>
-        <p>Regional Remote Work Hub & City Guides</p>
-        <p><a href="../index.html">← Home</a> | <a href="../hub.html">All Regional Hubs</a> | <a href="../compare.html">City Comparisons</a></p>
+        <h1>{data['title']}</h1>
+        <p>Comprehensive Remote Work Hub & Destination Directory</p>
     </header>
-    <main>
-        <h2>Explore Destinations in {reg_name}</h2>
-        <div class="card">
-            <p>Select a specific city spoke guide from the main index or comparison engine to view WiFi metrics, coworking options, and monthly living estimates.</p>
-            <a href="../compare.html" style="color: #2d5a27; font-weight: bold;">Browse City Comparisons →</a>
-        </div>
-    </main>
-    <footer>
-        <p>© Matcha Maya Blog — Digital Nomad Research Index</p>
-    </footer>
-</body>
-</html>
-"""
-    with open(hub_filename, "w", encoding="utf-8") as f:
-        f.write(hub_html)
 
-print(f"✔ Generated {len(regions_data)} regional hub files in 'regions/' folder")
-
-# 4. Generate Root 'hub.html' Directory Page
-hub_links_html = ""
-for reg_slug, reg_name in regions_data.items():
-    hub_links_html += f"""
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 {reg_name}</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in {reg_name}.</p>
-        <a href="regions/{reg_slug}.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View {reg_name} Guides →</a>
+    <div class="section-box">
+        <h2>🏙️ Primary City Guides & Workation Reports</h2>
+        <p>In-depth breakdowns on accommodation, digital nomad visas, coworking spaces, and daily living logistics:</p>
+        <ul class="link-list">
+            {city_links_html}
+        </ul>
     </div>
-    """
 
-root_hub_html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Digital Nomad Hub Directory | Matcha Maya Blog</title>
-    <meta name="description" content="Global index of regional digital nomad hubs covering Asia, Europe, Americas, Africa, and Middle East.">
-    <link rel="canonical" href="{domain}/hub.html">
-    <style>
-        body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; }}
-        header {{ background: #2d5a27; color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; }}
-        header a {{ color: #eef5ee; text-decoration: underline; }}
-        .grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin: 2rem 0; }}
-        footer {{ text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #666; }}
-    </style>
-</head>
-<body>
-    <header>
-        <h1>🌐 Global Regional Hub Directory</h1>
-        <p>Choose a Region to Discover Remote Work Destination Guides</p>
-        <p><a href="index.html">← Home</a> | <a href="compare.html">City Comparisons Index</a></p>
-    </header>
-    <main>
-        <div class="grid">
-            {hub_links_html}
-        </div>
-    </main>
+    <div class="section-box">
+        <h2>⚖️ Head-to-Head City Comparisons</h2>
+        <p>Direct metric comparisons covering internet speeds, monthly expenses, and community vibes:</p>
+        <ul class="link-list">
+            {comp_links_html}
+        </ul>
+    </div>
+
     <footer>
         <p>© Matcha Maya Blog — Digital Nomad Research Index</p>
     </footer>
+
 </body>
 </html>
 """
 
-with open("hub.html", "w", encoding="utf-8") as f:
-    f.write(root_hub_html)
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(html_content)
 
-print("✔ Generated root 'hub.html' directory")
+print("✔ Regional hubs updated with dual-section navigation (City Pages + Comparisons) and Top Navigation Menu!")
