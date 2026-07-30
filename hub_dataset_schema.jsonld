@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Global Digital Nomad & Coworking City Metrics Index",
+  "description": "Structured repository containing internet connectivity speeds, cost of living estimates, and remote work infrastructure data across 525+ global nomad hubs.",
+  "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/hub.html",
+  "keywords": ["Digital Nomad", "Coworking", "WiFi Speeds", "Cost of Living", "Remote Work Cities"],
+  "creator": {
+    "@type": "Organization",
+    "name": "Matcha Maya Blog",
+    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true
+}
+</script>
