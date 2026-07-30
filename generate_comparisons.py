@@ -1,20 +1,18 @@
 import os
 import html
 import itertools
-from batch_generator import CITY_ENTITIES, generate_head_tags
+from batch_generator import CITY_ENTITIES
 
 print("--- STARTING COMPARISON PAGE GENERATOR ---")
 
-# Define high-traffic city pairs to generate head-to-head guides
-# Uses key cities present in your CITY_ENTITIES dictionary
+domain = "https://dawidmillenium-design.github.io/matcha-maya-blog"
+
 featured_cities = [
     "bangkok", "lisbon", "medellin", "bali", "chiang-mai", 
     "mexico-city", "tokyo", "barcelona", "berlin", "tbilisi"
 ]
 
-# Generate unique pairs (e.g., bangkok-vs-lisbon)
 city_pairs = list(itertools.combinations(featured_cities, 2))
-
 generated_count = 0
 
 for city_a_slug, city_b_slug in city_pairs:
@@ -29,11 +27,10 @@ for city_a_slug, city_b_slug in city_pairs:
     
     comp_slug = f"{city_a_slug}-vs-{city_b_slug}-digital-nomad"
     filename = f"{comp_slug}.html"
-    page_url = f"https://dawidmillenium-design.github.io/matcha-maya-blog/{filename}"
+    page_url = f"{domain}/{filename}"
     title = f"{name_a} vs {name_b}: Digital Nomad Comparison Guide | Matcha Maya"
     description = f"Detailed remote work comparison: {name_a} vs {name_b}. Compare internet speeds ({data_a['wifi_speed']} vs {data_b['wifi_speed']}), monthly costs ({data_a['avg_cost']} vs {data_b['avg_cost']}), coworking spaces, and lifestyle."
 
-    # Generate JSON-LD Comparison Schema
     schema_json = f"""<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
@@ -43,7 +40,7 @@ for city_a_slug, city_b_slug in city_pairs:
   "author": {{
     "@type": "Organization",
     "name": "Matcha Maya Blog",
-    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
+    "url": "{domain}/"
   }},
   "mainEntity": {{
     "@type": "ItemList",
@@ -53,20 +50,19 @@ for city_a_slug, city_b_slug in city_pairs:
         "@type": "ListItem",
         "position": 1,
         "name": "{name_a}",
-        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/{city_a_slug}-coworking-guide.html"
+        "url": "{domain}/{city_a_slug}-coworking-guide.html"
       }},
       {{
         "@type": "ListItem",
         "position": 2,
         "name": "{name_b}",
-        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/{city_b_slug}-coworking-guide.html"
+        "url": "{domain}/{city_b_slug}-coworking-guide.html"
       }}
     ]
   }}
 }}
 </script>"""
 
-    # HTML Body Construction
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,7 +103,7 @@ for city_a_slug, city_b_slug in city_pairs:
     <header>
         <h1>{name_a} vs {name_b}</h1>
         <p>Head-to-Head Digital Nomad & Remote Work Comparison</p>
-        <p><a href="index.html">← Home</a> | <a href="hub.html">Global Hub Directory</a></p>
+        <p><a href="{domain}/index.html">← Home</a> | <a href="{domain}/hub.html">Global Hub Directory</a> | <a href="{domain}/compare.html">City Comparisons</a></p>
     </header>
 
     <div class="summary-box">
@@ -161,12 +157,12 @@ for city_a_slug, city_b_slug in city_pairs:
         <div class="card">
             <h3>Explore {name_a}</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in {name_a}.</p>
-            <a href="{city_a_slug}-coworking-guide.html" class="btn">Read Full {name_a} Guide →</a>
+            <a href="{domain}/{city_a_slug}-coworking-guide.html" class="btn">Read Full {name_a} Guide →</a>
         </div>
         <div class="card">
             <h3>Explore {name_b}</h3>
             <p>Get full insights, neighborhood breakdowns, visa specifics, and community hubs in {name_b}.</p>
-            <a href="{city_b_slug}-coworking-guide.html" class="btn">Read Full {name_b} Guide →</a>
+            <a href="{domain}/{city_b_slug}-coworking-guide.html" class="btn">Read Full {name_b} Guide →</a>
         </div>
     </div>
 
@@ -183,4 +179,4 @@ for city_a_slug, city_b_slug in city_pairs:
     
     generated_count += 1
 
-print(f"✔ Successfully generated {generated_count} programmatic head-to-head comparison pages!")
+print(f"✔ Successfully re-generated {generated_count} comparison pages with absolute URLs!")
