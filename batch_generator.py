@@ -1,4 +1,4 @@
-import os
+﻿import os
 
 REGIONAL_SILO = {
     # Southeast Asia
@@ -84,7 +84,12 @@ SUPERFOODS = [
     ("Acai & Goji Berry ORAC Antioxidants", "Acai and Goji berries provide over 100,000 ORAC units per 100g to reduce screen fatigue and travel oxidative stress."),
     ("Moringa & Green Tea Polyphenols", "Combining Moringa with green tea polyphenols boosts iron absorption and immune resistance for remote workers."),
     ("Chlorogenic Acid in Green Tea & Cold Matcha", "Shade-grown green tea paired with unroasted coffee beans delivers chlorogenic acids that regulate glucose during deep-work blocks."),
-    ("Matcha & Ashwagandha Adaptogens", "Infusing ceremonial matcha with ashwagandha roots balances adrenals and suppresses travel-induced insomnia.")
+    ("Matcha & Ashwagandha Adaptogens", "Infusing ceremonial matcha with ashwagandha roots balances adrenals and suppresses travel-induced insomnia."),
+    ("Lion's Mane & Cordyceps Nootropic Infusion", "Functional mushroom compounds enhance BDNF neurogenesis, accelerating mental clarity during long coding sessions."),
+    ("Rhodiola Rosea & Cold-Brewed Matcha Synergy", "Adaptogenic Rhodiola protects neurotransmitters from burnout during demanding multi-time-zone travel schedules."),
+    ("Spirulina & Chlorella Bio-Available Micronutrients", "Microalgae chlorophyll accelerates detox routines, maintaining energy in high-density urban environments."),
+    ("Turmeric Curcumin & Black Pepper Bio-Enhancement", "Curcumin reduces continuous desk-work joint inflammation while promoting steady cerebral blood flow."),
+    ("Maca Root & Raw Cacao Flavanols", "Peruvian Maca paired with unrefined cacao stimulates natural dopamine release without artificial caffeine jitters.")
 ]
 
 DEBATES = [
@@ -92,7 +97,12 @@ DEBATES = [
     "Are long-term remote work visas driving up local apartment rents?",
     "Does privatized urban infrastructure create a sanitized experience removed from genuine city life?",
     "Can low-cost nomad destinations preserve their neighborhoods as remote work grows?",
-    "Should remote workers undergo cultural orientation to prevent overtourism friction?"
+    "Should remote workers undergo cultural orientation to prevent overtourism friction?",
+    "Do foreign tech salaries create dual-tier local economies in emerging market hubs?",
+    "Are co-living spaces replacing traditional community bonds with transient professional networking?",
+    "Should short-term nomad stays be taxed specifically to fund local public transport upgrades?",
+    "Does global remote work accelerate gentrification faster than traditional urban tourism?",
+    "Is English becoming an mandatory requirement for service workers in top nomad districts?"
 ]
 
 DATA_SETS = [
@@ -109,7 +119,7 @@ DATA_SETS = [
         "disco_party": "$150 - $350 USD (VIP Table & Drinks)",
         "helicopter_1h": "$1,200 - $1,800 USD",
         "best_months": "November to April (Dry Season / Peak Nomad Window)",
-        "rooftop_bars": "15+ popular rooftop venues, cocktails $12 - $20 USD, open 5:00 PM - 2:00 AM, elevator & wheelchair accessible",
+        "rooftop_bars": "15+ popular rooftop venues, cocktails $12 - $20 USD, open 5:00 PM - 2:00 AM, elevator accessible",
         "delivery_info": "GrabFood, Foodpanda & ShopeeFood (avg delivery fee $1.00 - $2.50 USD, 25 - 40 min delivery)",
         "airport_routes": "Top domestic connection: Secondary regional hub & coastal islands. Top international routes: Singapore, Bangkok, Hong Kong & Dubai."
     },
@@ -177,7 +187,7 @@ def get_sibling_links(current_slug, current_region):
     
     html = '<div class="mt-8 border-t border-stone-200 pt-6"><h4 class="text-xs font-bold text-stone-900 uppercase tracking-wider mb-3">Related Regional Podcasts</h4><ul class="space-y-2 text-xs">'
     for s in siblings:
-        html += f'<li><a href="{s["slug"]}" class="text-emerald-700 hover:underline font-medium">-> Remote Work & Superfoods in {s["city"]}</a></li>'
+        html += f'<li><a href="{s["slug"]}" class="text-emerald-700 hover:underline font-medium">&rarr; Remote Work & Superfoods in {s["city"]}</a></li>'
     html += '</ul></div>'
     return html
 
@@ -193,6 +203,14 @@ def build_city_post(c):
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{page_title}</title>
   <meta name="description" content="Matcha Maya Podcast Proposal in {c['city']}. Covers digital nomad visas, airport routes, rooftop bars, home food delivery, helicopter tours, rent comparisons, and local SEO schools." />
+  <link rel="canonical" href="{page_url}" />
+  
+  <meta property="og:title" content="{page_title}" />
+  <meta property="og:description" content="Digital nomad infrastructure, podcast proposals, and remote work analysis for {c['city']}." />
+  <meta property="og:url" content="{page_url}" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script type="application/ld+json">
@@ -246,12 +264,12 @@ def build_city_post(c):
   <main class="max-w-4xl mx-auto px-4 py-8">
     <article class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
       <div class="flex items-center justify-between border-b border-stone-100 pb-4 mb-4">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">{c['region_slug'].replace('-', ' ')} * {c['archetype']}</span>
+        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">{c['region_slug'].replace('-', ' ')} &bull; {c['archetype']}</span>
         <span class="text-xs text-stone-400">100+ Mbps Fiber Verified</span>
       </div>
 
       <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-1">{c['city']} - Matcha Maya Podcast Proposal with local influencer</h1>
-      <p class="text-xs text-stone-500 mt-2">Verified workspace analysis, laptop battery hubs, ride-hailing app options, e-books, airport routes, rooftop venues, and local vlogs.</p>
+      <p class="text-xs text-stone-500 mt-2">Verified workspace analysis, laptop battery hubs, ride-hailing app options, e-books, airport routes, rooftop venues, and local vlogs in key central districts across {c['city']}.</p>
       
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-stone-50 p-4 rounded-xl border border-stone-200 text-xs">
         <div>
@@ -283,7 +301,7 @@ def build_city_post(c):
         <div class="space-y-6 text-xs text-stone-700 leading-relaxed">
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q1: How is the local internet infrastructure and what SIM cards work best for tourists?</h3>
-            <p><strong>Answer:</strong> {c['city']} offers 100+ Mbps high-speed fiber across coworking hubs and cafes. For tourists and nomads, prepaid local 5G SIM cards (or eSIMs via Airalo/Holafly) offer unlimited data packages starting around $15-$25 USD for 30 days.</p>
+            <p><strong>Answer:</strong> {c['city']} offers 100+ Mbps high-speed fiber across central tech districts and specialty cafes. For tourists and remote workers, prepaid local 5G SIM cards (or eSIMs via Airalo/Holafly) offer unlimited data packages starting around $15-$25 USD for 30 days.</p>
           </div>
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
@@ -338,7 +356,7 @@ def build_city_post(c):
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q12: How convenient is home food delivery and what local apps are used?</h3>
-            <p><strong>Answer:</strong> Home food delivery is fast and ubiquitous across {c['city']}. Main platforms include {c['delivery_info']}, offering live GPS order tracking and cashless digital payments.</p>
+            <p><strong>Answer:</strong> Home food delivery is fast and ubiquitous across central residential hubs in {c['city']}. Main platforms include {c['delivery_info']}, offering live GPS order tracking and cashless digital payments.</p>
           </div>
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
@@ -358,7 +376,7 @@ def build_city_post(c):
   </main>
 
   <footer class="text-center py-6 text-xs text-stone-400">
-    <p>MATCHA MAYA (C) 2026 - 220 Global City Guides</p>
+    <p>MATCHA MAYA &copy; 2026 - 220 Global City Guides</p>
   </footer>
 </body>
 </html>"""
@@ -371,4 +389,4 @@ for city in CITIES:
         f.write(content)
     generated_count += 1
 
-print(f"SUCCESS! Regenerated all {generated_count} city posts with Question 13 added!")
+print(f"SUCCESS! Regenerated all {generated_count} city posts with enhanced SEO meta, canonical tags, and expanded topic diversity!")
