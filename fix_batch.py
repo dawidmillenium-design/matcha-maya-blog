@@ -137,12 +137,27 @@ def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, co
       }}
     }},
     "author": {{
-      "@type": "Organization",
-      "name": "Matcha Maya Blog"
+      "@type": "Person",
+      "name": "Matcha Maya Editorial Team",
+      "jobTitle": "Digital Nomad Destination Specialist",
+      "worksFor": {{
+        "@type": "Organization",
+        "name": "Matcha Maya Blog",
+        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
+      }}
     }},
     "publisher": {{
       "@type": "Organization",
-      "name": "Matcha Maya Blog"
+      "name": "Matcha Maya Blog",
+      "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/",
+      "logo": {{
+        "@type": "ImageObject",
+        "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/assets/logo.png"
+      }}
+    }},
+    "speakable": {{
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".ai-atomic-summary"]
     }},
     "mainEntityOfPage": {{
       "@type": "WebPage",
@@ -211,4 +226,4 @@ def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, co
 with open('batch_generator.py', 'w', encoding='utf-8') as f:
     f.write(code)
 
-print("Successfully updated batch_generator.py with Tables, FAQPage & Breadcrumb Schema!")
+print("Successfully updated batch_generator.py with E-E-A-T Person Author, Organization & Speakable Schema!")
