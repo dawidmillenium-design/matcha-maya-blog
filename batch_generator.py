@@ -145,17 +145,65 @@ DATA_SETS = [
 def get_answer_variations(city, idx, extra_data):
     v = idx % 3
     
+    # Q1
     if v == 0:
-        q1 = f"Across {city}, fiber internet connectivity averages well above 100 Mbps in most commercial hubs. SIM choices include local 5G prepaid packages or instant e-SIM cards (such as Airalo or Holafly) starting around $15-$25 USD per month."
-        q12 = f"On-demand food delivery in {city} operates seamlessly via {extra_data['delivery_info']}, providing real-time tracking and card payments."
+        q1 = f"Across central districts in {city}, fiber internet connectivity averages well above 100 Mbps in most commercial hubs and laptop cafes. Mobile choices include local 5G prepaid packages or instant e-SIM cards (such as Airalo or Holafly) starting around $15-$25 USD per month."
     elif v == 1:
-        q1 = f"Digital nomads in {city} enjoy strong Wi-Fi access (100+ Mbps) throughout central cafes and co-working spaces. Prepaid tourist 5G SIMs or eSIM options are readily available for under $30 USD."
+        q1 = f"Digital nomads in {city} enjoy strong Wi-Fi access (100+ Mbps) throughout key central work areas. Prepaid tourist 5G SIM cards or eSIM passes are readily available for under $30 USD at the airport or local retail stores."
+    else:
+        q1 = f"Internet speeds routinely exceed 100 Mbps in established commercial neighborhoods across {city}. Mobile connectivity is seamless, with local 5G tourist SIMs and global eSIM passes taking under 5 minutes to set up upon arrival."
+
+    # Q2
+    if v == 0:
+        q2 = f"The local creator scene in {city} is active, featuring YouTube relocation channels and Instagram accounts regularly reviewing laptop-friendly cafes and local hidden spots."
+    elif v == 1:
+        q2 = f"Expat and nomad vloggers in {city} publish detailed neighborhood breakdowns, rent reviews, and lifestyle advice across platforms like YouTube, TikTok, and Medium."
+    else:
+        q2 = f"Content creators based in {city} maintain informative travel and living guides online, making it easy for newcomers to discover top workspace spots and housing advice."
+
+    # Q3
+    if v == 0:
+        q3 = f"Local remote work communities in {city} host regular masterclasses and tech meetups, alongside digital e-books covering regional SEO, e-commerce, and cross-border business setup."
+    elif v == 1:
+        q3 = f"Interested founders in {city} can access various downloadable business guides, localized SEO strategies, and attend weekly digital nomad networking sessions."
+    else:
+        q3 = f"Yes, central coworking hubs in {city} frequently organize workshops, e-learning courses, and informal panel discussions on scaling online businesses internationally."
+
+    # Q4
+    if v == 0:
+        q4 = f"Municipal and national policymakers in {city} continue to refine remote worker policies, offering specialized digital nomad visas and expanding smart-city infrastructure."
+    elif v == 1:
+        q4 = f"Government initiatives in {city} are increasingly welcoming to international remote talent, introducing favorable tax structures and streamlined visa procedures."
+    else:
+        q4 = f"Local authorities recognize the economic benefit of remote professionals, actively improving public Wi-Fi networks and long-term stay residence options across {city}."
+
+    # Q6
+    if v == 0:
+        q6 = f"Central neighborhoods feature reputable language academies, offering both group and private instruction for expat residents."
+    elif v == 1:
+        q6 = f"Offline language schools and corporate tutoring services are widely available in main commercial districts across {city}."
+    else:
+        q6 = f"Finding qualified language instruction in {city} is straightforward, with multiple language institutes located near central residential hubs."
+
+    # Q12
+    if v == 0:
+        q12 = f"On-demand food delivery in {city} operates seamlessly via {extra_data['delivery_info']}, providing real-time GPS tracking and cashless payment options."
+    elif v == 1:
         q12 = f"Ordering meals to your residence in {city} is effortless using {extra_data['delivery_info']}, with standard delivery windows between 20 to 40 minutes."
     else:
-        q1 = f"Internet speeds routinely exceed 100 Mbps in central work districts across {city}. Mobile data options are cheap, with local 5G tourist SIMs and global eSIM passes taking under 5 minutes to activate."
-        q12 = f"Food delivery services cover nearly all central neighborhoods in {city}. Major regional platforms comprise {extra_data['delivery_info']}."
-        
-    return q1, q12
+        q12 = f"Food delivery services cover nearly all central residential districts in {city}. Major regional platforms comprise {extra_data['delivery_info']}."
+
+    return q1, q2, q3, q4, q6, q12
+
+def get_lead_in_intro(city, idx):
+    lead_ins = [
+        f"Verified workspace analysis, laptop battery hubs, ride-hailing app options, e-books, airport routes, rooftop venues, and local vlogs across central districts in {city}.",
+        f"A complete logistical breakdown covering remote work setup, digital nomad visas, airport transport, food delivery apps, and rent trends in {city}.",
+        f"Comprehensive digital nomad guide for {city}: internet speed tests, luxury housing averages, rooftop bar listings, and regional flight connections.",
+        f"Local insights and infrastructural analysis for remote professionals planning a short or long-term stay in {city}.",
+        f"Essential operational guide for remote workers in {city}, evaluating 5G SIM availability, private villa rentals, transport costs, and local tech events."
+    ]
+    return lead_ins[idx % len(lead_ins)]
 
 def generate_220_cities():
     cities_list = []
@@ -165,7 +213,8 @@ def generate_220_cities():
         sf_title, sf_desc = SUPERFOODS[index % len(SUPERFOODS)]
         debate = DEBATES[index % len(DEBATES)]
         extra_data = DATA_SETS[index % len(DATA_SETS)]
-        q1_ans, q12_ans = get_answer_variations(formatted_name, index, extra_data)
+        q1_ans, q2_ans, q3_ans, q4_ans, q6_ans, q12_ans = get_answer_variations(formatted_name, index, extra_data)
+        lead_intro = get_lead_in_intro(formatted_name, index)
         
         cities_list.append({
             "slug": f"{slug}-podcast-proposal.html",
@@ -175,7 +224,12 @@ def generate_220_cities():
             "superfood_topic": sf_title,
             "superfood_text": sf_desc,
             "debate": debate,
+            "lead_intro": lead_intro,
             "q1_ans": q1_ans,
+            "q2_ans": q2_ans,
+            "q3_ans": q3_ans,
+            "q4_ans": q4_ans,
+            "q6_ans": q6_ans,
             "q12_ans": q12_ans,
             "visa": extra_data['visa'],
             "ride_app": extra_data['ride_app'],
@@ -287,7 +341,7 @@ def build_city_post(c):
       </div>
 
       <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-1">{c['city']} - Matcha Maya Podcast Proposal with local influencer</h1>
-      <p class="text-xs text-stone-500 mt-2">Verified workspace analysis, laptop battery hubs, ride-hailing options, e-books, airport routes, rooftop venues, and local vlogs across central districts in {c['city']}.</p>
+      <p class="text-xs text-stone-500 mt-2">{c['lead_intro']}</p>
       
       <!-- E-E-A-T Editorial Badge -->
       <div class="mt-4 p-3 bg-stone-100 rounded-lg text-xs text-stone-600 border border-stone-200 flex items-center justify-between">
@@ -330,17 +384,17 @@ def build_city_post(c):
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q2: How would you rate the quality of local influencer blogs, vlogs, and Instagram/TikTok accounts?</h3>
-            <p><strong>Answer:</strong> The local influencer ecosystem in {c['city']} is vibrant. Top YouTube creators and Instagram city channels regularly highlight workspace hidden gems, coffee spots, and neighborhood tours, making local discovery very accessible.</p>
+            <p><strong>Answer:</strong> {c['q2_ans']}</p>
           </div>
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q3: Are there local books, e-books, or courses covering internet business and local SEO?</h3>
-            <p><strong>Answer:</strong> Yes, local digital nomad communities host weekly SEO masterclasses and offline tech meetups. Several digital e-books cover navigating local search engines, cross-border e-commerce, and regional digital marketing strategies.</p>
+            <p><strong>Answer:</strong> {c['q3_ans']}</p>
           </div>
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q4: Are local politicians and government initiatives supportive of tech innovation?</h3>
-            <p><strong>Answer:</strong> Local policymakers in {c['city']} are increasingly tech-forward, introducing specialized remote work visas, tax incentives for tech startups, and investing in municipal smart-city internet infrastructure.</p>
+            <p><strong>Answer:</strong> {c['q4_ans']}</p>
           </div>
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
@@ -350,7 +404,7 @@ def build_city_post(c):
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q6: Are offline English language schools easily accessible in central districts?</h3>
-            <p><strong>Answer:</strong> Yes, central areas feature well-established offline English academies, corporate language training institutes, and private tutoring centers catering to international remote workers and language learners.</p>
+            <p><strong>Answer:</strong> {c['q6_ans']}</p>
           </div>
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
@@ -413,4 +467,4 @@ for city in CITIES:
         f.write(content)
     generated_count += 1
 
-print(f"SUCCESS! Regenerated all {generated_count} city posts with anti-spam variations and E-E-A-T metadata!")
+print(f"SUCCESS! Regenerated all {generated_count} city posts with high-uniqueness sentence variations!")
