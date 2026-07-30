@@ -1,157 +1,684 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Digital Nomad Hub Directory | Matcha Maya Blog</title>
-    <meta name="description" content="Global index of regional digital nomad hubs covering Asia, Europe, Americas, Africa, and Middle East.">
-    <link rel="canonical" href="https://dawidmillenium-design.github.io/matcha-maya-blog/hub.html">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; }
-        header { background: #2d5a27; color: white; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; }
-        header a { color: #eef5ee; text-decoration: underline; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.2rem; margin: 2rem 0; }
-        footer { text-align: center; margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd; color: #666; }
-    </style>
-<style id="nav-enhancements">
-  .main-nav a.active {
-    background-color: #ffffff !important;
-    color: #0f4c3a !important;
-    font-weight: 700 !important;
-  }
-  .site-footer {
-    background-color: #0f4c3a;
-    color: #ffffff;
-    text-align: center;
-    padding: 24px 20px;
-    margin-top: 60px;
-    border-top: 3px solid #15624c;
-    font-size: 0.9rem;
-  }
-  .site-footer a {
-    color: #ffffff;
-    text-decoration: underline;
-    margin: 0 10px;
-    font-weight: 600;
-  }
-  .site-footer a:hover {
-    color: #d1ded0;
-  }
-  @media (max-width: 480px) {
-    .nav-container {
-      flex-direction: column !important;
-      align-items: center !important;
-      gap: 12px !important;
-    }
-    .main-nav ul {
-      gap: 6px !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-    }
-    .main-nav a {
-      font-size: 0.75rem !important;
-      padding: 5px 10px !important;
-    }
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matcha Maya Blog: Regional Creator & Nomad Interviews</title>
+  <style>
+    :root { --primary: #0f4c3a; --bg: #f7f9f6; --border: #d1ded0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: #2c352b; }
+    
+    .site-header { background: var(--primary); color: #fff; padding: 14px 24px; position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; }
+    .main-nav ul { display: flex; list-style: none; gap: 12px; }
+    .main-nav a { text-decoration: none; color: #fff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; }
+    
+    .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+    .header-box { text-align: center; margin-bottom: 30px; background: #fff; padding: 30px; border-radius: 12px; border: 1px solid var(--border); }
+    
+    /* Filter Tabs */
+    .filter-tabs { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 30px; }
+    .tab-btn { background: #fff; border: 1px solid var(--border); padding: 10px 18px; border-radius: 20px; font-weight: 600; cursor: pointer; color: var(--primary); transition: all 0.2s; }
+    .tab-btn:hover, .tab-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    
+    /* Search Box */
+    .search-box { max-width: 500px; margin: 0 auto 30px auto; }
+    .search-box input { width: 100%; padding: 12px 20px; border-radius: 25px; border: 2px solid var(--border); outline: none; font-size: 1rem; }
+    .search-box input:focus { border-color: var(--primary); }
+
+    /* Interview Grid */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; text-decoration: none; color: #2c352b; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s; }
+    .card:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(15,76,58,0.1); }
+    .card span.title { font-weight: 600; }
+    .card span.badge { background: #eef5ee; color: var(--primary); font-size: 0.75rem; padding: 4px 10px; border-radius: 12px; font-weight: bold; }
+  </style>
 </head>
 <body>
-<header class="site-header" style="background-color: #0f4c3a; color: #ffffff; padding: 14px 24px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15);">
-  <div class="nav-container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-    <a href="index.html" style="font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none; letter-spacing: 0.5px;">MATCHA MAYA</a>
-    <nav class="main-nav">
-      <ul style="display: flex; list-style: none; gap: 12px; margin: 0; padding: 0;">
-        <li><a href="index.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">Home</a></li>
-        <li><a href="index2.html" class="active" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">220 Interviews</a></li>
-        <li><a href="comparison.html" style="text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem;">Comparison</a></li>
-      </ul>
-    </nav>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-logo">MATCHA MAYA</a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index2.html">220 Interviews</a></li>
+          <li><a href="podcasts.html">Podcasts</a></li>
+          <li><a href="comparison.html">Comparison</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="header-box">
+      <h1>🎙️ Regional Interview Portal</h1>
+      <p>Filter nomad creator interviews by global region or search by city name.</p>
+    </div>
+
+    <!-- Region Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="tab-btn active" onclick="filterRegion('all', this)">🌍 All Regions</button>
+      <button class="tab-btn" onclick="filterRegion('uk-europe', this)">📍 UK & Eastern Europe</button>
+      <button class="tab-btn" onclick="filterRegion('asia', this)">📍 Asia Pacific</button>
+      <button class="tab-btn" onclick="filterRegion('latam', this)">📍 Latin America</button>
+      <button class="tab-btn" onclick="filterRegion('americas', this)">📍 North America</button>
+    </div>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔍 Search city..." onkeyup="searchCities()">
+    </div>
+
+    <div class="grid" id="interviewGrid">      <a href="abu-dhabi-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Abu Dhabi</span><span class="badge">Read Interview</span></a>
+      <a href="abu-dhabi-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Abu Dhabi</span><span class="badge">Read Interview</span></a>
+      <a href="accra-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Accra</span><span class="badge">Read Interview</span></a>
+      <a href="accra-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Accra</span><span class="badge">Read Interview</span></a>
+      <a href="addis-ababa-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Addis Ababa</span><span class="badge">Read Interview</span></a>
+      <a href="addis-ababa-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Addis Ababa</span><span class="badge">Read Interview</span></a>
+      <a href="al-ula-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Al Ula</span><span class="badge">Read Interview</span></a>
+      <a href="albuquerque-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Albuquerque</span><span class="badge">Read Interview</span></a>
+      <a href="albuquerque-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Albuquerque</span><span class="badge">Read Interview</span></a>
+      <a href="alexandria-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Alexandria</span><span class="badge">Read Interview</span></a>
+      <a href="alexandria-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Alexandria</span><span class="badge">Read Interview</span></a>
+      <a href="algiers-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Algiers</span><span class="badge">Read Interview</span></a>
+      <a href="algiers-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Algiers</span><span class="badge">Read Interview</span></a>
+      <a href="almaty-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Almaty</span><span class="badge">Read Interview</span></a>
+      <a href="almaty-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Almaty</span><span class="badge">Read Interview</span></a>
+      <a href="amman-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Amman</span><span class="badge">Read Interview</span></a>
+      <a href="amman-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Amman</span><span class="badge">Read Interview</span></a>
+      <a href="amsterdam-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Amsterdam</span><span class="badge">Read Interview</span></a>
+      <a href="amsterdam-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Amsterdam</span><span class="badge">Read Interview</span></a>
+      <a href="ankara-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Ankara</span><span class="badge">Read Interview</span></a>
+      <a href="antalya-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Antalya</span><span class="badge">Read Interview</span></a>
+      <a href="antananarivo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Antananarivo</span><span class="badge">Read Interview</span></a>
+      <a href="antwerp-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Antwerp</span><span class="badge">Read Interview</span></a>
+      <a href="antwerp-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Antwerp</span><span class="badge">Read Interview</span></a>
+      <a href="aqaba-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Aqaba</span><span class="badge">Read Interview</span></a>
+      <a href="arequipa-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Arequipa</span><span class="badge">Read Interview</span></a>
+      <a href="ashgabat-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Ashgabat</span><span class="badge">Read Interview</span></a>
+      <a href="ashgabat-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Ashgabat</span><span class="badge">Read Interview</span></a>
+      <a href="astana-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Astana</span><span class="badge">Read Interview</span></a>
+      <a href="asuncion-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Asuncion</span><span class="badge">Read Interview</span></a>
+      <a href="asuncion-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Asuncion</span><span class="badge">Read Interview</span></a>
+      <a href="athens-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Athens</span><span class="badge">Read Interview</span></a>
+      <a href="athens-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Athens</span><span class="badge">Read Interview</span></a>
+      <a href="atlanta-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Atlanta</span><span class="badge">Read Interview</span></a>
+      <a href="atlanta-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Atlanta</span><span class="badge">Read Interview</span></a>
+      <a href="auckland-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Auckland</span><span class="badge">Read Interview</span></a>
+      <a href="auckland-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Auckland</span><span class="badge">Read Interview</span></a>
+      <a href="austin-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Austin</span><span class="badge">Read Interview</span></a>
+      <a href="austin-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Austin</span><span class="badge">Read Interview</span></a>
+      <a href="baku-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Baku</span><span class="badge">Read Interview</span></a>
+      <a href="baku-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Baku</span><span class="badge">Read Interview</span></a>
+      <a href="bali-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bali</span><span class="badge">Read Interview</span></a>
+      <a href="bali-vs-barcelona-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bali Vs Barcelona Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bali-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bali Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bali-vs-chiang-mai-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bali Vs Chiang Mai Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bali-vs-mexico-city-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bali Vs Mexico City Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bali-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Bali Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bali-vs-tokyo-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bali Vs Tokyo Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangalore-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bangalore</span><span class="badge">Read Interview</span></a>
+      <a href="bangalore-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bangalore</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bangkok</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bangkok</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-bali-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Bali Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-barcelona-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Barcelona Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-chiang-mai-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Chiang Mai Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-lisbon-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Lisbon Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-medellin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Medellin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-mexico-city-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Mexico City Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Bangkok Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bangkok-vs-tokyo-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Bangkok Vs Tokyo Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="barcelona-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Barcelona</span><span class="badge">Read Interview</span></a>
+      <a href="barcelona-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Barcelona</span><span class="badge">Read Interview</span></a>
+      <a href="barcelona-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Barcelona Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="barcelona-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Barcelona Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bariloche-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bariloche</span><span class="badge">Read Interview</span></a>
+      <a href="batumi-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Batumi</span><span class="badge">Read Interview</span></a>
+      <a href="beijing-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Beijing</span><span class="badge">Read Interview</span></a>
+      <a href="beijing-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Beijing</span><span class="badge">Read Interview</span></a>
+      <a href="beirut-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Beirut</span><span class="badge">Read Interview</span></a>
+      <a href="beirut-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Beirut</span><span class="badge">Read Interview</span></a>
+      <a href="belfast-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Belfast</span><span class="badge">Read Interview</span></a>
+      <a href="belgrade-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Belgrade</span><span class="badge">Read Interview</span></a>
+      <a href="belgrade-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Belgrade</span><span class="badge">Read Interview</span></a>
+      <a href="bengaluru-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bengaluru</span><span class="badge">Read Interview</span></a>
+      <a href="berlin-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Berlin</span><span class="badge">Read Interview</span></a>
+      <a href="berlin-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Berlin</span><span class="badge">Read Interview</span></a>
+      <a href="berlin-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Berlin Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="bern-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bern</span><span class="badge">Read Interview</span></a>
+      <a href="bern-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bern</span><span class="badge">Read Interview</span></a>
+      <a href="birmingham-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Birmingham</span><span class="badge">Read Interview</span></a>
+      <a href="birmingham-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Birmingham</span><span class="badge">Read Interview</span></a>
+      <a href="bishkek-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bishkek</span><span class="badge">Read Interview</span></a>
+      <a href="bishkek-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bishkek</span><span class="badge">Read Interview</span></a>
+      <a href="bodrum-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bodrum</span><span class="badge">Read Interview</span></a>
+      <a href="bogota-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bogota</span><span class="badge">Read Interview</span></a>
+      <a href="bogota-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bogota</span><span class="badge">Read Interview</span></a>
+      <a href="boston-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Boston</span><span class="badge">Read Interview</span></a>
+      <a href="boston-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Boston</span><span class="badge">Read Interview</span></a>
+      <a href="brampton-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Brampton</span><span class="badge">Read Interview</span></a>
+      <a href="brampton-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Brampton</span><span class="badge">Read Interview</span></a>
+      <a href="bratislava-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bratislava</span><span class="badge">Read Interview</span></a>
+      <a href="bratislava-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bratislava</span><span class="badge">Read Interview</span></a>
+      <a href="bremen-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bremen</span><span class="badge">Read Interview</span></a>
+      <a href="bremen-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bremen</span><span class="badge">Read Interview</span></a>
+      <a href="bridgetown-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bridgetown</span><span class="badge">Read Interview</span></a>
+      <a href="bridgetown-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bridgetown</span><span class="badge">Read Interview</span></a>
+      <a href="brisbane-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Brisbane</span><span class="badge">Read Interview</span></a>
+      <a href="brisbane-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Brisbane</span><span class="badge">Read Interview</span></a>
+      <a href="bristol-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Bristol</span><span class="badge">Read Interview</span></a>
+      <a href="bristol-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bristol</span><span class="badge">Read Interview</span></a>
+      <a href="brussels-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Brussels</span><span class="badge">Read Interview</span></a>
+      <a href="brussels-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Brussels</span><span class="badge">Read Interview</span></a>
+      <a href="bucharest-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Bucharest</span><span class="badge">Read Interview</span></a>
+      <a href="budapest-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Budapest</span><span class="badge">Read Interview</span></a>
+      <a href="budapest-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Budapest</span><span class="badge">Read Interview</span></a>
+      <a href="buenos-aires-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Buenos Aires</span><span class="badge">Read Interview</span></a>
+      <a href="buenos-aires-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Buenos Aires</span><span class="badge">Read Interview</span></a>
+      <a href="bursa-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Bursa</span><span class="badge">Read Interview</span></a>
+      <a href="busan-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Busan</span><span class="badge">Read Interview</span></a>
+      <a href="busan-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Busan</span><span class="badge">Read Interview</span></a>
+      <a href="cairo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Cairo</span><span class="badge">Read Interview</span></a>
+      <a href="cairo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cairo</span><span class="badge">Read Interview</span></a>
+      <a href="calgary-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Calgary</span><span class="badge">Read Interview</span></a>
+      <a href="calgary-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Calgary</span><span class="badge">Read Interview</span></a>
+      <a href="cali-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cali</span><span class="badge">Read Interview</span></a>
+      <a href="cape-town-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Cape Town</span><span class="badge">Read Interview</span></a>
+      <a href="cape-town-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cape Town</span><span class="badge">Read Interview</span></a>
+      <a href="caracas-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Caracas</span><span class="badge">Read Interview</span></a>
+      <a href="caracas-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Caracas</span><span class="badge">Read Interview</span></a>
+      <a href="cardiff-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cardiff</span><span class="badge">Read Interview</span></a>
+      <a href="cartagena-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cartagena</span><span class="badge">Read Interview</span></a>
+      <a href="casablanca-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Casablanca</span><span class="badge">Read Interview</span></a>
+      <a href="casablanca-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Casablanca</span><span class="badge">Read Interview</span></a>
+      <a href="cebu-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cebu</span><span class="badge">Read Interview</span></a>
+      <a href="chengdu-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Chengdu</span><span class="badge">Read Interview</span></a>
+      <a href="chennai-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Chennai</span><span class="badge">Read Interview</span></a>
+      <a href="chiang-mai-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Chiang Mai</span><span class="badge">Read Interview</span></a>
+      <a href="chiang-mai-vs-barcelona-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Chiang Mai Vs Barcelona Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="chiang-mai-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Chiang Mai Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="chiang-mai-vs-mexico-city-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Chiang Mai Vs Mexico City Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="chiang-mai-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Chiang Mai Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="chiang-mai-vs-tokyo-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Chiang Mai Vs Tokyo Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="chicago-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Chicago</span><span class="badge">Read Interview</span></a>
+      <a href="chicago-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Chicago</span><span class="badge">Read Interview</span></a>
+      <a href="chisinau-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Chisinau</span><span class="badge">Read Interview</span></a>
+      <a href="chisinau-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Chisinau</span><span class="badge">Read Interview</span></a>
+      <a href="christchurch-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Christchurch</span><span class="badge">Read Interview</span></a>
+      <a href="christchurch-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Christchurch</span><span class="badge">Read Interview</span></a>
+      <a href="ciudad-juarez-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Ciudad Juarez</span><span class="badge">Read Interview</span></a>
+      <a href="ciudad-juarez-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Ciudad Juarez</span><span class="badge">Read Interview</span></a>
+      <a href="cluj-napoca-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cluj Napoca</span><span class="badge">Read Interview</span></a>
+      <a href="cologne-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Cologne</span><span class="badge">Read Interview</span></a>
+      <a href="cologne-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cologne</span><span class="badge">Read Interview</span></a>
+      <a href="colombo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Colombo</span><span class="badge">Read Interview</span></a>
+      <a href="colombo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Colombo</span><span class="badge">Read Interview</span></a>
+      <a href="compare.html" class="card" data-region="other"><span class="title">🎙️ Compare</span><span class="badge">Read Interview</span></a>
+      <a href="copenhagen-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Copenhagen</span><span class="badge">Read Interview</span></a>
+      <a href="copenhagen-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Copenhagen</span><span class="badge">Read Interview</span></a>
+      <a href="cordoba-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cordoba</span><span class="badge">Read Interview</span></a>
+      <a href="create_silo_hubs.html" class="card" data-region="other"><span class="title">🎙️ Create_Silo_Hubs</span><span class="badge">Read Interview</span></a>
+      <a href="cuenca-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cuenca</span><span class="badge">Read Interview</span></a>
+      <a href="curitiba-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Curitiba</span><span class="badge">Read Interview</span></a>
+      <a href="cusco-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Cusco</span><span class="badge">Read Interview</span></a>
+      <a href="da-nang-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Da Nang</span><span class="badge">Read Interview</span></a>
+      <a href="dakar-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dakar</span><span class="badge">Read Interview</span></a>
+      <a href="dakar-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dakar</span><span class="badge">Read Interview</span></a>
+      <a href="dallas-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dallas</span><span class="badge">Read Interview</span></a>
+      <a href="dallas-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dallas</span><span class="badge">Read Interview</span></a>
+      <a href="dammam-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dammam</span><span class="badge">Read Interview</span></a>
+      <a href="dammam-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dammam</span><span class="badge">Read Interview</span></a>
+      <a href="dar-es-salaam-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dar Es Salaam</span><span class="badge">Read Interview</span></a>
+      <a href="dar-es-salaam-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dar Es Salaam</span><span class="badge">Read Interview</span></a>
+      <a href="delhi-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Delhi</span><span class="badge">Read Interview</span></a>
+      <a href="denver-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Denver</span><span class="badge">Read Interview</span></a>
+      <a href="denver-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Denver</span><span class="badge">Read Interview</span></a>
+      <a href="detroit-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Detroit</span><span class="badge">Read Interview</span></a>
+      <a href="detroit-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Detroit</span><span class="badge">Read Interview</span></a>
+      <a href="dhaka-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dhaka</span><span class="badge">Read Interview</span></a>
+      <a href="dhaka-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dhaka</span><span class="badge">Read Interview</span></a>
+      <a href="doha-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Doha</span><span class="badge">Read Interview</span></a>
+      <a href="doha-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Doha</span><span class="badge">Read Interview</span></a>
+      <a href="dortmund-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dortmund</span><span class="badge">Read Interview</span></a>
+      <a href="dortmund-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dortmund</span><span class="badge">Read Interview</span></a>
+      <a href="dresden-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dresden</span><span class="badge">Read Interview</span></a>
+      <a href="dresden-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dresden</span><span class="badge">Read Interview</span></a>
+      <a href="dubai-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dubai</span><span class="badge">Read Interview</span></a>
+      <a href="dubai-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dubai</span><span class="badge">Read Interview</span></a>
+      <a href="dublin-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dublin</span><span class="badge">Read Interview</span></a>
+      <a href="dublin-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dublin</span><span class="badge">Read Interview</span></a>
+      <a href="dubrovnik-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dubrovnik</span><span class="badge">Read Interview</span></a>
+      <a href="duisburg-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Duisburg</span><span class="badge">Read Interview</span></a>
+      <a href="duisburg-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Duisburg</span><span class="badge">Read Interview</span></a>
+      <a href="durban-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Durban</span><span class="badge">Read Interview</span></a>
+      <a href="dushanbe-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dushanbe</span><span class="badge">Read Interview</span></a>
+      <a href="dushanbe-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dushanbe</span><span class="badge">Read Interview</span></a>
+      <a href="dusseldorf-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Dusseldorf</span><span class="badge">Read Interview</span></a>
+      <a href="dusseldorf-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Dusseldorf</span><span class="badge">Read Interview</span></a>
+      <a href="edinburgh-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Edinburgh</span><span class="badge">Read Interview</span></a>
+      <a href="edinburgh-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Edinburgh</span><span class="badge">Read Interview</span></a>
+      <a href="edmonton-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Edmonton</span><span class="badge">Read Interview</span></a>
+      <a href="edmonton-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Edmonton</span><span class="badge">Read Interview</span></a>
+      <a href="erbil-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Erbil</span><span class="badge">Read Interview</span></a>
+      <a href="essen-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Essen</span><span class="badge">Read Interview</span></a>
+      <a href="essen-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Essen</span><span class="badge">Read Interview</span></a>
+      <a href="faro-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Faro</span><span class="badge">Read Interview</span></a>
+      <a href="florence-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Florence</span><span class="badge">Read Interview</span></a>
+      <a href="florianopolis-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Florianopolis</span><span class="badge">Read Interview</span></a>
+      <a href="frankfurt-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Frankfurt</span><span class="badge">Read Interview</span></a>
+      <a href="frankfurt-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Frankfurt</span><span class="badge">Read Interview</span></a>
+      <a href="fresno-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Fresno</span><span class="badge">Read Interview</span></a>
+      <a href="fresno-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Fresno</span><span class="badge">Read Interview</span></a>
+      <a href="fukuoka-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Fukuoka</span><span class="badge">Read Interview</span></a>
+      <a href="funchal-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Funchal</span><span class="badge">Read Interview</span></a>
+      <a href="gdansk-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Gdansk</span><span class="badge">Read Interview</span></a>
+      <a href="geneva-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Geneva</span><span class="badge">Read Interview</span></a>
+      <a href="geneva-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Geneva</span><span class="badge">Read Interview</span></a>
+      <a href="glasgow-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Glasgow</span><span class="badge">Read Interview</span></a>
+      <a href="glasgow-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Glasgow</span><span class="badge">Read Interview</span></a>
+      <a href="goa-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Goa</span><span class="badge">Read Interview</span></a>
+      <a href="guadalajara-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Guadalajara</span><span class="badge">Read Interview</span></a>
+      <a href="guadalajara-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Guadalajara</span><span class="badge">Read Interview</span></a>
+      <a href="guangzhou-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Guangzhou</span><span class="badge">Read Interview</span></a>
+      <a href="guangzhou-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Guangzhou</span><span class="badge">Read Interview</span></a>
+      <a href="guayaquil-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Guayaquil</span><span class="badge">Read Interview</span></a>
+      <a href="guayaquil-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Guayaquil</span><span class="badge">Read Interview</span></a>
+      <a href="halifax-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Halifax</span><span class="badge">Read Interview</span></a>
+      <a href="halifax-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Halifax</span><span class="badge">Read Interview</span></a>
+      <a href="hamburg-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Hamburg</span><span class="badge">Read Interview</span></a>
+      <a href="hamburg-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Hamburg</span><span class="badge">Read Interview</span></a>
+      <a href="hamilton-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Hamilton</span><span class="badge">Read Interview</span></a>
+      <a href="hamilton-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Hamilton</span><span class="badge">Read Interview</span></a>
+      <a href="hanoi-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Hanoi</span><span class="badge">Read Interview</span></a>
+      <a href="hanover-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Hanover</span><span class="badge">Read Interview</span></a>
+      <a href="hanover-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Hanover</span><span class="badge">Read Interview</span></a>
+      <a href="helsinki-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Helsinki</span><span class="badge">Read Interview</span></a>
+      <a href="helsinki-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Helsinki</span><span class="badge">Read Interview</span></a>
+      <a href="ho-chi-minh-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Ho Chi Minh</span><span class="badge">Read Interview</span></a>
+      <a href="ho-chi-minh-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Ho Chi Minh</span><span class="badge">Read Interview</span></a>
+      <a href="hong-kong-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Hong Kong</span><span class="badge">Read Interview</span></a>
+      <a href="hong-kong-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Hong Kong</span><span class="badge">Read Interview</span></a>
+      <a href="honolulu-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Honolulu</span><span class="badge">Read Interview</span></a>
+      <a href="houston-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Houston</span><span class="badge">Read Interview</span></a>
+      <a href="houston-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Houston</span><span class="badge">Read Interview</span></a>
+      <a href="hyderabad-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Hyderabad</span><span class="badge">Read Interview</span></a>
+      <a href="hyderabad-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Hyderabad</span><span class="badge">Read Interview</span></a>
+      <a href="islamabad-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Islamabad</span><span class="badge">Read Interview</span></a>
+      <a href="istanbul-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Istanbul</span><span class="badge">Read Interview</span></a>
+      <a href="istanbul-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Istanbul</span><span class="badge">Read Interview</span></a>
+      <a href="izmir-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Izmir</span><span class="badge">Read Interview</span></a>
+      <a href="jaipur-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Jaipur</span><span class="badge">Read Interview</span></a>
+      <a href="jakarta-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Jakarta</span><span class="badge">Read Interview</span></a>
+      <a href="jakarta-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Jakarta</span><span class="badge">Read Interview</span></a>
+      <a href="jeddah-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Jeddah</span><span class="badge">Read Interview</span></a>
+      <a href="jeddah-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Jeddah</span><span class="badge">Read Interview</span></a>
+      <a href="jeju-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Jeju</span><span class="badge">Read Interview</span></a>
+      <a href="johannesburg-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Johannesburg</span><span class="badge">Read Interview</span></a>
+      <a href="johannesburg-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Johannesburg</span><span class="badge">Read Interview</span></a>
+      <a href="kampala-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Kampala</span><span class="badge">Read Interview</span></a>
+      <a href="kampala-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kampala</span><span class="badge">Read Interview</span></a>
+      <a href="kandy-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kandy</span><span class="badge">Read Interview</span></a>
+      <a href="kaohsiung-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kaohsiung</span><span class="badge">Read Interview</span></a>
+      <a href="karachi-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Karachi</span><span class="badge">Read Interview</span></a>
+      <a href="kathmandu-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Kathmandu</span><span class="badge">Read Interview</span></a>
+      <a href="kathmandu-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kathmandu</span><span class="badge">Read Interview</span></a>
+      <a href="kaunas-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kaunas</span><span class="badge">Read Interview</span></a>
+      <a href="khujand-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Khujand</span><span class="badge">Read Interview</span></a>
+      <a href="kigali-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Kigali</span><span class="badge">Read Interview</span></a>
+      <a href="kigali-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kigali</span><span class="badge">Read Interview</span></a>
+      <a href="kingston-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Kingston</span><span class="badge">Read Interview</span></a>
+      <a href="kingston-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kingston</span><span class="badge">Read Interview</span></a>
+      <a href="kolkata-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Kolkata</span><span class="badge">Read Interview</span></a>
+      <a href="kolkata-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kolkata</span><span class="badge">Read Interview</span></a>
+      <a href="krakow-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Krakow</span><span class="badge">Read Interview</span></a>
+      <a href="kuala-lumpur-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Kuala Lumpur</span><span class="badge">Read Interview</span></a>
+      <a href="kuala-lumpur-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kuala Lumpur</span><span class="badge">Read Interview</span></a>
+      <a href="kuwait-city-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kuwait City</span><span class="badge">Read Interview</span></a>
+      <a href="kyiv-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Kyiv</span><span class="badge">Read Interview</span></a>
+      <a href="kyiv-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Kyiv</span><span class="badge">Read Interview</span></a>
+      <a href="kyoto-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Kyoto</span><span class="badge">Read Interview</span></a>
+      <a href="la-paz-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ La Paz</span><span class="badge">Read Interview</span></a>
+      <a href="la-paz-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ La Paz</span><span class="badge">Read Interview</span></a>
+      <a href="lagos-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Lagos</span><span class="badge">Read Interview</span></a>
+      <a href="lagos-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Lagos</span><span class="badge">Read Interview</span></a>
+      <a href="lahore-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Lahore</span><span class="badge">Read Interview</span></a>
+      <a href="las-vegas-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Las Vegas</span><span class="badge">Read Interview</span></a>
+      <a href="las-vegas-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Las Vegas</span><span class="badge">Read Interview</span></a>
+      <a href="laval-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Laval</span><span class="badge">Read Interview</span></a>
+      <a href="laval-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Laval</span><span class="badge">Read Interview</span></a>
+      <a href="leeds-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Leeds</span><span class="badge">Read Interview</span></a>
+      <a href="leeds-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Leeds</span><span class="badge">Read Interview</span></a>
+      <a href="leipzig-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Leipzig</span><span class="badge">Read Interview</span></a>
+      <a href="leipzig-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Leipzig</span><span class="badge">Read Interview</span></a>
+      <a href="leon-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Leon</span><span class="badge">Read Interview</span></a>
+      <a href="leon-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Leon</span><span class="badge">Read Interview</span></a>
+      <a href="lima-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Lima</span><span class="badge">Read Interview</span></a>
+      <a href="lima-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Lima</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Lisbon</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Lisbon</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-bali-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Lisbon Vs Bali Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-barcelona-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Lisbon Vs Barcelona Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Lisbon Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-chiang-mai-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Lisbon Vs Chiang Mai Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-medellin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Lisbon Vs Medellin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-mexico-city-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Lisbon Vs Mexico City Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Lisbon Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="lisbon-vs-tokyo-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Lisbon Vs Tokyo Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="liverpool-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Liverpool</span><span class="badge">Read Interview</span></a>
+      <a href="liverpool-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Liverpool</span><span class="badge">Read Interview</span></a>
+      <a href="ljubljana-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Ljubljana</span><span class="badge">Read Interview</span></a>
+      <a href="ljubljana-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Ljubljana</span><span class="badge">Read Interview</span></a>
+      <a href="london-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ London</span><span class="badge">Read Interview</span></a>
+      <a href="london-ontario-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ London Ontario</span><span class="badge">Read Interview</span></a>
+      <a href="london-ontario-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ London Ontario</span><span class="badge">Read Interview</span></a>
+      <a href="london-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ London</span><span class="badge">Read Interview</span></a>
+      <a href="los-angeles-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Los Angeles</span><span class="badge">Read Interview</span></a>
+      <a href="los-angeles-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Los Angeles</span><span class="badge">Read Interview</span></a>
+      <a href="louisville-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Louisville</span><span class="badge">Read Interview</span></a>
+      <a href="louisville-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Louisville</span><span class="badge">Read Interview</span></a>
+      <a href="luanda-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Luanda</span><span class="badge">Read Interview</span></a>
+      <a href="luxembourg-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Luxembourg</span><span class="badge">Read Interview</span></a>
+      <a href="luxembourg-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Luxembourg</span><span class="badge">Read Interview</span></a>
+      <a href="lviv-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Lviv</span><span class="badge">Read Interview</span></a>
+      <a href="lviv-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Lviv</span><span class="badge">Read Interview</span></a>
+      <a href="lyon-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Lyon</span><span class="badge">Read Interview</span></a>
+      <a href="macau-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Macau</span><span class="badge">Read Interview</span></a>
+      <a href="madrid-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Madrid</span><span class="badge">Read Interview</span></a>
+      <a href="madrid-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Madrid</span><span class="badge">Read Interview</span></a>
+      <a href="male-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Male</span><span class="badge">Read Interview</span></a>
+      <a href="male-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Male</span><span class="badge">Read Interview</span></a>
+      <a href="manama-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Manama</span><span class="badge">Read Interview</span></a>
+      <a href="manama-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Manama</span><span class="badge">Read Interview</span></a>
+      <a href="manchester-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Manchester</span><span class="badge">Read Interview</span></a>
+      <a href="manchester-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Manchester</span><span class="badge">Read Interview</span></a>
+      <a href="manila-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Manila</span><span class="badge">Read Interview</span></a>
+      <a href="manila-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Manila</span><span class="badge">Read Interview</span></a>
+      <a href="maputo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Maputo</span><span class="badge">Read Interview</span></a>
+      <a href="marrakech-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Marrakech</span><span class="badge">Read Interview</span></a>
+      <a href="mauritius-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Mauritius</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Medellin</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Medellin</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-vs-bali-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Medellin Vs Bali Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-vs-barcelona-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Medellin Vs Barcelona Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Medellin Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-vs-chiang-mai-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Medellin Vs Chiang Mai Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-vs-mexico-city-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Medellin Vs Mexico City Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Medellin Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="medellin-vs-tokyo-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Medellin Vs Tokyo Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="melbourne-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Melbourne</span><span class="badge">Read Interview</span></a>
+      <a href="melbourne-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Melbourne</span><span class="badge">Read Interview</span></a>
+      <a href="memphis-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Memphis</span><span class="badge">Read Interview</span></a>
+      <a href="memphis-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Memphis</span><span class="badge">Read Interview</span></a>
+      <a href="mendoza-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Mendoza</span><span class="badge">Read Interview</span></a>
+      <a href="mexico-city-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Mexico City</span><span class="badge">Read Interview</span></a>
+      <a href="mexico-city-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Mexico City</span><span class="badge">Read Interview</span></a>
+      <a href="mexico-city-vs-barcelona-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Mexico City Vs Barcelona Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="mexico-city-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Mexico City Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="mexico-city-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Mexico City Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="mexico-city-vs-tokyo-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Mexico City Vs Tokyo Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="miami-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Miami</span><span class="badge">Read Interview</span></a>
+      <a href="miami-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Miami</span><span class="badge">Read Interview</span></a>
+      <a href="milan-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Milan</span><span class="badge">Read Interview</span></a>
+      <a href="milan-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Milan</span><span class="badge">Read Interview</span></a>
+      <a href="minneapolis-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Minneapolis</span><span class="badge">Read Interview</span></a>
+      <a href="minneapolis-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Minneapolis</span><span class="badge">Read Interview</span></a>
+      <a href="minsk-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Minsk</span><span class="badge">Read Interview</span></a>
+      <a href="minsk-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Minsk</span><span class="badge">Read Interview</span></a>
+      <a href="mississauga-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Mississauga</span><span class="badge">Read Interview</span></a>
+      <a href="mississauga-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Mississauga</span><span class="badge">Read Interview</span></a>
+      <a href="mombasa-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Mombasa</span><span class="badge">Read Interview</span></a>
+      <a href="monterrey-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Monterrey</span><span class="badge">Read Interview</span></a>
+      <a href="monterrey-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Monterrey</span><span class="badge">Read Interview</span></a>
+      <a href="montevideo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Montevideo</span><span class="badge">Read Interview</span></a>
+      <a href="montevideo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Montevideo</span><span class="badge">Read Interview</span></a>
+      <a href="montreal-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Montreal</span><span class="badge">Read Interview</span></a>
+      <a href="montreal-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Montreal</span><span class="badge">Read Interview</span></a>
+      <a href="moscow-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Moscow</span><span class="badge">Read Interview</span></a>
+      <a href="moscow-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Moscow</span><span class="badge">Read Interview</span></a>
+      <a href="mumbai-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Mumbai</span><span class="badge">Read Interview</span></a>
+      <a href="mumbai-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Mumbai</span><span class="badge">Read Interview</span></a>
+      <a href="munich-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Munich</span><span class="badge">Read Interview</span></a>
+      <a href="munich-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Munich</span><span class="badge">Read Interview</span></a>
+      <a href="muscat-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Muscat</span><span class="badge">Read Interview</span></a>
+      <a href="muscat-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Muscat</span><span class="badge">Read Interview</span></a>
+      <a href="nagoya-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Nagoya</span><span class="badge">Read Interview</span></a>
+      <a href="nagoya-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Nagoya</span><span class="badge">Read Interview</span></a>
+      <a href="nairobi-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Nairobi</span><span class="badge">Read Interview</span></a>
+      <a href="nairobi-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Nairobi</span><span class="badge">Read Interview</span></a>
+      <a href="nashville-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Nashville</span><span class="badge">Read Interview</span></a>
+      <a href="nashville-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Nashville</span><span class="badge">Read Interview</span></a>
+      <a href="nassau-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Nassau</span><span class="badge">Read Interview</span></a>
+      <a href="nassau-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Nassau</span><span class="badge">Read Interview</span></a>
+      <a href="new-delhi-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ New Delhi</span><span class="badge">Read Interview</span></a>
+      <a href="new-delhi-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ New Delhi</span><span class="badge">Read Interview</span></a>
+      <a href="new-orleans-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ New Orleans</span><span class="badge">Read Interview</span></a>
+      <a href="new-orleans-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ New Orleans</span><span class="badge">Read Interview</span></a>
+      <a href="new-york-city-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ New York City</span><span class="badge">Read Interview</span></a>
+      <a href="new-york-city-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ New York City</span><span class="badge">Read Interview</span></a>
+      <a href="new-york-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ New York</span><span class="badge">Read Interview</span></a>
+      <a href="newcastle-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Newcastle</span><span class="badge">Read Interview</span></a>
+      <a href="newcastle-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Newcastle</span><span class="badge">Read Interview</span></a>
+      <a href="nice-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Nice</span><span class="badge">Read Interview</span></a>
+      <a href="nuremberg-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Nuremberg</span><span class="badge">Read Interview</span></a>
+      <a href="nuremberg-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Nuremberg</span><span class="badge">Read Interview</span></a>
+      <a href="oaxaca-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Oaxaca</span><span class="badge">Read Interview</span></a>
+      <a href="odesa-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Odesa</span><span class="badge">Read Interview</span></a>
+      <a href="odesa-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Odesa</span><span class="badge">Read Interview</span></a>
+      <a href="oklahoma-city-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Oklahoma City</span><span class="badge">Read Interview</span></a>
+      <a href="oklahoma-city-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Oklahoma City</span><span class="badge">Read Interview</span></a>
+      <a href="omaha-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Omaha</span><span class="badge">Read Interview</span></a>
+      <a href="omaha-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Omaha</span><span class="badge">Read Interview</span></a>
+      <a href="osaka-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Osaka</span><span class="badge">Read Interview</span></a>
+      <a href="osaka-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Osaka</span><span class="badge">Read Interview</span></a>
+      <a href="oslo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Oslo</span><span class="badge">Read Interview</span></a>
+      <a href="oslo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Oslo</span><span class="badge">Read Interview</span></a>
+      <a href="ottawa-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Ottawa</span><span class="badge">Read Interview</span></a>
+      <a href="ottawa-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Ottawa</span><span class="badge">Read Interview</span></a>
+      <a href="panama-city-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Panama City</span><span class="badge">Read Interview</span></a>
+      <a href="panama-city-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Panama City</span><span class="badge">Read Interview</span></a>
+      <a href="paris-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Paris</span><span class="badge">Read Interview</span></a>
+      <a href="paris-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Paris</span><span class="badge">Read Interview</span></a>
+      <a href="penang-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Penang</span><span class="badge">Read Interview</span></a>
+      <a href="perth-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Perth</span><span class="badge">Read Interview</span></a>
+      <a href="perth-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Perth</span><span class="badge">Read Interview</span></a>
+      <a href="philadelphia-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Philadelphia</span><span class="badge">Read Interview</span></a>
+      <a href="philadelphia-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Philadelphia</span><span class="badge">Read Interview</span></a>
+      <a href="phnom-penh-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Phnom Penh</span><span class="badge">Read Interview</span></a>
+      <a href="phnom-penh-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Phnom Penh</span><span class="badge">Read Interview</span></a>
+      <a href="phoenix-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Phoenix</span><span class="badge">Read Interview</span></a>
+      <a href="phoenix-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Phoenix</span><span class="badge">Read Interview</span></a>
+      <a href="phuket-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Phuket</span><span class="badge">Read Interview</span></a>
+      <a href="playa-del-carmen-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Playa Del Carmen</span><span class="badge">Read Interview</span></a>
+      <a href="plovdiv-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Plovdiv</span><span class="badge">Read Interview</span></a>
+      <a href="pokhara-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Pokhara</span><span class="badge">Read Interview</span></a>
+      <a href="port-au-prince-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Port Au Prince</span><span class="badge">Read Interview</span></a>
+      <a href="port-au-prince-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Port Au Prince</span><span class="badge">Read Interview</span></a>
+      <a href="port-of-spain-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Port Of Spain</span><span class="badge">Read Interview</span></a>
+      <a href="port-of-spain-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Port Of Spain</span><span class="badge">Read Interview</span></a>
+      <a href="portland-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Portland</span><span class="badge">Read Interview</span></a>
+      <a href="portland-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Portland</span><span class="badge">Read Interview</span></a>
+      <a href="porto-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Porto</span><span class="badge">Read Interview</span></a>
+      <a href="prague-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Prague</span><span class="badge">Read Interview</span></a>
+      <a href="prague-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Prague</span><span class="badge">Read Interview</span></a>
+      <a href="pretoria-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Pretoria</span><span class="badge">Read Interview</span></a>
+      <a href="puebla-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Puebla</span><span class="badge">Read Interview</span></a>
+      <a href="puebla-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Puebla</span><span class="badge">Read Interview</span></a>
+      <a href="puerto-vallarta-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Puerto Vallarta</span><span class="badge">Read Interview</span></a>
+      <a href="pune-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Pune</span><span class="badge">Read Interview</span></a>
+      <a href="quebec-city-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Quebec City</span><span class="badge">Read Interview</span></a>
+      <a href="quebec-city-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Quebec City</span><span class="badge">Read Interview</span></a>
+      <a href="quito-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Quito</span><span class="badge">Read Interview</span></a>
+      <a href="quito-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Quito</span><span class="badge">Read Interview</span></a>
+      <a href="reykjavik-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Reykjavik</span><span class="badge">Read Interview</span></a>
+      <a href="reykjavik-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Reykjavik</span><span class="badge">Read Interview</span></a>
+      <a href="riga-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Riga</span><span class="badge">Read Interview</span></a>
+      <a href="riga-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Riga</span><span class="badge">Read Interview</span></a>
+      <a href="rio-de-janeiro-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Rio De Janeiro</span><span class="badge">Read Interview</span></a>
+      <a href="rio-de-janeiro-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Rio De Janeiro</span><span class="badge">Read Interview</span></a>
+      <a href="riyadh-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Riyadh</span><span class="badge">Read Interview</span></a>
+      <a href="riyadh-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Riyadh</span><span class="badge">Read Interview</span></a>
+      <a href="rome-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Rome</span><span class="badge">Read Interview</span></a>
+      <a href="rome-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Rome</span><span class="badge">Read Interview</span></a>
+      <a href="rotterdam-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Rotterdam</span><span class="badge">Read Interview</span></a>
+      <a href="sacramento-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Sacramento</span><span class="badge">Read Interview</span></a>
+      <a href="sacramento-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Sacramento</span><span class="badge">Read Interview</span></a>
+      <a href="salalah-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Salalah</span><span class="badge">Read Interview</span></a>
+      <a href="salvador-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Salvador</span><span class="badge">Read Interview</span></a>
+      <a href="samarkand-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Samarkand</span><span class="badge">Read Interview</span></a>
+      <a href="san-diego-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ San Diego</span><span class="badge">Read Interview</span></a>
+      <a href="san-diego-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ San Diego</span><span class="badge">Read Interview</span></a>
+      <a href="san-francisco-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ San Francisco</span><span class="badge">Read Interview</span></a>
+      <a href="san-francisco-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ San Francisco</span><span class="badge">Read Interview</span></a>
+      <a href="san-jose-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ San Jose</span><span class="badge">Read Interview</span></a>
+      <a href="san-jose-cr-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ San Jose Cr</span><span class="badge">Read Interview</span></a>
+      <a href="san-jose-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ San Jose</span><span class="badge">Read Interview</span></a>
+      <a href="san-juan-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ San Juan</span><span class="badge">Read Interview</span></a>
+      <a href="san-juan-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ San Juan</span><span class="badge">Read Interview</span></a>
+      <a href="san-salvador-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ San Salvador</span><span class="badge">Read Interview</span></a>
+      <a href="san-salvador-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ San Salvador</span><span class="badge">Read Interview</span></a>
+      <a href="santa-marta-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Santa Marta</span><span class="badge">Read Interview</span></a>
+      <a href="santiago-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Santiago</span><span class="badge">Read Interview</span></a>
+      <a href="santiago-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Santiago</span><span class="badge">Read Interview</span></a>
+      <a href="santo-domingo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Santo Domingo</span><span class="badge">Read Interview</span></a>
+      <a href="santo-domingo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Santo Domingo</span><span class="badge">Read Interview</span></a>
+      <a href="sao-paulo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Sao Paulo</span><span class="badge">Read Interview</span></a>
+      <a href="sao-paulo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Sao Paulo</span><span class="badge">Read Interview</span></a>
+      <a href="sapporo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Sapporo</span><span class="badge">Read Interview</span></a>
+      <a href="sarajevo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Sarajevo</span><span class="badge">Read Interview</span></a>
+      <a href="sarajevo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Sarajevo</span><span class="badge">Read Interview</span></a>
+      <a href="seattle-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Seattle</span><span class="badge">Read Interview</span></a>
+      <a href="seattle-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Seattle</span><span class="badge">Read Interview</span></a>
+      <a href="seoul-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Seoul</span><span class="badge">Read Interview</span></a>
+      <a href="seoul-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Seoul</span><span class="badge">Read Interview</span></a>
+      <a href="seville-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Seville</span><span class="badge">Read Interview</span></a>
+      <a href="shanghai-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Shanghai</span><span class="badge">Read Interview</span></a>
+      <a href="shanghai-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Shanghai</span><span class="badge">Read Interview</span></a>
+      <a href="sharjah-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Sharjah</span><span class="badge">Read Interview</span></a>
+      <a href="sheffield-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Sheffield</span><span class="badge">Read Interview</span></a>
+      <a href="sheffield-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Sheffield</span><span class="badge">Read Interview</span></a>
+      <a href="shenzhen-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Shenzhen</span><span class="badge">Read Interview</span></a>
+      <a href="singapore-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Singapore</span><span class="badge">Read Interview</span></a>
+      <a href="singapore-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Singapore</span><span class="badge">Read Interview</span></a>
+      <a href="skopje-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Skopje</span><span class="badge">Read Interview</span></a>
+      <a href="skopje-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Skopje</span><span class="badge">Read Interview</span></a>
+      <a href="sofia-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Sofia</span><span class="badge">Read Interview</span></a>
+      <a href="split-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Split</span><span class="badge">Read Interview</span></a>
+      <a href="st-petersburg-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ St Petersburg</span><span class="badge">Read Interview</span></a>
+      <a href="st-petersburg-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ St Petersburg</span><span class="badge">Read Interview</span></a>
+      <a href="stockholm-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Stockholm</span><span class="badge">Read Interview</span></a>
+      <a href="stockholm-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Stockholm</span><span class="badge">Read Interview</span></a>
+      <a href="stuttgart-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Stuttgart</span><span class="badge">Read Interview</span></a>
+      <a href="stuttgart-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Stuttgart</span><span class="badge">Read Interview</span></a>
+      <a href="surrey-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Surrey</span><span class="badge">Read Interview</span></a>
+      <a href="surrey-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Surrey</span><span class="badge">Read Interview</span></a>
+      <a href="sydney-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Sydney</span><span class="badge">Read Interview</span></a>
+      <a href="sydney-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Sydney</span><span class="badge">Read Interview</span></a>
+      <a href="taghazout-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Taghazout</span><span class="badge">Read Interview</span></a>
+      <a href="taichung-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Taichung</span><span class="badge">Read Interview</span></a>
+      <a href="taipei-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Taipei</span><span class="badge">Read Interview</span></a>
+      <a href="taipei-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Taipei</span><span class="badge">Read Interview</span></a>
+      <a href="tallinn-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Tallinn</span><span class="badge">Read Interview</span></a>
+      <a href="tallinn-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Tallinn</span><span class="badge">Read Interview</span></a>
+      <a href="tartu-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tartu</span><span class="badge">Read Interview</span></a>
+      <a href="tashkent-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tashkent</span><span class="badge">Read Interview</span></a>
+      <a href="tashkent-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tashkent</span><span class="badge">Read Interview</span></a>
+      <a href="tbilisi-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Tbilisi</span><span class="badge">Read Interview</span></a>
+      <a href="tbilisi-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Tbilisi</span><span class="badge">Read Interview</span></a>
+      <a href="tel-aviv-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tel Aviv</span><span class="badge">Read Interview</span></a>
+      <a href="tel-aviv-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tel Aviv</span><span class="badge">Read Interview</span></a>
+      <a href="thimphu-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Thimphu</span><span class="badge">Read Interview</span></a>
+      <a href="tijuana-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tijuana</span><span class="badge">Read Interview</span></a>
+      <a href="tijuana-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tijuana</span><span class="badge">Read Interview</span></a>
+      <a href="tirana-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tirana</span><span class="badge">Read Interview</span></a>
+      <a href="tirana-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tirana</span><span class="badge">Read Interview</span></a>
+      <a href="tokyo-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tokyo</span><span class="badge">Read Interview</span></a>
+      <a href="tokyo-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tokyo</span><span class="badge">Read Interview</span></a>
+      <a href="tokyo-vs-barcelona-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Tokyo Vs Barcelona Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="tokyo-vs-berlin-digital-nomad.html" class="card" data-region="other"><span class="title">🎙️ Tokyo Vs Berlin Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="tokyo-vs-tbilisi-digital-nomad.html" class="card" data-region="uk-europe"><span class="title">🎙️ Tokyo Vs Tbilisi Digital Nomad</span><span class="badge">Read Interview</span></a>
+      <a href="toronto-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Toronto</span><span class="badge">Read Interview</span></a>
+      <a href="toronto-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Toronto</span><span class="badge">Read Interview</span></a>
+      <a href="tripoli-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tripoli</span><span class="badge">Read Interview</span></a>
+      <a href="tripoli-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tripoli</span><span class="badge">Read Interview</span></a>
+      <a href="tucson-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tucson</span><span class="badge">Read Interview</span></a>
+      <a href="tucson-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tucson</span><span class="badge">Read Interview</span></a>
+      <a href="tulum-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tulum</span><span class="badge">Read Interview</span></a>
+      <a href="tunis-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Tunis</span><span class="badge">Read Interview</span></a>
+      <a href="tunis-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Tunis</span><span class="badge">Read Interview</span></a>
+      <a href="ulaanbaatar-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Ulaanbaatar</span><span class="badge">Read Interview</span></a>
+      <a href="ulaanbaatar-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Ulaanbaatar</span><span class="badge">Read Interview</span></a>
+      <a href="valencia-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Valencia</span><span class="badge">Read Interview</span></a>
+      <a href="valletta-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Valletta</span><span class="badge">Read Interview</span></a>
+      <a href="vancouver-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Vancouver</span><span class="badge">Read Interview</span></a>
+      <a href="vancouver-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Vancouver</span><span class="badge">Read Interview</span></a>
+      <a href="varna-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Varna</span><span class="badge">Read Interview</span></a>
+      <a href="vienna-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Vienna</span><span class="badge">Read Interview</span></a>
+      <a href="vienna-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Vienna</span><span class="badge">Read Interview</span></a>
+      <a href="vientiane-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Vientiane</span><span class="badge">Read Interview</span></a>
+      <a href="vientiane-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Vientiane</span><span class="badge">Read Interview</span></a>
+      <a href="vilnius-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Vilnius</span><span class="badge">Read Interview</span></a>
+      <a href="vilnius-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Vilnius</span><span class="badge">Read Interview</span></a>
+      <a href="warsaw-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Warsaw</span><span class="badge">Read Interview</span></a>
+      <a href="warsaw-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Warsaw</span><span class="badge">Read Interview</span></a>
+      <a href="washington-dc-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Washington Dc</span><span class="badge">Read Interview</span></a>
+      <a href="washington-dc-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Washington Dc</span><span class="badge">Read Interview</span></a>
+      <a href="wellington-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Wellington</span><span class="badge">Read Interview</span></a>
+      <a href="wellington-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Wellington</span><span class="badge">Read Interview</span></a>
+      <a href="windhoek-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Windhoek</span><span class="badge">Read Interview</span></a>
+      <a href="winnipeg-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Winnipeg</span><span class="badge">Read Interview</span></a>
+      <a href="winnipeg-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Winnipeg</span><span class="badge">Read Interview</span></a>
+      <a href="wroclaw-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Wroclaw</span><span class="badge">Read Interview</span></a>
+      <a href="yangon-coworking-guide.html" class="card" data-region="other"><span class="title">🎙️ Yangon</span><span class="badge">Read Interview</span></a>
+      <a href="yangon-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Yangon</span><span class="badge">Read Interview</span></a>
+      <a href="yerevan-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Yerevan</span><span class="badge">Read Interview</span></a>
+      <a href="yerevan-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Yerevan</span><span class="badge">Read Interview</span></a>
+      <a href="zagreb-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Zagreb</span><span class="badge">Read Interview</span></a>
+      <a href="zagreb-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Zagreb</span><span class="badge">Read Interview</span></a>
+      <a href="zanzibar-podcast-proposal.html" class="card" data-region="other"><span class="title">🎙️ Zanzibar</span><span class="badge">Read Interview</span></a>
+      <a href="zurich-coworking-guide.html" class="card" data-region="uk-europe"><span class="title">🎙️ Zurich</span><span class="badge">Read Interview</span></a>
+      <a href="zurich-podcast-proposal.html" class="card" data-region="uk-europe"><span class="title">🎙️ Zurich</span><span class="badge">Read Interview</span></a>
+    </div>
   </div>
-</header>
 
+  <script>
+    function filterRegion(region, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      let cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (region === 'all' || card.getAttribute('data-region') === region) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
 
+    function searchCities() {
+      let query = document.getElementById('searchInput').value.toLowerCase();
+      let cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        let text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? 'flex' : 'none';
+      });
+    }
+  </script>
 
-  
-    
-    <main>
-        <div class="grid">
-            
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 Middle East</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in Middle East.</p>
-        <a href="regions/middle-east.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View Middle East Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 Africa</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in Africa.</p>
-        <a href="regions/africa.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View Africa Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 Central Asia</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in Central Asia.</p>
-        <a href="regions/central-asia.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View Central Asia Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 Western Europe</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in Western Europe.</p>
-        <a href="regions/western-europe.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View Western Europe Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 South America</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in South America.</p>
-        <a href="regions/south-america.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View South America Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 North America</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in North America.</p>
-        <a href="regions/north-america.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View North America Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 Southeast Asia</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in Southeast Asia.</p>
-        <a href="regions/southeast-asia.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View Southeast Asia Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 East Asia</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in East Asia.</p>
-        <a href="regions/east-asia.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View East Asia Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 UK & Eastern Europe</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in UK & Eastern Europe.</p>
-        <a href="regions/uk-eastern-europe.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View UK & Eastern Europe Guides →</a>
-    </div>
-    
-    <div style="background: #ffffff; border: 1px solid #e0ebe0; padding: 1.2rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-        <h3 style="margin: 0 0 0.5rem 0; color: #2d5a27;">📍 South Asia</h3>
-        <p style="margin: 0 0 0.8rem 0; font-size: 0.9rem; color: #555;">Browse nomad destinations and coworking hubs in South Asia.</p>
-        <a href="regions/south-asia.html" style="color: #2d5a27; font-weight: bold; text-decoration: none;">View South Asia Guides →</a>
-    </div>
-    
-        </div>
-    </main>
-    
+  <footer style="background-color: #0f4c3a; color: #ffffff; text-align: center; padding: 28px 20px; margin-top: 60px; font-size: 0.95rem;">
+    <p>© Matcha Maya Blog — Global Nomad Destination Guides</p>
+    <p style="margin-top: 8px;">
+      <a href="index.html" style="color: #fff; margin: 0 8px;">Home</a> | 
+      <a href="index2.html" style="color: #fff; margin: 0 8px;">220 Interviews</a> | 
+      <a href="podcasts.html" style="color: #fff; margin: 0 8px;">Podcast Proposals</a> | 
+      <a href="comparison.html" style="color: #fff; margin: 0 8px;">City Comparisons</a> | 
+      <a href="https://seohobby.myteachify.com" target="_blank" style="color: #fff; margin: 0 8px;">SEO hobby Expert School</a>
+    </p>
+  </footer>
 
-<footer class="site-footer" style="background-color: #0f4c3a; color: #ffffff; text-align: center; padding: 28px 20px; margin-top: 60px; border-top: 3px solid #15624c; font-size: 0.95rem;">
-  <p style="margin-bottom: 12px; font-weight: 500;">© Matcha Maya Blog — Global Nomad Destination Guides</p>
-  <p style="margin: 0;">
-    <a href="index.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">Home</a> | 
-    <a href="index2.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">220 Interviews</a> | 
-    <a href="podcasts.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">Podcast Proposals</a> | 
-    <a href="comparison.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">City Comparisons</a> | 
-    <a href="https://seohobby.myteachify.com" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">SEO hobby Expert School</a>
-  </p>
-</footer>
 </body>
 </html>
-
-
-
