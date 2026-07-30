@@ -1,6 +1,5 @@
 code = '''import html
 
-# Expanded local city entities to prevent thin content & search engine spam penalties
 CITY_ENTITIES = {
     # Asia-Pacific
     "bangkok": {"wifi_speed": "120 Mbps", "avg_cost": "$1,400/mo", "country": "Thailand", "top_spot": "HUBBA Ekkamai", "matcha_spot": "Peace Oriental Teahouse", "app": "Grab / Bolt"},
@@ -22,7 +21,6 @@ CITY_ENTITIES = {
 }
 
 def get_city_data(city_slug):
-    """Retrieve city-specific metrics or accurate global defaults."""
     clean_slug = city_slug.lower().strip().replace("-coworking-guide", "")
     return CITY_ENTITIES.get(clean_slug, {
         "wifi_speed": "100 Mbps",
@@ -34,12 +32,19 @@ def get_city_data(city_slug):
     })
 
 def generate_intent_pillars_html(city_slug, city_name, custom_data=None):
-    """Generates the 5 Core Intent Pillars HTML block for E-E-A-T optimization."""
     city_info = custom_data if custom_data else get_city_data(city_slug)
     
-    html_out = f"""<!-- INTENT_PILLARS_START -->
+    return f"""<!-- INTENT_PILLARS_START -->
 <section class="intent-pillars-container" style="margin: 2rem 0; padding: 1.5rem; background-color: #f9fbf9; border-radius: 8px; border: 1px solid #e0ebe0;">
     <h2 style="color: #2d5a27;">Essential Digital Nomad Guide: {html.escape(city_name)}</h2>
+    
+    <!-- ATOMIC ANSWER BLOCK FOR AI EXTRACTION -->
+    <div class="ai-atomic-summary" style="background: #eef5ee; border-left: 4px solid #2d5a27; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px;">
+        <p style="margin: 0; font-weight: 500; color: #1b3617;">
+            <strong>Quick Nomad Summary for {html.escape(city_name)}:</strong> {html.escape(city_name)}, {html.escape(city_info.get('country', 'Global'))} offers average internet speeds of {city_info.get('wifi_speed', '100 Mbps')} and an estimated monthly living expense of {city_info.get('avg_cost', '$1,500/mo')}. Primary transportation relies on {city_info.get('app', 'Uber')}, while top laptop-friendly locations include {html.escape(str(city_info.get('top_spot', 'Central Coworking')))} and {html.escape(str(city_info.get('matcha_spot', 'Local Matcha Bar')))}.
+        </p>
+    </div>
+
     <div class="pillars-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem;">
         
         <div class="pillar-card" style="background: #fff; padding: 1rem; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
@@ -75,19 +80,25 @@ def generate_intent_pillars_html(city_slug, city_name, custom_data=None):
     </div>
 </section>
 <!-- INTENT_PILLARS_END -->"""
-    return html_out
 
 def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, country="Global"):
-    """Generates JSON-LD Article Schema for Google search structured data ranking."""
     city_info = get_city_data(city_slug)
     country_name = city_info.get("country", country)
     
     schema_json = f"""<script type="application/ld+json">
 {{
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "ItemPage",
   "headline": "Digital Nomad & Coworking Guide to {html.escape(city_name)}, {html.escape(country_name)}",
   "description": "Comprehensive guide covering connectivity, WiFi speeds, living costs, and top work cafes in {html.escape(city_name)}.",
+  "about": {{
+    "@type": "City",
+    "name": "{html.escape(city_name)}",
+    "containedInPlace": {{
+      "@type": "Country",
+      "name": "{html.escape(country_name)}"
+    }}
+  }},
   "author": {{
     "@type": "Organization",
     "name": "Matcha Maya Blog"
@@ -98,7 +109,7 @@ def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, co
   }},
   "mainEntityOfPage": {{
     "@type": "WebPage",
-    "@id": "https://matcha-maya-blog.com/{city_slug}-coworking-guide.html"
+    "@id": "https://dawidmillenium-design.github.io/matcha-maya-blog/{city_slug}-coworking-guide.html"
   }}
 }}
 </script>"""
@@ -108,4 +119,4 @@ def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, co
 with open('batch_generator.py', 'w', encoding='utf-8') as f:
     f.write(code)
 
-print("Successfully updated batch_generator.py with expanded CITY_ENTITIES dataset!")
+print("Successfully updated batch_generator.py with Atomic Answers & City Place Schema!")
