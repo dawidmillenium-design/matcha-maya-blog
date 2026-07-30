@@ -1,3 +1,4 @@
+Set-Content -Path batch_generator.py -Value @'
 import os
 
 REGIONAL_SILO = {
@@ -110,7 +111,8 @@ DATA_SETS = [
         "helicopter_1h": "$1,200 - $1,800 USD",
         "best_months": "November to April (Dry Season / Peak Nomad Window)",
         "rooftop_bars": "15+ popular rooftop venues, cocktails $12 - $20 USD, open 5:00 PM - 2:00 AM, elevator & wheelchair accessible",
-        "delivery_info": "GrabFood, Foodpanda & ShopeeFood (avg delivery fee $1.00 - $2.50 USD, 25 - 40 min delivery)"
+        "delivery_info": "GrabFood, Foodpanda & ShopeeFood (avg delivery fee $1.00 - $2.50 USD, 25 - 40 min delivery)",
+        "airport_routes": "Top domestic connection: Secondary regional hub & coastal islands. Top international routes: Singapore, Bangkok, Hong Kong & Dubai."
     },
     {
         "visa": "D8 Nomad Visa / E33G Remote Worker Status",
@@ -126,7 +128,8 @@ DATA_SETS = [
         "helicopter_1h": "$1,500 - $2,400 USD",
         "best_months": "September to May (Mild Weather & Vibrant Culture)",
         "rooftop_bars": "20+ rooftop lounges, premium craft drinks $15 - $25 USD, open 4:00 PM - 1:00 AM, fully accessible",
-        "delivery_info": "Uber Eats, Deliveroo & Glovo (avg delivery fee $2.50 - $4.00 USD, 20 - 35 min delivery)"
+        "delivery_info": "Uber Eats, Deliveroo & Glovo (avg delivery fee $2.50 - $4.00 USD, 20 - 35 min delivery)",
+        "airport_routes": "Top domestic connection: Capital city & economic centers. Top international routes: London Heathrow, Frankfurt, Paris CDG & New York JFK."
     }
 ]
 
@@ -140,7 +143,7 @@ def generate_220_cities():
         extra_data = DATA_SETS[index % len(DATA_SETS)]
         
         cities_list.append({
-            "slug": f"{slug}-interview.html",
+            "slug": f"{slug}-podcast-proposal.html",
             "city": formatted_name,
             "region_slug": region_slug,
             "archetype": arch,
@@ -160,7 +163,8 @@ def generate_220_cities():
             "helicopter_1h": extra_data['helicopter_1h'],
             "best_months": extra_data['best_months'],
             "rooftop_bars": extra_data['rooftop_bars'],
-            "delivery_info": extra_data['delivery_info']
+            "delivery_info": extra_data['delivery_info'],
+            "airport_routes": extra_data['airport_routes']
         })
     return cities_list
 
@@ -172,16 +176,16 @@ def get_sibling_links(current_slug, current_region):
         if c['region_slug'] == current_region and c['slug'] != current_slug
     ][:3]
     
-    html = '<div class="mt-8 border-t border-stone-200 pt-6"><h4 class="text-xs font-bold text-stone-900 uppercase tracking-wider mb-3">🎧 Related Regional Podcasts</h4><ul class="space-y-2 text-xs">'
+    html = '<div class="mt-8 border-t border-stone-200 pt-6"><h4 class="text-xs font-bold text-stone-900 uppercase tracking-wider mb-3">Related Regional Podcasts</h4><ul class="space-y-2 text-xs">'
     for s in siblings:
-        html += f'<li><a href="{s["slug"]}" class="text-emerald-700 hover:underline font-medium">→ Remote Work & Superfoods in {s["city"]}</a></li>'
+        html += f'<li><a href="{s["slug"]}" class="text-emerald-700 hover:underline font-medium">-> Remote Work & Superfoods in {s["city"]}</a></li>'
     html += '</ul></div>'
     return html
 
 def build_city_post(c):
     sibling_section = get_sibling_links(c['slug'], c['region_slug'])
     page_url = f"https://dawidmillenium-design.github.io/matcha-maya-blog/{c['slug']}"
-    page_title = f"{c['city']} - Matcha Maya Interview proposal with local influencer"
+    page_title = f"{c['city']} - Matcha Maya Podcast Proposal with local influencer"
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -189,10 +193,9 @@ def build_city_post(c):
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{page_title}</title>
-  <meta name="description" content="Matcha Maya Interview proposal with local influencer in {c['city']}. Covers digital nomad visas, rooftop bars, home food delivery, helicopter tours, rent comparisons, and local SEO schools." />
+  <meta name="description" content="Matcha Maya Podcast Proposal in {c['city']}. Covers digital nomad visas, airport routes, rooftop bars, home food delivery, helicopter tours, rent comparisons, and local SEO schools." />
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- PodcastSeries & Article JSON-LD Schema Markup -->
   <script type="application/ld+json">
   {{
     "@context": "https://schema.org",
@@ -202,7 +205,7 @@ def build_city_post(c):
         "@id": "{page_url}#article",
         "isPartOf": {{ "@id": "{page_url}" }},
         "headline": "{page_title}",
-        "description": "Matcha Maya Interview proposal with local influencer covering remote work setup, visa options, rooftop bars, food delivery, and lifestyle in {c['city']}.",
+        "description": "Matcha Maya podcast proposal covering remote work setup, visa options, airport routes, rooftop bars, food delivery, and lifestyle in {c['city']}.",
         "inLanguage": "en-US",
         "mainEntityOfPage": "{page_url}",
         "author": {{
@@ -218,8 +221,8 @@ def build_city_post(c):
       {{
         "@type": "PodcastSeries",
         "@id": "{page_url}#podcast",
-        "name": "Matcha Maya Interview proposal with local influencer - {c['city']}",
-        "description": "Podcast interview series discussing digital nomad visas, laptop coworking, rooftop bars, food delivery, and rental trends in {c['city']}.",
+        "name": "Matcha Maya Podcast Proposal with local influencer - {c['city']}",
+        "description": "Podcast proposal series discussing digital nomad visas, airport routes, laptop coworking, rooftop bars, food delivery, and rental trends in {c['city']}.",
         "url": "{page_url}",
         "webFeed": "https://dawidmillenium-design.github.io/matcha-maya-blog/feed.xml",
         "author": {{
@@ -234,7 +237,7 @@ def build_city_post(c):
 <body class="bg-stone-50 text-stone-800 font-sans antialiased">
   <header class="bg-emerald-900 text-white p-4 text-xs shadow-md">
     <div class="max-w-4xl mx-auto flex justify-between items-center">
-      <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/" class="font-bold text-sm tracking-wide">🍵 MATCHA MAYA</a>
+      <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/" class="font-bold text-sm tracking-wide">MATCHA MAYA</a>
       <a href="regions/{c['region_slug']}.html" class="underline text-emerald-300 hover:text-white transition">
         Parent Regional SILO Hub
       </a>
@@ -244,47 +247,44 @@ def build_city_post(c):
   <main class="max-w-4xl mx-auto px-4 py-8">
     <article class="bg-white p-8 rounded-2xl border border-stone-200 shadow-sm">
       <div class="flex items-center justify-between border-b border-stone-100 pb-4 mb-4">
-        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">{c['region_slug'].replace('-', ' ')} • {c['archetype']}</span>
+        <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">{c['region_slug'].replace('-', ' ')} * {c['archetype']}</span>
         <span class="text-xs text-stone-400">100+ Mbps Fiber Verified</span>
       </div>
 
-      <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-1">{c['city']} - Matcha Maya Interview proposal with local influencer</h1>
-      <p class="text-xs text-stone-500 mt-2">Verified workspace analysis, laptop battery hubs, ride-hailing app options, e-books, rooftop venues, and local vlogs.</p>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-1">{c['city']} - Matcha Maya Podcast Proposal with local influencer</h1>
+      <p class="text-xs text-stone-500 mt-2">Verified workspace analysis, laptop battery hubs, ride-hailing app options, e-books, airport routes, rooftop venues, and local vlogs.</p>
       
-      <!-- Key Info Summary Box -->
       <div class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4 bg-stone-50 p-4 rounded-xl border border-stone-200 text-xs">
         <div>
-          <strong class="text-stone-900">🛂 Country-Specific Visa:</strong>
+          <strong class="text-stone-900">Country-Specific Visa:</strong>
           <p class="text-stone-600">{c['visa']}</p>
         </div>
         <div>
-          <strong class="text-stone-900">🚕 Ride-Hailing Apps & Premium Taxi:</strong>
+          <strong class="text-stone-900">Ride-Hailing Apps & Premium Taxi:</strong>
           <p class="text-stone-600">{c['ride_app']} | Airport Executive Car: {c['taxi_cost']}</p>
         </div>
         <div>
-          <strong class="text-stone-900">🎧 Audiobook & E-Book Recommendation:</strong>
+          <strong class="text-stone-900">Audiobook & E-Book Recommendation:</strong>
           <p class="text-stone-600">{c['audiobook']}</p>
         </div>
         <div>
-          <strong class="text-stone-900">📹 Blogs & Vlogs:</strong>
+          <strong class="text-stone-900">Blogs & Vlogs:</strong>
           <p class="text-stone-600">{c['vlog']}</p>
         </div>
       </div>
 
-      <!-- Superfood Section -->
       <div class="my-6 bg-emerald-50 border-l-4 border-emerald-600 p-4 rounded-r-xl">
-        <h3 class="font-bold text-emerald-950 text-sm flex items-center gap-2">🌿 {c['superfood_topic']}</h3>
+        <h3 class="font-bold text-emerald-950 text-sm flex items-center gap-2">{c['superfood_topic']}</h3>
         <p class="text-emerald-800 text-xs mt-1 leading-relaxed">{c['superfood_text']}</p>
       </div>
 
-      <!-- 🎙️ 12-QUESTION PODCAST INTERVIEW SECTION -->
       <section class="mt-8 border-t border-stone-200 pt-6">
-        <h2 class="text-xl font-extrabold text-stone-900 mb-4">🎙️ Podcast Interview: 12 Key Local Questions Answered</h2>
+        <h2 class="text-xl font-extrabold text-stone-900 mb-4">Podcast Interview: 13 Key Local Questions Answered</h2>
         
         <div class="space-y-6 text-xs text-stone-700 leading-relaxed">
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q1: How is the local internet infrastructure and what SIM cards work best for tourists?</h3>
-            <p><strong>Answer:</strong> {c['city']} offers 100+ Mbps high-speed fiber across coworking hubs and cafes. For tourists and nomads, prepaid local 5G SIM cards (or eSIMs via Airalo/Holafly) offer unlimited data packages starting around $15–$25 USD for 30 days.</p>
+            <p><strong>Answer:</strong> {c['city']} offers 100+ Mbps high-speed fiber across coworking hubs and cafes. For tourists and nomads, prepaid local 5G SIM cards (or eSIMs via Airalo/Holafly) offer unlimited data packages starting around $15-$25 USD for 30 days.</p>
           </div>
 
           <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
@@ -341,11 +341,16 @@ def build_city_post(c):
             <h3 class="font-bold text-emerald-800 text-sm mb-1">Q12: How convenient is home food delivery and what local apps are used?</h3>
             <p><strong>Answer:</strong> Home food delivery is fast and ubiquitous across {c['city']}. Main platforms include {c['delivery_info']}, offering live GPS order tracking and cashless digital payments.</p>
           </div>
+
+          <div class="bg-stone-50 p-4 rounded-xl border border-stone-200">
+            <h3 class="font-bold text-emerald-800 text-sm mb-1">Q13: What are the most frequently connected domestic and international cities from the local airport?</h3>
+            <p><strong>Answer:</strong> {c['airport_routes']}</p>
+          </div>
         </div>
       </section>
 
       <div class="bg-stone-900 text-white p-6 rounded-2xl mt-8 shadow-sm">
-        <h3 class="font-bold text-emerald-400 text-sm">🗣️ The Nomad Debate</h3>
+        <h3 class="font-bold text-emerald-400 text-sm">The Nomad Debate</h3>
         <p class="text-xs text-stone-300 mt-2 leading-relaxed">{c['debate']}</p>
       </div>
 
@@ -354,12 +359,11 @@ def build_city_post(c):
   </main>
 
   <footer class="text-center py-6 text-xs text-stone-400">
-    <p>MATCHA MAYA © 2026 — 220 Global City Guides</p>
+    <p>MATCHA MAYA (C) 2026 - 220 Global City Guides</p>
   </footer>
 </body>
 </html>"""
 
-# Execute Full 220-City Generation Loop
 generated_count = 0
 for city in CITIES:
     filename = city['slug']
@@ -368,4 +372,5 @@ for city in CITIES:
         f.write(content)
     generated_count += 1
 
-print(f"\n🎉 SUCCESS! Regenerated all {generated_count} city posts with Questions 11 & 12 added!")
+print(f"SUCCESS! Regenerated all {generated_count} city posts with Question 13 added!")
+'@
