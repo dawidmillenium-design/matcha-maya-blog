@@ -1,12 +1,10 @@
 import os
 import glob
-import html
 
 print("--- STARTING INTERNAL LINK REPAIR ---")
 
-# 1. Create 'regions' directory if it doesn't exist
+# 1. Create 'regions' directory
 os.makedirs("regions", exist_ok=True)
-print("✔ Created 'regions/' directory")
 
 # 2. Define Regional Hub Data
 regions_data = {
@@ -24,14 +22,10 @@ regions_data = {
 
 domain = "https://dawidmillenium-design.github.io/matcha-maya-blog"
 
-# Collect all HTML files to link them dynamically inside hubs
-all_pages = sorted(glob.glob("*.html"))
-
 # 3. Generate individual Regional Hub HTML pages inside 'regions/'
 for reg_slug, reg_name in regions_data.items():
     hub_filename = os.path.join("regions", f"{reg_slug}.html")
     
-    # Simple directory layout for regional hubs
     hub_html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -121,4 +115,3 @@ with open("hub.html", "w", encoding="utf-8") as f:
     f.write(root_hub_html)
 
 print("✔ Generated root 'hub.html' directory")
-print("--- INTERNAL LINK REPAIR COMPLETE ---")
