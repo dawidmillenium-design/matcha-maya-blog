@@ -9,8 +9,8 @@ DEFAULT_PILLAR_DATA = {
         "backup_power": "High grid stability; key coworking hubs feature UPS/generator back-ups"
     },
     "cost_of_living": {
-        "budget_range": "\,200 - \,200 USD / month",
-        "avg_rent": " - \,100 USD (1BR City Center)",
+        "budget_range": ",200 - ,200 USD / month",
+        "avg_rent": " - ,100 USD (1BR City Center)",
         "meal_price": " -  USD (Local to Mid-range meal)"
     },
     "logistics_visas": {
@@ -50,9 +50,9 @@ def generate_intent_pillars_html(city_slug, city_name, custom_data=None):
             "backup_power": "High grid stability; key coworking hubs feature UPS back-ups"
         },
         "cost_of_living": {
-            "budget_range": f"\ - \ USD / month",
-            "avg_rent": f"\ - \ USD (1BR City Center)",
-            "meal_price": f"\ - \ USD (Local to Mid-range meal)"
+            "budget_range": f" -  USD / month",
+            "avg_rent": f" -  USD (1BR City Center)",
+            "meal_price": f" -  USD (Local to Mid-range meal)"
         },
         "logistics_visas": {
             "visa_status": f"Digital Nomad Visa / Tourist Visa on Arrival ({city_name})",
