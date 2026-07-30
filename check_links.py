@@ -1,4 +1,4 @@
-import os
+ï»¿import os
 import re
 
 all_html_files = []
@@ -8,7 +8,7 @@ for root, dirs, files in os.walk("."):
             rel_path = os.path.relpath(os.path.join(root, file), ".").replace("\\", "/")
             all_html_files.append(rel_path)
 
-print(f"?? Found {len(all_html_files)} total HTML files to scan.\n")
+print(f"Found {len(all_html_files)} total HTML files to scan.\n")
 
 broken_links = []
 scanned_links = 0
@@ -39,11 +39,11 @@ for html_file in all_html_files:
                 "resolved": target_path
             })
 
-print(f"? Total internal links scanned: {scanned_links}")
+print(f"Total internal links scanned: {scanned_links}")
 
 if broken_links:
-    print(f"\n? FOUND {len(broken_links)} BROKEN INTERNAL LINKS:\n")
+    print(f"\nFOUND {len(broken_links)} BROKEN INTERNAL LINKS:\n")
     for b in broken_links:
-        print(f"• In '{b['source']}' --> Broken link: '{b['target']}' (Missing at: '{b['resolved']}')")
+        print(f"* In '{b['source']}' -> Broken link: '{b['target']}' (Missing at: '{b['resolved']}')")
 else:
-    print("\n?? PERFECT! 0 broken internal links found across all files!")
+    print("\nPERFECT! 0 broken internal links found across all files!")
