@@ -153,14 +153,56 @@ def get_sibling_links(current_slug, current_region):
 
 def build_city_post(c):
     sibling_section = get_sibling_links(c['slug'], c['region_slug'])
+    page_url = f"https://dawidmillenium-design.github.io/matcha-maya-blog/{c['slug']}"
+    page_title = f"{c['city']} - Matcha Maya Interview proposal with local influencer"
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🍵 {c['city']} Digital Nomad Visa, Laptop Coworking & Podcast Guide</title>
-  <meta name="description" content="Explore {c['city']} digital nomad visas, laptop friendly cafes with high-speed fiber, ride-hailing apps, premium taxi car costs, audiobooks, e-books, and local vlogs." />
+  <title>{page_title}</title>
+  <meta name="description" content="Matcha Maya Interview proposal with local influencer in {c['city']}. Covers digital nomad visas, laptop coworking, ride-hailing apps, premium taxi costs, audiobooks, and local vlogs." />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- PodcastSeries & Article JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+  {{
+    "@context": "https://schema.org",
+    "@graph": [
+      {{
+        "@type": "Article",
+        "@id": "{page_url}#article",
+        "isPartOf": {{ "@id": "{page_url}" }},
+        "headline": "{page_title}",
+        "description": "Matcha Maya Interview proposal with local influencer covering remote work setup, visa options, and lifestyle in {c['city']}.",
+        "inLanguage": "en-US",
+        "mainEntityOfPage": "{page_url}",
+        "author": {{
+          "@type": "Organization",
+          "name": "Matcha Maya"
+        }},
+        "publisher": {{
+          "@type": "Organization",
+          "name": "Matcha Maya Blog",
+          "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/"
+        }}
+      }},
+      {{
+        "@type": "PodcastSeries",
+        "@id": "{page_url}#podcast",
+        "name": "Matcha Maya Interview proposal with local influencer - {c['city']}",
+        "description": "Podcast interview series discussing digital nomad visas, laptop coworking infrastructure, ride-hailing options, and superfoods in {c['city']}.",
+        "url": "{page_url}",
+        "webFeed": "https://dawidmillenium-design.github.io/matcha-maya-blog/feed.xml",
+        "author": {{
+          "@type": "Organization",
+          "name": "Matcha Maya"
+        }}
+      }}
+    ]
+  }}
+  </script>
 </head>
 <body class="bg-stone-50 text-stone-800 font-sans antialiased">
   <header class="bg-emerald-900 text-white p-4 text-xs shadow-md">
@@ -179,7 +221,7 @@ def build_city_post(c):
         <span class="text-xs text-stone-400">100+ Mbps Fiber Verified</span>
       </div>
 
-      <h1 class="text-3xl font-extrabold text-stone-900 mt-1">{c['city']} Digital Nomad Visa, Laptop & Mobility Guide</h1>
+      <h1 class="text-2xl md:text-3xl font-extrabold text-stone-900 mt-1">{c['city']} - Matcha Maya Interview proposal with local influencer</h1>
       <p class="text-xs text-stone-500 mt-2">Verified workspace analysis, laptop battery hubs, ride-hailing app options, e-books, and local vlogs.</p>
       
       <!-- SEO Key Info Box -->
@@ -237,4 +279,4 @@ for city in CITIES:
         f.write(content)
     generated_count += 1
 
-print(f"\n🎉 SUCCESS! Regenerated all {generated_count} city posts with enhanced SEO keywords!")
+print(f"\n🎉 SUCCESS! Regenerated all {generated_count} city posts with PodcastSeries/Article JSON-LD schema & Influencer title!")
