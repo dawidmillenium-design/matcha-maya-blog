@@ -4,16 +4,13 @@ Allow: /
 User-agent: GPTBot
 Allow: /
 
-User-agent: ChatGPT-User
-Allow: /
-
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Google-Extended
+User-agent: ClaudeBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://dawidmillenium-design.github.io/matcha-maya-blog/sitemap.xml
