@@ -142,6 +142,47 @@
         @media (max-width: 600px) { .comparison-grid { grid-template-columns: 1fr; } }
         .author-note { font-size: 0.9em; color: #666; font-style: italic; }
     </style>
+<style id="nav-enhancements">
+  .main-nav a.active {
+    background-color: #ffffff !important;
+    color: #0f4c3a !important;
+    font-weight: 700 !important;
+  }
+  .site-footer {
+    background-color: #0f4c3a;
+    color: #ffffff;
+    text-align: center;
+    padding: 24px 20px;
+    margin-top: 60px;
+    border-top: 3px solid #15624c;
+    font-size: 0.9rem;
+  }
+  .site-footer a {
+    color: #ffffff;
+    text-decoration: underline;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+  .site-footer a:hover {
+    color: #d1ded0;
+  }
+  @media (max-width: 480px) {
+    .nav-container {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 12px !important;
+    }
+    .main-nav ul {
+      gap: 6px !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+    }
+    .main-nav a {
+      font-size: 0.75rem !important;
+      padding: 5px 10px !important;
+    }
+  }
+</style>
 </head>
 <body>
 <header class="site-header" style="background-color: #0f4c3a; color: #ffffff; padding: 14px 24px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15);">
@@ -354,6 +395,15 @@
 <!-- INTENT_PILLARS_END -->
 <!-- INTENT_PILLARS_END -->
 <!-- INTENT_PILLARS_END -->
+<footer class="site-footer">
+  <p>© Matcha Maya Blog — Global Nomad Destination Guides</p>
+  <p style="margin-top: 8px;">
+    <a href="index.html">Home</a> | 
+    <a href="hub.html">220 Interviews</a> | 
+    <a href="podcasts.html">Podcast Proposals</a> | 
+    <a href="comparison.html">City Comparisons</a>
+  </p>
+</footer>
 </body></html>
 
 

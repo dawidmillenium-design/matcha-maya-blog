@@ -43,6 +43,47 @@
     .grid-card span.title { font-weight: 600; font-size: 0.95rem; }
     .grid-card span.badge { background: #eef5ee; color: var(--primary-color); font-size: 0.75rem; padding: 4px 8px; border-radius: 12px; font-weight: bold; }
   </style>
+<style id="nav-enhancements">
+  .main-nav a.active {
+    background-color: #ffffff !important;
+    color: #0f4c3a !important;
+    font-weight: 700 !important;
+  }
+  .site-footer {
+    background-color: #0f4c3a;
+    color: #ffffff;
+    text-align: center;
+    padding: 24px 20px;
+    margin-top: 60px;
+    border-top: 3px solid #15624c;
+    font-size: 0.9rem;
+  }
+  .site-footer a {
+    color: #ffffff;
+    text-decoration: underline;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+  .site-footer a:hover {
+    color: #d1ded0;
+  }
+  @media (max-width: 480px) {
+    .nav-container {
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 12px !important;
+    }
+    .main-nav ul {
+      gap: 6px !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+    }
+    .main-nav a {
+      font-size: 0.75rem !important;
+      padding: 5px 10px !important;
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -53,7 +94,7 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="index2.html">220 Interviews</a></li>
-          <li><a href="podcasts.html">Podcasts</a></li>
+          <li><a href="podcasts.html" class="active">Podcasts</a></li>
           <li><a href="comparison.html">Comparison</a></li>
         </ul>
       </nav>
@@ -393,5 +434,14 @@
       }
     }
   </script>
+<footer class="site-footer">
+  <p>© Matcha Maya Blog — Global Nomad Destination Guides</p>
+  <p style="margin-top: 8px;">
+    <a href="index.html">Home</a> | 
+    <a href="hub.html">220 Interviews</a> | 
+    <a href="podcasts.html">Podcast Proposals</a> | 
+    <a href="comparison.html">City Comparisons</a>
+  </p>
+</footer>
 </body>
 </html>
