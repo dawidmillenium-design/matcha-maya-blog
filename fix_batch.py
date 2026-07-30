@@ -2,22 +2,22 @@ code = '''import html
 
 CITY_ENTITIES = {
     # Asia-Pacific
-    "bangkok": {"wifi_speed": "120 Mbps", "avg_cost": "$1,400/mo", "country": "Thailand", "region": "Asia", "top_spot": "HUBBA Ekkamai", "matcha_spot": "Peace Oriental Teahouse", "app": "Grab / Bolt"},
-    "chiang-mai": {"wifi_speed": "95 Mbps", "avg_cost": "$1,100/mo", "country": "Thailand", "region": "Asia", "top_spot": "Punspace Tha Phae", "matcha_spot": "Ristr8to", "app": "Grab / Bolt"},
-    "bali": {"wifi_speed": "85 Mbps", "avg_cost": "$1,300/mo", "country": "Indonesia", "region": "Asia", "top_spot": "Dojo Bali", "matcha_spot": "Matcha Cafe Bali", "app": "Gojek / Grab"},
-    "tokyo": {"wifi_speed": "210 Mbps", "avg_cost": "$2,800/mo", "country": "Japan", "region": "Asia", "top_spot": "Biolab Tokyo", "matcha_spot": "Ippodo Tea Marunouchi", "app": "GO App / Suica"},
-    "da-nang": {"wifi_speed": "80 Mbps", "avg_cost": "$900/mo", "country": "Vietnam", "region": "Asia", "top_spot": "Enouvo Space", "matcha_spot": "43 Factory Coffee", "app": "Grab"},
+    "bangkok": {"wifi_speed": "120 Mbps", "avg_cost": "$1,400/mo", "country": "Thailand", "region": "Asia", "top_spot": "HUBBA Ekkamai", "matcha_spot": "Peace Oriental Teahouse", "app": "Grab / Bolt", "related": ["chiang-mai", "da-nang", "bali"]},
+    "chiang-mai": {"wifi_speed": "95 Mbps", "avg_cost": "$1,100/mo", "country": "Thailand", "region": "Asia", "top_spot": "Punspace Tha Phae", "matcha_spot": "Ristr8to", "app": "Grab / Bolt", "related": ["bangkok", "da-nang", "bali"]},
+    "bali": {"wifi_speed": "85 Mbps", "avg_cost": "$1,300/mo", "country": "Indonesia", "region": "Asia", "top_spot": "Dojo Bali", "matcha_spot": "Matcha Cafe Bali", "app": "Gojek / Grab", "related": ["bangkok", "chiang-mai", "da-nang"]},
+    "tokyo": {"wifi_speed": "210 Mbps", "avg_cost": "$2,800/mo", "country": "Japan", "region": "Asia", "top_spot": "Biolab Tokyo", "matcha_spot": "Ippodo Tea Marunouchi", "app": "GO App / Suica", "related": ["bangkok", "lisbon", "berlin"]},
+    "da-nang": {"wifi_speed": "80 Mbps", "avg_cost": "$900/mo", "country": "Vietnam", "region": "Asia", "top_spot": "Enouvo Space", "matcha_spot": "43 Factory Coffee", "app": "Grab", "related": ["bangkok", "chiang-mai", "bali"]},
 
     # Europe
-    "lisbon": {"wifi_speed": "150 Mbps", "avg_cost": "$2,100/mo", "country": "Portugal", "region": "Europe", "top_spot": "LACS Conde d'Óbidos", "matcha_spot": "Matcha Mama Lisbon", "app": "Bolt / Uber"},
-    "barcelona": {"wifi_speed": "180 Mbps", "avg_cost": "$2,600/mo", "country": "Spain", "region": "Europe", "top_spot": "Aticco Urquinaona", "matcha_spot": "HanSo Cafe", "app": "Cabify / Uber"},
-    "berlin": {"wifi_speed": "130 Mbps", "avg_cost": "$2,400/mo", "country": "Germany", "region": "Europe", "top_spot": "Factory Berlin", "matcha_spot": "The Barn Roastery", "app": "FreeNow / Uber"},
-    "tbilisi": {"wifi_speed": "90 Mbps", "avg_cost": "$1,200/mo", "country": "Georgia", "region": "Europe", "top_spot": "Impact Hub Tbilisi", "matcha_spot": "Coffee LAB", "app": "Yandex Go / Bolt"},
+    "lisbon": {"wifi_speed": "150 Mbps", "avg_cost": "$2,100/mo", "country": "Portugal", "region": "Europe", "top_spot": "LACS Conde d'Óbidos", "matcha_spot": "Matcha Mama Lisbon", "app": "Bolt / Uber", "related": ["barcelona", "berlin", "tbilisi"]},
+    "barcelona": {"wifi_speed": "180 Mbps", "avg_cost": "$2,600/mo", "country": "Spain", "region": "Europe", "top_spot": "Aticco Urquinaona", "matcha_spot": "HanSo Cafe", "app": "Cabify / Uber", "related": ["lisbon", "berlin", "medellin"]},
+    "berlin": {"wifi_speed": "130 Mbps", "avg_cost": "$2,400/mo", "country": "Germany", "region": "Europe", "top_spot": "Factory Berlin", "matcha_spot": "The Barn Roastery", "app": "FreeNow / Uber", "related": ["lisbon", "barcelona", "tokyo"]},
+    "tbilisi": {"wifi_speed": "90 Mbps", "avg_cost": "$1,200/mo", "country": "Georgia", "region": "Europe", "top_spot": "Impact Hub Tbilisi", "matcha_spot": "Coffee LAB", "app": "Yandex Go / Bolt", "related": ["lisbon", "chiang-mai", "medellin"]},
 
     # Americas
-    "medellin": {"wifi_speed": "90 Mbps", "avg_cost": "$1,100/mo", "country": "Colombia", "region": "Americas", "top_spot": "Selah Coworking", "matcha_spot": "Teahouse El Poblado", "app": "Uber / InDrive"},
-    "new-york": {"wifi_speed": "250 Mbps", "avg_cost": "$4,200/mo", "country": "United States", "region": "Americas", "top_spot": "WeWork 450 Lexington", "matcha_spot": "Cha Cha Matcha", "app": "Uber / Lyft / UberEats"},
-    "mexico-city": {"wifi_speed": "110 Mbps", "avg_cost": "$1,600/mo", "country": "Mexico", "region": "Americas", "top_spot": "Público Condesa", "matcha_spot": "Matcha Kaori", "app": "Uber / DiDi"}
+    "medellin": {"wifi_speed": "90 Mbps", "avg_cost": "$1,100/mo", "country": "Colombia", "region": "Americas", "top_spot": "Selah Coworking", "matcha_spot": "Teahouse El Poblado", "app": "Uber / InDrive", "related": ["mexico-city", "bali", "tbilisi"]},
+    "new-york": {"wifi_speed": "250 Mbps", "avg_cost": "$4,200/mo", "country": "United States", "region": "Americas", "top_spot": "WeWork 450 Lexington", "matcha_spot": "Cha Cha Matcha", "app": "Uber / Lyft / UberEats", "related": ["tokyo", "london", "barcelona"]},
+    "mexico-city": {"wifi_speed": "110 Mbps", "avg_cost": "$1,600/mo", "country": "Mexico", "region": "Americas", "top_spot": "Público Condesa", "matcha_spot": "Matcha Kaori", "app": "Uber / DiDi", "related": ["medellin", "barcelona", "lisbon"]}
 }
 
 def get_city_data(city_slug):
@@ -29,11 +29,18 @@ def get_city_data(city_slug):
         "region": "Global",
         "top_spot": "Central Coworking Hub",
         "matcha_spot": "Local Artisanal Cafe",
-        "app": "Uber / Local Transit"
+        "app": "Uber / Local Transit",
+        "related": ["bangkok", "lisbon", "medellin"]
     })
 
 def generate_intent_pillars_html(city_slug, city_name, custom_data=None):
     city_info = custom_data if custom_data else get_city_data(city_slug)
+    related_cities = city_info.get("related", ["bangkok", "lisbon", "medellin"])
+    
+    related_links_html = "".join([
+        f'<a href="{rel}-coworking-guide.html" style="display: inline-block; margin: 0.25rem 0.5rem 0.25rem 0; padding: 0.5rem 1rem; background: #eef5ee; color: #2d5a27; text-decoration: none; border-radius: 4px; font-weight: 500;">👉 {rel.replace("-", " ").title()} Guide</a>'
+        for rel in related_cities
+    ])
     
     return f"""<!-- INTENT_PILLARS_START -->
 <section class="intent-pillars-container" style="margin: 2rem 0; padding: 1.5rem; background-color: #f9fbf9; border-radius: 8px; border: 1px solid #e0ebe0;">
@@ -112,6 +119,12 @@ def generate_intent_pillars_html(city_slug, city_name, custom_data=None):
             <p>Active expat communities, regular tech meetups, and dedicated collaborative workspaces.</p>
         </div>
 
+    </div>
+
+    <!-- INTERNAL LINK GRAPH / RELATED CITIES -->
+    <div class="related-spokes-section" style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px dashed #c0d8c0;">
+        <h4 style="margin: 0 0 0.5rem 0; color: #1b3617;">Explore Related Digital Nomad Destinations:</h4>
+        {related_links_html}
     </div>
 </section>
 <!-- INTENT_PILLARS_END -->"""
@@ -226,4 +239,4 @@ def generate_city_schema(city_slug, city_name, wifi_speed=100, avg_cost=1500, co
 with open('batch_generator.py', 'w', encoding='utf-8') as f:
     f.write(code)
 
-print("Successfully updated batch_generator.py with E-E-A-T Person Author, Organization & Speakable Schema!")
+print("Successfully updated batch_generator.py with Related Spokes Internal Linking Graph!")
