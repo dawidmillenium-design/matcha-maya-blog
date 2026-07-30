@@ -4,9 +4,10 @@ import re
 
 print("--- STARTING INTERNAL LINK AUDIT ---")
 
-# Scan both root files and files inside subdirectories (like regions/)
+# Scan both root files and files inside subdirectories
 all_files = glob.glob("*.html") + glob.glob("regions/*.html")
-existing_files = set(os.path.normpath(f) for f in all_files)
+# Store all relative paths using standard forward slashes
+existing_files = set(f.replace("\\", "/") for f in all_files)
 broken_links = []
 
 for file in all_files:
@@ -27,11 +28,15 @@ for file in all_files:
         if "matcha-maya-blog/" in target:
             target = target.split("matcha-maya-blog/")[-1]
 
-        # Resolve relative directory targets based on current file location
-        if file.startswith("regions/"):
-            resolved_target = os.path.normpath(os.path.join("regions", target))
+        # Resolve relative directory targets cleanly using POSIX style
+        file_dir = os.path.dirname(file)
+        if file_dir:
+            raw_path = os.path.join(file_dir, target)
         else:
-            resolved_target = os.path.normpath(target)
+            raw_path = target
+
+        # Normalize without converting to Windows backslashes
+        resolved_target = os.path.normpath(raw_path).replace("\\", "/")
 
         if resolved_target and resolved_target not in existing_files:
             broken_links.append((file, href, resolved_target))
