@@ -1,158 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="google-site-verification" content="ddryQTwrxDAxNvgfjcrTs2eW06UebOvdNums43rTfJc" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MATCHA MAYA Interviews | 220 Video Call Conversations</title>
+  <meta name="description" content="MATCHA MAYA interviews local influencers in 220 cities about coworking spaces, ergonomic chairs, matcha drinks, internet speeds, and flight prices to Dubai." />
   
-  <!-- SEO Title Tag & Meta Description -->
-  <title>MATCHA MAYA Interviews: Creator & Nomad Stories</title>
-  <meta name="description" content="In-depth interviews with global remote workers, podcasters, and digital nomads sharing field insights and city advice.">
-
   <style>
-    :root {
-      --primary-color: #3b5336;
-      --bg-color: #f7f9f6;
-      --text-color: #2c352b;
-      --card-bg: #ffffff;
-      --border-color: #d1ded0;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
-
-    /* Top Navigation Header */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; background: #faf8f5; color: #2d2d2d; }
+    
+    /* ===== TOP MENU NAVIGATION HEADER (Matching Screenshot Style) ===== */
     .site-header {
-      background-color: var(--card-bg);
-      border-bottom: 2px solid var(--border-color);
-      padding: 15px 20px;
+      background-color: #0f4c3a; /* Dark Matcha Green from your screenshot */
+      color: #ffffff;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     }
 
     .nav-container {
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
     }
 
     .brand-logo {
-      font-size: 1.3rem;
-      font-weight: bold;
-      color: var(--primary-color);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
       text-decoration: none;
+      letter-spacing: 1px;
     }
 
     .main-nav ul {
       display: flex;
       list-style: none;
-      gap: 15px;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    .main-nav a {
+    /* 3 Action Link Buttons */
+    .nav-btn {
       text-decoration: none;
-      color: var(--text-color);
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 6px;
-      transition: all 0.2s ease;
-    }
-
-    .main-nav a:hover,
-    .main-nav a.active-link {
-      background-color: var(--primary-color);
       color: #ffffff;
-    }
-
-    /* Main Container */
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      background: var(--card-bg);
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      padding: 40px;
-    }
-
-    h1 {
-      font-size: 2.2rem;
-      color: var(--primary-color);
-      margin-bottom: 16px;
-    }
-
-    .interview-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-
-    .interview-card {
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 20px;
-      background: #fafcf9;
-    }
-
-    .interview-card h3 {
-      color: var(--primary-color);
-      margin-bottom: 10px;
-    }
-
-    .back-btn {
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.08);
+      font-size: 0.9em;
+      transition: all 0.2s ease-in-out;
       display: inline-block;
-      margin-top: 30px;
-      color: var(--primary-color);
-      font-weight: bold;
-      text-decoration: none;
     }
 
-    .back-btn:hover {
-      text-decoration: underline;
+    .nav-btn:hover,
+    .nav-btn.active {
+      background-color: #8bc34a; /* Accent Lime Green */
+      color: #0f4c3a;
+      border-color: #8bc34a;
+      font-weight: bold;
     }
+
+    .nav-tagline {
+      font-size: 0.85em;
+      color: #a3d9a5;
+    }
+
+    /* ===== MAIN CONTENT LAYOUT ===== */
+    .main-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    h1 { color: #2d5a27; font-size: 2.8em; border-bottom: 4px solid #8bc34a; padding-bottom: 15px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap; }
+    h1 small { font-size: 0.4em; color: #777; font-weight: normal; }
+    .subtitle { color: #666; font-size: 1.1em; margin-bottom: 30px; }
+    
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; background: #e8f5e9; padding: 20px; border-radius: 12px; margin: 30px 0; }
+    .meta-grid .stat { text-align: center; }
+    .meta-grid .stat-number { font-size: 2em; font-weight: bold; color: #2d5a27; }
+    .meta-grid .stat-label { font-size: 0.85em; color: #555; }
+    
+    .region-section { margin: 40px 0 30px; }
+    .region-section h2 { color: #2d5a27; font-size: 1.8em; border-left: 5px solid #8bc34a; padding-left: 15px; margin-bottom: 20px; }
+    .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin: 20px 0; }
+    .guide-card { background: white; border-radius: 8px; padding: 12px 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 4px solid #8bc34a; transition: transform 0.2s, box-shadow 0.2s; }
+    .guide-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,0.10); }
+    .guide-card .city { font-size: 0.9em; font-weight: bold; color: #2d5a27; display: flex; align-items: center; gap: 6px; }
+    .guide-card .influencer { color: #555; font-size: 0.7em; margin: 3px 0 6px; }
+    .guide-card .open-btn { display: inline-block; margin-top: 6px; background: #2d5a27; color: white; padding: 3px 12px; border-radius: 20px; text-decoration: none; font-size: 0.7em; transition: background 0.2s; }
+    .guide-card .open-btn:hover { background: #1e3f1b; }
+    
+    .footer { margin-top: 50px; padding-top: 25px; border-top: 2px solid #e8e0d5; text-align: center; color: #888; font-size: 0.9em; }
+    .footer a { color: #2d5a27; text-decoration: none; }
+    
+    .cta-box { background: #2d5a27; color: white; padding: 25px 30px; border-radius: 12px; text-align: center; margin: 30px 0; }
+    .cta-box h3 { color: #8bc34a; margin-bottom: 10px; }
+    .cta-box a { background: #8bc34a; color: #2d5a27; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; display: inline-block; }
+    .progress-bar { background: #e8f5e9; border-radius: 30px; padding: 10px 20px; text-align: center; margin: 20px 0; font-weight: bold; color: #2d5a27; border: 2px solid #8bc34a; }
+    .completed-badge { display: inline-block; background: #2d5a27; color: white; padding: 2px 14px; border-radius: 20px; font-size: 0.7em; margin-left: 10px; }
+    
+    @media (max-width: 768px) {
+      .nav-container { flex-direction: column; text-align: center; }
+      h1 { font-size: 2em; } 
+      .guide-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) { .guide-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
-  <!-- Site Navigation Header -->
+  <!-- ===== TOP MENU HEADER WITH 3 BUTTONS ===== -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo">🍵 Matcha Maya</a>
+      <a href="index.html" class="brand-logo">MATCHA MAYA</a>
+      
       <nav class="main-nav">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index2.html" class="active-link">MATCHA MAYA Interviews</a></li>
+          <!-- Button 1: Interview -->
+          <li><a href="index2.html" class="nav-btn active">🎙️ 1. Interviews</a></li>
+          <!-- Button 2: Podcast -->
+          <li><a href="index.html" class="nav-btn">📻 2. Podcast</a></li>
+          <!-- Button 3: Comparison -->
+          <li><a href="comparison.html" class="nav-btn">📊 3. Comparison</a></li>
         </ul>
       </nav>
+
+      <span class="nav-tagline">220 Global City Destinations</span>
     </div>
   </header>
 
-  <div class="container">
-    <h1>MATCHA MAYA Interviews</h1>
-    <p>Exclusive conversations with creators, location-independent entrepreneurs, and global podcasters sharing real field insights.</p>
+  <!-- ===== MAIN BODY CONTENT ===== -->
+  <div class="main-wrapper">
+      <h1>
+          🍵 MATCHA MAYA Interviews
+          <small>220 Video Call Conversations</small>
+          <span class="completed-badge">🎉 220/220 Complete</span>
+      </h1>
+      <p class="subtitle">🌏 MATCHA MAYA interviews local influencers in 220 cities about coworking, ergonomic chairs, matcha drinks, internet speeds, and flight prices to Dubai.[cite: 1]</p>
 
-    <div class="interview-grid">
-      <div class="interview-card">
-        <h3>🎙️ Episode 1: Podcasting On The Road</h3>
-        <p>How to record professional audio quality in dynamic digital nomad hubs worldwide.</p>
+      <div class="meta-grid">
+          <div class="stat"><div class="stat-number">220</div><div class="stat-label">Cities</div></div>
+          <div class="stat"><div class="stat-number">220</div><div class="stat-label">Interviews</div></div>
+          <div class="stat"><div class="stat-number">~200,000</div><div class="stat-label">Total Words</div></div>
+          <div class="stat"><div class="stat-number">⭐ 88%</div><div class="stat-label">SEO Score</div></div>
       </div>
 
-      <div class="interview-card">
-        <h3>🌐 Episode 2: The 12-Point City Audit</h3>
-        <p>Breaking down real-world internet speed tests, neighborhood safety, and long-term stays.</p>
+      <div class="progress-bar">
+          <span>🌍 220 / 220 interviews completed · 100% complete![cite: 1]</span>
       </div>
-    </div>
 
-    <a href="index.html" class="back-btn">&larr; Back to Main Guides</a>
+      <!-- SOUTHEAST ASIA -->
+      <div class="region-section">
+          <h2>🌴 Southeast Asia[cite: 1]</h2>
+          <div class="guide-grid">
+              <div class="guide-card"><div class="city">🇮🇩 Jakarta[cite: 1]</div><div class="influencer">with Nadia Travels[cite: 1]</div><div><a class="open-btn" href="jakarta-podcast-proposal.html">📖 Read[cite: 1]</a></div></div>
+              <div class="guide-card"><div class="city">🇵🇭 Manila[cite: 1]</div><div class="influencer">with Manila Explorer[cite: 1]</div><div><a class="open-btn" href="manila-podcast-proposal.html">📖 Read[cite: 1]</a></div></div>
+              <div class="guide-card"><div class="city">🇹🇭 Bangkok[cite: 1]</div><div class="influencer">with Bangkok Bites[cite: 1]</div><div><a class="open-btn" href="bangkok-podcast-proposal.html">📖 Read[cite: 1]</a></div></div>
+          </div>
+      </div>
+
+      <!-- CTA BOX -->
+      <div class="cta-box">
+          <h3>🎉 220 Interviews Complete![cite: 1]</h3>
+          <p style="margin-bottom: 15px;">The complete <strong>MATCHA MAYA Interview Series</strong> is now available![cite: 1]</p>
+          <a href="https://matchainfluencer.blogspot.com/2026/07/ultimate-global-matcha-guide.html" target="_blank">🌏 Open Global Guide[cite: 1]</a>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+          <p>© 2026 MATCHA MAYA · All interviews are creative content based on publicly available workspace information.[cite: 1]</p>
+      </div>
   </div>
 
 </body>
