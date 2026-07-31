@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>220 Global Podcast Proposals · Matcha Maya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet" />
+    <style>
+        /* --- RESET & BASE --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f8f9fc;
+            color: #1e1e2f;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- HEADER (matching podcasts.html) --- */
+        .site-header {
+            background: #0b0b1a;
+            color: #fff;
+            padding: 18px 0;
+            border-bottom: 2px solid #6c3bd4;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+        .logo a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .logo span {
+            background: linear-gradient(135deg, #a78bfa, #6c3bd4);
+            padding: 2px 12px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #fff;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+        .main-nav {
+            display: flex;
+            gap: 28px;
+            font-size: 15px;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #fff;
+        }
+        .main-nav a.active {
+            border-bottom: 2px solid #6c3bd4;
+            padding-bottom: 4px;
+        }
+
+        /* --- PAGE HERO --- */
+        .page-hero {
+            padding: 48px 0 32px;
+            text-align: center;
+        }
+        .page-hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e1e2f, #6c3bd4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-hero p {
+            font-size: 18px;
+            color: #475569;
+            max-width: 640px;
+            margin: 8px auto 0;
+        }
+
+        /* --- SELECTOR BAR --- */
+        .selector-bar {
+            background: #fff;
+            border-radius: 60px;
+            padding: 10px 20px 10px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            margin: 8px 0 32px;
+            border: 1px solid #e9edf4;
+        }
+        .selector-bar label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #1e1e2f;
+        }
+        .selector-bar select {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px 16px;
+            border-radius: 40px;
+            border: 1px solid #d1d9e6;
+            background: #f8fafc;
+            font-size: 14px;
+            font-weight: 500;
+            color: #0b0b1a;
+            outline: none;
+            cursor: pointer;
+        }
+        .selector-bar select:focus {
+            border-color: #6c3bd4;
+        }
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            background: #f1f4f9;
+            border-radius: 40px;
+            padding: 0 16px;
+            flex: 1;
+            min-width: 160px;
+        }
+        .search-wrap span {
+            color: #94a3b8;
+            font-size: 16px;
+        }
+        .search-wrap input {
+            border: none;
+            background: transparent;
+            padding: 10px 8px;
+            font-size: 14px;
+            width: 100%;
+            outline: none;
+        }
+        .city-count {
+            font-size: 13px;
+            color: #64748b;
+            white-space: nowrap;
+        }
+
+        /* --- STORYBOARD GRID --- */
+        .storyboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 32px 0 40px;
+        }
+        .story-panel {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 20px 22px 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eef2f8;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .story-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(108, 59, 212, 0.06);
+        }
+        .panel-label {
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            color: #6c3bd4;
+            margin-bottom: 6px;
+        }
+        .story-panel h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0b0b1a;
+            margin-bottom: 6px;
+        }
+        .story-panel .scene {
+            font-size: 14px;
+            color: #334155;
+            line-height: 1.6;
+        }
+        .story-panel .scene strong {
+            color: #0b0b1a;
+        }
+        .panel-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+        }
+        .panel-tags span {
+            background: #f1f4f9;
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #334155;
+        }
+        .panel-tags .purple {
+            background: #6c3bd4;
+            color: #fff;
+        }
+        .panel-tags .blue {
+            background: #2563eb;
+            color: #fff;
+        }
+        .panel-tags .green {
+            background: #059669;
+            color: #fff;
+        }
+        .panel-tags .orange {
+            background: #ea580c;
+            color: #fff;
+        }
+
+        /* --- FEATURED STUDIO --- */
+        .featured-studio {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #0b0b1a 0%, #1e103a 100%);
+            border-radius: 24px;
+            padding: 28px 36px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            border: 1px solid #2d1f55;
+            box-shadow: 0 8px 32px rgba(108, 59, 212, 0.12);
+        }
+        .studio-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #a78bfa, #6c3bd4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .studio-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .studio-info p {
+            color: #cbd5e1;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+        .studio-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 4px 0 6px;
+        }
+        .studio-details span {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            color: #cbd5e1;
+        }
+        .studio-tag {
+            background: rgba(108, 59, 212, 0.25);
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #c4b5e6;
+            border: 1px solid rgba(108, 59, 212, 0.2);
+            display: inline-block;
+        }
+        .studio-tag strong {
+            color: #fff;
+        }
+
+        /* --- KEYWORD HEATMAP --- */
+        .keyword-heatmap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 16px 0 4px;
+        }
+        .keyword-heatmap span {
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            background: #eef2f8;
+            color: #1e1e2f;
+        }
+        .keyword-heatmap .high {
+            background: #6c3bd4;
+            color: #fff;
+        }
+        .keyword-heatmap .medium {
+            background: #a78bfa;
+            color: #fff;
+        }
+        .keyword-heatmap .low {
+            background: #d9d0eb;
+            color: #1e1e2f;
+        }
+
+        /* --- FOOTER (matching podcasts.html) --- */
+        .site-footer {
+            border-top: 1px solid #e2e8f0;
+            padding: 28px 0 24px;
+            margin-top: 32px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 14px;
+            color: #64748b;
+        }
+        .site-footer .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .site-footer .footer-links a {
+            color: #64748b;
+            text-decoration: none;
+        }
+        .site-footer .footer-links a:hover {
+            color: #6c3bd4;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1024px) {
+            .storyboard-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .main-nav {
+                justify-content: center;
+                gap: 16px;
+                font-size: 14px;
+            }
+            .selector-bar {
+                border-radius: 28px;
+                padding: 14px 18px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-wrap {
+                min-width: unset;
+            }
+            .storyboard-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+            .featured-studio {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px 20px;
+            }
+            .studio-details {
+                justify-content: center;
+            }
+            .page-hero h1 {
+                font-size: 28px;
+            }
+            .site-footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 18px;
+            }
+            .logo span {
+                font-size: 10px;
+                padding: 2px 10px;
+            }
+            .main-nav {
+                gap: 12px;
+                font-size: 13px;
+                flex-wrap: wrap;
+            }
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER with internal links ========== -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/">🎙️ MATCHA MAYA</a>
+                <span>SEO HOBBY EXPERT school</span>
+            </div>
+            <nav class="main-nav">
+                <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/">Home</a>
+                <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcasts.html" class="active">220 Interviews</a>
+                <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcasts.html">Podcasts</a>
+                <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/comparison.html">Comparison</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <!-- ========== HERO ========== -->
+            <div class="page-hero">
+                <h1>🎧 220 Global Podcast Proposals</h1>
+                <p>Browse structured destination proposals and media creation pitches worldwide.</p>
+            </div>
+
+            <!-- ========== SELECTOR ========== -->
+            <div class="selector-bar">
+                <label for="citySelect">🌍 City</label>
+                <select id="citySelect"></select>
+                <div class="search-wrap">
+                    <span>🔍</span>
+                    <input type="text" id="citySearch" placeholder="Search city..." />
+                </div>
+                <span class="city-count" id="cityCount">220 cities</span>
+            </div>
+
+            <!-- ========== DYNAMIC CONTENT ========== -->
+            <div id="dynamicContent">
+
+                <div class="page-title">
+                    <h2 style="font-size:24px; font-weight:700; margin-bottom:2px;">
+                        🎙️ <span id="cityNameDisplay">Abu Dhabi</span> · Storyboard
+                    </h2>
+                    <p style="color:#475569; margin-bottom:4px;">
+                        Matcha Maya explores <span id="cityNameSub">Abu Dhabi</span> in an ultra-luxury modern co-working space with premium ergonomic chairs and designer desks.
+                    </p>
+                    <div class="keyword-heatmap" id="keywordHeatmap">
+                        <span class="high">#AbuDhabi</span>
+                        <span class="high">#Podcast</span>
+                        <span class="medium">#LuxuryCoworking</span>
+                        <span class="medium">#DigitalNomad</span>
+                        <span class="low">#SEO</span>
+                        <span class="low">#HobbyExpert</span>
+                    </div>
+                </div>
+
+                <!-- Storyboard Grid -->
+                <div class="storyboard-grid" id="storyboardGrid">
+                    <!-- Panel 1 -->
+                    <div class="story-panel" id="panel1">
+                        <div class="panel-label">📊 SCENE 1</div>
+                        <h3 id="p1Title">Arrival &amp; First Impressions</h3>
+                        <div class="scene" id="p1Scene">
+                            Matcha Maya arrives at <strong id="p1City">Abu Dhabi</strong>'s ultra-luxury co-working space, greeted by panoramic city views and a warm smile.
+                        </div>
+                        <div class="panel-tags">
+                            <span class="purple">#Arrival</span>
+                            <span class="blue">#Skyline</span>
+                            <span>#Welcome</span>
+                            <span>#LuxuryTravel</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 2 -->
+                    <div class="story-panel" id="panel2">
+                        <div class="panel-label">🎯 SCENE 2</div>
+                        <h3 id="p2Title">Studio &amp; Equipment Setup</h3>
+                        <div class="scene" id="p2Scene">
+                            Inside the <strong id="p2City">Abu Dhabi</strong> podcast studio, premium microphones and soundproofing create the perfect atmosphere for recording.
+                        </div>
+                        <div class="panel-tags">
+                            <span class="purple">#Studio</span>
+                            <span class="blue">#Audio</span>
+                            <span>#Production</span>
+                            <span>#RemoteWork</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 3 -->
+                    <div class="story-panel" id="panel3">
+                        <div class="panel-label">🏆 SCENE 3</div>
+                        <h3 id="p3Title">Designer Workspace</h3>
+                        <div class="scene" id="p3Scene">
+                            The designer desk features a sleek monitor, ergonomic chair, and a cup of matcha latte — <strong id="p3City">Abu Dhabi</strong>'s creative headquarters.
+                        </div>
+                        <div class="panel-tags">
+                            <span class="purple">#Design</span>
+                            <span class="blue">#MatchaLatte</span>
+                            <span>#Ergonomics</span>
+                            <span>#WorkFromAnywhere</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 4 -->
+                    <div class="story-panel" id="panel4">
+                        <div class="panel-label">📚 SCENE 4</div>
+                        <h3 id="p4Title">Guest Expert Interview</h3>
+                        <div class="scene" id="p4Scene">
+                            Maya interviews a local <strong id="p4City">Abu Dhabi</strong> expert who shares insider tips and cultural insights for the podcast audience.
+                        </div>
+                        <div class="panel-tags">
+                            <span class="purple">#Interview</span>
+                            <span class="blue">#LocalExpert</span>
+                            <span>#Culture</span>
+                            <span>#Productivity</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 5 -->
+                    <div class="story-panel" id="panel5">
+                        <div class="panel-label">🌟 SCENE 5</div>
+                        <h3 id="p5Title">SEO Content Strategy</h3>
+                        <div class="scene" id="p5Scene">
+                            Reviewing keyword analytics for the <strong id="p5City">Abu Dhabi</strong> episode, Maya optimizes for global reach and discoverability.
+                        </div>
+                        <div class="panel-tags">
+                            <span class="purple">#SEO</span>
+                            <span class="blue">#Analytics</span>
+                            <span>#ContentStrategy</span>
+                            <span>#AbuDhabiSEO</span>
+                        </div>
+                    </div>
+
+                    <!-- Panel 6 -->
+                    <div class="story-panel" id="panel6">
+                        <div class="panel-label">🎬 SCENE 6</div>
+                        <h3 id="p6Title">Episode Wrap &amp; Celebration</h3>
+                        <div class="scene" id="p6Scene">
+                            Episode complete! Maya smiles as she reviews the recording, ready to share <strong id="p6City">Abu Dhabi</strong>'s story with the world.
+                        </div>
+                        <div class="panel-tags">
+                            <span class="purple">#Wrap</span>
+                            <span class="blue">#Celebration</span>
+                            <span>#Published</span>
+                            <span>#AbuDhabiComplete</span>
+                        </div>
+                    </div>
+
+                    <!-- Featured Studio -->
+                    <div class="featured-studio">
+                        <div class="studio-avatar">🎙️</div>
+                        <div class="studio-info">
+                            <h3>🎬 Live from <span id="featuredCity">Abu Dhabi</span></h3>
+                            <p>Matcha Maya in the ultra-luxury podcast studio · Premium ergonomic chairs · Designer desk · City skyline view</p>
+                            <div class="studio-details">
+                                <span>🪑 Ergonomic seating</span>
+                                <span>🖥️ 4K monitors</span>
+                                <span>🎧 Studio-grade audio</span>
+                                <span>☕ Matcha bar</span>
+                            </div>
+                            <div class="studio-tag">👕 <strong>SEO HOBBY EXPERT school</strong> · blue &amp; purple highlights</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ========== FOOTER with internal links ========== -->
+            <footer class="site-footer">
+                <span>© Matcha Maya Blog — Global Remote Work &amp; Podcast Creator Network</span>
+                <div class="footer-links">
+                    <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/">Home</a>
+                    <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcasts.html">220 Interviews</a>
+                    <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcasts.html">Podcast Proposals</a>
+                    <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/comparison.html">City Comparisons</a>
+                    <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/">SEO Hobby Expert School</a>
+                    <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/">About</a>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- ========== JAVASCRIPT (unchanged) ========== -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ---------- 220 CITIES ----------
+            const cities = [
+                "Abu Dhabi", "Accra", "Addis Ababa", "Al Ula", "Albuquerque",
+                "Alexandria", "Algiers", "Almaty", "Amman", "Amsterdam",
+                "Ankara", "Antalya", "Antananarivo", "Antwerp", "Aqaba",
+                "Arequipa", "Ashgabat", "Astana", "Asuncion", "Athens",
+                "Atlanta", "Auckland", "Austin", "Baku", "Bali",
+                "Bangalore", "Bangkok", "Barcelona", "Bariloche", "Batumi",
+                "Beijing", "Beirut", "Belfast", "Belgrade", "Bengaluru",
+                "Berlin", "Bern", "Birmingham", "Bishkek", "Bodrum",
+                "Bogota", "Boston", "Brampton", "Bratislava", "Bremen",
+                "Bridgetown", "Brisbane", "Bristol", "Brussels", "Bucharest",
+                "Budapest", "Buenos Aires", "Bursa", "Busan", "Cairo",
+                "Calgary", "Cali", "Cape Town", "Caracas", "Cardiff",
+                "Cartagena", "Casablanca", "Cebu", "Chengdu", "Chennai",
+                "Chiang Mai", "Chicago", "Chisinau", "Christchurch", "Ciudad Juarez",
+                "Cluj Napoca", "Cologne", "Colombo", "Copenhagen", "Cordoba",
+                "Cuenca", "Curitiba", "Cusco", "Da Nang", "Dakar",
+                "Dallas", "Dammam", "Dar Es Salaam", "Delhi", "Denver",
+                "Detroit", "Dhaka", "Doha", "Dortmund", "Dresden",
+                "Dubai", "Dublin", "Dubrovnik", "Duisburg", "Durban",
+                "Dushanbe", "Dusseldorf", "Edinburgh", "Edmonton", "Erbil",
+                "Essen", "Faro", "Florence", "Florianopolis", "Frankfurt",
+                "Fresno", "Fukuoka", "Funchal", "Gdansk", "Geneva",
+                "Glasgow", "Goa", "Guadalajara", "Guangzhou", "Guayaquil",
+                "Halifax", "Hamburg", "Hamilton", "Hanoi", "Hanover",
+                "Helsinki", "Ho Chi Minh", "Hong Kong", "Honolulu", "Houston",
+                "Hyderabad", "Islamabad", "Istanbul", "Izmir", "Jaipur",
+                "Jakarta", "Jeddah", "Jeju", "Johannesburg", "Kampala",
+                "Kandy", "Kaohsiung", "Karachi", "Kathmandu", "Kaunas",
+                "Khujand", "Kigali", "Kingston", "Kolkata", "Krakow",
+                "Kuala Lumpur", "Kuwait City", "Kyiv", "Kyoto", "La Paz",
+                "Lagos", "Lahore", "Las Vegas", "Laval", "Leeds",
+                "Leipzig", "Leon", "Lima", "Lisbon", "Liverpool",
+                "Ljubljana", "London Ontario", "London", "Los Angeles", "Louisville",
+                "Luanda", "Luxembourg", "Lviv", "Lyon", "Macau",
+                "Madrid", "Male", "Manama", "Manchester", "Manila",
+                "Maputo", "Marrakech", "Mauritius", "Medellin", "Melbourne",
+                "Memphis", "Mendoza", "Mexico City", "Miami", "Milan",
+                "Minneapolis", "Minsk", "Mississauga", "Mombasa", "Monterrey",
+                "Montevideo", "Montreal", "Moscow", "Mumbai", "Munich",
+                "Muscat", "Nagoya", "Nairobi", "Nashville", "Nassau",
+                "New Delhi", "New Orleans", "New York City", "New York", "Newcastle",
+                "Nice", "Nuremberg", "Oaxaca", "Odesa", "Oklahoma City",
+                "Omaha", "Osaka", "Oslo", "Ottawa", "Panama City",
+                "Paris", "Penang", "Perth", "Philadelphia", "Phnom Penh",
+                "Phoenix", "Phuket", "Playa Del Carmen", "Plovdiv", "Pokhara",
+                "Port Au Prince", "Port Of Spain", "Portland", "Porto", "Prague",
+                "Pretoria", "Puebla", "Puerto Vallarta", "Pune", "Quebec City",
+                "Quito", "Reykjavik", "Riga", "Rio De Janeiro", "Riyadh",
+                "Rome", "Rotterdam", "Sacramento", "Salalah", "Salvador",
+                "Samarkand", "San Diego", "San Francisco", "San Jose Cr", "San Jose",
+                "San Juan", "San Salvador", "Santa Marta", "Santiago", "Santo Domingo",
+                "Sao Paulo", "Sapporo", "Sarajevo", "Seattle", "Seoul",
+                "Seville", "Shanghai", "Sharjah", "Sheffield", "Shenzhen",
+                "Singapore", "Skopje", "Sofia", "Split", "St Petersburg",
+                "Stockholm", "Stuttgart", "Surrey", "Sydney", "Taghazout",
+                "Taichung", "Taipei", "Tallinn", "Tartu", "Tashkent",
+                "Tbilisi", "Tel Aviv", "Thimphu", "Tijuana", "Tirana",
+                "Tokyo", "Toronto", "Tripoli", "Tucson", "Tulum",
+                "Tunis", "Ulaanbaatar", "Valencia", "Valletta", "Vancouver",
+                "Varna", "Vienna", "Vientiane", "Vilnius", "Warsaw",
+                "Washington Dc", "Wellington", "Windhoek", "Winnipeg", "Wroclaw",
+                "Yangon", "Yerevan", "Zagreb", "Zanzibar", "Zurich"
+            ];
+
+            // ---------- SCENE TEMPLATES ----------
+            const sceneTemplates = {
+                p1: [
+                    c => `Matcha Maya arrives at ${c}'s ultra-luxury co-working space, greeted by panoramic city views and a warm smile. The modern condominium features floor-to-ceiling windows and a stunning ${c} skyline.`,
+                    c => `Stepping into the ${c} co-working lounge, Maya is welcomed by the scent of fresh coffee and the hum of creative energy. The designer interior features Italian leather chairs and a breathtaking view.`,
+                    c => `The ${c} podcast studio is a masterpiece of modern design. Maya takes her seat at the custom-built desk, ready to record another episode in this inspiring ultra-luxury setting.`,
+                    c => `With a backdrop of the ${c} skyline, Maya sets up her equipment. The premium soundproofing and ambient lighting create the perfect environment for storytelling.`
+                ],
+                p2: [
+                    c => `Inside the ${c} podcast studio, premium microphones and soundproofing create the perfect atmosphere for recording. Maya's voice carries with crystal clarity.`,
+                    c => `The ${c} studio is equipped with top-tier audio gear. Maya reviews her notes while the engineer adjusts the levels, ensuring a flawless recording session.`,
+                    c => `Maya's favorite spot in the ${c} co-working space is the podcast booth. With a digital recorder, headphones, and a smile, she brings stories to life.`,
+                    c => `Surrounded by acoustic panels and professional lighting, Maya begins her ${c} episode. The studio's design reflects the city's blend of tradition and innovation.`
+                ],
+                p3: [
+                    c => `The designer desk features a sleek monitor, ergonomic chair, and a cup of matcha latte — Maya's creative headquarters in ${c}. The view inspires every word.`,
+                    c => `Maya's workspace in ${c} is a blend of luxury and functionality. The custom desk, premium chair, and ambient lighting fuel her creative flow.`,
+                    c => `With a matcha latte in hand, Maya reviews the ${c} episode outline. The co-working space's modern design and city view provide endless inspiration.`,
+                    c => `The ${c} co-working desk is Maya's command center. Dual monitors, a designer keyboard, and a healthy snack keep her energized for the recording ahead.`
+                ],
+                p4: [
+                    c => `Maya interviews a local ${c} expert who shares insider tips and cultural insights for the podcast audience. The conversation flows naturally.`,
+                    c => `A ${c} entrepreneur joins Maya in the studio. They discuss business trends, local culture, and the future of digital nomadism in this vibrant city.`,
+                    c => `Maya welcomes a ${c} artist to the podcast. They explore the creative scene, hidden galleries, and the unique inspiration found in this destination.`,
+                    c => `The ${c} episode features a local chef who shares culinary secrets and stories from the city's famous food markets. Maya is captivated.`
+                ],
+                p5: [
+                    c => `Reviewing keyword analytics and content strategy for the ${c} episode, Maya optimizes for global reach. The data reveals exciting trends.`,
+                    c => `Maya's SEO dashboard lights up with insights about ${c}. She identifies key search terms and tailors the episode to match audience intent.`,
+                    c => `The ${c} episode strategy focuses on high-value keywords, related topics, and semantic clusters. Maya ensures every piece of content is discoverable.`,
+                    c => `Maya analyzes the ${c} market using SEO tools. She finds gaps in content and creates a plan to fill them, making her podcast the go-to resource.`
+                ],
+                p6: [
+                    c => `Episode complete! Maya smiles as she reviews the recording, ready to share ${c}'s story with the world. Another successful session.`,
+                    c => `Maya saves the ${c} audio file and celebrates with a matcha toast. The co-working space buzzes with the energy of creative minds.`,
+                    c => `With a satisfied smile, Maya exports the ${c} episode. The podcast is ready for editing and publishing, bringing this city's stories to listeners everywhere.`,
+                    c => `Maya looks out at the ${c} skyline, feeling grateful for another wonderful recording. The co-working space has become her second home.`
+                ]
+            };
+
+            const titleSets = [
+                ['Arrival & First Impressions', 'Studio & Equipment Setup', 'Designer Workspace', 'Guest Expert Interview', 'SEO Content Strategy', 'Episode Wrap & Celebration'],
+                ['Welcome to the City', 'Premium Audio Studio', 'Matcha & Productivity', 'Local Insights', 'Content Optimization', 'Success & Smiles'],
+                ['First Look at the Space', 'Professional Recording', 'Creative Command Center', 'Cultural Conversation', 'Analytics & Reach', 'Mission Accomplished'],
+                ['Maya Arrives', 'Podcast Booth', 'Desk & Design', 'Guest Spotlight', 'Keyword Strategy', 'Episode Complete']
+            ];
+
+            const keywordSets = [
+                ['#LuxuryTravel', '#RemoteWork', '#WorkFromAnywhere', '#Productivity'],
+                ['#DigitalNomad', '#TravelGram', '#NomadLifestyle', '#CreativeSpace'],
+                ['#Coworking', '#MatchaMaya', '#PodcastTips', '#AudioProduction'],
+                ['#PodcastLife', '#PodcastStudio', '#TravelPodcast', '#TravelContent']
+            ];
+
+            // ---------- DOM REFS ----------
+            const select = document.getElementById('citySelect');
+            const search = document.getElementById('citySearch');
+            const cityCount = document.getElementById('cityCount');
+            const cityNameDisplay = document.getElementById('cityNameDisplay');
+            const cityNameSub = document.getElementById('cityNameSub');
+            const featuredCity = document.getElementById('featuredCity');
+            const keywordHeatmap = document.getElementById('keywordHeatmap');
+
+            const p1City = document.getElementById('p1City');
+            const p2City = document.getElementById('p2City');
+            const p3City = document.getElementById('p3City');
+            const p4City = document.getElementById('p4City');
+            const p5City = document.getElementById('p5City');
+            const p6City = document.getElementById('p6City');
+
+            const p1Title = document.getElementById('p1Title');
+            const p2Title = document.getElementById('p2Title');
+            const p3Title = document.getElementById('p3Title');
+            const p4Title = document.getElementById('p4Title');
+            const p5Title = document.getElementById('p5Title');
+            const p6Title = document.getElementById('p6Title');
+
+            const p1Scene = document.getElementById('p1Scene');
+            const p2Scene = document.getElementById('p2Scene');
+            const p3Scene = document.getElementById('p3Scene');
+            const p4Scene = document.getElementById('p4Scene');
+            const p5Scene = document.getElementById('p5Scene');
+            const p6Scene = document.getElementById('p6Scene');
+
+            const panelTags = [
+                document.querySelector('#panel1 .panel-tags'),
+                document.querySelector('#panel2 .panel-tags'),
+                document.querySelector('#panel3 .panel-tags'),
+                document.querySelector('#panel4 .panel-tags'),
+                document.querySelector('#panel5 .panel-tags'),
+                document.querySelector('#panel6 .panel-tags')
+            ];
+
+            // ---------- HELPERS ----------
+            function getSceneText(templateArray, city, seed) {
+                return templateArray[seed % templateArray.length](city);
+            }
+
+            function getSlug(city) {
+                return city.replace(/ /g, '').replace(/'/g, '');
+            }
+
+            // ---------- UPDATE PAGE ----------
+            function updateCity(city, index) {
+                const slug = getSlug(city);
+
+                cityNameDisplay.textContent = city;
+                cityNameSub.textContent = city;
+                featuredCity.textContent = city;
+
+                p1City.textContent = city;
+                p2City.textContent = city;
+                p3City.textContent = city;
+                p4City.textContent = city;
+                p5City.textContent = city;
+                p6City.textContent = city;
+
+                const titles = titleSets[index % titleSets.length];
+                p1Title.textContent = titles[0];
+                p2Title.textContent = titles[1];
+                p3Title.textContent = titles[2];
+                p4Title.textContent = titles[3];
+                p5Title.textContent = titles[4];
+                p6Title.textContent = titles[5];
+
+                p1Scene.innerHTML = getSceneText(sceneTemplates.p1, city, index * 7 + 1);
+                p2Scene.innerHTML = getSceneText(sceneTemplates.p2, city, index * 11 + 3);
+                p3Scene.innerHTML = getSceneText(sceneTemplates.p3, city, index * 13 + 5);
+                p4Scene.innerHTML = getSceneText(sceneTemplates.p4, city, index * 17 + 7);
+                p5Scene.innerHTML = getSceneText(sceneTemplates.p5, city, index * 19 + 9);
+                p6Scene.innerHTML = getSceneText(sceneTemplates.p6, city, index * 23 + 11);
+
+                const heatKeywords = [
+                    { text: '#' + slug, cls: 'high' },
+                    { text: '#Podcast', cls: 'high' },
+                    { text: '#LuxuryCoworking', cls: 'medium' },
+                    { text: '#DigitalNomad', cls: 'medium' },
+                    { text: '#SEO', cls: 'low' },
+                    { text: '#HobbyExpert', cls: 'low' }
+                ];
+                keywordHeatmap.innerHTML = heatKeywords.map(kw =>
+                    `<span class="${kw.cls}">${kw.text}</span>`
+                ).join('');
+
+                const kw = keywordSets[index % keywordSets.length];
+                const tagSets = [
+                    ['#Arrival', '#Skyline', '#Welcome', kw[0]],
+                    ['#Studio', '#Audio', '#Production', kw[1]],
+                    ['#Design', '#MatchaLatte', '#Ergonomics', kw[2]],
+                    ['#Interview', '#LocalExpert', '#Culture', kw[3]],
+                    ['#SEO', '#Analytics', '#ContentStrategy', '#' + slug + 'SEO'],
+                    ['#Wrap', '#Celebration', '#Published', '#' + slug + 'Complete']
+                ];
+
+                const colorClasses = ['purple', 'blue', 'green', 'orange'];
+                panelTags.forEach((el, i) => {
+                    const tags = tagSets[i];
+                    el.innerHTML = tags.map((t, j) => {
+                        const cls = j < 2 ? colorClasses[j % colorClasses.length] : '';
+                        return `<span class="${cls}">${t}</span>`;
+                    }).join('');
+                });
+
+                select.value = city;
+            }
+
+            // ---------- POPULATE DROPDOWN ----------
+            cities.forEach((c, i) => {
+                const opt = document.createElement('option');
+                opt.value = c;
+                opt.textContent = c;
+                opt.dataset.index = i;
+                select.appendChild(opt);
+            });
+            cityCount.textContent = cities.length + ' cities';
+
+            // ---------- EVENT LISTENERS ----------
+            select.addEventListener('change', function(e) {
+                const city = e.target.value;
+                const idx = Array.from(select.options).findIndex(o => o.value === city);
+                if (idx >= 0) {
+                    updateCity(city, idx);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+
+            search.addEventListener('input', function(e) {
+                const val = e.target.value.toLowerCase();
+                let visible = 0;
+                let firstVisible = null;
+
+                for (let opt of select.options) {
+                    const match = opt.value.toLowerCase().includes(val);
+                    opt.style.display = match ? '' : 'none';
+                    if (match) {
+                        visible++;
+                        if (!firstVisible) firstVisible = opt;
+                    }
+                }
+
+                cityCount.textContent = visible + ' cities';
+
+                if (firstVisible && val.length > 0) {
+                    select.value = firstVisible.value;
+                    const idx = parseInt(firstVisible.dataset.index);
+                    updateCity(firstVisible.value, idx);
+                } else if (val.length === 0) {
+                    const firstOpt = select.options[0];
+                    select.value = firstOpt.value;
+                    updateCity(firstOpt.value, 0);
+                }
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+                const current = select.selectedIndex;
+                let next = current;
+                if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    next = Math.min(current + 1, select.options.length - 1);
+                } else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    next = Math.max(current - 1, 0);
+                }
+                if (next !== current && select.options[next].style.display !== 'none') {
+                    select.selectedIndex = next;
+                    const city = select.value;
+                    const idx = parseInt(select.options[next].dataset.index);
+                    updateCity(city, idx);
+                }
+            });
+
+            // ---------- INITIAL LOAD ----------
+            updateCity('Abu Dhabi', 0);
+
+            console.log('🎙️ Matcha Maya · 220 Global Podcast Proposals loaded.');
+            console.log(`📍 ${cities.length} cities available. Use arrow keys or search.`);
+
+        })();
+    </script>
+
+</body>
+</html>
