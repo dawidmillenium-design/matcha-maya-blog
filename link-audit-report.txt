@@ -1,0 +1,9 @@
+﻿
+URL             Occurrences
+---             -----------
+index.html                3
+podcasts.html             2
+index2.html               2
+comparison.html           2
+
+
