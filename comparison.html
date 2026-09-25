@@ -1,354 +1,225 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matcha Maya Blog: 220 City Coworking & Cost Comparisons</title>
-  <meta name="description" content="Compare rent, internet speeds, safety, and coworking options across 220 global destinations.">
-  <style>
-    :root {
-      --primary-color: #0f4c3a;
-      --primary-hover: #15624c;
-      --bg-color: #f7f9f6;
-      --text-color: #2c352b;
-      --card-bg: #ffffff;
-      --border-color: #d1ded0;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
-    
-    /* Navigation Header */
-    .site-header { background-color: var(--primary-color); color: #ffffff; padding: 14px 24px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #ffffff; text-decoration: none; letter-spacing: 0.5px; }
-    .main-nav ul { display: flex; list-style: none; gap: 12px; margin: 0; padding: 0; }
-    .main-nav a { text-decoration: none; color: #ffffff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; }
-    .main-nav a:hover { background-color: rgba(255,255,255,0.25); }
-    
-    /* Layout */
-    .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-    .page-header { text-align: center; margin-bottom: 40px; }
-    .page-header h1 { font-size: 2.2rem; color: var(--primary-color); margin-bottom: 10px; }
-    .page-header p { font-size: 1.1rem; color: #555; }
-    
-    /* Search Bar Filter */
-    .search-filter-box { max-width: 600px; margin: 0 auto 30px auto; text-align: center; }
-    .search-filter-box input { width: 100%; padding: 12px 20px; border-radius: 30px; border: 2px solid var(--border-color); font-size: 1rem; outline: none; }
-    .search-filter-box input:focus { border-color: var(--primary-color); }
-
-    /* City Link Grid */
-    .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-    .grid-card { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 10px; padding: 16px 20px; text-decoration: none; color: var(--text-color); display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; }
-    .grid-card:hover { border-color: var(--primary-color); transform: translateY(-3px); box-shadow: 0 4px 12px rgba(15, 76, 58, 0.1); }
-    .grid-card span.title { font-weight: 600; font-size: 0.95rem; }
-    .grid-card span.badge { background: #eef5ee; color: var(--primary-color); font-size: 0.75rem; padding: 4px 8px; border-radius: 12px; font-weight: bold; }
-  </style>
-<style id="nav-enhancements">
-  .main-nav a.active {
-    background-color: #ffffff !important;
-    color: #0f4c3a !important;
-    font-weight: 700 !important;
-  }
-  .site-footer {
-    background-color: #0f4c3a;
-    color: #ffffff;
-    text-align: center;
-    padding: 24px 20px;
-    margin-top: 60px;
-    border-top: 3px solid #15624c;
-    font-size: 0.9rem;
-  }
-  .site-footer a {
-    color: #ffffff;
-    text-decoration: underline;
-    margin: 0 10px;
-    font-weight: 600;
-  }
-  .site-footer a:hover {
-    color: #d1ded0;
-  }
-  @media (max-width: 480px) {
-    .nav-container {
-      flex-direction: column !important;
-      align-items: center !important;
-      gap: 12px !important;
-    }
-    .main-nav ul {
-      gap: 6px !important;
-      flex-wrap: wrap !important;
-      justify-content: center !important;
-    }
-    .main-nav a {
-      font-size: 0.75rem !important;
-      padding: 5px 10px !important;
-    }
-  }
-</style>
-</head>
-<body>
-
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo">MATCHA MAYA</a>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index2.html">220 Interviews</a></li>
-          <li><a href="podcasts.html">Podcasts</a></li>
-          <li><a href="comparison.html" class="active">Comparison</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="page-header">
-      <h1>📊 City to City Coworking & Cost Comparison</h1>
-      <p>Analyze internet speeds, safety, living costs, and coworking hubs side-by-side.</p>
-    </div>
-
-    <div class="search-filter-box">
-      <input type="text" id="compSearch" placeholder="🔍 Search city comparisons..." onkeyup="filterComparison()">
-    </div>
-
-    <div class="link-grid" id="comparisonGrid">      <a href="abu-dhabi-comparison.html" class="grid-card"><span class="title">📊 Abu Dhabi</span><span class="badge">Guide</span></a>
-      <a href="accra-comparison.html" class="grid-card"><span class="title">📊 Accra</span><span class="badge">Guide</span></a>
-      <a href="addis-ababa-comparison.html" class="grid-card"><span class="title">📊 Addis Ababa</span><span class="badge">Guide</span></a>
-      <a href="albuquerque-comparison.html" class="grid-card"><span class="title">📊 Albuquerque</span><span class="badge">Guide</span></a>
-      <a href="alexandria-comparison.html" class="grid-card"><span class="title">📊 Alexandria</span><span class="badge">Guide</span></a>
-      <a href="algiers-comparison.html" class="grid-card"><span class="title">📊 Algiers</span><span class="badge">Guide</span></a>
-      <a href="almaty-comparison.html" class="grid-card"><span class="title">📊 Almaty</span><span class="badge">Guide</span></a>
-      <a href="amman-comparison.html" class="grid-card"><span class="title">📊 Amman</span><span class="badge">Guide</span></a>
-      <a href="amsterdam-comparison.html" class="grid-card"><span class="title">📊 Amsterdam</span><span class="badge">Guide</span></a>
-      <a href="antwerp-comparison.html" class="grid-card"><span class="title">📊 Antwerp</span><span class="badge">Guide</span></a>
-      <a href="ashgabat-comparison.html" class="grid-card"><span class="title">📊 Ashgabat</span><span class="badge">Guide</span></a>
-      <a href="asuncion-comparison.html" class="grid-card"><span class="title">📊 Asuncion</span><span class="badge">Guide</span></a>
-      <a href="athens-comparison.html" class="grid-card"><span class="title">📊 Athens</span><span class="badge">Guide</span></a>
-      <a href="atlanta-comparison.html" class="grid-card"><span class="title">📊 Atlanta</span><span class="badge">Guide</span></a>
-      <a href="auckland-comparison.html" class="grid-card"><span class="title">📊 Auckland</span><span class="badge">Guide</span></a>
-      <a href="austin-comparison.html" class="grid-card"><span class="title">📊 Austin</span><span class="badge">Guide</span></a>
-      <a href="baku-comparison.html" class="grid-card"><span class="title">📊 Baku</span><span class="badge">Guide</span></a>
-      <a href="bangalore-comparison.html" class="grid-card"><span class="title">📊 Bangalore</span><span class="badge">Guide</span></a>
-      <a href="bangkok-comparison.html" class="grid-card"><span class="title">📊 Bangkok</span><span class="badge">Guide</span></a>
-      <a href="barcelona-comparison.html" class="grid-card"><span class="title">📊 Barcelona</span><span class="badge">Guide</span></a>
-      <a href="beijing-comparison.html" class="grid-card"><span class="title">📊 Beijing</span><span class="badge">Guide</span></a>
-      <a href="beirut-comparison.html" class="grid-card"><span class="title">📊 Beirut</span><span class="badge">Guide</span></a>
-      <a href="belgrade-comparison.html" class="grid-card"><span class="title">📊 Belgrade</span><span class="badge">Guide</span></a>
-      <a href="berlin-comparison.html" class="grid-card"><span class="title">📊 Berlin</span><span class="badge">Guide</span></a>
-      <a href="bern-comparison.html" class="grid-card"><span class="title">📊 Bern</span><span class="badge">Guide</span></a>
-      <a href="birmingham-comparison.html" class="grid-card"><span class="title">📊 Birmingham</span><span class="badge">Guide</span></a>
-      <a href="bishkek-comparison.html" class="grid-card"><span class="title">📊 Bishkek</span><span class="badge">Guide</span></a>
-      <a href="bogota-comparison.html" class="grid-card"><span class="title">📊 Bogota</span><span class="badge">Guide</span></a>
-      <a href="boston-comparison.html" class="grid-card"><span class="title">📊 Boston</span><span class="badge">Guide</span></a>
-      <a href="brampton-comparison.html" class="grid-card"><span class="title">📊 Brampton</span><span class="badge">Guide</span></a>
-      <a href="bratislava-comparison.html" class="grid-card"><span class="title">📊 Bratislava</span><span class="badge">Guide</span></a>
-      <a href="bremen-comparison.html" class="grid-card"><span class="title">📊 Bremen</span><span class="badge">Guide</span></a>
-      <a href="bridgetown-comparison.html" class="grid-card"><span class="title">📊 Bridgetown</span><span class="badge">Guide</span></a>
-      <a href="brisbane-comparison.html" class="grid-card"><span class="title">📊 Brisbane</span><span class="badge">Guide</span></a>
-      <a href="bristol-comparison.html" class="grid-card"><span class="title">📊 Bristol</span><span class="badge">Guide</span></a>
-      <a href="brussels-comparison.html" class="grid-card"><span class="title">📊 Brussels</span><span class="badge">Guide</span></a>
-      <a href="budapest-comparison.html" class="grid-card"><span class="title">📊 Budapest</span><span class="badge">Guide</span></a>
-      <a href="buenos-aires-comparison.html" class="grid-card"><span class="title">📊 Buenos Aires</span><span class="badge">Guide</span></a>
-      <a href="busan-comparison.html" class="grid-card"><span class="title">📊 Busan</span><span class="badge">Guide</span></a>
-      <a href="cairo-comparison.html" class="grid-card"><span class="title">📊 Cairo</span><span class="badge">Guide</span></a>
-      <a href="calgary-comparison.html" class="grid-card"><span class="title">📊 Calgary</span><span class="badge">Guide</span></a>
-      <a href="cape-town-comparison.html" class="grid-card"><span class="title">📊 Cape Town</span><span class="badge">Guide</span></a>
-      <a href="caracas-comparison.html" class="grid-card"><span class="title">📊 Caracas</span><span class="badge">Guide</span></a>
-      <a href="casablanca-comparison.html" class="grid-card"><span class="title">📊 Casablanca</span><span class="badge">Guide</span></a>
-      <a href="chicago-comparison.html" class="grid-card"><span class="title">📊 Chicago</span><span class="badge">Guide</span></a>
-      <a href="chisinau-comparison.html" class="grid-card"><span class="title">📊 Chisinau</span><span class="badge">Guide</span></a>
-      <a href="christchurch-comparison.html" class="grid-card"><span class="title">📊 Christchurch</span><span class="badge">Guide</span></a>
-      <a href="ciudad-juarez-comparison.html" class="grid-card"><span class="title">📊 Ciudad Juarez</span><span class="badge">Guide</span></a>
-      <a href="cologne-comparison.html" class="grid-card"><span class="title">📊 Cologne</span><span class="badge">Guide</span></a>
-      <a href="colombo-comparison.html" class="grid-card"><span class="title">📊 Colombo</span><span class="badge">Guide</span></a>
-      <a href="copenhagen-comparison.html" class="grid-card"><span class="title">📊 Copenhagen</span><span class="badge">Guide</span></a>
-      <a href="dakar-comparison.html" class="grid-card"><span class="title">📊 Dakar</span><span class="badge">Guide</span></a>
-      <a href="dallas-comparison.html" class="grid-card"><span class="title">📊 Dallas</span><span class="badge">Guide</span></a>
-      <a href="dammam-comparison.html" class="grid-card"><span class="title">📊 Dammam</span><span class="badge">Guide</span></a>
-      <a href="dar-es-salaam-comparison.html" class="grid-card"><span class="title">📊 Dar Es Salaam</span><span class="badge">Guide</span></a>
-      <a href="denver-comparison.html" class="grid-card"><span class="title">📊 Denver</span><span class="badge">Guide</span></a>
-      <a href="detroit-comparison.html" class="grid-card"><span class="title">📊 Detroit</span><span class="badge">Guide</span></a>
-      <a href="dhaka-comparison.html" class="grid-card"><span class="title">📊 Dhaka</span><span class="badge">Guide</span></a>
-      <a href="doha-comparison.html" class="grid-card"><span class="title">📊 Doha</span><span class="badge">Guide</span></a>
-      <a href="dortmund-comparison.html" class="grid-card"><span class="title">📊 Dortmund</span><span class="badge">Guide</span></a>
-      <a href="dresden-comparison.html" class="grid-card"><span class="title">📊 Dresden</span><span class="badge">Guide</span></a>
-      <a href="dubai-comparison.html" class="grid-card"><span class="title">📊 Dubai</span><span class="badge">Guide</span></a>
-      <a href="dublin-comparison.html" class="grid-card"><span class="title">📊 Dublin</span><span class="badge">Guide</span></a>
-      <a href="duisburg-comparison.html" class="grid-card"><span class="title">📊 Duisburg</span><span class="badge">Guide</span></a>
-      <a href="dushanbe-comparison.html" class="grid-card"><span class="title">📊 Dushanbe</span><span class="badge">Guide</span></a>
-      <a href="dusseldorf-comparison.html" class="grid-card"><span class="title">📊 Dusseldorf</span><span class="badge">Guide</span></a>
-      <a href="edinburgh-comparison.html" class="grid-card"><span class="title">📊 Edinburgh</span><span class="badge">Guide</span></a>
-      <a href="edmonton-comparison.html" class="grid-card"><span class="title">📊 Edmonton</span><span class="badge">Guide</span></a>
-      <a href="essen-comparison.html" class="grid-card"><span class="title">📊 Essen</span><span class="badge">Guide</span></a>
-      <a href="frankfurt-comparison.html" class="grid-card"><span class="title">📊 Frankfurt</span><span class="badge">Guide</span></a>
-      <a href="fresno-comparison.html" class="grid-card"><span class="title">📊 Fresno</span><span class="badge">Guide</span></a>
-      <a href="geneva-comparison.html" class="grid-card"><span class="title">📊 Geneva</span><span class="badge">Guide</span></a>
-      <a href="glasgow-comparison.html" class="grid-card"><span class="title">📊 Glasgow</span><span class="badge">Guide</span></a>
-      <a href="guadalajara-comparison.html" class="grid-card"><span class="title">📊 Guadalajara</span><span class="badge">Guide</span></a>
-      <a href="guangzhou-comparison.html" class="grid-card"><span class="title">📊 Guangzhou</span><span class="badge">Guide</span></a>
-      <a href="guayaquil-comparison.html" class="grid-card"><span class="title">📊 Guayaquil</span><span class="badge">Guide</span></a>
-      <a href="halifax-comparison.html" class="grid-card"><span class="title">📊 Halifax</span><span class="badge">Guide</span></a>
-      <a href="hamburg-comparison.html" class="grid-card"><span class="title">📊 Hamburg</span><span class="badge">Guide</span></a>
-      <a href="hamilton-comparison.html" class="grid-card"><span class="title">📊 Hamilton</span><span class="badge">Guide</span></a>
-      <a href="hanover-comparison.html" class="grid-card"><span class="title">📊 Hanover</span><span class="badge">Guide</span></a>
-      <a href="helsinki-comparison.html" class="grid-card"><span class="title">📊 Helsinki</span><span class="badge">Guide</span></a>
-      <a href="ho-chi-minh-comparison.html" class="grid-card"><span class="title">📊 Ho Chi Minh</span><span class="badge">Guide</span></a>
-      <a href="hong-kong-comparison.html" class="grid-card"><span class="title">📊 Hong Kong</span><span class="badge">Guide</span></a>
-      <a href="houston-comparison.html" class="grid-card"><span class="title">📊 Houston</span><span class="badge">Guide</span></a>
-      <a href="hyderabad-comparison.html" class="grid-card"><span class="title">📊 Hyderabad</span><span class="badge">Guide</span></a>
-      <a href="istanbul-comparison.html" class="grid-card"><span class="title">📊 Istanbul</span><span class="badge">Guide</span></a>
-      <a href="jakarta-comparison.html" class="grid-card"><span class="title">📊 Jakarta</span><span class="badge">Guide</span></a>
-      <a href="jeddah-comparison.html" class="grid-card"><span class="title">📊 Jeddah</span><span class="badge">Guide</span></a>
-      <a href="johannesburg-comparison.html" class="grid-card"><span class="title">📊 Johannesburg</span><span class="badge">Guide</span></a>
-      <a href="kampala-comparison.html" class="grid-card"><span class="title">📊 Kampala</span><span class="badge">Guide</span></a>
-      <a href="kathmandu-comparison.html" class="grid-card"><span class="title">📊 Kathmandu</span><span class="badge">Guide</span></a>
-      <a href="kigali-comparison.html" class="grid-card"><span class="title">📊 Kigali</span><span class="badge">Guide</span></a>
-      <a href="kingston-comparison.html" class="grid-card"><span class="title">📊 Kingston</span><span class="badge">Guide</span></a>
-      <a href="kolkata-comparison.html" class="grid-card"><span class="title">📊 Kolkata</span><span class="badge">Guide</span></a>
-      <a href="kuala-lumpur-comparison.html" class="grid-card"><span class="title">📊 Kuala Lumpur</span><span class="badge">Guide</span></a>
-      <a href="kyiv-comparison.html" class="grid-card"><span class="title">📊 Kyiv</span><span class="badge">Guide</span></a>
-      <a href="la-paz-comparison.html" class="grid-card"><span class="title">📊 La Paz</span><span class="badge">Guide</span></a>
-      <a href="lagos-comparison.html" class="grid-card"><span class="title">📊 Lagos</span><span class="badge">Guide</span></a>
-      <a href="las-vegas-comparison.html" class="grid-card"><span class="title">📊 Las Vegas</span><span class="badge">Guide</span></a>
-      <a href="laval-comparison.html" class="grid-card"><span class="title">📊 Laval</span><span class="badge">Guide</span></a>
-      <a href="leeds-comparison.html" class="grid-card"><span class="title">📊 Leeds</span><span class="badge">Guide</span></a>
-      <a href="leipzig-comparison.html" class="grid-card"><span class="title">📊 Leipzig</span><span class="badge">Guide</span></a>
-      <a href="leon-comparison.html" class="grid-card"><span class="title">📊 Leon</span><span class="badge">Guide</span></a>
-      <a href="lima-comparison.html" class="grid-card"><span class="title">📊 Lima</span><span class="badge">Guide</span></a>
-      <a href="lisbon-comparison.html" class="grid-card"><span class="title">📊 Lisbon</span><span class="badge">Guide</span></a>
-      <a href="liverpool-comparison.html" class="grid-card"><span class="title">📊 Liverpool</span><span class="badge">Guide</span></a>
-      <a href="ljubljana-comparison.html" class="grid-card"><span class="title">📊 Ljubljana</span><span class="badge">Guide</span></a>
-      <a href="london-comparison.html" class="grid-card"><span class="title">📊 London</span><span class="badge">Guide</span></a>
-      <a href="london-ontario-comparison.html" class="grid-card"><span class="title">📊 London Ontario</span><span class="badge">Guide</span></a>
-      <a href="los-angeles-comparison.html" class="grid-card"><span class="title">📊 Los Angeles</span><span class="badge">Guide</span></a>
-      <a href="louisville-comparison.html" class="grid-card"><span class="title">📊 Louisville</span><span class="badge">Guide</span></a>
-      <a href="luxembourg-comparison.html" class="grid-card"><span class="title">📊 Luxembourg</span><span class="badge">Guide</span></a>
-      <a href="lviv-comparison.html" class="grid-card"><span class="title">📊 Lviv</span><span class="badge">Guide</span></a>
-      <a href="madrid-comparison.html" class="grid-card"><span class="title">📊 Madrid</span><span class="badge">Guide</span></a>
-      <a href="male-comparison.html" class="grid-card"><span class="title">📊 Male</span><span class="badge">Guide</span></a>
-      <a href="manama-comparison.html" class="grid-card"><span class="title">📊 Manama</span><span class="badge">Guide</span></a>
-      <a href="manchester-comparison.html" class="grid-card"><span class="title">📊 Manchester</span><span class="badge">Guide</span></a>
-      <a href="manila-comparison.html" class="grid-card"><span class="title">📊 Manila</span><span class="badge">Guide</span></a>
-      <a href="medellin-comparison.html" class="grid-card"><span class="title">📊 Medellin</span><span class="badge">Guide</span></a>
-      <a href="melbourne-comparison.html" class="grid-card"><span class="title">📊 Melbourne</span><span class="badge">Guide</span></a>
-      <a href="memphis-comparison.html" class="grid-card"><span class="title">📊 Memphis</span><span class="badge">Guide</span></a>
-      <a href="mexico-city-comparison.html" class="grid-card"><span class="title">📊 Mexico City</span><span class="badge">Guide</span></a>
-      <a href="miami-comparison.html" class="grid-card"><span class="title">📊 Miami</span><span class="badge">Guide</span></a>
-      <a href="milan-comparison.html" class="grid-card"><span class="title">📊 Milan</span><span class="badge">Guide</span></a>
-      <a href="minneapolis-comparison.html" class="grid-card"><span class="title">📊 Minneapolis</span><span class="badge">Guide</span></a>
-      <a href="minsk-comparison.html" class="grid-card"><span class="title">📊 Minsk</span><span class="badge">Guide</span></a>
-      <a href="mississauga-comparison.html" class="grid-card"><span class="title">📊 Mississauga</span><span class="badge">Guide</span></a>
-      <a href="monterrey-comparison.html" class="grid-card"><span class="title">📊 Monterrey</span><span class="badge">Guide</span></a>
-      <a href="montevideo-comparison.html" class="grid-card"><span class="title">📊 Montevideo</span><span class="badge">Guide</span></a>
-      <a href="montreal-comparison.html" class="grid-card"><span class="title">📊 Montreal</span><span class="badge">Guide</span></a>
-      <a href="moscow-comparison.html" class="grid-card"><span class="title">📊 Moscow</span><span class="badge">Guide</span></a>
-      <a href="mumbai-comparison.html" class="grid-card"><span class="title">📊 Mumbai</span><span class="badge">Guide</span></a>
-      <a href="munich-comparison.html" class="grid-card"><span class="title">📊 Munich</span><span class="badge">Guide</span></a>
-      <a href="muscat-comparison.html" class="grid-card"><span class="title">📊 Muscat</span><span class="badge">Guide</span></a>
-      <a href="nagoya-comparison.html" class="grid-card"><span class="title">📊 Nagoya</span><span class="badge">Guide</span></a>
-      <a href="nairobi-comparison.html" class="grid-card"><span class="title">📊 Nairobi</span><span class="badge">Guide</span></a>
-      <a href="nashville-comparison.html" class="grid-card"><span class="title">📊 Nashville</span><span class="badge">Guide</span></a>
-      <a href="nassau-comparison.html" class="grid-card"><span class="title">📊 Nassau</span><span class="badge">Guide</span></a>
-      <a href="new-delhi-comparison.html" class="grid-card"><span class="title">📊 New Delhi</span><span class="badge">Guide</span></a>
-      <a href="new-orleans-comparison.html" class="grid-card"><span class="title">📊 New Orleans</span><span class="badge">Guide</span></a>
-      <a href="new-york-city-comparison.html" class="grid-card"><span class="title">📊 New York City</span><span class="badge">Guide</span></a>
-      <a href="newcastle-comparison.html" class="grid-card"><span class="title">📊 Newcastle</span><span class="badge">Guide</span></a>
-      <a href="nuremberg-comparison.html" class="grid-card"><span class="title">📊 Nuremberg</span><span class="badge">Guide</span></a>
-      <a href="odesa-comparison.html" class="grid-card"><span class="title">📊 Odesa</span><span class="badge">Guide</span></a>
-      <a href="oklahoma-city-comparison.html" class="grid-card"><span class="title">📊 Oklahoma City</span><span class="badge">Guide</span></a>
-      <a href="omaha-comparison.html" class="grid-card"><span class="title">📊 Omaha</span><span class="badge">Guide</span></a>
-      <a href="osaka-comparison.html" class="grid-card"><span class="title">📊 Osaka</span><span class="badge">Guide</span></a>
-      <a href="oslo-comparison.html" class="grid-card"><span class="title">📊 Oslo</span><span class="badge">Guide</span></a>
-      <a href="ottawa-comparison.html" class="grid-card"><span class="title">📊 Ottawa</span><span class="badge">Guide</span></a>
-      <a href="panama-city-comparison.html" class="grid-card"><span class="title">📊 Panama City</span><span class="badge">Guide</span></a>
-      <a href="paris-comparison.html" class="grid-card"><span class="title">📊 Paris</span><span class="badge">Guide</span></a>
-      <a href="perth-comparison.html" class="grid-card"><span class="title">📊 Perth</span><span class="badge">Guide</span></a>
-      <a href="philadelphia-comparison.html" class="grid-card"><span class="title">📊 Philadelphia</span><span class="badge">Guide</span></a>
-      <a href="phnom-penh-comparison.html" class="grid-card"><span class="title">📊 Phnom Penh</span><span class="badge">Guide</span></a>
-      <a href="phoenix-comparison.html" class="grid-card"><span class="title">📊 Phoenix</span><span class="badge">Guide</span></a>
-      <a href="port-au-prince-comparison.html" class="grid-card"><span class="title">📊 Port Au Prince</span><span class="badge">Guide</span></a>
-      <a href="port-of-spain-comparison.html" class="grid-card"><span class="title">📊 Port Of Spain</span><span class="badge">Guide</span></a>
-      <a href="portland-comparison.html" class="grid-card"><span class="title">📊 Portland</span><span class="badge">Guide</span></a>
-      <a href="prague-comparison.html" class="grid-card"><span class="title">📊 Prague</span><span class="badge">Guide</span></a>
-      <a href="puebla-comparison.html" class="grid-card"><span class="title">📊 Puebla</span><span class="badge">Guide</span></a>
-      <a href="quebec-city-comparison.html" class="grid-card"><span class="title">📊 Quebec City</span><span class="badge">Guide</span></a>
-      <a href="quito-comparison.html" class="grid-card"><span class="title">📊 Quito</span><span class="badge">Guide</span></a>
-      <a href="reykjavik-comparison.html" class="grid-card"><span class="title">📊 Reykjavik</span><span class="badge">Guide</span></a>
-      <a href="riga-comparison.html" class="grid-card"><span class="title">📊 Riga</span><span class="badge">Guide</span></a>
-      <a href="rio-de-janeiro-comparison.html" class="grid-card"><span class="title">📊 Rio De Janeiro</span><span class="badge">Guide</span></a>
-      <a href="riyadh-comparison.html" class="grid-card"><span class="title">📊 Riyadh</span><span class="badge">Guide</span></a>
-      <a href="rome-comparison.html" class="grid-card"><span class="title">📊 Rome</span><span class="badge">Guide</span></a>
-      <a href="sacramento-comparison.html" class="grid-card"><span class="title">📊 Sacramento</span><span class="badge">Guide</span></a>
-      <a href="san-diego-comparison.html" class="grid-card"><span class="title">📊 San Diego</span><span class="badge">Guide</span></a>
-      <a href="san-francisco-comparison.html" class="grid-card"><span class="title">📊 San Francisco</span><span class="badge">Guide</span></a>
-      <a href="san-jose-comparison.html" class="grid-card"><span class="title">📊 San Jose</span><span class="badge">Guide</span></a>
-      <a href="san-juan-comparison.html" class="grid-card"><span class="title">📊 San Juan</span><span class="badge">Guide</span></a>
-      <a href="san-salvador-comparison.html" class="grid-card"><span class="title">📊 San Salvador</span><span class="badge">Guide</span></a>
-      <a href="santiago-comparison.html" class="grid-card"><span class="title">📊 Santiago</span><span class="badge">Guide</span></a>
-      <a href="santo-domingo-comparison.html" class="grid-card"><span class="title">📊 Santo Domingo</span><span class="badge">Guide</span></a>
-      <a href="sao-paulo-comparison.html" class="grid-card"><span class="title">📊 Sao Paulo</span><span class="badge">Guide</span></a>
-      <a href="sarajevo-comparison.html" class="grid-card"><span class="title">📊 Sarajevo</span><span class="badge">Guide</span></a>
-      <a href="seattle-comparison.html" class="grid-card"><span class="title">📊 Seattle</span><span class="badge">Guide</span></a>
-      <a href="seoul-comparison.html" class="grid-card"><span class="title">📊 Seoul</span><span class="badge">Guide</span></a>
-      <a href="shanghai-comparison.html" class="grid-card"><span class="title">📊 Shanghai</span><span class="badge">Guide</span></a>
-      <a href="sheffield-comparison.html" class="grid-card"><span class="title">📊 Sheffield</span><span class="badge">Guide</span></a>
-      <a href="singapore-comparison.html" class="grid-card"><span class="title">📊 Singapore</span><span class="badge">Guide</span></a>
-      <a href="skopje-comparison.html" class="grid-card"><span class="title">📊 Skopje</span><span class="badge">Guide</span></a>
-      <a href="st-petersburg-comparison.html" class="grid-card"><span class="title">📊 St Petersburg</span><span class="badge">Guide</span></a>
-      <a href="stockholm-comparison.html" class="grid-card"><span class="title">📊 Stockholm</span><span class="badge">Guide</span></a>
-      <a href="stuttgart-comparison.html" class="grid-card"><span class="title">📊 Stuttgart</span><span class="badge">Guide</span></a>
-      <a href="surrey-comparison.html" class="grid-card"><span class="title">📊 Surrey</span><span class="badge">Guide</span></a>
-      <a href="sydney-comparison.html" class="grid-card"><span class="title">📊 Sydney</span><span class="badge">Guide</span></a>
-      <a href="taipei-comparison.html" class="grid-card"><span class="title">📊 Taipei</span><span class="badge">Guide</span></a>
-      <a href="tallinn-comparison.html" class="grid-card"><span class="title">📊 Tallinn</span><span class="badge">Guide</span></a>
-      <a href="tashkent-comparison.html" class="grid-card"><span class="title">📊 Tashkent</span><span class="badge">Guide</span></a>
-      <a href="tbilisi-comparison.html" class="grid-card"><span class="title">📊 Tbilisi</span><span class="badge">Guide</span></a>
-      <a href="tel-aviv-comparison.html" class="grid-card"><span class="title">📊 Tel Aviv</span><span class="badge">Guide</span></a>
-      <a href="tijuana-comparison.html" class="grid-card"><span class="title">📊 Tijuana</span><span class="badge">Guide</span></a>
-      <a href="tirana-comparison.html" class="grid-card"><span class="title">📊 Tirana</span><span class="badge">Guide</span></a>
-      <a href="tokyo-comparison.html" class="grid-card"><span class="title">📊 Tokyo</span><span class="badge">Guide</span></a>
-      <a href="toronto-comparison.html" class="grid-card"><span class="title">📊 Toronto</span><span class="badge">Guide</span></a>
-      <a href="tripoli-comparison.html" class="grid-card"><span class="title">📊 Tripoli</span><span class="badge">Guide</span></a>
-      <a href="tucson-comparison.html" class="grid-card"><span class="title">📊 Tucson</span><span class="badge">Guide</span></a>
-      <a href="tunis-comparison.html" class="grid-card"><span class="title">📊 Tunis</span><span class="badge">Guide</span></a>
-      <a href="ulaanbaatar-comparison.html" class="grid-card"><span class="title">📊 Ulaanbaatar</span><span class="badge">Guide</span></a>
-      <a href="vancouver-comparison.html" class="grid-card"><span class="title">📊 Vancouver</span><span class="badge">Guide</span></a>
-      <a href="vienna-comparison.html" class="grid-card"><span class="title">📊 Vienna</span><span class="badge">Guide</span></a>
-      <a href="vientiane-comparison.html" class="grid-card"><span class="title">📊 Vientiane</span><span class="badge">Guide</span></a>
-      <a href="vilnius-comparison.html" class="grid-card"><span class="title">📊 Vilnius</span><span class="badge">Guide</span></a>
-      <a href="warsaw-comparison.html" class="grid-card"><span class="title">📊 Warsaw</span><span class="badge">Guide</span></a>
-      <a href="washington-dc-comparison.html" class="grid-card"><span class="title">📊 Washington Dc</span><span class="badge">Guide</span></a>
-      <a href="wellington-comparison.html" class="grid-card"><span class="title">📊 Wellington</span><span class="badge">Guide</span></a>
-      <a href="winnipeg-comparison.html" class="grid-card"><span class="title">📊 Winnipeg</span><span class="badge">Guide</span></a>
-      <a href="yangon-comparison.html" class="grid-card"><span class="title">📊 Yangon</span><span class="badge">Guide</span></a>
-      <a href="yerevan-comparison.html" class="grid-card"><span class="title">📊 Yerevan</span><span class="badge">Guide</span></a>
-      <a href="zagreb-comparison.html" class="grid-card"><span class="title">📊 Zagreb</span><span class="badge">Guide</span></a>
-      <a href="zurich-comparison.html" class="grid-card"><span class="title">📊 Zurich</span><span class="badge">Guide</span></a>
-    </div>
-  </div>
-
-  <script>
-    function filterComparison() {
-      let input = document.getElementById('compSearch').value.toLowerCase();
-      let cards = document.getElementsByClassName('grid-card');
-      for (let i = 0; i < cards.length; i++) {
-        let text = cards[i].innerText.toLowerCase();
-        cards[i].style.display = text.includes(input) ? "" : "none";
-      }
-    }
-  </script>
-
-
-<footer class="site-footer" style="background-color: #0f4c3a; color: #ffffff; text-align: center; padding: 28px 20px; margin-top: 60px; border-top: 3px solid #15624c; font-size: 0.95rem;">
-  <p style="margin-bottom: 12px; font-weight: 500;">© Matcha Maya Blog — Global Nomad Destination Guides</p>
-  <p style="margin: 0;">
-    <a href="index.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">Home</a> | 
-    <a href="index2.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">220 Interviews</a> | 
-    <a href="podcasts.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">Podcast Proposals</a> | 
-    <a href="comparison.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">City Comparisons</a> | 
-    <a href="https://seohobby.myteachify.com" target="_blank" rel="noopener" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">SEO hobby Expert School</a> | 
-    <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">podcast storyboard</a> <a href="about.html" style="color: #ffffff; text-decoration: underline; margin: 0 8px; font-weight: 600;">About</a>
-  </p>
-</footer>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>City coworking research directory | Matcha Maya</title>
+<meta name="description" content="Browse 213 city coworking research checklists and guides. Learn what to verify about workspace prices, connectivity, housing and access.">
+<link rel="canonical" href="https://dawidmillenium-design.github.io/matcha-maya-blog/comparison.html"><link rel="stylesheet" href="comparison-pages.css"></head><body>
+<header class="site-header"><div class="nav-container"><a class="brand-logo" href="index.html">MATCHA <span>MAYA</span></a><nav class="main-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="index2.html">City guides</a><a href="comparison.html" aria-current="page">City research</a><a href="about.html">About</a></nav></div></header>
+<section class="hero"><div class="hero-inner"><p class="eyebrow">Matcha Maya · Explore by city</p><h1>City coworking research directory</h1><p>Find a city, then check the questions that matter before you commit to a desk or apartment. Current prices, speeds and availability should be confirmed directly.</p></div></section>
+<main class="container"><div class="notice"><p><strong>How to use this directory:</strong> These 213 cards are research checklists, not verified price tables. Open a city card for practical checks and a link to its full coworking guide.</p></div>
+<div class="search-filter-box"><label for="compSearch">Find a city</label><input type="search" id="compSearch" placeholder="For example: Tbilisi or Bangkok" autocomplete="off" aria-controls="comparisonGrid"><p id="resultCount" role="status" aria-live="polite">Showing 213 cities</p></div>
+<div class="link-grid" id="comparisonGrid"><a class="grid-card" href="abu-dhabi-comparison.html"><strong>Abu Dhabi</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="accra-comparison.html"><strong>Accra</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="addis-ababa-comparison.html"><strong>Addis Ababa</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="albuquerque-comparison.html"><strong>Albuquerque</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="alexandria-comparison.html"><strong>Alexandria</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="algiers-comparison.html"><strong>Algiers</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="almaty-comparison.html"><strong>Almaty</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="amman-comparison.html"><strong>Amman</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="amsterdam-comparison.html"><strong>Amsterdam</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="antwerp-comparison.html"><strong>Antwerp</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="ashgabat-comparison.html"><strong>Ashgabat</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="asuncion-comparison.html"><strong>Asuncion</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="athens-comparison.html"><strong>Athens</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="atlanta-comparison.html"><strong>Atlanta</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="auckland-comparison.html"><strong>Auckland</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="austin-comparison.html"><strong>Austin</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="baku-comparison.html"><strong>Baku</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bangalore-comparison.html"><strong>Bangalore</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bangkok-comparison.html"><strong>Bangkok</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="barcelona-comparison.html"><strong>Barcelona</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="beijing-comparison.html"><strong>Beijing</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="beirut-comparison.html"><strong>Beirut</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="belgrade-comparison.html"><strong>Belgrade</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="berlin-comparison.html"><strong>Berlin</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bern-comparison.html"><strong>Bern</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="birmingham-comparison.html"><strong>Birmingham</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bishkek-comparison.html"><strong>Bishkek</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bogota-comparison.html"><strong>Bogota</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="boston-comparison.html"><strong>Boston</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="brampton-comparison.html"><strong>Brampton</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bratislava-comparison.html"><strong>Bratislava</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bremen-comparison.html"><strong>Bremen</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bridgetown-comparison.html"><strong>Bridgetown</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="brisbane-comparison.html"><strong>Brisbane</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="bristol-comparison.html"><strong>Bristol</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="brussels-comparison.html"><strong>Brussels</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="budapest-comparison.html"><strong>Budapest</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="buenos-aires-comparison.html"><strong>Buenos Aires</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="busan-comparison.html"><strong>Busan</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="cairo-comparison.html"><strong>Cairo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="calgary-comparison.html"><strong>Calgary</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="cape-town-comparison.html"><strong>Cape Town</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="caracas-comparison.html"><strong>Caracas</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="casablanca-comparison.html"><strong>Casablanca</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="chicago-comparison.html"><strong>Chicago</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="chisinau-comparison.html"><strong>Chisinau</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="christchurch-comparison.html"><strong>Christchurch</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="ciudad-juarez-comparison.html"><strong>Ciudad Juarez</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="cologne-comparison.html"><strong>Cologne</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="colombo-comparison.html"><strong>Colombo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="copenhagen-comparison.html"><strong>Copenhagen</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dakar-comparison.html"><strong>Dakar</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dallas-comparison.html"><strong>Dallas</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dammam-comparison.html"><strong>Dammam</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dar-es-salaam-comparison.html"><strong>Dar Es Salaam</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="denver-comparison.html"><strong>Denver</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="detroit-comparison.html"><strong>Detroit</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dhaka-comparison.html"><strong>Dhaka</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="doha-comparison.html"><strong>Doha</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dortmund-comparison.html"><strong>Dortmund</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dresden-comparison.html"><strong>Dresden</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dubai-comparison.html"><strong>Dubai</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dublin-comparison.html"><strong>Dublin</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="duisburg-comparison.html"><strong>Duisburg</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dushanbe-comparison.html"><strong>Dushanbe</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="dusseldorf-comparison.html"><strong>Dusseldorf</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="edinburgh-comparison.html"><strong>Edinburgh</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="edmonton-comparison.html"><strong>Edmonton</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="essen-comparison.html"><strong>Essen</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="frankfurt-comparison.html"><strong>Frankfurt</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="fresno-comparison.html"><strong>Fresno</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="geneva-comparison.html"><strong>Geneva</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="glasgow-comparison.html"><strong>Glasgow</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="guadalajara-comparison.html"><strong>Guadalajara</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="guangzhou-comparison.html"><strong>Guangzhou</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="guayaquil-comparison.html"><strong>Guayaquil</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="halifax-comparison.html"><strong>Halifax</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="hamburg-comparison.html"><strong>Hamburg</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="hamilton-comparison.html"><strong>Hamilton</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="hanover-comparison.html"><strong>Hanover</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="helsinki-comparison.html"><strong>Helsinki</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="ho-chi-minh-comparison.html"><strong>Ho Chi Minh</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="hong-kong-comparison.html"><strong>Hong Kong</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="houston-comparison.html"><strong>Houston</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="hyderabad-comparison.html"><strong>Hyderabad</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="istanbul-comparison.html"><strong>Istanbul</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="jakarta-comparison.html"><strong>Jakarta</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="jeddah-comparison.html"><strong>Jeddah</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="johannesburg-comparison.html"><strong>Johannesburg</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="kampala-comparison.html"><strong>Kampala</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="kathmandu-comparison.html"><strong>Kathmandu</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="kigali-comparison.html"><strong>Kigali</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="kingston-comparison.html"><strong>Kingston</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="kolkata-comparison.html"><strong>Kolkata</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="kuala-lumpur-comparison.html"><strong>Kuala Lumpur</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="kyiv-comparison.html"><strong>Kyiv</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="la-paz-comparison.html"><strong>La Paz</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="lagos-comparison.html"><strong>Lagos</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="las-vegas-comparison.html"><strong>Las Vegas</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="laval-comparison.html"><strong>Laval</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="leeds-comparison.html"><strong>Leeds</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="leipzig-comparison.html"><strong>Leipzig</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="leon-comparison.html"><strong>Leon</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="lima-comparison.html"><strong>Lima</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="lisbon-comparison.html"><strong>Lisbon</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="liverpool-comparison.html"><strong>Liverpool</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="ljubljana-comparison.html"><strong>Ljubljana</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="london-comparison.html"><strong>London</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="london-ontario-comparison.html"><strong>London Ontario</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="los-angeles-comparison.html"><strong>Los Angeles</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="louisville-comparison.html"><strong>Louisville</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="luxembourg-comparison.html"><strong>Luxembourg</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="lviv-comparison.html"><strong>Lviv</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="madrid-comparison.html"><strong>Madrid</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="male-comparison.html"><strong>Male</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="manama-comparison.html"><strong>Manama</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="manchester-comparison.html"><strong>Manchester</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="manila-comparison.html"><strong>Manila</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="medellin-comparison.html"><strong>Medellin</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="melbourne-comparison.html"><strong>Melbourne</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="memphis-comparison.html"><strong>Memphis</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="mexico-city-comparison.html"><strong>Mexico City</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="miami-comparison.html"><strong>Miami</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="milan-comparison.html"><strong>Milan</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="minneapolis-comparison.html"><strong>Minneapolis</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="minsk-comparison.html"><strong>Minsk</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="mississauga-comparison.html"><strong>Mississauga</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="monterrey-comparison.html"><strong>Monterrey</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="montevideo-comparison.html"><strong>Montevideo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="montreal-comparison.html"><strong>Montreal</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="moscow-comparison.html"><strong>Moscow</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="mumbai-comparison.html"><strong>Mumbai</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="munich-comparison.html"><strong>Munich</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="muscat-comparison.html"><strong>Muscat</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="nagoya-comparison.html"><strong>Nagoya</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="nairobi-comparison.html"><strong>Nairobi</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="nashville-comparison.html"><strong>Nashville</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="nassau-comparison.html"><strong>Nassau</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="new-delhi-comparison.html"><strong>New Delhi</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="new-orleans-comparison.html"><strong>New Orleans</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="new-york-city-comparison.html"><strong>New York City</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="newcastle-comparison.html"><strong>Newcastle</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="nuremberg-comparison.html"><strong>Nuremberg</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="odesa-comparison.html"><strong>Odesa</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="oklahoma-city-comparison.html"><strong>Oklahoma City</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="omaha-comparison.html"><strong>Omaha</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="osaka-comparison.html"><strong>Osaka</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="oslo-comparison.html"><strong>Oslo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="ottawa-comparison.html"><strong>Ottawa</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="panama-city-comparison.html"><strong>Panama City</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="paris-comparison.html"><strong>Paris</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="perth-comparison.html"><strong>Perth</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="philadelphia-comparison.html"><strong>Philadelphia</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="phnom-penh-comparison.html"><strong>Phnom Penh</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="phoenix-comparison.html"><strong>Phoenix</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="port-au-prince-comparison.html"><strong>Port Au Prince</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="port-of-spain-comparison.html"><strong>Port Of Spain</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="portland-comparison.html"><strong>Portland</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="prague-comparison.html"><strong>Prague</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="puebla-comparison.html"><strong>Puebla</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="quebec-city-comparison.html"><strong>Quebec City</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="quito-comparison.html"><strong>Quito</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="reykjavik-comparison.html"><strong>Reykjavik</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="riga-comparison.html"><strong>Riga</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="rio-de-janeiro-comparison.html"><strong>Rio De Janeiro</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="riyadh-comparison.html"><strong>Riyadh</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="rome-comparison.html"><strong>Rome</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="sacramento-comparison.html"><strong>Sacramento</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="san-diego-comparison.html"><strong>San Diego</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="san-francisco-comparison.html"><strong>San Francisco</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="san-jose-comparison.html"><strong>San Jose</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="san-juan-comparison.html"><strong>San Juan</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="san-salvador-comparison.html"><strong>San Salvador</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="santiago-comparison.html"><strong>Santiago</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="santo-domingo-comparison.html"><strong>Santo Domingo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="sao-paulo-comparison.html"><strong>Sao Paulo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="sarajevo-comparison.html"><strong>Sarajevo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="seattle-comparison.html"><strong>Seattle</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="seoul-comparison.html"><strong>Seoul</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="shanghai-comparison.html"><strong>Shanghai</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="sheffield-comparison.html"><strong>Sheffield</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="singapore-comparison.html"><strong>Singapore</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="skopje-comparison.html"><strong>Skopje</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="st-petersburg-comparison.html"><strong>St Petersburg</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="stockholm-comparison.html"><strong>Stockholm</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="stuttgart-comparison.html"><strong>Stuttgart</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="surrey-comparison.html"><strong>Surrey</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="sydney-comparison.html"><strong>Sydney</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="taipei-comparison.html"><strong>Taipei</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tallinn-comparison.html"><strong>Tallinn</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tashkent-comparison.html"><strong>Tashkent</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tbilisi-comparison.html"><strong>Tbilisi</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tel-aviv-comparison.html"><strong>Tel Aviv</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tijuana-comparison.html"><strong>Tijuana</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tirana-comparison.html"><strong>Tirana</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tokyo-comparison.html"><strong>Tokyo</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="toronto-comparison.html"><strong>Toronto</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tripoli-comparison.html"><strong>Tripoli</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tucson-comparison.html"><strong>Tucson</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="tunis-comparison.html"><strong>Tunis</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="ulaanbaatar-comparison.html"><strong>Ulaanbaatar</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="vancouver-comparison.html"><strong>Vancouver</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="vienna-comparison.html"><strong>Vienna</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="vientiane-comparison.html"><strong>Vientiane</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="vilnius-comparison.html"><strong>Vilnius</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="warsaw-comparison.html"><strong>Warsaw</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="washington-dc-comparison.html"><strong>Washington Dc</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="wellington-comparison.html"><strong>Wellington</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="winnipeg-comparison.html"><strong>Winnipeg</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="yangon-comparison.html"><strong>Yangon</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="yerevan-comparison.html"><strong>Yerevan</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="zagreb-comparison.html"><strong>Zagreb</strong><span>Research checklist →</span></a>
+<a class="grid-card" href="zurich-comparison.html"><strong>Zurich</strong><span>Research checklist →</span></a></div><p id="noResults" hidden>No city matches your search. Try a shorter name.</p></main>
+<footer class="site-footer"><a href="index.html">Home</a> · <a href="index2.html">Coworking guides</a> · <a href="about.html">About Matcha Maya</a></footer>
+<script>const search=document.getElementById('compSearch'),cards=[...document.querySelectorAll('#comparisonGrid a')],count=document.getElementById('resultCount'),empty=document.getElementById('noResults');search.addEventListener('input',()=>{const q=search.value.trim().toLocaleLowerCase();let n=0;for(const card of cards){const show=card.textContent.toLocaleLowerCase().includes(q);card.hidden=!show;if(show)n++}count.textContent=`Showing ${n} cities`;empty.hidden=n!==0});</script>
+</body></html>

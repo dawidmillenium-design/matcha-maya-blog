@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matcha Maya | Global Remote Work & Podcast Creator Guides (2026)</title>
-  <meta name="description" content="Discover comprehensive 12-point city analysis and podcast proposals tailored for global remote workers, digital nomads, and creators worldwide.">
+  <meta name="description" content="Explore coworking guides, city research checklists, and podcast proposals for remote workers and creators.">
   <link rel="canonical" href="https://dawidmillenium-design.github.io/matcha-maya-blog/">
 
   <!-- Open Graph / Social -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Matcha Maya | Global Remote Work & Podcast Creator Guides">
-  <meta property="og:description" content="Data-backed 12-point destination research, fiber internet benchmarks, and podcast production blueprints across 220+ global cities.">
+  <meta property="og:description" content="Explore coworking guides, practical city research, and podcast planning resources. Check current prices and venue details before making travel decisions.">
   <meta property="og:url" content="https://dawidmillenium-design.github.io/matcha-maya-blog/">
   <meta property="og:site_name" content="Matcha Maya Blog">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Matcha Maya | Global Remote Work & Podcast Creator Guides">
-  <meta name="twitter:description" content="Data-backed destination research and podcast blueprints across 220+ global cities.">
+  <meta name="twitter:description" content="Explore coworking guides, city research checklists, and podcast planning resources.">
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -24,85 +24,424 @@
     "@type": "WebSite",
     "name": "Matcha Maya Blog",
     "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/",
-    "description": "Global remote work destination guides and podcast creator blueprints across 220+ cities.",
+    "description": "Coworking guides, city research checklists, and podcast planning resources.",
     "inLanguage": "en"
   }
   </script>
 
   <style>
+
+
     :root {
-      --primary: #0f4c3a;
-      --primary-dark: #0a3528;
-      --accent: #8fbf9f;
-      --bg: #f4f7f3;
+      --primary: #082e22;
+      --primary-dark: #041912;
+      --accent: #10b981;
+      --accent-light: #d1fae5;
+      --bg: #f8fafc;
       --card-bg: #ffffff;
-      --border: #d9e4d6;
-      --text: #263026;
-      --muted: #5c6b5a;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --muted: #64748b;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-md: 0 10px 25px -3px rgba(8, 46, 34, 0.08);
+      --radius: 14px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
 
-    .site-header { background: var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
-    .nav-container { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-    .brand-logo { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.06em; color: #fff; text-decoration: none; }
-    .main-nav ul { display: flex; list-style: none; gap: 8px; flex-wrap: wrap; }
-    .main-nav a { text-decoration: none; color: #fff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; transition: background 0.15s ease; }
-    .main-nav a:hover { background: rgba(255,255,255,0.22); }
-    .main-nav a.active { background: #fff; color: var(--primary); }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    .hero { background: linear-gradient(135deg, var(--primary) 0%, #1c6b50 60%, #2b8a63 100%); color: #fff; padding: 72px 24px 64px; text-align: center; }
-    .hero-inner { max-width: 820px; margin: 0 auto; }
-    .hero h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.2; margin-bottom: 18px; }
-    .hero p { font-size: 1.15rem; color: #e3efe6; max-width: 640px; margin: 0 auto 28px; }
-    .hero-cta { display: inline-block; background: #fff; color: var(--primary); font-weight: 700; padding: 13px 30px; border-radius: 30px; text-decoration: none; transition: transform 0.15s ease; }
-    .hero-cta:hover { transform: translateY(-2px); }
+    /* Header & Navigation */
+    .site-header {
+      background: rgba(8, 46, 34, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-    .stats-strip { max-width: 900px; margin: -34px auto 0; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; position: relative; z-index: 2; }
-    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px; text-align: center; box-shadow: 0 6px 20px rgba(15,76,58,0.10); }
-    .stat-card .num { font-size: 1.9rem; font-weight: 800; color: var(--primary); }
-    .stat-card .label { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
 
-    .container { max-width: 1050px; margin: 0 auto; padding: 56px 20px 20px; }
-    .section-title { text-align: center; font-size: 1.7rem; color: var(--primary); font-weight: 800; margin-bottom: 8px; }
-    .section-sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+    .brand-logo {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-    .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-    .portal-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px 26px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.2s ease, box-shadow 0.2s ease; }
-    .portal-card:hover { transform: translateY(-4px); box-shadow: 0 10px 26px rgba(15,76,58,0.12); }
-    .portal-card h2 { font-size: 1.25rem; color: var(--primary); margin: 12px 0 10px; }
-    .portal-card p { color: var(--muted); font-size: 0.95rem; }
-    .btn-action { display: inline-block; background: var(--primary); color: #fff; font-weight: 700; padding: 11px 24px; border-radius: 25px; text-decoration: none; margin-top: 18px; font-size: 0.92rem; transition: background 0.15s ease; }
-    .btn-action:hover { background: var(--primary-dark); }
+    .brand-logo span {
+      color: var(--accent);
+    }
 
-    .quote-band { background: #eaf2ea; border-left: 5px solid var(--primary); border-radius: 10px; padding: 22px 26px; margin: 56px auto 0; max-width: 820px; font-style: italic; color: var(--text); }
-    .quote-band footer { font-style: normal; font-weight: 700; margin-top: 8px; font-size: 0.88rem; color: var(--primary); }
-    .quote-band a { color: var(--primary); }
+    .main-nav ul {
+      display: flex;
+      list-style: none;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-    .featured { margin-top: 64px; }
-    .city-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
-    .city-chip { display: block; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.15s ease; }
-    .city-chip:hover { border-color: var(--primary); color: var(--primary); background: #eef5ee; }
+    .main-nav a {
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+    }
 
-    .site-footer { background: var(--primary); color: #fff; text-align: center; padding: 30px 20px; margin-top: 72px; font-size: 0.95rem; }
-    .site-footer a { color: #fff; text-decoration: underline; margin: 0 8px; font-weight: 600; }
+    .main-nav a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
 
+    .main-nav a.active {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff;
+      padding: 80px 24px 90px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: #cbd5e1;
+      max-width: 660px;
+      margin: 0 auto 32px;
+      font-weight: 400;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+      transition: all 0.2s ease;
+    }
+
+    .hero-cta:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+
+    /* Stats Strip */
+    .stats-strip {
+      max-width: 1000px;
+      margin: -40px auto 0;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-card .num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    .stat-card .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 64px 24px 32px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: clamp(1.7rem, 3vw, 2.2rem);
+      color: var(--primary);
+      font-weight: 800;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    /* Portal Grid */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .portal-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s ease;
+    }
+
+    .portal-card:hover {
+      transform: translateY(-4px);
+      border-color: #cbd5e1;
+      box-shadow: var(--shadow-md);
+    }
+
+    .portal-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: inline-block;
+      background: var(--accent-light);
+      padding: 12px;
+      border-radius: 12px;
+      width: fit-content;
+    }
+
+    .portal-card h2 {
+      font-size: 1.25rem;
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .portal-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f1f5f9;
+      color: var(--primary);
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      width: fit-content;
+      transition: all 0.2s ease;
+    }
+
+    .portal-card:hover .btn-action {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Quote Band */
+    .quote-band {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 5px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin: 64px auto 0;
+      max-width: 860px;
+      font-style: italic;
+      color: #166534;
+      font-size: 1.1rem;
+    }
+
+    .quote-band footer {
+      font-style: normal;
+      font-weight: 700;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .quote-band a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+
+    /* Featured Cities */
+    .featured {
+      margin-top: 72px;
+    }
+
+    .city-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .city-chip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.92rem;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .city-chip:hover {
+      border-color: var(--accent);
+      color: var(--primary);
+      background: var(--accent-light);
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--primary-dark);
+      color: #94a3b8;
+      text-align: center;
+      padding: 40px 24px;
+      margin-top: 80px;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .site-footer p {
+      color: #cbd5e1;
+    }
+
+    .footer-links {
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .site-footer a {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.15s ease;
+    }
+
+    .site-footer a:hover {
+      color: var(--accent);
+    }
+
+    :where(a, button, input):focus-visible { outline: 3px solid #10b981; outline-offset: 3px; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
     @media (max-width: 640px) {
-      .hero { padding: 52px 18px 56px; }
-      .hero h1 { font-size: 1.9rem; }
+      .hero { padding: 60px 18px 70px; }
+      .hero h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
+
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo">MATCHA MAYA</a>
+      <a href="index.html" class="brand-logo">MATCHA <span>MAYA</span></a>
       <nav class="main-nav">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="index2.html">220 City Interviews</a></li>
-          <li><a href="podcasts.html">Podcast Proposals</a></li>
-          <li><a href="comparison.html">City Comparisons</a></li>
+          <li><a href="index2.html">City Guides</a></li>
+          <li><a href="podcasts.html">Podcasts</a></li>
+          <li><a href="comparison.html">Comparisons</a></li>
           <li><a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">Storyboards</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
@@ -112,43 +451,64 @@
 
   <section class="hero">
     <div class="hero-inner">
+      <span class="hero-badge">Explore city research</span>
       <h1>Global Remote Work & Podcast Creator Network</h1>
-      <p>Data-backed 12-point destination research, fiber internet benchmarks, and podcast production blueprints across 220+ global cities.</p>
-      <a href="index2.html" class="hero-cta">Explore 220+ City Guides →</a>
+      <p>Explore coworking guides, practical city research, and podcast planning resources. Check current prices and venue details before making travel decisions.</p>
+      <a href="index2.html" class="hero-cta">Explore City Guides <span>→</span></a>
     </div>
   </section>
 
   <div class="stats-strip">
-    <div class="stat-card"><div class="num">220+</div><div class="label">Cities Researched</div></div>
-    <div class="stat-card"><div class="num">12-Point</div><div class="label">Analysis Framework</div></div>
-    <div class="stat-card"><div class="num">220+</div><div class="label">Podcast Blueprints</div></div>
-    <div class="stat-card"><div class="num">60+</div><div class="label">City Comparisons</div></div>
+    <div class="stat-card">
+      <div class="num">213</div>
+      <div class="label">Coworking Guides</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">213</div>
+      <div class="label">City Research Cards</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">310</div>
+      <div class="label">Podcast Proposals</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">45</div>
+      <div class="label">City Pairs</div>
+    </div>
   </div>
 
   <main class="container">
-    <h2 class="section-title">Start Exploring</h2>
-    <p class="section-sub">Three research portals covering everything a location-independent worker or audio creator needs.</p>
+    <div class="section-header">
+      <h2 class="section-title">Start Exploring</h2>
+      <p class="section-sub">Explore city guides, podcast proposals, and comparison research tools.</p>
+    </div>
 
     <div class="portal-grid">
       <div class="portal-card">
-        <span style="font-size: 2.5rem;">🎙️</span>
-        <h2>220+ Creator Interviews</h2>
-        <p>Access regional interviews and field research with remote nomads and workspace managers worldwide.</p>
-        <a href="index2.html" class="btn-action">Read interviews in 220 cities →</a>
+        <div>
+          <span class="portal-icon">🎙️</span>
+          <h2>City Guide Directory</h2>
+          <p>Browse city-specific coworking research and workspace planning notes. Confirm local details directly before booking.</p>
+        </div>
+        <a href="index2.html" class="btn-action">Browse city guides →</a>
       </div>
 
       <div class="portal-card">
-        <span style="font-size: 2.5rem;">🎧</span>
-        <h2>Podcast Proposals</h2>
-        <p>Structured show blueprints, studio maps, and production logistics for location-independent audio creators.</p>
-        <a href="podcasts.html" class="btn-action">Explore podcast proposals →</a>
+        <div>
+          <span class="portal-icon">🎧</span>
+          <h2>Podcast Proposals</h2>
+          <p>Structured show blueprints, studio maps, and production logistics for location-independent audio creators.</p>
+        </div>
+        <a href="podcasts.html" class="btn-action">Explore proposals →</a>
       </div>
 
       <div class="portal-card">
-        <span style="font-size: 2.5rem;">📊</span>
-        <h2>City Comparisons</h2>
-        <p>Side-by-side infrastructure matrices evaluating WiFi bandwidth, living costs, and coworking prices.</p>
-        <a href="comparison.html" class="btn-action">Compare digital nomad hubs →</a>
+        <div>
+          <span class="portal-icon">📊</span>
+          <h2>City Research Cards</h2>
+          <p>Browse city research checklists and identify which prices, internet speeds, and venue details to verify.</p>
+        </div>
+        <a href="comparison.html" class="btn-action">Explore city research →</a>
       </div>
     </div>
 
@@ -158,8 +518,10 @@
     </blockquote>
 
     <section class="featured">
-      <h2 class="section-title">Featured City Guides</h2>
-      <p class="section-sub">Jump straight into our most-read coworking and remote work guides.</p>
+      <div class="section-header" style="margin-bottom: 24px;">
+        <h2 class="section-title">Featured City Guides</h2>
+        <p class="section-sub">Start with selected coworking and remote work guides.</p>
+      </div>
       <div class="city-grid">
         <a class="city-chip" href="bangkok-coworking-guide.html">Bangkok</a>
         <a class="city-chip" href="tokyo-coworking-guide.html">Tokyo</a>
@@ -178,15 +540,16 @@
   </main>
 
   <footer class="site-footer">
-    <p>© Matcha Maya Blog — Global Nomad Destination Guides</p>
-    <p style="margin-top: 8px;">
-      <a href="index.html">Home</a> |
-      <a href="index2.html">Interviews</a> |
-      <a href="podcasts.html">Proposals</a> |
-      <a href="comparison.html">Comparisons</a> |
-      <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">Storyboards</a> |
+    <p>© 2026 Matcha Maya Blog — Global Nomad Destination Guides</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a> <span>•</span>
+      <a href="index2.html">City guides</a> <span>•</span>
+      <a href="podcasts.html">Proposals</a> <span>•</span>
+      <a href="comparison.html">Comparisons</a> <span>•</span>
+      <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">Storyboards</a> <span>•</span>
       <a href="about.html">About Team & Mission</a>
-    </p>
+    </div>
   </footer>
+
 </body>
 </html>
