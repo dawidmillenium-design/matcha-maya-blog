@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,29 +6,94 @@
   <title>Matcha Maya | Global Remote Work & Podcast Creator Guides (2026)</title>
   <meta name="description" content="Discover comprehensive 12-point city analysis and podcast proposals tailored for global remote workers, digital nomads, and creators worldwide.">
   <link rel="canonical" href="https://dawidmillenium-design.github.io/matcha-maya-blog/">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Matcha Maya | Global Remote Work & Podcast Creator Guides">
+  <meta property="og:description" content="Data-backed 12-point destination research, fiber internet benchmarks, and podcast production blueprints across 220+ global cities.">
+  <meta property="og:url" content="https://dawidmillenium-design.github.io/matcha-maya-blog/">
+  <meta property="og:site_name" content="Matcha Maya Blog">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Matcha Maya | Global Remote Work & Podcast Creator Guides">
+  <meta name="twitter:description" content="Data-backed destination research and podcast blueprints across 220+ global cities.">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Matcha Maya Blog",
+    "url": "https://dawidmillenium-design.github.io/matcha-maya-blog/",
+    "description": "Global remote work destination guides and podcast creator blueprints across 220+ cities.",
+    "inLanguage": "en"
+  }
+  </script>
+
   <style>
-    :root { --primary: #0f4c3a; --primary-hover: #15624c; --bg: #f7f9f6; --card-bg: #ffffff; --border: #d1ded0; --text: #2c352b; }
+    :root {
+      --primary: #0f4c3a;
+      --primary-dark: #0a3528;
+      --accent: #8fbf9f;
+      --bg: #f4f7f3;
+      --card-bg: #ffffff;
+      --border: #d9e4d6;
+      --text: #263026;
+      --muted: #5c6b5a;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-    .site-header { background-color: var(--primary); color: #fff; padding: 14px 24px; position: sticky; top: 0; z-index: 1000; }
-    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .brand-logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; }
-    .main-nav ul { display: flex; list-style: none; gap: 12px; }
-    .main-nav a { text-decoration: none; color: #fff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; }
-    .main-nav a.active { background: #fff !important; color: var(--primary) !important; }
-    .container { max-width: 1050px; margin: 40px auto; padding: 0 20px; }
-    .hero { text-align: center; margin-bottom: 50px; }
-    .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
-    .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-bottom: 50px; }
-    .portal-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.2s ease; }
-    .portal-card:hover { transform: translateY(-4px); }
-    .btn-action { display: inline-block; background: var(--primary); color: #fff; font-weight: 700; padding: 12px 24px; border-radius: 25px; text-decoration: none; margin-top: 15px; }
-    .site-footer { background-color: var(--primary); color: #ffffff; text-align: center; padding: 28px 20px; margin-top: 60px; font-size: 0.95rem; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    .site-header { background: var(--primary); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    .nav-container { max-width: 1100px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .brand-logo { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.06em; color: #fff; text-decoration: none; }
+    .main-nav ul { display: flex; list-style: none; gap: 8px; flex-wrap: wrap; }
+    .main-nav a { text-decoration: none; color: #fff; font-weight: 600; padding: 6px 14px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); font-size: 0.85rem; transition: background 0.15s ease; }
+    .main-nav a:hover { background: rgba(255,255,255,0.22); }
+    .main-nav a.active { background: #fff; color: var(--primary); }
+
+    .hero { background: linear-gradient(135deg, var(--primary) 0%, #1c6b50 60%, #2b8a63 100%); color: #fff; padding: 72px 24px 64px; text-align: center; }
+    .hero-inner { max-width: 820px; margin: 0 auto; }
+    .hero h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.2; margin-bottom: 18px; }
+    .hero p { font-size: 1.15rem; color: #e3efe6; max-width: 640px; margin: 0 auto 28px; }
+    .hero-cta { display: inline-block; background: #fff; color: var(--primary); font-weight: 700; padding: 13px 30px; border-radius: 30px; text-decoration: none; transition: transform 0.15s ease; }
+    .hero-cta:hover { transform: translateY(-2px); }
+
+    .stats-strip { max-width: 900px; margin: -34px auto 0; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; position: relative; z-index: 2; }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 20px; text-align: center; box-shadow: 0 6px 20px rgba(15,76,58,0.10); }
+    .stat-card .num { font-size: 1.9rem; font-weight: 800; color: var(--primary); }
+    .stat-card .label { font-size: 0.85rem; color: var(--muted); font-weight: 600; }
+
+    .container { max-width: 1050px; margin: 0 auto; padding: 56px 20px 20px; }
+    .section-title { text-align: center; font-size: 1.7rem; color: var(--primary); font-weight: 800; margin-bottom: 8px; }
+    .section-sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 36px; }
+
+    .portal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .portal-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 32px 26px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .portal-card:hover { transform: translateY(-4px); box-shadow: 0 10px 26px rgba(15,76,58,0.12); }
+    .portal-card h2 { font-size: 1.25rem; color: var(--primary); margin: 12px 0 10px; }
+    .portal-card p { color: var(--muted); font-size: 0.95rem; }
+    .btn-action { display: inline-block; background: var(--primary); color: #fff; font-weight: 700; padding: 11px 24px; border-radius: 25px; text-decoration: none; margin-top: 18px; font-size: 0.92rem; transition: background 0.15s ease; }
+    .btn-action:hover { background: var(--primary-dark); }
+
+    .quote-band { background: #eaf2ea; border-left: 5px solid var(--primary); border-radius: 10px; padding: 22px 26px; margin: 56px auto 0; max-width: 820px; font-style: italic; color: var(--text); }
+    .quote-band footer { font-style: normal; font-weight: 700; margin-top: 8px; font-size: 0.88rem; color: var(--primary); }
+    .quote-band a { color: var(--primary); }
+
+    .featured { margin-top: 64px; }
+    .city-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .city-chip { display: block; background: var(--card-bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; text-align: center; transition: all 0.15s ease; }
+    .city-chip:hover { border-color: var(--primary); color: var(--primary); background: #eef5ee; }
+
+    .site-footer { background: var(--primary); color: #fff; text-align: center; padding: 30px 20px; margin-top: 72px; font-size: 0.95rem; }
     .site-footer a { color: #fff; text-decoration: underline; margin: 0 8px; font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .hero { padding: 52px 18px 56px; }
+      .hero h1 { font-size: 1.9rem; }
+    }
   </style>
 </head>
 <body>
-  <!-- Priority 3: Persistent Navigation Menu -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo">MATCHA MAYA</a>
@@ -38,31 +103,32 @@
           <li><a href="index2.html">220 City Interviews</a></li>
           <li><a href="podcasts.html">Podcast Proposals</a></li>
           <li><a href="comparison.html">City Comparisons</a></li>
-          <li><a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">podcast storyboard</a> <a href="about.html">About Mission</a></li>
+          <li><a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">Storyboards</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <main class="container">
-    <blockquote style="background: #ffffff; border: 1px solid #d1ded0; border-radius: 8px; padding: 15px 20px; margin: 25px 0; font-style: italic;">
-      "Without big data, you are blind and deaf and in the middle of a freeway."
-      <footer style="font-style: normal; font-weight: bold; margin-top: 5px; font-size: 0.85rem; color: #0f4c3a;">
-        — <a href="https://www.geoffreyamoore.com/" target="_blank" rel="noopener">Geoffrey Moore</a>, Author of <em>Crossing the Chasm</em>
-      </footer>
-    </blockquote>
-    <section class="hero">
+  <section class="hero">
+    <div class="hero-inner">
       <h1>Global Remote Work & Podcast Creator Network</h1>
-    <blockquote style="background: #f7f9f6; border-left: 4px solid #0f4c3a; padding: 15px 20px; margin: 25px 0; font-style: italic;">
-      "The idea that you have to be physically present to be productive is just a myth."
-      <footer style="font-style: normal; font-weight: bold; margin-top: 5px; font-size: 0.9rem; color: #0f4c3a;">
-        — <a href="https://news.microsoft.com/exec/satya-nadella/" target="_blank" rel="noopener">Satya Nadella</a>, CEO of Microsoft
-      </footer>
-    </blockquote>
       <p>Data-backed 12-point destination research, fiber internet benchmarks, and podcast production blueprints across 220+ global cities.</p>
-    </section>
+      <a href="index2.html" class="hero-cta">Explore 220+ City Guides →</a>
+    </div>
+  </section>
 
-    <!-- Priority 1: Wrap Portals in Active Links -->
+  <div class="stats-strip">
+    <div class="stat-card"><div class="num">220+</div><div class="label">Cities Researched</div></div>
+    <div class="stat-card"><div class="num">12-Point</div><div class="label">Analysis Framework</div></div>
+    <div class="stat-card"><div class="num">220+</div><div class="label">Podcast Blueprints</div></div>
+    <div class="stat-card"><div class="num">60+</div><div class="label">City Comparisons</div></div>
+  </div>
+
+  <main class="container">
+    <h2 class="section-title">Start Exploring</h2>
+    <p class="section-sub">Three research portals covering everything a location-independent worker or audio creator needs.</p>
+
     <div class="portal-grid">
       <div class="portal-card">
         <span style="font-size: 2.5rem;">🎙️</span>
@@ -85,16 +151,41 @@
         <a href="comparison.html" class="btn-action">Compare digital nomad hubs →</a>
       </div>
     </div>
+
+    <blockquote class="quote-band">
+      "The idea that you have to be physically present to be productive is just a myth."
+      <footer>— <a href="https://news.microsoft.com/exec/satya-nadella/" target="_blank" rel="noopener">Satya Nadella</a>, CEO of Microsoft</footer>
+    </blockquote>
+
+    <section class="featured">
+      <h2 class="section-title">Featured City Guides</h2>
+      <p class="section-sub">Jump straight into our most-read coworking and remote work guides.</p>
+      <div class="city-grid">
+        <a class="city-chip" href="bangkok-coworking-guide.html">Bangkok</a>
+        <a class="city-chip" href="tokyo-coworking-guide.html">Tokyo</a>
+        <a class="city-chip" href="lisbon-coworking-guide.html">Lisbon</a>
+        <a class="city-chip" href="barcelona-coworking-guide.html">Barcelona</a>
+        <a class="city-chip" href="berlin-coworking-guide.html">Berlin</a>
+        <a class="city-chip" href="medellin-coworking-guide.html">Medellín</a>
+        <a class="city-chip" href="mexico-city-coworking-guide.html">Mexico City</a>
+        <a class="city-chip" href="tbilisi-coworking-guide.html">Tbilisi</a>
+        <a class="city-chip" href="singapore-coworking-guide.html">Singapore</a>
+        <a class="city-chip" href="buenos-aires-coworking-guide.html">Buenos Aires</a>
+        <a class="city-chip" href="prague-coworking-guide.html">Prague</a>
+        <a class="city-chip" href="cape-town-coworking-guide.html">Cape Town</a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <p>© Matcha Maya Blog — Global Nomad Destination Guides</p>
     <p style="margin-top: 8px;">
-      <a href="index.html">Home</a> | 
-      <a href="index2.html">Interviews</a> | 
-      <a href="podcasts.html">Proposals</a> | 
-      <a href="comparison.html">Comparisons</a> | 
-      <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">podcast storyboard</a> <a href="about.html">About Team & Mission</a>
+      <a href="index.html">Home</a> |
+      <a href="index2.html">Interviews</a> |
+      <a href="podcasts.html">Proposals</a> |
+      <a href="comparison.html">Comparisons</a> |
+      <a href="https://dawidmillenium-design.github.io/matcha-maya-blog/podcast%20story-boards-for-all-220-cities.html">Storyboards</a> |
+      <a href="about.html">About Team & Mission</a>
     </p>
   </footer>
 </body>
