@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-import json, sys
-sys.path.insert(0, '/workspace/regbuild')
-from common import build
-import content_a, content_b
+"""Regenerate regional pages with: python -m regbuild.run"""
+import json
+from pathlib import Path
+from .common import build
 
-cities = set(json.load(open('/tmp/cities.json')))
-META = {**content_a.META, **content_b.META}
-CONTENT = {**content_a.CONTENT, **content_b.CONTENT}
-for key in META:
-    r = dict(META[key]); r.update(CONTENT[key])
-    build(key, r, cities)
+
+def main():
+    regions = json.loads((Path(__file__).parent / 'regions.json').read_text(encoding='utf-8'))
+    for key, region in regions.items():
+        print(f'{key}: {build(key, region)} linked city guides')
+
+
+if __name__ == '__main__':
+    main()
