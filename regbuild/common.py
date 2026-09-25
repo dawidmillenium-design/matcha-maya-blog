@@ -1,0 +1,76 @@
+"""Build regional directories from the existing city guide filenames."""
+from html import escape
+import json
+from pathlib import Path
+
+BASE = 'https://dawidmillenium-design.github.io/matcha-maya-blog'
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def build(key, region):
+    name, title, desc = region['name'], region['title'], region['desc']
+    url = f'{BASE}/regions/{key}.html'
+    cities = [slug for slug in region['list'] if (ROOT / f'{slug}-coworking-guide.html').is_file()]
+    cards = '\n'.join(f'<li><a href="../{escape(slug)}-coworking-guide.html">{escape(slug.replace("-", " ").title())} city guide</a></li>' for slug in cities)
+    breadcrumb = {'@context':'https://schema.org','@type':'BreadcrumbList','itemListElement':[
+        {'@type':'ListItem','position':1,'name':'Home','item':BASE+'/index.html'},
+        {'@type':'ListItem','position':2,'name':'Regional hubs','item':BASE+'/hub.html'},
+        {'@type':'ListItem','position':3,'name':name,'item':url}]}
+    html = f'''<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{escape(title)}</title>
+  <meta name="description" content="{escape(desc, quote=True)}">
+  <link rel="canonical" href="{url}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{escape(title, quote=True)}">
+  <meta property="og:description" content="{escape(desc, quote=True)}">
+  <meta property="og:url" content="{url}">
+  <meta property="og:image" content="{BASE}/matcha-maya-pages-main.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{json.dumps(breadcrumb, ensure_ascii=False)}</script>
+  <style>
+    :root {{ --green:#14543d; --ink:#26372e; --line:#cadacb; }}
+    * {{ box-sizing:border-box; }}
+    body {{ margin:0; color:var(--ink); background:#f6f9f5; font:16px/1.65 system-ui,sans-serif; }}
+    a {{ color:var(--green); }} a:focus-visible {{ outline:3px solid #b17a1c; outline-offset:3px; }}
+    header {{ background:var(--green); color:white; padding:1rem; }}
+    header nav, main, footer {{ max-width:1100px; margin:auto; }}
+    header nav {{ display:flex; flex-wrap:wrap; align-items:center; gap:.5rem 1.2rem; }}
+    header a {{ color:white; }} header .brand {{ font-size:1.25rem; font-weight:800; margin-right:auto; }}
+    main {{ padding:1.5rem 1rem 3rem; }}
+    h1,h2 {{ line-height:1.2; color:var(--green); }} h1 {{ font-size:clamp(1.7rem,4vw,2.5rem); }}
+    section {{ background:white; border:1px solid var(--line); border-radius:12px; padding:1rem 1.5rem; margin:1.2rem 0; }}
+    .cities {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:.75rem; list-style:none; padding:0; }}
+    .cities a {{ display:block; border:1px solid var(--line); border-radius:8px; padding:.75rem; text-decoration:none; font-weight:650; }}
+    .cities a:hover {{ background:#e8f3e9; text-decoration:underline; }}
+    footer {{ padding:1rem; border-top:1px solid var(--line); }}
+  </style>
+</head>
+<body>
+  <header><nav aria-label="Main navigation">
+    <a class="brand" href="../index.html">🍵 Matcha Maya</a>
+    <a href="../index.html">Home</a><a href="../hub.html">Regional hubs</a>
+    <a href="../comparison.html">Compare cities</a><a href="../podcasts.html">Podcasts</a>
+    <a href="../about.html">About</a>
+  </nav></header>
+  <main>
+    <nav aria-label="Breadcrumb"><a href="../index.html">Home</a> / <a href="../hub.html">Regional hubs</a> / {escape(name)}</nav>
+    <h1>{escape(region['emoji'])} {escape(name)} city guides</h1>
+    <p>Browse {len(cities)} Matcha Maya city guides in {escape(name)}. Use the links below to explore destinations and make a shortlist for your own research.</p>
+    <section aria-labelledby="city-list"><h2 id="city-list">Explore city guides</h2><ul class="cities">{cards}</ul></section>
+    <section aria-labelledby="planning"><h2 id="planning">What to check before choosing a city</h2>
+      <p>Start with your work hours, accommodation needs and the reliability of the connection where you plan to work. Ask a prospective host for a recent speed test from the actual room and confirm backup power if interruptions would affect your work.</p>
+      <p>Compare current rental listings and coworking prices for your dates. Prices and availability can change by neighborhood and season. Treat any figures in an individual guide as a starting point until you can verify them with a provider.</p>
+      <p>Check entry, remote-work, insurance and tax requirements with the relevant official authorities for your passport and situation. The linked guides are editorial starting points, not proof of current eligibility.</p>
+    </section>
+    <section aria-labelledby="explore"><h2 id="explore">Keep exploring</h2><p>Browse <a href="../hub.html">all regional hubs</a> or open the <a href="../comparison.html">city comparison index</a> to discover other destinations.</p></section>
+  </main>
+  <footer><a href="../index.html">Home</a> · <a href="../hub.html">Regional hubs</a> · <a href="../about.html">About</a></footer>
+</body>
+</html>
+'''
+    (ROOT / 'regions' / f'{key}.html').write_text(html, encoding='utf-8')
+    return len(cities)
