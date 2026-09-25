@@ -10,12 +10,15 @@ pending review. Sitemap omission alone does not prevent search indexing.
    "Reviewed July 2026" and describe interviews, although the format is a
    proposal. Confirm each interview took place; otherwise label it as a
    proposed interview and remove unsupported verification claims.
+   These pages now carry a draft notice and `noindex,follow`; their individual
+   factual statements and any named guests still need source review.
 2. **213 short city comparison matrices:** The sampled Bangkok page has only
    116 visible words and presents costs and a safety score without sources.
    Merge useful comparisons into a city guide or expand with dated, sourced
    methodology and a distinct reason to exist.
 3. **45 generated city-pair comparisons:** Check source and date for every
    numeric comparison, and add insight specific to the pair before promotion.
+   These pages now have an H1 and `noindex,follow` while figures await review.
 
 Start with pages that have real firsthand reporting or measurable reader
 demand. Promote an individual page only after checking its claims, canonical,
