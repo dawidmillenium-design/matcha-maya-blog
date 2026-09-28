@@ -1,0 +1,47 @@
+[
+ {
+  "file": "abu-dhabi-coworking-guide.html",
+  "flags": [
+   "speed-100mbp-verified-claim",
+   "exchange-rates-corrupted",
+   "bangkok-editorial-note-mismatch",
+   "placeholder-video-id",
+   "undated-verification-stamp"
+  ]
+ },
+ {
+  "file": "abu-dhabi-podcast-proposal.html",
+  "flags": [
+   "exchange-rates-corrupted",
+   "bangkok-editorial-note-mismatch"
+  ]
+ },
+ {
+  "file": "accra-coworking-guide.html",
+  "flags": [
+   "speed-100mbp-verified-claim",
+   "exchange-rates-corrupted",
+   "bangkok-editorial-note-mismatch",
+   "placeholder-video-id",
+   "generic-venue-name",
+   "undated-verification-stamp"
+  ]
+ },
+ {
+  "file": "accra-podcast-proposal.html",
+  "flags": [
+   "exchange-rates-corrupted",
+   "bangkok-editorial-note-mismatch"
+  ]
+ },
+ {
+  "file": "addis-ababa-coworking-guide.html",
+  "flags": [
+   "speed-100mbp-verified-claim",
+   "exchange-rates-corrupted",
+   "bangkok-editorial-note-mismatch",
+   "placeholder-video-id",
+   "undated-verification-stamp"
+  ]
+ }
+]
